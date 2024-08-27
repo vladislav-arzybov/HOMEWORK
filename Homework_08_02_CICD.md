@@ -35,11 +35,11 @@
 
 3. Создайте в jenkins Freestyle Project, подключите получившийся репозиторий к нему и произведите запуск тестов и сборку проекта ```go test .``` и  ```docker build .```.
 
+   ![изображение](https://github.com/user-attachments/assets/f4ccb539-5c39-4613-b70a-566066cf79bf)
+
 В качестве ответа пришлите скриншоты с настройками проекта и результатами выполнения сборки.
 
-![изображение](https://github.com/user-attachments/assets/f4ccb539-5c39-4613-b70a-566066cf79bf)
-
-![изображение](https://github.com/user-attachments/assets/362015bc-371d-4d06-8445-6a2c3578e454)
+   ![изображение](https://github.com/user-attachments/assets/362015bc-371d-4d06-8445-6a2c3578e454)
 
 
 
@@ -50,9 +50,17 @@
 **Что нужно сделать:**
 
 1. Создайте новый проект pipeline.
-2. Перепишите сборку из задания 1 на declarative в виде кода.
+
+   
+3. Перепишите сборку из задания 1 на declarative в виде кода.
+
+   ![изображение](https://github.com/user-attachments/assets/402ccf4c-1922-47ed-a73e-66b4acf35761)
 
 В качестве ответа пришлите скриншоты с настройками проекта и результатами выполнения сборки.
+
+   ![изображение](https://github.com/user-attachments/assets/3a0cc5f1-03aa-4b7c-8ea1-8273cedc0b62)
+
+
 
 ---
 
