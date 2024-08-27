@@ -95,3 +95,12 @@
 Подсказка: используйте переменную BUILD_NUMBER.
 
 В качестве ответа пришлите скриншоты с настройками проекта и результатами выполнения сборки.
+
+![изображение](https://github.com/user-attachments/assets/a2884615-4fe0-41a7-a1b1-a098d46de0b5)
+
+
+![изображение](https://github.com/user-attachments/assets/3d46afcc-a9bb-4b04-b5f3-78b863d2475c)
+
+
+![изображение](https://github.com/user-attachments/assets/3084b892-b978-4970-a28e-2a3ea1f0e86d)
+
