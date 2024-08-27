@@ -65,6 +65,9 @@
    ![изображение](https://github.com/user-attachments/assets/897665cc-8e66-4d34-b5b9-f8fcc23db9c6)
 
 1. Создайте raw-hosted репозиторий.
+
+   ![изображение](https://github.com/user-attachments/assets/c1e82f0e-d6ba-4e9c-9c82-e293a8831faa)
+
 1. Измените pipeline так, чтобы вместо Docker-образа собирался бинарный go-файл. Команду можно скопировать из Dockerfile.
 1. Загрузите файл в репозиторий с помощью jenkins.
 
