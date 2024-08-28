@@ -77,9 +77,18 @@
    ![изображение](https://github.com/user-attachments/assets/c1e82f0e-d6ba-4e9c-9c82-e293a8831faa)
 
 1. Измените pipeline так, чтобы вместо Docker-образа собирался бинарный go-файл. Команду можно скопировать из Dockerfile.
+
+   ![изображение](https://github.com/user-attachments/assets/8ba14630-5a0c-4403-8cb0-09f5a8b852bc)
+
 1. Загрузите файл в репозиторий с помощью jenkins.
 
+   ![изображение](https://github.com/user-attachments/assets/91a94e1c-d50a-4269-ac9b-f8f3e2bc11f9)
+
+
 В качестве ответа пришлите скриншоты с настройками проекта и результатами выполнения сборки.
+
+   ![изображение](https://github.com/user-attachments/assets/f91c85ff-d852-4e61-a323-81e6b68e3ce0)
+
 
 ---
 ## Дополнительные задания* (со звёздочкой)
