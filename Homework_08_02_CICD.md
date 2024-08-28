@@ -75,7 +75,7 @@
 
 1. Создайте raw-hosted репозиторий.
 
-  ![изображение](https://github.com/user-attachments/assets/112fe690-0328-420f-805b-729413e9cfd2)
+   ![изображение](https://github.com/user-attachments/assets/112fe690-0328-420f-805b-729413e9cfd2)
 
 
 1. Измените pipeline так, чтобы вместо Docker-образа собирался бинарный go-файл. Команду можно скопировать из Dockerfile.
