@@ -51,6 +51,9 @@
 
    ![изображение](https://github.com/user-attachments/assets/6f59bc83-dfdc-4869-ab38-d484a29e1357)
 
+   ![изображение](https://github.com/user-attachments/assets/adc8d924-028b-430a-a362-98c6d1b20ece)
+
+
   
 ---
 ## Дополнительные задания* (со звёздочкой)
