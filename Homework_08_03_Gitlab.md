@@ -51,7 +51,8 @@
 
    ![изображение](https://github.com/user-attachments/assets/6f59bc83-dfdc-4869-ab38-d484a29e1357)
 
-   ![изображение](https://github.com/user-attachments/assets/adc8d924-028b-430a-a362-98c6d1b20ece)
+   ![изображение](https://github.com/user-attachments/assets/cf9e1741-903b-481b-a05c-a57cb9872822)
+
 
 
   
