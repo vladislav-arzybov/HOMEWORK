@@ -22,7 +22,7 @@
 
    ![изображение](https://github.com/user-attachments/assets/dd096769-c836-4a45-ac60-f138681a17dd)
 
-   ![изображение](https://github.com/user-attachments/assets/136c680b-07fc-4452-a628-42a85191a9a3)
+   ![изображение](https://github.com/user-attachments/assets/d01f3315-2d77-46eb-adc7-0e4d9f9bad55)
 
    ![изображение](https://github.com/user-attachments/assets/453e7b0c-cca9-4390-afb9-404a1b99c2a5)
 
