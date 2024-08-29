@@ -37,7 +37,7 @@
 
    ![изображение](https://github.com/user-attachments/assets/4dfe1853-0e7e-4d64-afed-db26b7515f89)
 
-   ![изображение](https://github.com/user-attachments/assets/b77bea1f-9404-4480-8c59-047cf7ff5880)
+   ![изображение](https://github.com/user-attachments/assets/f5e84a23-7a2d-4e57-8ec1-7ff926068302)
 
 3. Создайте .gitlab-ci.yml, описав в нём все необходимые, на ваш взгляд, этапы.
 
