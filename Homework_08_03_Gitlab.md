@@ -46,7 +46,9 @@
    ![изображение](https://github.com/user-attachments/assets/787b2b69-42b9-4cf6-a377-77e9d4a267da)
    
  * файл gitlab-ci.yml для своего проекта или вставьте код в соответствующее поле в шаблоне;
-      https://raw.githubusercontent.com/vladislav-arzybov/HOMEWORK/main/.gitlab-ci.yml
+     
+      https://raw.githubusercontent.com/vladislav-arzybov/HOMEWORK/main/.gitlab-ci.yml_1
+   
  * скриншоты с успешно собранными сборками.
 
    ![изображение](https://github.com/user-attachments/assets/6f59bc83-dfdc-4869-ab38-d484a29e1357)
