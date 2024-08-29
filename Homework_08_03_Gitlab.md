@@ -74,5 +74,7 @@
 
 В качестве ответа добавьте в шаблон с решением файл gitlab-ci.yml своего проекта или вставьте код в соответсвующее поле в шаблоне.
 
+   https://raw.githubusercontent.com/vladislav-arzybov/HOMEWORK/main/.gitlab-ci.yml_2
+
    ![изображение](https://github.com/user-attachments/assets/009804dd-c113-4753-9de2-837567afa98a)
 
