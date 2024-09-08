@@ -41,6 +41,8 @@
 
 - На проверку отправьте получившуюся схему в формате pkt и скриншот, где виден процесс настройки маршрутизатора.
 
+  Обновленный файл: https://github.com/vladislav-arzybov/HOMEWORK/blob/main/10_Otkazoustojchivost/hsrp_advanced.pkt
+
 ------
 
 
