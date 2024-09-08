@@ -121,6 +121,8 @@ echo $x > /etc/track_nginx_file
 
   ![изображение](https://github.com/user-attachments/assets/cef364bf-ae61-4b1f-8993-138357670b1f)
 
+  Виртуальный ip установлен на мастер сервере
+  
   ![изображение](https://github.com/user-attachments/assets/cee1c640-3021-4020-a6d2-fe62e21cf264)
 
   ![изображение](https://github.com/user-attachments/assets/d7b3b3e0-87aa-4425-a210-6cbfde24c848)
