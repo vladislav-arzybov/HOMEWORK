@@ -22,7 +22,23 @@
 - Дана [схема](1/hsrp_advanced.pkt) для Cisco Packet Tracer, рассматриваемая в лекции.
 - На данной схеме уже настроено отслеживание интерфейсов маршрутизаторов Gi0/1 (для нулевой группы)
 - Необходимо аналогично настроить отслеживание состояния интерфейсов Gi0/0 (для первой группы).
+
+  ![изображение](https://github.com/user-attachments/assets/55c256ab-906c-40ee-93fe-6118641f01ff)
+
 - Для проверки корректности настройки, разорвите один из кабелей между одним из маршрутизаторов и Switch0 и запустите ping между PC0 и Server0.
+
+  ![изображение](https://github.com/user-attachments/assets/93eeb3ad-12c5-48b3-a464-a0118d546c8d)
+
+  ![изображение](https://github.com/user-attachments/assets/5cd5e603-6112-4eb7-bddc-2eb4e3d8ac10)
+
+  разрываем соединение
+
+  ![изображение](https://github.com/user-attachments/assets/fd725da1-d249-4513-bf7c-4eb030e2fc70)
+
+  ![изображение](https://github.com/user-attachments/assets/b4d8299b-c588-4aee-9180-6ef23fdf3e7c)
+
+  ![изображение](https://github.com/user-attachments/assets/01276caf-b7a8-4013-9e5f-4a671e7c338d)
+
 - На проверку отправьте получившуюся схему в формате pkt и скриншот, где виден процесс настройки маршрутизатора.
 
 ------
