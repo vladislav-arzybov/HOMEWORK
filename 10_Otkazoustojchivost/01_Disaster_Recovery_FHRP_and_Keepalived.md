@@ -136,7 +136,9 @@ echo $x > /etc/track_nginx_file
 - Попробуйте выполнить настройку keepalived на третьем сервере и скорректировать при необходимости формулу так, чтобы плавающий ip адрес всегда был прикреплен к серверу, имеющему наименьшую нагрузку.
 - На проверку отправьте получившийся bash-скрипт и конфигурационный файл keepalived, а также скриншоты логов keepalived с серверов при разных нагрузках
 
-  Ссылки на конфиги и скрипты:
+  ![изображение](https://github.com/user-attachments/assets/35be9ec7-8968-472e-9960-707ec192e82b)
+
+    Ссылки на конфиги и скрипты:
 
   [keepalived_cron](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/10_Otkazoustojchivost/keepalived_cron)
 
@@ -145,8 +147,6 @@ echo $x > /etc/track_nginx_file
   [keepalived.conf-master](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/10_Otkazoustojchivost/keepalived.conf-master)
   
   [keepalived.conf-backup](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/10_Otkazoustojchivost/keepalived.conf-backup)
-
-  ![изображение](https://github.com/user-attachments/assets/35be9ec7-8968-472e-9960-707ec192e82b)
 
 
 ------
