@@ -1,0 +1,1 @@
+/1 * * * * root /etc/script_track_nginx_file.sh
