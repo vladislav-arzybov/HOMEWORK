@@ -138,9 +138,9 @@ echo $x > /etc/track_nginx_file
 
   Ссылки на конфиги и скрипты:
 
-  keepalived_cron
+  [keepalived_cron](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/10_Otkazoustojchivost/keepalived_cron)
 
-  script_track_nginx_file.sh
+  [script_track_nginx_file.sh](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/10_Otkazoustojchivost/nginx_check.sh)
 
   [keepalived.conf-master](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/10_Otkazoustojchivost/keepalived.conf-master)
   
