@@ -127,6 +127,8 @@ echo $x > /etc/track_nginx_file
 
   ![изображение](https://github.com/user-attachments/assets/d7b3b3e0-87aa-4425-a210-6cbfde24c848)
 
+  Повышаем нагрузку чтобы виртуальный ip перешел на другой сервер
+
   ![изображение](https://github.com/user-attachments/assets/89c507f8-5546-4541-9d20-a76968abee95)
 
   ![изображение](https://github.com/user-attachments/assets/35be9ec7-8968-472e-9960-707ec192e82b)
