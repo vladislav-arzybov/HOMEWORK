@@ -1,4 +1,4 @@
-# Домашнее задание к занятию «`Disaster recovery и Keepalived`» - `Арзыбов Владислав`
+![изображение](https://github.com/user-attachments/assets/26a57fd6-82c2-4885-9237-fb74955090a8)# Домашнее задание к занятию «`Disaster recovery и Keepalived`» - `Арзыбов Владислав`
 
 ### Цель задания
 В результате выполнения этого задания вы научитесь:
@@ -127,10 +127,9 @@ echo $x > /etc/track_nginx_file
 
   ![изображение](https://github.com/user-attachments/assets/89c507f8-5546-4541-9d20-a76968abee95)
 
-  ![изображение](https://github.com/user-attachments/assets/cbb76d2b-c3e5-4a8e-8ae7-44bf1447f5f9)
+  ![изображение](https://github.com/user-attachments/assets/35be9ec7-8968-472e-9960-707ec192e82b)
 
-
-
+  ![изображение](https://github.com/user-attachments/assets/02969c8c-ad6b-4d2d-98aa-f9147f5ea35b)
   
 - Попробуйте выполнить настройку keepalived на третьем сервере и скорректировать при необходимости формулу так, чтобы плавающий ip адрес всегда был прикреплен к серверу, имеющему наименьшую нагрузку.
 - На проверку отправьте получившийся bash-скрипт и конфигурационный файл keepalived, а также скриншоты логов keepalived с серверов при разных нагрузках
