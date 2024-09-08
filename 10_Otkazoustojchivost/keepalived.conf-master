@@ -6,6 +6,12 @@ vrrp_script nginx_check {
     interval 3
     user root
 }
+
+vrrp_track_file track_nginx_file {
+      file /etc/track_nginx_file
+      weight -1
+}
+
 vrrp_instance VI_1 {
         state MASTER
         interface enp0s10
@@ -18,4 +24,9 @@ vrrp_instance VI_1 {
     track_script {
         nginx_check
     }
+
+      track_file {
+         track_nginx_file
+   }
+
 }
