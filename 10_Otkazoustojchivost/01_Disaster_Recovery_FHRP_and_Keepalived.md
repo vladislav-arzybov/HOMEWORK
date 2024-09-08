@@ -1,4 +1,4 @@
-![изображение](https://github.com/user-attachments/assets/26a57fd6-82c2-4885-9237-fb74955090a8)# Домашнее задание к занятию «`Disaster recovery и Keepalived`» - `Арзыбов Владислав`
+# Домашнее задание к занятию «`Disaster recovery и Keepalived`» - `Арзыбов Владислав`
 
 ### Цель задания
 В результате выполнения этого задания вы научитесь:
@@ -146,8 +146,6 @@ echo $x > /etc/track_nginx_file
   
   [keepalived.conf-backup](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/10_Otkazoustojchivost/keepalived.conf-backup)
 
-  
-  
   ![изображение](https://github.com/user-attachments/assets/35be9ec7-8968-472e-9960-707ec192e82b)
 
 
