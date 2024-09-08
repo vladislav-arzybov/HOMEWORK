@@ -78,7 +78,9 @@ nginx_check
   Ссылки на конфиги и скрипт:
 
   [nginx_check.sh](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/10_Otkazoustojchivost/nginx_check.sh)
+  
   [keepalived.conf-master](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/10_Otkazoustojchivost/keepalived.conf-master)
+  
   [keepalived.conf-backup](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/10_Otkazoustojchivost/keepalived.conf-backup)
 
   ![изображение](https://github.com/user-attachments/assets/849a7449-cd36-40e6-909c-fd13b9bdbcd1)
