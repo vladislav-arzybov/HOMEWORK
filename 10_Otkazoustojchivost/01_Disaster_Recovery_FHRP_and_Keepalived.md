@@ -75,6 +75,12 @@ nginx_check
 
 - На проверку отправьте получившейся bash-скрипт и конфигурационный файл keepalived, а также скриншот с демонстрацией переезда плавающего ip на другой сервер в случае недоступности порта или файла index.html
 
+  Ссылки на конфиги и скрипт:
+
+  [nginx_check.sh](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/10_Otkazoustojchivost/nginx_check.sh)
+  [keepalived.conf-master](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/10_Otkazoustojchivost/keepalived.conf-master)
+  [keepalived.conf-backup](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/10_Otkazoustojchivost/keepalived.conf-backup)
+
   ![изображение](https://github.com/user-attachments/assets/849a7449-cd36-40e6-909c-fd13b9bdbcd1)
 
   ![изображение](https://github.com/user-attachments/assets/f131efa7-a0ab-4ed2-9e03-5384a496c015)
