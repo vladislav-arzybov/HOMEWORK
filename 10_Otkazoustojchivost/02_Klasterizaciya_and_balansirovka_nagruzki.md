@@ -32,6 +32,7 @@
   
 - На проверку направьте конфигурационный файл haproxy, скриншоты, где видно перенаправление запросов на разные серверы при обращении к HAProxy.
 
+  [haproxy.cfg](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/10_Otkazoustojchivost/haproxy_1.cfg)
 
   ![изображение](https://github.com/user-attachments/assets/dbf92815-6348-483e-8327-7bc171b5e2c7)
   ![изображение](https://github.com/user-attachments/assets/cedf4335-9f39-446a-a114-c79d13a53b06)
