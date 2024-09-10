@@ -23,8 +23,20 @@
   ![изображение](https://github.com/user-attachments/assets/78f972ba-72a7-4db7-87b4-4e5f23d2e54f)
 
 - Установите и настройте HAProxy, воспользуйтесь материалами к лекции по [ссылке](https://github.com/netology-code/sflt-homeworks/tree/main/2)
+
+  ![изображение](https://github.com/user-attachments/assets/0959de80-5ee2-4c07-95dc-a5aacb033e8b)
+
 - Настройте балансировку Round-robin на 4 уровне.
+
+  ![изображение](https://github.com/user-attachments/assets/be482f27-e017-4ca6-96d7-9d72fb841f30)
+  
 - На проверку направьте конфигурационный файл haproxy, скриншоты, где видно перенаправление запросов на разные серверы при обращении к HAProxy.
+
+
+  ![изображение](https://github.com/user-attachments/assets/dbf92815-6348-483e-8327-7bc171b5e2c7)
+  ![изображение](https://github.com/user-attachments/assets/cedf4335-9f39-446a-a114-c79d13a53b06)
+
+
 
 
 ### Задание 2
