@@ -92,7 +92,13 @@
   ![изображение](https://github.com/user-attachments/assets/f0837f29-ad7f-4dd4-8fe9-91990ce82616)
   
 - Настройте два бэкенда HAProxy
+
+  ![изображение](https://github.com/user-attachments/assets/fc850399-ef8e-45c2-a6c2-11d4924c7a9a)
+
 - Настройте фронтенд HAProxy так, чтобы в зависимости от запрашиваемого сайта example1.local или example2.local запросы перенаправлялись на разные бэкенды HAProxy
+
+  ![изображение](https://github.com/user-attachments/assets/75e113a1-c56c-4662-be7b-923f99b6bc8e)
+
 - На проверку направьте конфигурационный файл HAProxy, скриншоты, демонстрирующие запросы к разным фронтендам и ответам от разных бэкендов.
 
 
