@@ -105,6 +105,9 @@
 
   ![изображение](https://github.com/user-attachments/assets/a8197f8b-1258-4103-8375-a208fc3ac20c)
 
+  ![изображение](https://github.com/user-attachments/assets/a93c2ac9-3d79-4bc9-b915-a828df0782f6)
+
+
 
 
 ------
