@@ -101,6 +101,11 @@
 
 - На проверку направьте конфигурационный файл HAProxy, скриншоты, демонстрирующие запросы к разным фронтендам и ответам от разных бэкендов.
 
+  [haproxy.cfg](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/10_Otkazoustojchivost/haproxy.cfg_4)
+
+  ![изображение](https://github.com/user-attachments/assets/a8197f8b-1258-4103-8375-a208fc3ac20c)
+
+
 
 ------
 
