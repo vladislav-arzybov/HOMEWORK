@@ -83,7 +83,13 @@
 
 ### Задание 4*
 - Запустите 4 simple python сервера на разных портах.
+  
+  ![изображение](https://github.com/user-attachments/assets/d8756535-b281-4504-94eb-c5b14eff4fb8)
+
 - Первые два сервера будут выдавать страницу index.html вашего сайта example1.local (в файле index.html напишите example1.local)
+
+  ![изображение](https://github.com/user-attachments/assets/f0837f29-ad7f-4dd4-8fe9-91990ce82616)
+
 - Вторые два сервера будут выдавать страницу index.html вашего сайта example2.local (в файле index.html напишите example2.local)
 - Настройте два бэкенда HAProxy
 - Настройте фронтенд HAProxy так, чтобы в зависимости от запрашиваемого сайта example1.local или example2.local запросы перенаправлялись на разные бэкенды HAProxy
