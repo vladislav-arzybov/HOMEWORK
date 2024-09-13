@@ -41,7 +41,7 @@
 
 ### Ответ
 
-0 0 * * * root rsync --archive --update --delete /home/reivol /tmp/backup
+    0 0 * * * root rsync --archive --update --delete /home/reivol /tmp/backup
 
 ![изображение](https://github.com/user-attachments/assets/95ff7d2a-e087-4252-986b-f3c1072b224d)
 
