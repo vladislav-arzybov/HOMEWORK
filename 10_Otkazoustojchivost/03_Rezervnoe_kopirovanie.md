@@ -26,7 +26,8 @@
 
     rsync -a -c --exclude=".*/" --progress ~ /tmp/backup
 
-    ![изображение](https://github.com/user-attachments/assets/32123cf8-b660-4af4-8fb1-7a77dc147473)
+   ![изображение](https://github.com/user-attachments/assets/19a962a2-6e20-4835-b6a4-0b48d4a5a9d1)
+
 
 
 
