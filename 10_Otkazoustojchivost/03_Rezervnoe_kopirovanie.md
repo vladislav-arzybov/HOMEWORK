@@ -43,6 +43,12 @@
 
 0 0 * * * root rsync --archive --update --delete /home/reivol /tmp/backup
 
+![изображение](https://github.com/user-attachments/assets/95ff7d2a-e087-4252-986b-f3c1072b224d)
+
+![изображение](https://github.com/user-attachments/assets/2a036786-2de8-419c-a153-b42596430376)
+
+
+
 
 
 ---
