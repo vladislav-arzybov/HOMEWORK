@@ -53,7 +53,7 @@
 
 *В качестве результата пришлите:*
 
-*1. Terraform Playbook.*
+*1.* [*Terraform Playbook.*](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/10_Otkazoustojchivost/main.tf_04)
 
 *2. Скриншот статуса балансировщика и целевой группы.*
 
