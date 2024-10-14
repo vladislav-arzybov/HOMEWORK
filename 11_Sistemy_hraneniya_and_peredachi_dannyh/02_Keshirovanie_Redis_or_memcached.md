@@ -23,6 +23,8 @@
 
 Установите и запустите memcached.
 
+![изображение](https://github.com/user-attachments/assets/5ddbac2d-c741-4c96-8ff8-5902d64b12b2)
+
 *Приведите скриншот systemctl status memcached, где будет видно, что memcached запущен.*
 
 ![изображение](https://github.com/user-attachments/assets/d69ed257-7839-4d00-872d-a7e449d5f987)
