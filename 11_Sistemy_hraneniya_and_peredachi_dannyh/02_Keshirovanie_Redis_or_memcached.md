@@ -51,7 +51,7 @@
 
 ![изображение](https://github.com/user-attachments/assets/f1bd7c93-2929-4af3-8e2c-cd000008d595)
 
-redis-cli --raw KEYS "*" | while read key; do echo -n "$key: "; redis-cli GET "$key"; done
+***redis-cli --raw KEYS "*" | while read key; do echo -n "$key: "; redis-cli GET "$key"; done***
 
 ![изображение](https://github.com/user-attachments/assets/bd1174fc-cbc7-46f5-8421-36e3e1b0f46f)
 
