@@ -82,7 +82,7 @@ $ rabbitmqctl cluster_status
 
 ![изображение](https://github.com/user-attachments/assets/ed57ae66-0fe4-4a4c-a437-ef5af61e8985)
 
-![изображение](https://github.com/user-attachments/assets/08f907d5-c053-488c-88b5-5507730cac13)
+![изображение](https://github.com/user-attachments/assets/91dea203-169f-4844-aa85-b74c16897e86)
 
 
 Для закрепления материала снова запустите скрипт producer.py и приложите скриншот выполнения команды на каждой из нод:
