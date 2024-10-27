@@ -101,7 +101,7 @@ $ rabbitmqadmin get queue='hello'
 
 *Приложите скриншот результата работы второго скрипта.*
 
-![изображение](https://github.com/user-attachments/assets/766139f9-4cbf-4d77-bc84-d5f3b9f3d0ae)
+![изображение](https://github.com/user-attachments/assets/d044fd6f-6731-4427-ad14-0d09beb7acd1)
 
 
 
