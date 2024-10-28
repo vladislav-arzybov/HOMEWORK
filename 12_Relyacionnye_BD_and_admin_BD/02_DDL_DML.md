@@ -29,6 +29,8 @@
 
 1.6. Переподключитесь к базе данных от имени sys_temp.
 
+![изображение](https://github.com/user-attachments/assets/2839463e-1e5d-451a-b965-20aa070e44e1)
+
 Для смены типа аутентификации с sha2 используйте запрос: 
 ```sql
 ALTER USER 'sys_test'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
