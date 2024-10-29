@@ -8,7 +8,7 @@
 ### Задание 1
 1.1. Поднимите чистый инстанс MySQL версии 8.0+. Можно использовать локальный сервер или контейнер Docker.
 
-![изображение](https://github.com/user-attachments/assets/00dee0d4-3305-417e-9d7d-aa45ed95fb2e)
+![изображение](https://github.com/user-attachments/assets/1ce73b67-06d8-46f2-9ff5-21a8fc464b10)
 
 1.2. Создайте учётную запись sys_temp. 
 
