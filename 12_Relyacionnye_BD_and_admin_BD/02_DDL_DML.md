@@ -16,7 +16,7 @@
 
 1.3. Выполните запрос на получение списка пользователей в базе данных. (скриншот)
 
-![изображение](https://github.com/user-attachments/assets/d83a0799-662c-4ef1-ac61-f5c3f35549b5)
+![изображение](https://github.com/user-attachments/assets/4f858a09-7369-44e0-80a4-71dc8c2321c7)
 
 1.4. Дайте все права для пользователя sys_temp. 
 
