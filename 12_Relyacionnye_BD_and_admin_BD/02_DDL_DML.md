@@ -24,8 +24,7 @@
 
 1.5. Выполните запрос на получение списка прав для пользователя sys_temp. (скриншот)
 
-![изображение](https://github.com/user-attachments/assets/b92e8e51-788a-4185-a192-13979fb5e002)
-![изображение](https://github.com/user-attachments/assets/09bb91e8-22ae-404e-8fbc-66f108c6717d)
+![изображение](https://github.com/user-attachments/assets/e215cf00-7b7f-4932-84d0-302e4f04927d)
 
 1.6. Переподключитесь к базе данных от имени sys_temp.
 
@@ -76,6 +75,11 @@ WHERE COLUMN_KEY = 'PRI' AND TABLE_SCHEMA = 'sakila';
 ### Задание 3*
 3.1. Уберите у пользователя sys_temp права на внесение, изменение и удаление данных из базы sakila.
 
+![изображение](https://github.com/user-attachments/assets/be8e153f-5cf0-4cb1-8e47-3145e9392248)
+
 3.2. Выполните запрос на получение списка прав для пользователя sys_temp. (скриншот)
 
 *Результатом работы должны быть скриншоты обозначенных заданий, а также простыня со всеми запросами.*
+
+![изображение](https://github.com/user-attachments/assets/9969cf6a-46e4-4985-815b-00375c119d15)
+
