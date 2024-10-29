@@ -61,6 +61,14 @@ SOURCE /tmp/sakila-data.sql;
 customer         | customer_id
 ```
 
+```sql
+SELECT TABLE_NAME AS 'Название таблицы', COLUMN_NAME AS 'Название первичного ключа'
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE COLUMN_KEY = 'PRI' AND TABLE_SCHEMA = 'sakila';
+```
+
+![изображение](https://github.com/user-attachments/assets/e8f2b154-718c-4fa8-b2b5-da08892afbb4)
+
 
 ## Дополнительные задания (со звёздочкой*)
 Эти задания дополнительные, то есть не обязательные к выполнению, и никак не повлияют на получение вами зачёта по этому домашнему заданию. Вы можете их выполнить, если хотите глубже шире разобраться в материале.
