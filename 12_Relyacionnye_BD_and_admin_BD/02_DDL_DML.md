@@ -12,7 +12,7 @@
 
 1.2. Создайте учётную запись sys_temp. 
 
-![изображение](https://github.com/user-attachments/assets/66381257-1cce-4866-85db-97561e2826ec)
+![изображение](https://github.com/user-attachments/assets/3746fbe5-9e4c-4cce-b6c2-5838d1c920a1)
 
 1.3. Выполните запрос на получение списка пользователей в базе данных. (скриншот)
 
