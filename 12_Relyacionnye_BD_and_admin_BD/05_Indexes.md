@@ -25,11 +25,43 @@ where date(p.payment_date) = '2005-07-30' and p.payment_date = r.rental_date and
 
 *Запрос выводит данные о покупателях и сумме платежей за указанную дату. В запросе много лишних таблиц которые не участвуют в итоговом выводе, такие как rental, inventoryfilm.*
 
+*Кратко его можно представить в виде такого sql скрипта:*
+
+```sql
+select p.*, concat(c.last_name, ' ', c.first_name) from payment p
+join customer c on p.customer_id = c.customer_id
+where date(p.payment_date) = '2005-07-30';
+```
+
 *До оптимизации скрипт выполнялся за 6,5 сек*
 
 ![изображение](https://github.com/user-attachments/assets/44374fea-2903-48e8-87b7-3be1d5dc4a9d)
  
 - оптимизируйте запрос: внесите корректировки по использованию операторов, при необходимости добавьте индексы.
+
+  *Запрос оптимизирован, удалены ненужные таблицы:*
+  
+```sql
+select distinct concat(c.last_name, ' ', c.first_name) as 'Покупатель', sum(p.amount) over (partition by c.customer_id) as 'Сумма'
+from payment p
+join customer c on p.customer_id = c.customer_id
+where date(p.payment_date) = '2005-07-30';
+```
+
+![изображение](https://github.com/user-attachments/assets/53e84e47-dca4-4923-b12d-93b9da1ae414)
+
+  *Добавлен индекс:*
+
+```sql
+CREATE INDEX index_payment_date ON payment (payment_date);
+```
+
+![изображение](https://github.com/user-attachments/assets/23ea4beb-2f94-4f84-b203-eeabe6f9f905)
+
+  *Итоговое время выполнения 8,5 млсек:*
+
+  ![изображение](https://github.com/user-attachments/assets/bc3512ff-c226-4f9b-87ed-e2509545a4be)
+
 
 ## Дополнительные задания (со звёздочкой*)
 Эти задания дополнительные, то есть не обязательные к выполнению, и никак не повлияют на получение вами зачёта по этому домашнему заданию. Вы можете их выполнить, если хотите глубже шире разобраться в материале.
