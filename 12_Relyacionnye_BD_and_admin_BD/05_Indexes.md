@@ -22,6 +22,13 @@ from payment p, rental r, customer c, inventory i, film f
 where date(p.payment_date) = '2005-07-30' and p.payment_date = r.rental_date and r.customer_id = c.customer_id and i.inventory_id = r.inventory_id
 ```
 - перечислите узкие места;
+
+Запрос выводит данные о покупателях и сумме платежей за указанную дату. В запросе много лишних таблиц которые не участвуют в итоговом выводе, такие как rental, inventoryfilm.
+
+До оптимизации скрипт выполнялся за 6,5 сек
+
+![изображение](https://github.com/user-attachments/assets/44374fea-2903-48e8-87b7-3be1d5dc4a9d)
+ 
 - оптимизируйте запрос: внесите корректировки по использованию операторов, при необходимости добавьте индексы.
 
 ## Дополнительные задания (со звёздочкой*)
