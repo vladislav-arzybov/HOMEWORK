@@ -41,6 +41,15 @@
 
 ![изображение](https://github.com/user-attachments/assets/2bd3d14f-1799-45e8-8b8e-fda9d4c96b2e)
 
+Вносим изменения в файл /etc/my.cnf на сервере replication-master
+![изображение](https://github.com/user-attachments/assets/2783d37c-e81f-4dfb-bd7e-bc19b875cc3d)
+
+Выполняем перезагрузку и проверяем состояние мастер сервера:
+- docker restart replication-master
+- SHOW MASTER STATUS;
+
+![изображение](https://github.com/user-attachments/assets/514ecb21-99e5-4c21-9f93-cbf33b02cdcf)
+
 
 
 
