@@ -22,8 +22,8 @@
 
 *Приложите скриншоты конфигурации, выполнения работы: состояния и режимы работы серверов.*
 
-docker run -d --name replication-master -e MYSQL_ROOT_PASSWORD=123456 -d mysql:8.3
-docker run -d --name replication-slave -e MYSQL_ROOT_PASSWORD=123456 -d mysql:8.3
+ docker run -d --name replication-master -e MYSQL_ROOT_PASSWORD=123456 -d mysql:8.3
+ docker run -d --name replication-slave -e MYSQL_ROOT_PASSWORD=123456 -d mysql:8.3
 
 ![изображение](https://github.com/user-attachments/assets/25f0128b-d458-435e-838d-5d9f4ef7151d)
 
