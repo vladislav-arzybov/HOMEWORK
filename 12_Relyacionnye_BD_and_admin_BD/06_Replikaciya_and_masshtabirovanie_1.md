@@ -62,6 +62,13 @@ MASTER_USER='replication',
 MASTER_LOG_FILE='mysql-bin.000001',
 MASTER_LOG_POS=158;
 
+![изображение](https://github.com/user-attachments/assets/8a99ca97-4d67-49dd-86cd-32cd4b68d656)
+
+- START REPLICA;
+- SHOW SLAVE STATUS\G
+
+![изображение](https://github.com/user-attachments/assets/5551b101-9483-4063-97da-e9bfb81337af)
+
 
 
 
