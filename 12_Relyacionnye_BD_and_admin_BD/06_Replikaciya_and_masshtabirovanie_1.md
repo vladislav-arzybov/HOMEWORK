@@ -50,7 +50,9 @@
 
 ![изображение](https://github.com/user-attachments/assets/514ecb21-99e5-4c21-9f93-cbf33b02cdcf)
 
+Вносим изменения в файл /etc/my.cnf на сервере replication-slave
 
+![изображение](https://github.com/user-attachments/assets/5731c44a-06d9-4ed8-ac59-54e8fdd64a8a)
 
 
 ---
