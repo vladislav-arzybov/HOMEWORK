@@ -65,6 +65,8 @@ CREATE INDEX index_payment_date ON payment (payment_date);
 
 ## *Дополнительная доработка скрипта*
 
+  *Скрипт выполняется за 3,5 млсек:*
+  
 ```sql
 select distinct concat(c.last_name, ' ', c.first_name) as 'Покупатель', sum(p.amount) as 'Сумма'
 from payment p
@@ -75,6 +77,15 @@ group by c.customer_id;
 
 ![изображение](https://github.com/user-attachments/assets/7d734282-9171-46ae-a338-4e579cf739e7)
 
+# *explain analyze*
+```sql
+-> Sort with duplicate removal: `Покупатель`, `Сумма`  (actual time=3.42..3.46 rows=391 loops=1)
+    -> Table scan on <temporary>  (actual time=3.21..3.25 rows=391 loops=1)
+        -> Aggregate using temporary table  (actual time=3.2..3.2 rows=391 loops=1)
+            -> Nested loop inner join  (cost=507 rows=634) (actual time=0.528..2.67 rows=634 loops=1)
+                -> Index range scan on p using index_payment_date over ('2005-07-30 00:00:00' <= payment_date < '2005-07-31 00:00:00'), with index condition: ((p.payment_date >= TIMESTAMP'2005-07-30 00:00:00') and (p.payment_date < <cache>(('2005-07-30' + interval 1 day))))  (cost=286 rows=634) (actual time=0.516..1.5 rows=634 loops=1)
+                -> Single-row index lookup on c using PRIMARY (customer_id=p.customer_id)  (cost=0.25 rows=1) (actual time=0.00168..0.00171 rows=1 loops=634)
+```
 
 
 ## Дополнительные задания (со звёздочкой*)
