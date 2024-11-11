@@ -81,8 +81,22 @@ MASTER_LOG_POS=158;
 
 ![изображение](https://github.com/user-attachments/assets/f1090b1c-ecc8-4ee7-9d3f-74806fe97e71)
 
-Проверяем наличие БД и записей в таблице на сервере replication-slave:
+- SHOW MASTER STATUS;
 
+![изображение](https://github.com/user-attachments/assets/ae5d4754-32cf-4825-a4f5-2fb6c60d9f2a)
+
+
+Проверяем наличие БД и записей в таблице на сервере replication-slave:
+- SHOW SLAVE STATUS\G
+
+![изображение](https://github.com/user-attachments/assets/fad1d4f5-29ab-4584-b77c-a5893f4bd81a)
+
+- SHOW databases;
+- USE world;
+- SHOW tables;
+- SELECT * FROM city ORDER BY ID DESC LIMIT 1;
+
+![изображение](https://github.com/user-attachments/assets/c1e4f806-ef04-4cb9-ab6b-2ac02e394ebc)
 
 
 ---
