@@ -24,6 +24,7 @@
 
 - docker run -d --name replication-master -e MYSQL_ROOT_PASSWORD=123456 -d mysql:8.3
 - docker run -d --name replication-slave -e MYSQL_ROOT_PASSWORD=123456 -d mysql:8.3
+- docker ps
 
 ![изображение](https://github.com/user-attachments/assets/25f0128b-d458-435e-838d-5d9f4ef7151d)
 
@@ -33,6 +34,13 @@
 - docker network connect replication replication-slave
 
 Создадим учетную запись master для сервера репликации:
+- docker exec -it replication-master mysql -p
+- CREATE USER 'replication'@'%';
+- GRANT REPLICATION SLAVE ON *.* TO 'replication'@'%';
+- SHOW GRANTS FOR replication@'%';
+
+![изображение](https://github.com/user-attachments/assets/2bd3d14f-1799-45e8-8b8e-fda9d4c96b2e)
+
 
 
 
