@@ -69,6 +69,19 @@ MASTER_LOG_POS=158;
 
 ![изображение](https://github.com/user-attachments/assets/5551b101-9483-4063-97da-e9bfb81337af)
 
+# Тестирование
+
+Создаем новую БД и таблицу на сервере replication-master:
+- CREATE database world;
+- SHOW databases;
+- USE world;
+- CREATE TABLE city (id SERIAL PRIMARY KEY, name VARCHAR(50), countrycode VARCHAR(50), district VARCHAR(50), population INTEGER);
+- INSERT INTO city (id, name, countrycode, district, population) VALUES ('1', 'Test-Replication', 'ALB', 'Test', '42');
+- SELECT * FROM city ORDER BY ID DESC LIMIT 1;
+
+![изображение](https://github.com/user-attachments/assets/f1090b1c-ecc8-4ee7-9d3f-74806fe97e71)
+
+Проверяем наличие БД и записей в таблице на сервере replication-slave:
 
 
 
