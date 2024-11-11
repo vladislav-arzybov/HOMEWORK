@@ -27,9 +27,9 @@
 
 ![изображение](https://github.com/user-attachments/assets/25f0128b-d458-435e-838d-5d9f4ef7151d)
 
-docker network create replication
-docker network connect replication replication-master
-docker network connect replication replication-slave
+- docker network create replication
+- docker network connect replication replication-master
+- docker network connect replication replication-slave
 
 
 ---
