@@ -54,6 +54,16 @@
 
 ![изображение](https://github.com/user-attachments/assets/5731c44a-06d9-4ed8-ac59-54e8fdd64a8a)
 
+Выполняем перезагрузку и послеующую настройку сервера реплики:
+- docker restart replication-slave
+- CHANGE MASTER TO
+MASTER_HOST='replication-master',
+MASTER_USER='replication',
+MASTER_LOG_FILE='mysql-bin.000001',
+MASTER_LOG_POS=158;
+
+
+
 
 ---
 
