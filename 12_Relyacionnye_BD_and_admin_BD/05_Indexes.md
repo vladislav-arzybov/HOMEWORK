@@ -63,6 +63,20 @@ CREATE INDEX index_payment_date ON payment (payment_date);
   ![изображение](https://github.com/user-attachments/assets/bc3512ff-c226-4f9b-87ed-e2509545a4be)
 
 
+## *Дополнительная доработка скрипта*
+
+```sql
+select distinct concat(c.last_name, ' ', c.first_name) as 'Покупатель', sum(p.amount) as 'Сумма'
+from payment p
+inner join customer c on p.customer_id = c.customer_id
+where p.payment_date >= '2005-07-30' and p.payment_date < DATE_ADD('2005-07-30', INTERVAL 1 DAY)
+group by c.customer_id;
+```
+
+![изображение](https://github.com/user-attachments/assets/7d734282-9171-46ae-a338-4e579cf739e7)
+
+
+
 ## Дополнительные задания (со звёздочкой*)
 Эти задания дополнительные, то есть не обязательные к выполнению, и никак не повлияют на получение вами зачёта по этому домашнему заданию. Вы можете их выполнить, если хотите глубже шире разобраться в материале.
 
