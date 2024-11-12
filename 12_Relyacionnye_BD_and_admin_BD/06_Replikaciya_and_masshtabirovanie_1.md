@@ -111,3 +111,10 @@ MASTER_LOG_POS=158;
 Выполните конфигурацию master-master репликации. Произведите проверку.
 
 *Приложите скриншоты конфигурации, выполнения работы: состояния и режимы работы серверов.*
+
+- docker run -d --name replication-master-one -e MYSQL_ALLOW_EMPTY_PASSWORD=true -v ~/path/to/world/dump:/docker-entrypoint-initdb.d mysql:8.0
+- docker run -d --name replication-master-two -e MYSQL_ALLOW_EMPTY_PASSWORD=true -v ~/path/to/world/dump:/docker-entrypoint-initdb.d mysql:8.0
+- docker ps
+
+![изображение](https://github.com/user-attachments/assets/4e0fe0af-fd50-43be-bf23-67e6feb7b925)
+
