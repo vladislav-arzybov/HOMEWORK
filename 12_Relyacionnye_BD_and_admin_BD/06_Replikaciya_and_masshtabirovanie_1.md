@@ -118,3 +118,15 @@ MASTER_LOG_POS=158;
 
 ![изображение](https://github.com/user-attachments/assets/4e0fe0af-fd50-43be-bf23-67e6feb7b925)
 
+Вносим и проверяем изменения в файле /etc/my.cnf на серверах replication-master-one и replication-master-two mysql:
+- docker exec -it replication-master-one cat /etc/my.cnf
+
+![изображение](https://github.com/user-attachments/assets/4cc108ac-98c5-40cd-a71d-860779b15e5e)
+
+- docker exec -it replication-master-two cat /etc/my.cnf
+
+![изображение](https://github.com/user-attachments/assets/1e5ccaaf-9cf7-4786-95b6-7e852334808b)
+
+
+
+
