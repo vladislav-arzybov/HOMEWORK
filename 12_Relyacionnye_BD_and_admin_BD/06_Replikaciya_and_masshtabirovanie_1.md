@@ -153,5 +153,9 @@ MASTER_LOG_POS=158;
 - docker restart replication-master-one
 - docker restart replication-master-two
 
+Проверяем статус на обоих серверах:
+- SHOW MASTER STATUS;
+
+![изображение](https://github.com/user-attachments/assets/93ae7d85-2014-4eb2-a17f-39d10d64c8d9)
 
 
