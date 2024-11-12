@@ -118,7 +118,7 @@ MASTER_LOG_POS=158;
 
 ![изображение](https://github.com/user-attachments/assets/4e0fe0af-fd50-43be-bf23-67e6feb7b925)
 
-Вносим и проверяем изменения в файле /etc/my.cnf на серверах replication-master-one и replication-master-two mysql:
+Вносим и проверяем изменения в файле /etc/my.cnf на серверах replication-master-one и replication-master-two:
 - docker exec -it replication-master-one cat /etc/my.cnf
 
 ![изображение](https://github.com/user-attachments/assets/4cc108ac-98c5-40cd-a71d-860779b15e5e)
@@ -126,6 +126,28 @@ MASTER_LOG_POS=158;
 - docker exec -it replication-master-two cat /etc/my.cnf
 
 ![изображение](https://github.com/user-attachments/assets/1e5ccaaf-9cf7-4786-95b6-7e852334808b)
+
+Выполняем настройку сервера replication-master-two:
+- stop slave;
+- CHANGE MASTER TO MASTER_HOST = 'replication-master-one', MASTER_USER = 'replicator', MASTER_PASSWORD = 'password', MASTER_LOG_FILE = 'mysql-bin.000001', MASTER_LOG_POS = 107;
+- start slave;
+  
+![изображение](https://github.com/user-attachments/assets/b83de067-38a0-4c2b-b05e-d844f52c26f7)
+
+Выполняем настройку сервера replication-master-one:
+- stop slave;
+- CHANGE MASTER TO MASTER_HOST = 'replication-master-two', MASTER_USER = 'replicator', MASTER_PASSWORD = 'password', MASTER_LOG_FILE = 'mysql-bin.000001', MASTER_LOG_POS = 107;
+- start slave;
+
+![изображение](https://github.com/user-attachments/assets/13255e86-5b00-452d-b538-c7ddf11b332c)
+
+Создаем пользователя replicator на обоих серверах:
+- create user 'replicator'@'%' identified by 'password';
+- create database example;
+- grant replication slave on *.* to 'replicator'@'%';
+- SELECT user FROM mysql.user;
+
+![изображение](https://github.com/user-attachments/assets/3853ac48-ce60-49df-b9c7-4829416f23b8)
 
 
 
