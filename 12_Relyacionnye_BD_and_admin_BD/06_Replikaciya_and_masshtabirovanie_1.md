@@ -149,6 +149,9 @@ MASTER_LOG_POS=158;
 
 ![изображение](https://github.com/user-attachments/assets/3853ac48-ce60-49df-b9c7-4829416f23b8)
 
+Перезагружаем сервера:
+- docker restart replication-master-one
+- docker restart replication-master-two
 
 
 
