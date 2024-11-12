@@ -193,3 +193,10 @@ MASTER_LOG_POS=158;
 
 ![изображение](https://github.com/user-attachments/assets/e577ae0d-39b1-443e-a754-ec99894f627f)
 
+Режим работы серверов:
+
+![изображение](https://github.com/user-attachments/assets/49b2bac5-e8aa-4e59-aeab-0e8462d5b43b)
+
+![изображение](https://github.com/user-attachments/assets/98976735-0546-4c63-91b5-13ef2ef8b59c)
+
+
