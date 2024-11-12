@@ -182,7 +182,7 @@ MASTER_LOG_POS=158;
 
 
 Проверяем наличие БД и записей в таблице на сервере replication-master-two:
--SHOW SLAVE STATUS\G
+- SHOW SLAVE STATUS\G
 
 ![изображение](https://github.com/user-attachments/assets/90da9fe9-fbc8-4c63-98be-2c214ca2c665)
 
