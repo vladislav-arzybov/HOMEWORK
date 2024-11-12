@@ -142,6 +142,7 @@ MASTER_LOG_POS=158;
 Выполняем настройку сервера replication-master-one:
 - stop slave;
 - CHANGE MASTER TO MASTER_HOST = 'replication-master-two', MASTER_USER = 'replicator', MASTER_PASSWORD = 'password', MASTER_LOG_FILE = 'mysql-bin.000001', MASTER_LOG_POS = 107;
+- CHANGE MASTER TO GET_MASTER_PUBLIC_KEY=1;
 - start slave;
 
 ![изображение](https://github.com/user-attachments/assets/13255e86-5b00-452d-b538-c7ddf11b332c)
@@ -173,4 +174,22 @@ MASTER_LOG_POS=158;
 - INSERT INTO city (id, name, countrycode, district, population) VALUES ('1', 'Test-Replication', 'ALB', 'Test', '42');
 - SELECT * FROM city ORDER BY ID DESC LIMIT 1;
 
+![изображение](https://github.com/user-attachments/assets/c32a3c9d-5af6-4700-8ad2-6e0914ba60e5)
+
+- SHOW MASTER STATUS;
+
+![изображение](https://github.com/user-attachments/assets/d2468315-12e4-4894-914b-55d25a7114d7)
+
+
+Проверяем наличие БД и записей в таблице на сервере replication-master-two:
+-SHOW SLAVE STATUS\G
+
+![изображение](https://github.com/user-attachments/assets/90da9fe9-fbc8-4c63-98be-2c214ca2c665)
+
+- SHOW databases;
+- USE world;
+- SHOW tables;
+- SELECT * FROM city ORDER BY ID DESC LIMIT 1;
+
+![изображение](https://github.com/user-attachments/assets/e577ae0d-39b1-443e-a754-ec99894f627f)
 
