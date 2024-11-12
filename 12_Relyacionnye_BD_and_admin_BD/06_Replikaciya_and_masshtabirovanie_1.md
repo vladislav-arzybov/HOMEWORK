@@ -118,6 +118,11 @@ MASTER_LOG_POS=158;
 
 ![изображение](https://github.com/user-attachments/assets/4e0fe0af-fd50-43be-bf23-67e6feb7b925)
 
+Создадим сеть replication и добавим в неё наши сервера:
+- docker network create replication
+- docker network connect replication replication-master-one
+- docker network connect replication replication-master-two
+
 Вносим и проверяем изменения в файле /etc/my.cnf на серверах replication-master-one и replication-master-two:
 - docker exec -it replication-master-one cat /etc/my.cnf
 
@@ -157,5 +162,15 @@ MASTER_LOG_POS=158;
 - SHOW MASTER STATUS;
 
 ![изображение](https://github.com/user-attachments/assets/93ae7d85-2014-4eb2-a17f-39d10d64c8d9)
+
+# Тестирование
+
+Создаем новую БД и таблицу на сервере replication-master-one:
+- CREATE database world;
+- SHOW databases;
+- USE world;
+- CREATE TABLE city (id SERIAL PRIMARY KEY, name VARCHAR(50), countrycode VARCHAR(50), district VARCHAR(50), population INTEGER);
+- INSERT INTO city (id, name, countrycode, district, population) VALUES ('1', 'Test-Replication', 'ALB', 'Test', '42');
+- SELECT * FROM city ORDER BY ID DESC LIMIT 1;
 
 
