@@ -40,11 +40,11 @@
 
 Пример вертикального шардинга на основе данных в таблице книги:
 
-[docker-compose.yml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/12_Relyacionnye_BD_and_admin_BD/07_docker-compose.yml)
-[shards_1.sql](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/12_Relyacionnye_BD_and_admin_BD/07_shards_1.sql)
-[shards_2.sql](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/12_Relyacionnye_BD_and_admin_BD/07_shards_2.sql)
-[shards_3.sql](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/12_Relyacionnye_BD_and_admin_BD/07_shards_3.sql)
-[shards_main.sql](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/12_Relyacionnye_BD_and_admin_BD/07_shards_main.sql)
+- [docker-compose.yml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/12_Relyacionnye_BD_and_admin_BD/07_docker-compose.yml)
+- [shards_1.sql](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/12_Relyacionnye_BD_and_admin_BD/07_shards_1.sql)
+- [shards_2.sql](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/12_Relyacionnye_BD_and_admin_BD/07_shards_2.sql)
+- [shards_3.sql](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/12_Relyacionnye_BD_and_admin_BD/07_shards_3.sql)
+- [shards_main.sql](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/12_Relyacionnye_BD_and_admin_BD/07_shards_main.sql)
 
 ![изображение](https://github.com/user-attachments/assets/e2fc2eee-5227-4a4e-8017-05a0b7dc8587)
 
