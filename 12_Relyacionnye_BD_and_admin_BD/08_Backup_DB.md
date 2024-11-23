@@ -76,7 +76,7 @@ unset PGPASSWORD
 Добавить расписание в планировщик cron запускать скрипт ежедневно в 3 часа ночи:
 
 ```bash
-3 0 * * * /etc/scripts/pgsql_dump.sh # postgres pg dump
+3 0 * * * /etc/scripts/pgsql_dump.sh # postgres pg_dump
 ```
 
 
