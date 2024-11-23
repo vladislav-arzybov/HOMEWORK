@@ -141,6 +141,15 @@ unset PGPASSWORD
 
 ![изображение](https://github.com/user-attachments/assets/f7a3690b-bb30-4d34-8eff-c453b030b261)
 
+Повторно создадим БД world:
+- CREATE database world;
+- SHOW databases;
+
+![изображение](https://github.com/user-attachments/assets/633bb9dd-aac0-4501-9f17-abe249b1d4bc)
+
+Как видими таблица city в БД world сейчас отсутствует:
+
+![изображение](https://github.com/user-attachments/assets/e2b7dd08-321c-4a19-b760-5768a055f465)
 
 
 
