@@ -86,8 +86,8 @@ unset PGPASSWORD
 
 3.1. С помощью официальной документации приведите пример команды инкрементного резервного копирования базы данных MySQL. 
 
-Для теста создадим docker-контейнер с mysql ver.8.3
--docker run -d --name repmysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql:8.3
+Для теста создадим docker-контейнер с mysql ver.8.3:
+- docker run -d --name repmysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql:8.3
 
 Отредактируем конфиг /etc/my.cnf, т.к. для выполнения инкрементного резервного копирования необходимо включить двоичный журнал.
 - Добавим сроку: log_bin = /var/log/mysql/mysql-bin.log expire_logs_days = 10
