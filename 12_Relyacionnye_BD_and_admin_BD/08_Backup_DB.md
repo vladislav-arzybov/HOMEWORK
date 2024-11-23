@@ -97,6 +97,17 @@ unset PGPASSWORD
 Перезапустим контейнер:
 - docker restart repmysql
 
+Создадим БД, таблицу и наполним её данными:
+- docker exec -it repmysql mysql -p
+- CREATE database world;
+- SHOW databases;
+- USE world;
+- CREATE TABLE city (id SERIAL PRIMARY KEY, name VARCHAR(50), countrycode VARCHAR(50), district VARCHAR(50), population INTEGER);
+- INSERT INTO city (name, countrycode, district, population) VALUES ('Test-Replication', 'ALB', 'Test', '42');
+- INSERT INTO city (name, countrycode, district, population) VALUES ('Test-Backup', 'CRT', 'Test2', '43');
+- SELECT * FROM city;
+
+![изображение](https://github.com/user-attachments/assets/482c988e-fadd-48c9-a1ec-a77d30a1bf72)
 
 
 3.1.* В каких случаях использование реплики будет давать преимущество по сравнению с обычным резервным копированием?
