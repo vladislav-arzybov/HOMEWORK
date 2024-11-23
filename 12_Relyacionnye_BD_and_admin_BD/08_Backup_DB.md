@@ -113,6 +113,11 @@ unset PGPASSWORD
 
 **mysqldump -uroot -p --all-databases --single-transaction --flush-logs --master-data=2 > full_backup.sql**
 
+Проверяем что создался новый файл журнала mysql-bin.000002:
+- docker exec -it repmysql /bin/bash
+- ls -l /var/log/mysql/
+
+![изображение](https://github.com/user-attachments/assets/4299a7b2-4a4e-4e59-9cc1-88f13b6c757f)
 
 
 3.1.* В каких случаях использование реплики будет давать преимущество по сравнению с обычным резервным копированием?
