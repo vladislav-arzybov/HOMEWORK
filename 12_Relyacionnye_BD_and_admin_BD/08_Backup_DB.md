@@ -163,9 +163,9 @@ unset PGPASSWORD
 
 **mysqlbinlog /var/log/mysql/mysql-bin.000002 | mysql -uroot -p world**
 
+![изображение](https://github.com/user-attachments/assets/da3b082a-40d1-4c53-bc30-b6924e68dd79)
 
-
-
+*P.S. дополнительно пришлось копировать mysqlbinlog с образа mysql:8.0.23, т.к. в mysql:8.3 он по какой-то причине отсутствет*
 
 3.1.* В каких случаях использование реплики будет давать преимущество по сравнению с обычным резервным копированием?
 
