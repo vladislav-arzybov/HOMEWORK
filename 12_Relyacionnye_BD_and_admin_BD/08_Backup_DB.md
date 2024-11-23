@@ -30,6 +30,12 @@ pg_dump -U postgres -W books > /tmp/books.dump
 
 ![изображение](https://github.com/user-attachments/assets/cd39048b-0936-4bef-b1ce-d6645b92d588)
 
+![изображение](https://github.com/user-attachments/assets/1dcd077b-4fd2-4cd9-95c8-5e0e33fa2b37)
+
+Удалим данные в таблице books
+
+![изображение](https://github.com/user-attachments/assets/2d3305e4-e26c-443d-9d19-cd4455c7a7b1)
+
 
 2.1.* Возможно ли автоматизировать этот процесс? Если да, то как?
 
