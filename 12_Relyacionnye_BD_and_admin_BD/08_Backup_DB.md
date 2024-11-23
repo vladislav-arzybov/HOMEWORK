@@ -120,12 +120,20 @@ unset PGPASSWORD
 ![изображение](https://github.com/user-attachments/assets/4299a7b2-4a4e-4e59-9cc1-88f13b6c757f)
 
 Добавляем новые данные в таблицу city:
+- docker exec -it repmysql mysql -p
+- USE world;
 - INSERT INTO city (name, countrycode, district, population) VALUES ('Test-Backup3', 'ABC', 'Test3', '44');
 - INSERT INTO city (name, countrycode, district, population) VALUES ('Test-Backup4', 'DFG', 'Test4', '45');
 - SELECT * FROM city;
 
 ![изображение](https://github.com/user-attachments/assets/aacbdb4a-5370-44cc-866b-1a3e3ecbd005)
 
+Для создания инкреметной резервной копии необходимо очистить двоичный журнал и сохранить двоичные журналы, созданные при последнем полном резервном копировании:
+- docker exec -it repmysql /bin/bash
+- mysqladmin -uroot -p flush-logs
+- ls -l /var/log/mysql/
+
+![изображение](https://github.com/user-attachments/assets/ba3e607a-230c-4837-901b-c14dc2fbb27c)
 
 
 3.1.* В каких случаях использование реплики будет давать преимущество по сравнению с обычным резервным копированием?
