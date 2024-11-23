@@ -109,6 +109,11 @@ unset PGPASSWORD
 
 ![изображение](https://github.com/user-attachments/assets/482c988e-fadd-48c9-a1ec-a77d30a1bf72)
 
+Выполним полный бэкап:
+
+**mysqldump -uroot -p --all-databases --single-transaction --flush-logs --master-data=2 > full_backup.sql**
+
+
 
 3.1.* В каких случаях использование реплики будет давать преимущество по сравнению с обычным резервным копированием?
 
