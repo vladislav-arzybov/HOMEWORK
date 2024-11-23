@@ -59,7 +59,7 @@
 Можножно использовать скрипт:
 
 ```bash
-#!/bin/sh
+#!/bin/bash
 PATH=/etc:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
 
 PGPASSWORD=postgres
@@ -76,7 +76,6 @@ unset PGPASSWORD
 Добавить расписание в планировщик cron запускать скрипт ежедневно в 3 часа ночи:
 
 ```bash
-# crontab -e
 3 0 * * * /etc/scripts/pgsql_dump.sh # postgres pg dump
 ```
 
