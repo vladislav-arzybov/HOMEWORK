@@ -39,6 +39,8 @@
 ![изображение](https://github.com/user-attachments/assets/2d3305e4-e26c-443d-9d19-cd4455c7a7b1)
 
 
+
+
 Восстановление БД:
 
 **psql -U postgres -d books < /tmp/books.dump**
