@@ -28,7 +28,7 @@
 
 Создаем резервную копию:
 
-pg_dump -U postgres -W books > /tmp/books.dump
+**pg_dump -U postgres -W books > /tmp/books.dump**
 
 ![изображение](https://github.com/user-attachments/assets/cd39048b-0936-4bef-b1ce-d6645b92d588)
 
@@ -41,7 +41,7 @@ pg_dump -U postgres -W books > /tmp/books.dump
 
 Восстановление БД:
 
-psql -U postgres -d books < /tmp/books.dump
+**psql -U postgres -d books < /tmp/books.dump**
 
 ![изображение](https://github.com/user-attachments/assets/cf4708ee-c279-43f7-a3a6-b513eea952ad)
 
