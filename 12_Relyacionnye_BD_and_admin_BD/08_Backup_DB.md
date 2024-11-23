@@ -72,6 +72,15 @@ pg_dump -U $dbUser $database | gzip > $pathB/pgsql_$(date "+%Y-%m-%d").sql.gz
 
 unset PGPASSWORD
 ```
+
+Добавить расписание в планировщик cron запускать скрипт ежедневно в 3 часа ночи:
+
+```bash
+# crontab -e
+3 0 * * * /etc/scripts/pgsql_dump.sh # postgres pg dump
+```
+
+
 ---
 
 ### Задание 3. MySQL
