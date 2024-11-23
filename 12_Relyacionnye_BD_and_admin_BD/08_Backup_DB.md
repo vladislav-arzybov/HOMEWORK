@@ -159,6 +159,11 @@ unset PGPASSWORD
 
 ![изображение](https://github.com/user-attachments/assets/dd4b40cf-13e6-4651-a566-d03c8b7b4dc5)
 
+Для восстановлени инкреметной резервной копии необходимо восстановить данные из двоичного журнала, сохранённого в файле mysql-bin.000002:
+
+**mysqlbinlog /var/log/mysql/mysql-bin.000002 | mysql -uroot -p world**
+
+
 
 
 
