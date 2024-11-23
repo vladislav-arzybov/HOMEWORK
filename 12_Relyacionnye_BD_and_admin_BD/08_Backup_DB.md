@@ -26,6 +26,8 @@
 
 2.1. С помощью официальной документации приведите пример команды резервирования данных и восстановления БД (pgdump/pgrestore).
 
+Создаем резервную копию:
+
 pg_dump -U postgres -W books > /tmp/books.dump
 
 ![изображение](https://github.com/user-attachments/assets/cd39048b-0936-4bef-b1ce-d6645b92d588)
@@ -35,6 +37,17 @@ pg_dump -U postgres -W books > /tmp/books.dump
 Удалим данные в таблице books
 
 ![изображение](https://github.com/user-attachments/assets/2d3305e4-e26c-443d-9d19-cd4455c7a7b1)
+
+
+Восстановление БД:
+
+psql -U postgres -d books < /tmp/books.dump
+
+![изображение](https://github.com/user-attachments/assets/cf4708ee-c279-43f7-a3a6-b513eea952ad)
+
+Проверяем данные в БД:
+
+![изображение](https://github.com/user-attachments/assets/fe44a461-631d-4009-b6d7-2bf4ca94388b)
 
 
 2.1.* Возможно ли автоматизировать этот процесс? Если да, то как?
