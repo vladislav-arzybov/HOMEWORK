@@ -58,11 +58,10 @@
 
 Можножно использовать скрипт:
 
+```bash
 #!/bin/sh
-
 PATH=/etc:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
 
-```bash
 PGPASSWORD=postgres
 export PGPASSWORD
 pathB=/mnt/backup
