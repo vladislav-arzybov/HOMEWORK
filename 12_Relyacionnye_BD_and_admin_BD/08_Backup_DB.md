@@ -135,6 +135,14 @@ unset PGPASSWORD
 
 ![изображение](https://github.com/user-attachments/assets/ba3e607a-230c-4837-901b-c14dc2fbb27c)
 
+После этого необходимо произвести порчу\удаление ьазы данных world:
+- drop database world;
+- SHOW databases;
+
+![изображение](https://github.com/user-attachments/assets/f7a3690b-bb30-4d34-8eff-c453b030b261)
+
+
+
 
 3.1.* В каких случаях использование реплики будет давать преимущество по сравнению с обычным резервным копированием?
 
