@@ -86,6 +86,9 @@ insert into test_table values('Строка 1');
 
 * Теперь подключитесь к узлу-реплике. Для этого из команды подключения удалите атрибут ```target_session_attrs```  и в параметре атрибут ```host``` передайте только имя хоста-реплики. Роли хостов можно посмотреть на соответствующей вкладке UI консоли.
 
+   ![изображение](https://github.com/user-attachments/assets/9b31d112-c225-470e-98ea-7e3165400b4f)
+
+
 * Проверьте, что подключение прошло к узлу-реплике.
 ```
 select case when pg_is_in_recovery() then 'REPLICA' else 'MASTER' end;
