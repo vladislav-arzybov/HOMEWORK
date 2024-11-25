@@ -56,6 +56,10 @@
 ```
 select case when pg_is_in_recovery() then 'REPLICA' else 'MASTER' end;
 ```
+
+   ![изображение](https://github.com/user-attachments/assets/5e7ea625-8547-44a2-8877-5e265fe6a5fd)
+
+
 * Посмотрите количество подключенных реплик:
 ```
 select count(*) from pg_stat_replication;
