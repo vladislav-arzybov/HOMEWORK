@@ -49,6 +49,9 @@
 
 * Используйте инструкцию по подключению к кластеру, доступную на вкладке «Обзор»: cкачайте SSL-сертификат и подключитесь к кластеру с помощью утилиты psql, указав hostname всех узлов и атрибут ```target_session_attrs=read-write```.
 
+  ![изображение](https://github.com/user-attachments/assets/4abee118-f415-4c31-b6ae-38181bbe735b)
+
+
 * Проверьте, что подключение прошло к master-узлу.
 ```
 select case when pg_is_in_recovery() then 'REPLICA' else 'MASTER' end;
