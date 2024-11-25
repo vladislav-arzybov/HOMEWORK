@@ -78,6 +78,8 @@ CREATE TABLE test_table(text varchar);
 insert into test_table values('Строка 1');
 ```
 
+   ![изображение](https://github.com/user-attachments/assets/87a7a2a5-a32a-4dc5-aeb6-2678b7aa53ae)
+
 * Выйдите из psql командой ```\q```.
 
 * Теперь подключитесь к узлу-реплике. Для этого из команды подключения удалите атрибут ```target_session_attrs```  и в параметре атрибут ```host``` передайте только имя хоста-реплики. Роли хостов можно посмотреть на соответствующей вкладке UI консоли.
