@@ -116,4 +116,10 @@ select * from test_table;
 *В качестве результата вашей работы пришлите скриншоты:*
 
 *1) Созданной базы данных;*
+
+![изображение](https://github.com/user-attachments/assets/277dd1a7-cf48-4970-98c1-89193ae194b0)
+
+
 *2) Результата вывода команды на реплике ```select * from test_table;```.*
+
+![изображение](https://github.com/user-attachments/assets/d89f3249-9eee-451d-bb30-6ce7335977a0)
