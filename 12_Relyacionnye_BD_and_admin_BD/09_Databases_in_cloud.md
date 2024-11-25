@@ -21,16 +21,19 @@
 #### Создание кластера
 1. Перейдите на главную страницу сервиса Managed Service for PostgreSQL.
    
-![изображение](https://github.com/user-attachments/assets/9023dd2f-f5c6-4150-937a-b4620ab3d14b)
+   ![изображение](https://github.com/user-attachments/assets/9023dd2f-f5c6-4150-937a-b4620ab3d14b)
 
 1. Создайте кластер PostgreSQL со следующими параметрами:
 - класс хоста: s2.micro, диск network-ssd любого размера;
 
-![изображение](https://github.com/user-attachments/assets/cd22bd94-2182-438a-a163-901c78df9ec6)
+   ![изображение](https://github.com/user-attachments/assets/cd22bd94-2182-438a-a163-901c78df9ec6)
 
-![изображение](https://github.com/user-attachments/assets/b7142cb8-5268-4ad6-8f86-c36336ad67e0)
+   ![изображение](https://github.com/user-attachments/assets/b7142cb8-5268-4ad6-8f86-c36336ad67e0)
 
 - хосты: нужно создать два хоста в двух разных зонах доступности и указать необходимость публичного доступа, то есть публичного IP адреса, для них;
+
+   ![изображение](https://github.com/user-attachments/assets/a08dc92b-6d05-4f31-99d8-adb2d884dc53)
+
 - установите учётную запись для пользователя и базы.
 
 Остальные параметры оставьте по умолчанию либо измените по своему усмотрению.
