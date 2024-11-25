@@ -93,15 +93,25 @@ insert into test_table values('Строка 1');
 ```
 select case when pg_is_in_recovery() then 'REPLICA' else 'MASTER' end;
 ```
+
+![изображение](https://github.com/user-attachments/assets/8aa86ac9-5f88-4c92-80f9-ff9fdeabd19b)
+
+
 * Проверьте состояние репликации
 ```
 select status from pg_stat_wal_receiver;
 ```
 
+![изображение](https://github.com/user-attachments/assets/c6bd9b27-8680-4472-b0fa-4a9e0c90a149)
+
+
 * Для проверки, что механизм репликации данных работает между зонами доступности облака, выполните запрос к таблице, созданной на предыдущем шаге:
 ```
 select * from test_table;
 ```
+
+![изображение](https://github.com/user-attachments/assets/30b10ab8-5e96-4169-9314-c0ba629ac974)
+
 
 *В качестве результата вашей работы пришлите скриншоты:*
 
