@@ -65,6 +65,9 @@ select case when pg_is_in_recovery() then 'REPLICA' else 'MASTER' end;
 select count(*) from pg_stat_replication;
 ```
 
+   ![изображение](https://github.com/user-attachments/assets/dae843f2-74e2-41cb-b46c-5662ca75f849)
+
+
 ### Проверьте работоспособность репликации в кластере
 
 * Создайте таблицу и вставьте одну-две строки.
