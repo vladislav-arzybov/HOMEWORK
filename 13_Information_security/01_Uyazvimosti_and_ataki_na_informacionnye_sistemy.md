@@ -32,7 +32,7 @@
 
 [	BIND 9.4.1 < 9.4.2 - Remote DNS Cache Poisoning (Metasploit)](https://www.exploit-db.com/exploits/6122)
 
-
+[	PostgreSQL 8.2/8.3/8.4 - UDF for Command Execution](https://www.exploit-db.com/exploits/7855)
 
 
 
