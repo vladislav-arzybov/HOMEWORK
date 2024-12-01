@@ -28,6 +28,9 @@
   
 *Приведите ответ в свободной форме.*  
 
+![изображение](https://github.com/user-attachments/assets/aceacc10-2360-40df-a0fd-9eb7a59d0675)
+
+
 [vsftpd 2.3.4 - Backdoor Command Execution](https://www.exploit-db.com/exploits/49757)
 
 [	BIND 9.4.1 < 9.4.2 - Remote DNS Cache Poisoning (Metasploit)](https://www.exploit-db.com/exploits/6122)
