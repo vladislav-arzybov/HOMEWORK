@@ -43,9 +43,13 @@
 
 ![изображение](https://github.com/user-attachments/assets/3cee3657-2cba-4ccf-8227-0de788599e21)
 
-Также можно посмотреть статус
+Также можно посмотреть статус раздела
 
 ![изображение](https://github.com/user-attachments/assets/9d2097fc-9db5-4d67-917c-d57188d2fa6d)
+
+Выполним форматирование раздела предварительно затерев все данные нулями 
+
+![изображение](https://github.com/user-attachments/assets/c387729b-4492-4ed3-8bac-7379ab92021e)
 
 
 
