@@ -43,6 +43,11 @@
 
 ![изображение](https://github.com/user-attachments/assets/3cee3657-2cba-4ccf-8227-0de788599e21)
 
+Также можно посмотреть статус
+
+![изображение](https://github.com/user-attachments/assets/9d2097fc-9db5-4d67-917c-d57188d2fa6d)
+
+
 
 ## Дополнительные задания (со звёздочкой*)
 
