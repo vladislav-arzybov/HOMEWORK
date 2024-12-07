@@ -74,7 +74,28 @@ sudo cryptsetup luksOpen /dev/sdb1 disk
 ![изображение](https://github.com/user-attachments/assets/1a19b478-757a-4e48-b4e3-0cbf25f51cc6)
    
 3. Повторите эксперимент, указанный в лекции.
-4. Отключите (удалите) apparmor.
+
+- ls /etc/apparmor.d/
+![изображение](https://github.com/user-attachments/assets/b121025b-eb68-4d52-a6a1-807c94045de6)
+
+- sudo cp /usr/bin/man /usr/bin/man1
+![изображение](https://github.com/user-attachments/assets/db8647d8-bbd2-4e30-82a6-3cb7c61b435a)
+
+- sudo cp /bin/ping /usr/bin/man
+
+![изображение](https://github.com/user-attachments/assets/0a00fbb3-3200-423f-9176-1cc5590ef2f6)
+
+- sudo man 127.0.0.1
+
+![изображение](https://github.com/user-attachments/assets/09607fed-7208-49a1-acd5-887c7a2d2389)
+
+- sudo aa-enforce man
+
+![изображение](https://github.com/user-attachments/assets/7ae58475-9f6a-49bc-bea6-e3eb74340da0)
+
+- sudo man 127.0.0.1
+
+5. Отключите (удалите) apparmor.
 
 
 *В качестве ответа пришлите снимки экрана с поэтапным выполнением задания.*
