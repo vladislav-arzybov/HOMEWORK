@@ -101,8 +101,9 @@ sudo cryptsetup luksOpen /dev/sdb1 disk
 
 5. Отключите (удалите) apparmor.
 
-
 *В качестве ответа пришлите снимки экрана с поэтапным выполнением задания.*
+
+![изображение](https://github.com/user-attachments/assets/78bfba89-0f05-4ee7-ac19-504cf5e1d442)
 
 
 
