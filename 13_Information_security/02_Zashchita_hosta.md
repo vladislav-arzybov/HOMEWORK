@@ -76,7 +76,7 @@ sudo cryptsetup luksOpen /dev/sdb1 disk
 3. Повторите эксперимент, указанный в лекции.
 
 - ls /etc/apparmor.d/
-![изображение](https://github.com/user-attachments/assets/b121025b-eb68-4d52-a6a1-807c94045de6)
+![изображение](https://github.com/user-attachments/assets/94eba279-1baa-4be9-bd56-74da486afcbc)
 
 - sudo cp /usr/bin/man /usr/bin/man1
 ![изображение](https://github.com/user-attachments/assets/db8647d8-bbd2-4e30-82a6-3cb7c61b435a)
