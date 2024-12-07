@@ -97,6 +97,8 @@ sudo cryptsetup luksOpen /dev/sdb1 disk
 
 - sudo man 127.0.0.1
 
+![изображение](https://github.com/user-attachments/assets/08e899d9-d3ff-4b85-a518-175d63a77ba9)
+
 5. Отключите (удалите) apparmor.
 
 
