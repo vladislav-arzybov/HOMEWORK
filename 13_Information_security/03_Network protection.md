@@ -82,12 +82,15 @@
 12/12/2024-14:32:19.738547  [**] [1:2024364:4] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.0.2.15:51558 -> 10.0.2.5:80
 ```
 
+Опция -sV — в отличии от остальных дополнительно указывает подробную информацию о службе, которая запущена на определённом порту. В логе suricata помимо записей о сканировании порта и адреса атакующей машины зафиксирована информация об обнаружении сканирования с помощью инструмента Nmap.
+
 В логе: /var/log/auth.log
 
 ```bash
 Dec 12 14:32:13 client2 sshd[19142]: error: kex_exchange_identification: Connection closed by remote host
 Dec 12 14:32:13 client2 sshd[19142]: Connection closed by 10.0.2.15 port 38422
 ```
+Зафиксирована попытка подключения по порту 38422 использующегося для сервиса Xn Control Plane.
 
 
 По желанию можете поэкспериментировать с опциями: https://nmap.org/man/ru/man-briefoptions.html.
