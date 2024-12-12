@@ -129,6 +129,8 @@ Dec 12 14:32:13 client2 sshd[19142]: Connection closed by 10.0.2.15 port 38422
 
 ![изображение](https://github.com/user-attachments/assets/3f14dad5-d2c5-4218-8f69-a09b70301962)
 
+Работа программы hydra закончена, но подходящих паролей не обнаружено.
+
 В логе: /var/log/suricata/fast.log
 
 ```bash
