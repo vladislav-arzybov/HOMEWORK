@@ -113,6 +113,8 @@ Dec 12 14:32:13 client2 sshd[19142]: Connection closed by 10.0.2.15 port 38422
 
 Дополнительная информация по **hydra**: https://kali.tools/?p=1847.
 
+![изображение](https://github.com/user-attachments/assets/9baff91e-5ee4-4a85-bbd1-5ace6fe8d506)
+
 2. Включение защиты SSH для Fail2Ban:
 
 -  открыть файл /etc/fail2ban/jail.conf,
@@ -121,6 +123,8 @@ Dec 12 14:32:13 client2 sshd[19142]: Connection closed by 10.0.2.15 port 38422
 
 Дополнительная информация по **Fail2Ban**:https://putty.org.ru/articles/fail2ban-ssh.html.
 
-
+![изображение](https://github.com/user-attachments/assets/4b725add-1f79-4583-a021-461fcc8595a8)
 
 *В качестве ответа пришлите события, которые попали в логи Suricata и Fail2Ban, прокомментируйте результат.*
+
+
