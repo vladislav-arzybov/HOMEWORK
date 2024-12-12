@@ -40,6 +40,19 @@
 
 **sudo nmap -sS < ip-адрес >**
 
+![изображение](https://github.com/user-attachments/assets/b7ccc083-e82f-4104-8767-32ba8c3b7505)
+
+В логе: /var/log/suricata/fast.log
+
+```bash
+12/12/2024-14:29:40.177859  [**] [1:2010937:3] ET SCAN Suspicious inbound to mySQL port 3306 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 10.0.2.15:61631 -> 10.0.2.5:3306
+12/12/2024-14:29:40.200746  [**] [1:2002910:6] ET SCAN Potential VNC Scan 5800-5820 [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.0.2.15:61631 -> 10.0.2.5:5801
+12/12/2024-14:29:40.199457  [**] [1:2010935:3] ET SCAN Suspicious inbound to MSSQL port 1433 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 10.0.2.15:61631 -> 10.0.2.5:1433
+12/12/2024-14:29:40.203186  [**] [1:2010936:3] ET SCAN Suspicious inbound to Oracle SQL port 1521 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 10.0.2.15:61631 -> 10.0.2.5:1521
+12/12/2024-14:29:40.212157  [**] [1:2010939:3] ET SCAN Suspicious inbound to PostgreSQL port 5432 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 10.0.2.15:61631 -> 10.0.2.5:5432
+```
+
+
 **sudo nmap -sV < ip-адрес >**
 
 По желанию можете поэкспериментировать с опциями: https://nmap.org/man/ru/man-briefoptions.html.
