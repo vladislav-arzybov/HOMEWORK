@@ -127,4 +127,173 @@ Dec 12 14:32:13 client2 sshd[19142]: Connection closed by 10.0.2.15 port 38422
 
 *В качестве ответа пришлите события, которые попали в логи Suricata и Fail2Ban, прокомментируйте результат.*
 
+![изображение](https://github.com/user-attachments/assets/3f14dad5-d2c5-4218-8f69-a09b70301962)
+
+В логе: /var/log/suricata/fast.log
+
+```bash
+12/12/2024-16:00:32.423292  [**] [1:2001219:20] ET SCAN Potential SSH Scan [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.0.2.15:32908 -> 10.0.2.5:22
+12/12/2024-16:00:32.423292  [**] [1:2003068:7] ET SCAN Potential SSH Scan OUTBOUND [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.0.2.15:32908 -> 10.0.2.5:22
+12/12/2024-16:00:32.424196  [**] [1:2001219:20] ET SCAN Potential SSH Scan [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.0.2.15:32940 -> 10.0.2.5:22
+12/12/2024-16:00:32.424196  [**] [1:2003068:7] ET SCAN Potential SSH Scan OUTBOUND [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.0.2.15:32940 -> 10.0.2.5:22
+12/12/2024-16:00:32.425887  [**] [1:2003068:7] ET SCAN Potential SSH Scan OUTBOUND [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.0.2.15:33014 -> 10.0.2.5:22
+12/12/2024-16:00:32.480228  [**] [1:2260002:1] SURICATA Applayer Detect protocol only one direction [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.0.2.5:22 -> 10.0.2.15:32968
+12/12/2024-16:00:32.480680  [**] [1:2260002:1] SURICATA Applayer Detect protocol only one direction [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.0.2.5:22 -> 10.0.2.15:32992
+12/12/2024-16:00:32.480458  [**] [1:2260002:1] SURICATA Applayer Detect protocol only one direction [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.0.2.5:22 -> 10.0.2.15:32982
+12/12/2024-16:00:34.786621  [**] [1:2003068:7] ET SCAN Potential SSH Scan OUTBOUND [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.0.2.15:45868 -> 10.0.2.5:22
+12/12/2024-16:00:35.233915  [**] [1:2003068:7] ET SCAN Potential SSH Scan OUTBOUND [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.0.2.15:45914 -> 10.0.2.5:22
+12/12/2024-16:00:35.369985  [**] [1:2003068:7] ET SCAN Potential SSH Scan OUTBOUND [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.0.2.15:45924 -> 10.0.2.5:22
+12/12/2024-16:00:35.939259  [**] [1:2003068:7] ET SCAN Potential SSH Scan OUTBOUND [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.0.2.15:45904 -> 10.0.2.5:22
+12/12/2024-16:00:36.407399  [**] [1:2210054:1] SURICATA STREAM excessive retransmissions [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.0.2.15:32906 -> 10.0.2.5:22
+12/12/2024-16:00:36.408373  [**] [1:2210054:1] SURICATA STREAM excessive retransmissions [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.0.2.15:32940 -> 10.0.2.5:22
+12/12/2024-16:00:36.408379  [**] [1:2210054:1] SURICATA STREAM excessive retransmissions [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.0.2.15:32922 -> 10.0.2.5:22
+12/12/2024-16:00:36.471162  [**] [1:2210054:1] SURICATA STREAM excessive retransmissions [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.0.2.15:32932 -> 10.0.2.5:22
+12/12/2024-16:00:36.471172  [**] [1:2210054:1] SURICATA STREAM excessive retransmissions [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.0.2.15:32914 -> 10.0.2.5:22
+12/12/2024-16:00:36.535415  [**] [1:2210054:1] SURICATA STREAM excessive retransmissions [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.0.2.15:32956 -> 10.0.2.5:22
+12/12/2024-16:00:36.836024  [**] [1:2003068:7] ET SCAN Potential SSH Scan OUTBOUND [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.0.2.15:45888 -> 10.0.2.5:22
+12/12/2024-16:00:36.919175  [**] [1:2210054:1] SURICATA STREAM excessive retransmissions [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.0.2.15:32888 -> 10.0.2.5:22
+12/12/2024-16:00:37.047334  [**] [1:2210054:1] SURICATA STREAM excessive retransmissions [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.0.2.15:33024 -> 10.0.2.5:22
+12/12/2024-16:00:37.859278  [**] [1:2003068:7] ET SCAN Potential SSH Scan OUTBOUND [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.0.2.15:45868 -> 10.0.2.5:22
+12/12/2024-16:00:37.923513  [**] [1:2003068:7] ET SCAN Potential SSH Scan OUTBOUND [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.0.2.15:45892 -> 10.0.2.5:22
+12/12/2024-16:00:38.711475  [**] [1:2210054:1] SURICATA STREAM excessive retransmissions [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.0.2.15:33040 -> 10.0.2.5:22
+12/12/2024-16:00:38.711480  [**] [1:2210054:1] SURICATA STREAM excessive retransmissions [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.0.2.15:33054 -> 10.0.2.5:22
+12/12/2024-16:00:38.883872  [**] [1:2003068:7] ET SCAN Potential SSH Scan OUTBOUND [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.0.2.15:45868 -> 10.0.2.5:22
+12/12/2024-16:00:39.543375  [**] [1:2210054:1] SURICATA STREAM excessive retransmissions [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.0.2.15:32874 -> 10.0.2.5:22
+12/12/2024-16:00:39.543380  [**] [1:2210054:1] SURICATA STREAM excessive retransmissions [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.0.2.15:32892 -> 10.0.2.5:22
+12/12/2024-16:00:39.608422  [**] [1:2210054:1] SURICATA STREAM excessive retransmissions [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.0.2.15:32886 -> 10.0.2.5:22
+12/12/2024-16:00:39.608427  [**] [1:2210054:1] SURICATA STREAM excessive retransmissions [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.0.2.15:32908 -> 10.0.2.5:22
+12/12/2024-16:00:39.671348  [**] [1:2210054:1] SURICATA STREAM excessive retransmissions [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.0.2.15:33008 -> 10.0.2.5:22
+12/12/2024-16:00:39.907744  [**] [1:2003068:7] ET SCAN Potential SSH Scan OUTBOUND [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.0.2.15:45888 -> 10.0.2.5:22
+12/12/2024-16:00:40.483376  [**] [1:2003068:7] ET SCAN Potential SSH Scan OUTBOUND [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.0.2.15:45924 -> 10.0.2.5:22
+12/12/2024-16:00:42.083200  [**] [1:2003068:7] ET SCAN Potential SSH Scan OUTBOUND [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.0.2.15:45904 -> 10.0.2.5:22
+12/12/2024-16:00:46.435526  [**] [1:2003068:7] ET SCAN Potential SSH Scan OUTBOUND [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.0.2.15:45914 -> 10.0.2.5:22
+12/12/2024-16:00:54.755382  [**] [1:2003068:7] ET SCAN Potential SSH Scan OUTBOUND [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.0.2.15:45924 -> 10.0.2.5:22
+```
+
+В логе: /var/log/auth.log
+
+```bash
+Dec 12 16:00:32 client2 sshd[21244]: Invalid user admin from 10.0.2.15 port 32866
+Dec 12 16:00:32 client2 sshd[21244]: Received disconnect from 10.0.2.15 port 32866:11: Bye Bye [preauth]
+Dec 12 16:00:32 client2 sshd[21244]: Disconnected from invalid user admin 10.0.2.15 port 32866 [preauth]
+Dec 12 16:00:32 client2 sshd[766]: error: beginning MaxStartups throttling
+Dec 12 16:00:32 client2 sshd[766]: drop connection #11 from [10.0.2.15]:32968 on [10.0.2.5]:22 past MaxStartups
+Dec 12 16:00:32 client2 sshd[21248]: Invalid user reivol from 10.0.2.15 port 32888
+Dec 12 16:00:32 client2 sshd[21246]: Invalid user admin from 10.0.2.15 port 32874
+Dec 12 16:00:32 client2 sshd[21249]: Invalid user admin from 10.0.2.15 port 32892
+Dec 12 16:00:32 client2 sshd[21246]: pam_unix(sshd:auth): check pass; user unknown
+Dec 12 16:00:32 client2 sshd[21246]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.0.2.15 
+Dec 12 16:00:32 client2 sshd[21248]: pam_unix(sshd:auth): check pass; user unknown
+Dec 12 16:00:32 client2 sshd[21248]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.0.2.15 
+Dec 12 16:00:32 client2 sshd[21247]: Invalid user admin from 10.0.2.15 port 32886
+Dec 12 16:00:32 client2 sshd[21251]: Invalid user admin from 10.0.2.15 port 32908
+Dec 12 16:00:32 client2 sshd[21249]: pam_unix(sshd:auth): check pass; user unknown
+Dec 12 16:00:32 client2 sshd[21249]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.0.2.15 
+Dec 12 16:00:32 client2 sshd[21253]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.0.2.15  user=root
+Dec 12 16:00:32 client2 sshd[21250]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.0.2.15  user=root
+Dec 12 16:00:32 client2 sshd[21256]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.0.2.15  user=root
+Dec 12 16:00:32 client2 sshd[21251]: pam_unix(sshd:auth): check pass; user unknown
+Dec 12 16:00:32 client2 sshd[21251]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.0.2.15 
+Dec 12 16:00:32 client2 sshd[21247]: pam_unix(sshd:auth): check pass; user unknown
+Dec 12 16:00:32 client2 sshd[21247]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.0.2.15 
+Dec 12 16:00:32 client2 sshd[21252]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.0.2.15  user=root
+Dec 12 16:00:32 client2 sshd[21258]: Invalid user super from 10.0.2.15 port 32956
+Dec 12 16:00:32 client2 sshd[21261]: Invalid user super from 10.0.2.15 port 33014
+Dec 12 16:00:32 client2 sshd[21255]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.0.2.15  user=root
+Dec 12 16:00:32 client2 sshd[21264]: Invalid user reivol from 10.0.2.15 port 33024
+Dec 12 16:00:32 client2 sshd[21260]: Invalid user admin from 10.0.2.15 port 33008
+Dec 12 16:00:32 client2 sshd[21258]: pam_unix(sshd:auth): check pass; user unknown
+Dec 12 16:00:32 client2 sshd[21265]: Invalid user reivol from 10.0.2.15 port 33040
+Dec 12 16:00:32 client2 sshd[21258]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.0.2.15 
+Dec 12 16:00:32 client2 sshd[21261]: pam_unix(sshd:auth): check pass; user unknown
+Dec 12 16:00:32 client2 sshd[21261]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.0.2.15 
+Dec 12 16:00:32 client2 sshd[21264]: pam_unix(sshd:auth): check pass; user unknown
+Dec 12 16:00:32 client2 sshd[21264]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.0.2.15 
+Dec 12 16:00:32 client2 sshd[21260]: pam_unix(sshd:auth): check pass; user unknown
+Dec 12 16:00:32 client2 sshd[21260]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.0.2.15 
+Dec 12 16:00:32 client2 sshd[21265]: pam_unix(sshd:auth): check pass; user unknown
+Dec 12 16:00:32 client2 sshd[21265]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.0.2.15 
+Dec 12 16:00:32 client2 sshd[21266]: Invalid user reivol from 10.0.2.15 port 33054
+Dec 12 16:00:32 client2 sshd[21266]: pam_unix(sshd:auth): check pass; user unknown
+Dec 12 16:00:32 client2 sshd[21266]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.0.2.15 
+Dec 12 16:00:34 client2 sshd[21246]: Failed password for invalid user admin from 10.0.2.15 port 32874 ssh2
+Dec 12 16:00:34 client2 sshd[21248]: Failed password for invalid user reivol from 10.0.2.15 port 32888 ssh2
+Dec 12 16:00:34 client2 sshd[21249]: Failed password for invalid user admin from 10.0.2.15 port 32892 ssh2
+Dec 12 16:00:34 client2 sshd[21253]: Failed password for root from 10.0.2.15 port 32922 ssh2
+Dec 12 16:00:34 client2 sshd[21250]: Failed password for root from 10.0.2.15 port 32906 ssh2
+Dec 12 16:00:34 client2 sshd[21256]: Failed password for root from 10.0.2.15 port 32940 ssh2
+Dec 12 16:00:34 client2 sshd[21251]: Failed password for invalid user admin from 10.0.2.15 port 32908 ssh2
+Dec 12 16:00:34 client2 sshd[21247]: Failed password for invalid user admin from 10.0.2.15 port 32886 ssh2
+Dec 12 16:00:34 client2 sshd[21252]: Failed password for root from 10.0.2.15 port 32914 ssh2
+Dec 12 16:00:34 client2 sshd[21255]: Failed password for root from 10.0.2.15 port 32932 ssh2
+Dec 12 16:00:34 client2 sshd[21258]: Failed password for invalid user super from 10.0.2.15 port 32956 ssh2
+Dec 12 16:00:34 client2 sshd[21261]: Failed password for invalid user super from 10.0.2.15 port 33014 ssh2
+Dec 12 16:00:34 client2 sshd[21264]: Failed password for invalid user reivol from 10.0.2.15 port 33024 ssh2
+Dec 12 16:00:34 client2 sshd[21260]: Failed password for invalid user admin from 10.0.2.15 port 33008 ssh2
+Dec 12 16:00:34 client2 sshd[21265]: Failed password for invalid user reivol from 10.0.2.15 port 33040 ssh2
+Dec 12 16:00:34 client2 sshd[21266]: Failed password for invalid user reivol from 10.0.2.15 port 33054 ssh2
+```
+
+В логе: /var/log/fail2ban.log
+
+```bash
+2024-12-12 16:00:32,396 fail2ban.filter         [20073]: INFO    [ssh] Found 10.0.2.15 - 2024-12-12 16:00:32
+2024-12-12 16:00:32,397 fail2ban.filter         [20073]: INFO    [sshd] Found 10.0.2.15 - 2024-12-12 16:00:32
+2024-12-12 16:00:32,550 fail2ban.filter         [20073]: INFO    [ssh] Found 10.0.2.15 - 2024-12-12 16:00:32
+2024-12-12 16:00:32,551 fail2ban.filter         [20073]: INFO    [ssh] Found 10.0.2.15 - 2024-12-12 16:00:32
+2024-12-12 16:00:32,570 fail2ban.filter         [20073]: INFO    [sshd] Found 10.0.2.15 - 2024-12-12 16:00:32
+2024-12-12 16:00:32,570 fail2ban.filter         [20073]: INFO    [sshd] Found 10.0.2.15 - 2024-12-12 16:00:32
+2024-12-12 16:00:32,571 fail2ban.filter         [20073]: INFO    [sshd] Found 10.0.2.15 - 2024-12-12 16:00:32
+2024-12-12 16:00:32,578 fail2ban.filter         [20073]: INFO    [ssh] Found 10.0.2.15 - 2024-12-12 16:00:32
+2024-12-12 16:00:32,603 fail2ban.filter         [20073]: INFO    [sshd] Found 10.0.2.15 - 2024-12-12 16:00:32
+2024-12-12 16:00:32,604 fail2ban.filter         [20073]: INFO    [sshd] Found 10.0.2.15 - 2024-12-12 16:00:32
+2024-12-12 16:00:32,619 fail2ban.filter         [20073]: INFO    [ssh] Found 10.0.2.15 - 2024-12-12 16:00:32
+2024-12-12 16:00:32,620 fail2ban.filter         [20073]: INFO    [ssh] Found 10.0.2.15 - 2024-12-12 16:00:32
+2024-12-12 16:00:32,676 fail2ban.filter         [20073]: INFO    [ssh] Found 10.0.2.15 - 2024-12-12 16:00:32
+2024-12-12 16:00:32,680 fail2ban.filter         [20073]: INFO    [sshd] Found 10.0.2.15 - 2024-12-12 16:00:32
+2024-12-12 16:00:32,684 fail2ban.filter         [20073]: INFO    [sshd] Found 10.0.2.15 - 2024-12-12 16:00:32
+2024-12-12 16:00:32,682 fail2ban.filter         [20073]: INFO    [ssh] Found 10.0.2.15 - 2024-12-12 16:00:32
+2024-12-12 16:00:32,687 fail2ban.filter         [20073]: INFO    [ssh] Found 10.0.2.15 - 2024-12-12 16:00:32
+2024-12-12 16:00:32,690 fail2ban.filter         [20073]: INFO    [ssh] Found 10.0.2.15 - 2024-12-12 16:00:32
+2024-12-12 16:00:32,688 fail2ban.filter         [20073]: INFO    [sshd] Found 10.0.2.15 - 2024-12-12 16:00:32
+2024-12-12 16:00:32,694 fail2ban.filter         [20073]: INFO    [sshd] Found 10.0.2.15 - 2024-12-12 16:00:32
+2024-12-12 16:00:32,702 fail2ban.filter         [20073]: INFO    [sshd] Found 10.0.2.15 - 2024-12-12 16:00:32
+2024-12-12 16:00:32,703 fail2ban.filter         [20073]: INFO    [ssh] Found 10.0.2.15 - 2024-12-12 16:00:32
+2024-12-12 16:00:32,717 fail2ban.filter         [20073]: INFO    [ssh] Found 10.0.2.15 - 2024-12-12 16:00:32
+2024-12-12 16:00:32,717 fail2ban.filter         [20073]: INFO    [sshd] Found 10.0.2.15 - 2024-12-12 16:00:32
+2024-12-12 16:00:33,048 fail2ban.actions        [20073]: NOTICE  [sshd] Ban 10.0.2.15
+2024-12-12 16:00:33,048 fail2ban.actions        [20073]: NOTICE  [ssh] Ban 10.0.2.15
+2024-12-12 16:00:34,647 fail2ban.filter         [20073]: INFO    [ssh] Found 10.0.2.15 - 2024-12-12 16:00:34
+2024-12-12 16:00:34,648 fail2ban.filter         [20073]: INFO    [sshd] Found 10.0.2.15 - 2024-12-12 16:00:34
+2024-12-12 16:00:34,663 fail2ban.filter         [20073]: INFO    [ssh] Found 10.0.2.15 - 2024-12-12 16:00:34
+2024-12-12 16:00:34,664 fail2ban.filter         [20073]: INFO    [sshd] Found 10.0.2.15 - 2024-12-12 16:00:34
+2024-12-12 16:00:34,673 fail2ban.filter         [20073]: INFO    [ssh] Found 10.0.2.15 - 2024-12-12 16:00:34
+2024-12-12 16:00:34,674 fail2ban.filter         [20073]: INFO    [sshd] Found 10.0.2.15 - 2024-12-12 16:00:34
+2024-12-12 16:00:34,683 fail2ban.filter         [20073]: INFO    [sshd] Found 10.0.2.15 - 2024-12-12 16:00:34
+2024-12-12 16:00:34,683 fail2ban.filter         [20073]: INFO    [ssh] Found 10.0.2.15 - 2024-12-12 16:00:34
+2024-12-12 16:00:34,696 fail2ban.filter         [20073]: INFO    [ssh] Found 10.0.2.15 - 2024-12-12 16:00:34
+2024-12-12 16:00:34,696 fail2ban.filter         [20073]: INFO    [sshd] Found 10.0.2.15 - 2024-12-12 16:00:34
+2024-12-12 16:00:34,700 fail2ban.filter         [20073]: INFO    [ssh] Found 10.0.2.15 - 2024-12-12 16:00:34
+2024-12-12 16:00:34,700 fail2ban.filter         [20073]: INFO    [sshd] Found 10.0.2.15 - 2024-12-12 16:00:34
+2024-12-12 16:00:34,712 fail2ban.filter         [20073]: INFO    [ssh] Found 10.0.2.15 - 2024-12-12 16:00:34
+2024-12-12 16:00:34,713 fail2ban.filter         [20073]: INFO    [sshd] Found 10.0.2.15 - 2024-12-12 16:00:34
+2024-12-12 16:00:34,718 fail2ban.filter         [20073]: INFO    [ssh] Found 10.0.2.15 - 2024-12-12 16:00:34
+2024-12-12 16:00:34,719 fail2ban.filter         [20073]: INFO    [sshd] Found 10.0.2.15 - 2024-12-12 16:00:34
+2024-12-12 16:00:34,728 fail2ban.filter         [20073]: INFO    [sshd] Found 10.0.2.15 - 2024-12-12 16:00:34
+2024-12-12 16:00:34,728 fail2ban.filter         [20073]: INFO    [ssh] Found 10.0.2.15 - 2024-12-12 16:00:34
+2024-12-12 16:00:34,738 fail2ban.filter         [20073]: INFO    [sshd] Found 10.0.2.15 - 2024-12-12 16:00:34
+2024-12-12 16:00:34,739 fail2ban.filter         [20073]: INFO    [ssh] Found 10.0.2.15 - 2024-12-12 16:00:34
+2024-12-12 16:00:34,754 fail2ban.filter         [20073]: INFO    [ssh] Found 10.0.2.15 - 2024-12-12 16:00:34
+2024-12-12 16:00:34,754 fail2ban.filter         [20073]: INFO    [sshd] Found 10.0.2.15 - 2024-12-12 16:00:34
+2024-12-12 16:00:34,760 fail2ban.filter         [20073]: INFO    [ssh] Found 10.0.2.15 - 2024-12-12 16:00:34
+2024-12-12 16:00:34,761 fail2ban.filter         [20073]: INFO    [sshd] Found 10.0.2.15 - 2024-12-12 16:00:34
+2024-12-12 16:00:34,761 fail2ban.filter         [20073]: INFO    [sshd] Found 10.0.2.15 - 2024-12-12 16:00:34
+2024-12-12 16:00:34,762 fail2ban.filter         [20073]: INFO    [ssh] Found 10.0.2.15 - 2024-12-12 16:00:34
+2024-12-12 16:00:34,763 fail2ban.filter         [20073]: INFO    [sshd] Found 10.0.2.15 - 2024-12-12 16:00:34
+2024-12-12 16:00:34,764 fail2ban.filter         [20073]: INFO    [ssh] Found 10.0.2.15 - 2024-12-12 16:00:34
+2024-12-12 16:00:34,773 fail2ban.filter         [20073]: INFO    [ssh] Found 10.0.2.15 - 2024-12-12 16:00:34
+2024-12-12 16:00:34,774 fail2ban.filter         [20073]: INFO    [sshd] Found 10.0.2.15 - 2024-12-12 16:00:34
+2024-12-12 16:00:34,781 fail2ban.filter         [20073]: INFO    [ssh] Found 10.0.2.15 - 2024-12-12 16:00:34
+2024-12-12 16:00:34,782 fail2ban.filter         [20073]: INFO    [sshd] Found 10.0.2.15 - 2024-12-12 16:00:34
+```
 
