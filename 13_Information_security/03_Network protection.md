@@ -55,10 +55,38 @@
 
 **sudo nmap -sV < ip-адрес >**
 
+![изображение](https://github.com/user-attachments/assets/732e8b73-1d7f-473f-9919-e01670adf8cf)
+
+В логе: /var/log/suricata/fast.log
+
+```bash
+12/12/2024-14:32:13.525517  [**] [1:2010937:3] ET SCAN Suspicious inbound to mySQL port 3306 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 10.0.2.15:51967 -> 10.0.2.5:3306
+12/12/2024-14:32:13.527984  [**] [1:2010936:3] ET SCAN Suspicious inbound to Oracle SQL port 1521 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 10.0.2.15:51967 -> 10.0.2.5:1521
+12/12/2024-14:32:13.526320  [**] [1:2010939:3] ET SCAN Suspicious inbound to PostgreSQL port 5432 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 10.0.2.15:51967 -> 10.0.2.5:5432
+12/12/2024-14:32:13.543650  [**] [1:2010935:3] ET SCAN Suspicious inbound to MSSQL port 1433 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 10.0.2.15:51967 -> 10.0.2.5:1433
+12/12/2024-14:32:13.564043  [**] [1:2002910:6] ET SCAN Potential VNC Scan 5800-5820 [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.0.2.15:51967 -> 10.0.2.5:5801
+12/12/2024-14:32:19.740381  [**] [1:2009358:6] ET SCAN Nmap Scripting Engine User-Agent Detected (Nmap Scripting Engine) [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.0.2.15:51560 -> 10.0.2.5:80
+12/12/2024-14:32:19.740381  [**] [1:2024364:4] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.0.2.15:51560 -> 10.0.2.5:80
+12/12/2024-14:32:19.740669  [**] [1:2009358:6] ET SCAN Nmap Scripting Engine User-Agent Detected (Nmap Scripting Engine) [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.0.2.15:51572 -> 10.0.2.5:80
+12/12/2024-14:32:19.740669  [**] [1:2024364:4] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.0.2.15:51572 -> 10.0.2.5:80
+12/12/2024-14:32:19.737316  [**] [1:2009358:6] ET SCAN Nmap Scripting Engine User-Agent Detected (Nmap Scripting Engine) [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.0.2.15:51532 -> 10.0.2.5:80
+12/12/2024-14:32:19.737316  [**] [1:2024364:4] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.0.2.15:51532 -> 10.0.2.5:80
+12/12/2024-14:32:19.738547  [**] [1:2009358:6] ET SCAN Nmap Scripting Engine User-Agent Detected (Nmap Scripting Engine) [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.0.2.15:51558 -> 10.0.2.5:80
+12/12/2024-14:32:19.738547  [**] [1:2024364:4] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.0.2.15:51558 -> 10.0.2.5:80
+```
+
+В логе: /var/log/auth.log
+
+```bash
+Dec 12 14:32:13 client2 sshd[19142]: error: kex_exchange_identification: Connection closed by remote host
+Dec 12 14:32:13 client2 sshd[19142]: Connection closed by 10.0.2.15 port 38422
+```
+
+
 По желанию можете поэкспериментировать с опциями: https://nmap.org/man/ru/man-briefoptions.html.
-
-
 *В качестве ответа пришлите события, которые попали в логи Suricata и Fail2Ban, прокомментируйте результат.*
+
+
 
 ------
 
