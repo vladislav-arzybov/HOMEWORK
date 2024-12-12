@@ -27,6 +27,15 @@
 
 **sudo nmap -sT < ip-адрес >**
 
+![изображение](https://github.com/user-attachments/assets/2a9cb7d4-1226-4941-b864-b2f911510c3e)
+
+В логе: /var/log/suricata/fast.log
+
+12/12/2024-14:26:55.428644  [**] [1:2010936:3] ET SCAN Suspicious inbound to Oracle SQL port 1521 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 10.0.2.15:52588 -> 10.0.2.5:1521
+12/12/2024-14:26:55.406964  [**] [1:2010937:3] ET SCAN Suspicious inbound to mySQL port 3306 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 10.0.2.15:33298 -> 10.0.2.5:3306
+12/12/2024-14:26:55.472675  [**] [1:2010935:3] ET SCAN Suspicious inbound to MSSQL port 1433 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 10.0.2.15:43818 -> 10.0.2.5:1433
+12/12/2024-14:26:55.476922  [**] [1:2010939:3] ET SCAN Suspicious inbound to PostgreSQL port 5432 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 10.0.2.15:38858 -> 10.0.2.5:5432
+
 **sudo nmap -sS < ip-адрес >**
 
 **sudo nmap -sV < ip-адрес >**
