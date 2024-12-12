@@ -22,6 +22,9 @@
 
 **sudo nmap -sA < ip-адрес >**
 
+![изображение](https://github.com/user-attachments/assets/cb1a5244-5a48-4a79-8ab7-71899600d7a3)
+
+
 **sudo nmap -sT < ip-адрес >**
 
 **sudo nmap -sS < ip-адрес >**
