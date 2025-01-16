@@ -85,11 +85,25 @@
 
 ### Создание файлов `.gitignore` и второго коммита
 
-1. Создайте файл `.gitignore` (обратите внимание на точку в начале файла), проверьте его статус сразу после создания. 
+1. Создайте файл `.gitignore` (обратите внимание на точку в начале файла), проверьте его статус сразу после создания.
+
+![изображение](https://github.com/user-attachments/assets/84024e5f-47ca-48e2-aac1-a935bdd73627)
+   
 1. Добавьте файл `.gitignore` в следующий коммит (`git add...`).
-1. На одном из следующих блоков вы будете изучать `Terraform`, давайте сразу создадим соотвествующий каталог `terraform` и внутри этого каталога — файл `.gitignore` по примеру: https://github.com/github/gitignore/blob/master/Terraform.gitignore.  
+
+![изображение](https://github.com/user-attachments/assets/a2dc77e8-7ebc-4308-9bb0-b56133bcbb8f)
+
+1. На одном из следующих блоков вы будете изучать `Terraform`, давайте сразу создадим соотвествующий каталог `terraform` и внутри этого каталога — файл `.gitignore` по примеру: https://github.com/github/gitignore/blob/master/Terraform.gitignore.
+
+![изображение](https://github.com/user-attachments/assets/a00f4d6b-3241-4b39-b33a-91ef6a173425)
+
 1. В файле `README.md` опишите своими словами, какие файлы будут проигнорированы в будущем благодаря добавленному `.gitignore`.
+
+![изображение](https://github.com/user-attachments/assets/84247ae5-0a6a-47cc-80ff-39bcd53cfc3a)
+
 1. Закоммитьте все новые и изменённые файлы. Комментарий к коммиту должен быть `Added gitignore`.
+
+![изображение](https://github.com/user-attachments/assets/e11b9f01-1c31-480e-bcdf-e2a41f4ce5e9)
 
 ### Эксперимент с удалением и перемещением файлов (третий и четвёртый коммит)
 
