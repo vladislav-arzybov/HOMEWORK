@@ -53,11 +53,23 @@
 - git config --global user.name vladislav-arzybov
 - git config --global user.email reivol@mail.ru
    
-8. Выполните команду `git status` и запомните результат.
-9. Отредактируйте файл `README.md` любым удобным способом, тем самым переведя файл в состояние `Modified`.
-10. Ещё раз выполните `git status` и продолжайте проверять вывод этой команды после каждого следующего шага. 
-11. Теперь посмотрите изменения в файле `README.md`, выполнив команды `git diff` и `git diff --staged`.
-12. Переведите файл в состояние `staged` (или, как говорят, просто добавьте файл в коммит) командой `git add README.md`.
+7. Выполните команду `git status` и запомните результат.
+
+![изображение](https://github.com/user-attachments/assets/c5d1dba8-0472-4ea0-b2f3-f2df05b25fce)
+   
+8. Отредактируйте файл `README.md` любым удобным способом, тем самым переведя файл в состояние `Modified`.
+9. Ещё раз выполните `git status` и продолжайте проверять вывод этой команды после каждого следующего шага.
+
+![изображение](https://github.com/user-attachments/assets/693a3b7d-92a1-438b-bc56-917e4d98e795)
+
+10. Теперь посмотрите изменения в файле `README.md`, выполнив команды `git diff` и `git diff --staged`.
+
+![изображение](https://github.com/user-attachments/assets/c7bcf66f-5502-41d4-a719-4e3b358cd514)
+
+11. Переведите файл в состояние `staged` (или, как говорят, просто добавьте файл в коммит) командой `git add README.md`.
+
+![изображение](https://github.com/user-attachments/assets/bb6c7079-e575-4101-a5ff-acc5451bd300)
+
 13. И ещё раз выполните команды `git diff` и `git diff --staged`. Поиграйте с изменениями и этими командами, чтобы чётко понять, что и когда они отображают. 
 14. Теперь можно сделать коммит `git commit -m 'First commit'`.
 15. И ещё раз посмотреть выводы команд `git status`, `git diff` и `git diff --staged`.
