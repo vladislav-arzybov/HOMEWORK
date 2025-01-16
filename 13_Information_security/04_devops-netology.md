@@ -112,9 +112,18 @@
 ![изображение](https://github.com/user-attachments/assets/fa898cb3-9f41-4403-9dd1-962d9c1848de)
 
 1. В случае необходимости обратитесь к [официальной документации](https://git-scm.com/book/ru/v2/Основы-Git-Запись-изменений-в-репозиторий) — здесь подробно описано, как выполнить следующие шаги. 
-1. Удалите файл `will_be_deleted.txt` с диска и из репозитория. 
+1. Удалите файл `will_be_deleted.txt` с диска и из репозитория.
+
+![изображение](https://github.com/user-attachments/assets/cb8519ba-d9a5-40c7-8627-196a97a42d0d)
+   
 1. Переименуйте (переместите) файл `will_be_moved.txt` на диске и в репозитории, чтобы он стал называться `has_been_moved.txt`.
+
+![изображение](https://github.com/user-attachments/assets/16fcf05a-e126-4878-b44f-6bf0da8bc3a1)
+
 1. Закоммитьте результат работы с комментарием `Moved and deleted`.
+
+![изображение](https://github.com/user-attachments/assets/92da5a99-0ff9-42fc-8e3f-3526d967832b)
+
 
 ### Проверка изменения
 
