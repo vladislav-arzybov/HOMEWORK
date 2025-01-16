@@ -70,9 +70,18 @@
 
 ![изображение](https://github.com/user-attachments/assets/bb6c7079-e575-4101-a5ff-acc5451bd300)
 
-13. И ещё раз выполните команды `git diff` и `git diff --staged`. Поиграйте с изменениями и этими командами, чтобы чётко понять, что и когда они отображают. 
-14. Теперь можно сделать коммит `git commit -m 'First commit'`.
-15. И ещё раз посмотреть выводы команд `git status`, `git diff` и `git diff --staged`.
+12. И ещё раз выполните команды `git diff` и `git diff --staged`. Поиграйте с изменениями и этими командами, чтобы чётко понять, что и когда они отображают.
+
+![изображение](https://github.com/user-attachments/assets/7a4111b3-ee95-4948-9602-28f9ebf973f6)
+
+13. Теперь можно сделать коммит `git commit -m 'First commit'`.
+
+![изображение](https://github.com/user-attachments/assets/7362a8ea-0064-4318-a4fd-55e405058445)
+
+14. И ещё раз посмотреть выводы команд `git status`, `git diff` и `git diff --staged`.
+
+![изображение](https://github.com/user-attachments/assets/253abb9f-d698-49e4-bed3-27bf07ca6484)
+
 
 ### Создание файлов `.gitignore` и второго коммита
 
