@@ -89,19 +89,19 @@
 
 ![изображение](https://github.com/user-attachments/assets/84024e5f-47ca-48e2-aac1-a935bdd73627)
    
-1. Добавьте файл `.gitignore` в следующий коммит (`git add...`).
+2. Добавьте файл `.gitignore` в следующий коммит (`git add...`).
 
 ![изображение](https://github.com/user-attachments/assets/a2dc77e8-7ebc-4308-9bb0-b56133bcbb8f)
 
-1. На одном из следующих блоков вы будете изучать `Terraform`, давайте сразу создадим соотвествующий каталог `terraform` и внутри этого каталога — файл `.gitignore` по примеру: https://github.com/github/gitignore/blob/master/Terraform.gitignore.
+3. На одном из следующих блоков вы будете изучать `Terraform`, давайте сразу создадим соотвествующий каталог `terraform` и внутри этого каталога — файл `.gitignore` по примеру: https://github.com/github/gitignore/blob/master/Terraform.gitignore.
 
 ![изображение](https://github.com/user-attachments/assets/a00f4d6b-3241-4b39-b33a-91ef6a173425)
 
-1. В файле `README.md` опишите своими словами, какие файлы будут проигнорированы в будущем благодаря добавленному `.gitignore`.
+4. В файле `README.md` опишите своими словами, какие файлы будут проигнорированы в будущем благодаря добавленному `.gitignore`.
 
 ![изображение](https://github.com/user-attachments/assets/84247ae5-0a6a-47cc-80ff-39bcd53cfc3a)
 
-1. Закоммитьте все новые и изменённые файлы. Комментарий к коммиту должен быть `Added gitignore`.
+5. Закоммитьте все новые и изменённые файлы. Комментарий к коммиту должен быть `Added gitignore`.
 
 ![изображение](https://github.com/user-attachments/assets/e11b9f01-1c31-480e-bcdf-e2a41f4ce5e9)
 
@@ -111,16 +111,16 @@
 
 ![изображение](https://github.com/user-attachments/assets/fa898cb3-9f41-4403-9dd1-962d9c1848de)
 
-1. В случае необходимости обратитесь к [официальной документации](https://git-scm.com/book/ru/v2/Основы-Git-Запись-изменений-в-репозиторий) — здесь подробно описано, как выполнить следующие шаги. 
-1. Удалите файл `will_be_deleted.txt` с диска и из репозитория.
+2. В случае необходимости обратитесь к [официальной документации](https://git-scm.com/book/ru/v2/Основы-Git-Запись-изменений-в-репозиторий) — здесь подробно описано, как выполнить следующие шаги. 
+3. Удалите файл `will_be_deleted.txt` с диска и из репозитория.
 
 ![изображение](https://github.com/user-attachments/assets/cb8519ba-d9a5-40c7-8627-196a97a42d0d)
    
-1. Переименуйте (переместите) файл `will_be_moved.txt` на диске и в репозитории, чтобы он стал называться `has_been_moved.txt`.
+4. Переименуйте (переместите) файл `will_be_moved.txt` на диске и в репозитории, чтобы он стал называться `has_been_moved.txt`.
 
 ![изображение](https://github.com/user-attachments/assets/16fcf05a-e126-4878-b44f-6bf0da8bc3a1)
 
-1. Закоммитьте результат работы с комментарием `Moved and deleted`.
+5. Закоммитьте результат работы с комментарием `Moved and deleted`.
 
 ![изображение](https://github.com/user-attachments/assets/92da5a99-0ff9-42fc-8e3f-3526d967832b)
 
