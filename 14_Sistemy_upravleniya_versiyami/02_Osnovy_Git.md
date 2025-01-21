@@ -72,6 +72,8 @@ https://gitlab.com/YOUR_LOGIN/devops-netology. Изучите предлагае
 
 ![изображение](https://github.com/user-attachments/assets/b083bbd6-6fc5-451d-a828-5d7a8a795c2b)
 
+![изображение](https://github.com/user-attachments/assets/e1df3117-ae54-4629-9708-d701a0b5ae02)
+
 
 #### Как изменить видимость репозитория в  GitLab — сделать его публичным 
 
@@ -80,6 +82,8 @@ https://gitlab.com/YOUR_LOGIN/devops-netology. Изучите предлагае
 * Разверните раздел «Видимость» -> «Функции проекта» -> «Разрешения».
 * Измените видимость проекта на Public.
 * Нажмите «Сохранить изменения».
+
+
 
 ### Bitbucket* (задание со звёздочкой) 
 
