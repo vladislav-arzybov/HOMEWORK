@@ -105,9 +105,22 @@ https://gitlab.com/YOUR_LOGIN/devops-netology. Изучите предлагае
 ![изображение](https://github.com/user-attachments/assets/2ed9a0f6-d61c-4f15-aee3-9299a22bd227)
 
 1. Аналогично создайте аннотированный тег `v0.1`.
+
+![изображение](https://github.com/user-attachments/assets/471e81b0-0fcb-4847-8611-3af11e14a34e)
+
 1. Перейдите на страницу просмотра тегов в GitHab (и в других репозиториях) и посмотрите, чем отличаются созданные теги. 
     * в GitHub — https://github.com/YOUR_ACCOUNT/devops-netology/releases;
+
+![изображение](https://github.com/user-attachments/assets/9e786647-3e50-4258-be6f-9d7dfd986aa0)
+
+![изображение](https://github.com/user-attachments/assets/1b0903dd-12f6-4a00-aef1-2cb0aeea41c7)
+
     * в GitLab — https://gitlab.com/YOUR_ACCOUNT/devops-netology/-/tags;
+
+![изображение](https://github.com/user-attachments/assets/fcbef00f-cff0-40c1-9f6c-aab1a6da2ef5)
+
+![изображение](https://github.com/user-attachments/assets/87b9cd5e-da8c-41b3-ac8d-b8947999c4a0)
+
     * в Bitbucket — список тегов расположен в выпадающем меню веток на отдельной вкладке. 
 
 ## Задание 3. Ветки 
