@@ -93,6 +93,17 @@ https://gitlab.com/YOUR_LOGIN/devops-netology. Изучите предлагае
 исправить её и выложить исправленный код в продакшн. Мы никуда не будем выкладывать код, но пометим некоторые коммиты тегами и создадим от них ветки. 
 
 1. Создайте легковестный тег `v0.0` на HEAD-коммите и запуште его во все три добавленных на предыдущем этапе `upstream`.
+
+![изображение](https://github.com/user-attachments/assets/b6ca102b-5167-4d2b-8847-9bb5f85ff004)
+
+![изображение](https://github.com/user-attachments/assets/e4eb4a63-6afc-400e-95c5-ddeec6a91ada)
+
+![изображение](https://github.com/user-attachments/assets/242fd7dc-df62-4231-bfa0-5b594f63dcfc)
+
+![изображение](https://github.com/user-attachments/assets/05886856-0099-46b8-a82b-84c2b1e1f615)
+
+
+
 1. Аналогично создайте аннотированный тег `v0.1`.
 1. Перейдите на страницу просмотра тегов в GitHab (и в других репозиториях) и посмотрите, чем отличаются созданные теги. 
     * в GitHub — https://github.com/YOUR_ACCOUNT/devops-netology/releases;
