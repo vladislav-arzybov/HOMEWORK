@@ -102,7 +102,7 @@ https://gitlab.com/YOUR_LOGIN/devops-netology. Изучите предлагае
 
 ![изображение](https://github.com/user-attachments/assets/05886856-0099-46b8-a82b-84c2b1e1f615)
 
-
+![изображение](https://github.com/user-attachments/assets/2ed9a0f6-d61c-4f15-aee3-9299a22bd227)
 
 1. Аналогично создайте аннотированный тег `v0.1`.
 1. Перейдите на страницу просмотра тегов в GitHab (и в других репозиториях) и посмотрите, чем отличаются созданные теги. 
