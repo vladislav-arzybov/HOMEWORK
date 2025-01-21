@@ -61,6 +61,9 @@ https://gitlab.com/YOUR_LOGIN/devops-netology. Изучите предлагае
 вновь созданного репозитория) нам не подходит. Поэтому добавляем этот репозиторий, как дополнительный `remote`, к созданному
 репозиторию в рамках предыдущего домашнего задания:
 `git remote add gitlab https://gitlab.com/YOUR_LOGIN/devops-netology.git`.
+
+![изображение](https://github.com/user-attachments/assets/3bc0c5fd-eacd-4e8e-94c2-4aea7a629780)
+
 1. Отправьте изменения в новый удалённый репозиторий `git push -u gitlab main`.
 1. Обратите внимание, как изменился результат работы команды `git remote -v`.
 
