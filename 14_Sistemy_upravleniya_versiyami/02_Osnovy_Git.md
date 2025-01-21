@@ -42,6 +42,9 @@
 1. GitLab. Для [регистрации](https://gitlab.com/users/sign_up)  можно использовать аккаунт Google, GitHub и другие. 
 1. После регистрации или авторизации в GitLab создайте новый проект, нажав на ссылку `Create a projet`. 
 Желательно назвать также, как и в GitHub — `devops-netology` и `visibility level`, выбрать `Public`.
+
+![изображение](https://github.com/user-attachments/assets/1e79d2be-b24d-4f4b-8935-d0eb3dfdf0d9)
+
 1. Галочку `Initialize repository with a README` лучше не ставить, чтобы не пришлось разрешать конфликты.
 1. Если вы зарегистрировались при помощи аккаунта в другой системе и не указали пароль, то увидите сообщение:
 `You won't be able to pull or push project code via HTTPS until you set a password on your account`. 
