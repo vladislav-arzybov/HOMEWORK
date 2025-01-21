@@ -175,7 +175,17 @@ https://www.jetbrains.com/pycharm/download/other.html
 
 https://www.jetbrains.com/help/pycharm/installation-guide.html#standalone_linux
 
-1. Измените какой-нибудь файл, и он сразу появится на вкладке `Local Changes`, отсюда можно выполнить коммит, нажав на кнопку внизу этого диалога. 
+1. Измените какой-нибудь файл, и он сразу появится на вкладке `Local Changes`, отсюда можно выполнить коммит, нажав на кнопку внизу этого диалога.
+
+# Отключить Settings -> Version Control -> Use non-modal commit interface
+
+![изображение](https://github.com/user-attachments/assets/7aec7003-7ac5-4d70-9e78-a5ddac78f4f5)
+
+![изображение](https://github.com/user-attachments/assets/20305072-7bfd-424f-8213-5468e04f70ad)
+
+![изображение](https://github.com/user-attachments/assets/ce1fe9f3-be79-4ae5-8e17-8a4f1760054b)
+
+
 1. Элементы управления для работы с Git будут выглядеть примерно так:
 
    ![Работа с гитом](img/ide-git-01.jpg)
@@ -187,7 +197,14 @@ https://www.jetbrains.com/help/pycharm/installation-guide.html#standalone_linux
 Если вверху экрана выбрать свою операционную систему, можно посмотреть горячие клавиши для работы с Git. 
 Подробней о визуальном интерфейсе мы расскажем на одной из следующих лекций.
 
+![изображение](https://github.com/user-attachments/assets/8624387a-3ab4-402f-8bd7-83a913daff02)
+
+![изображение](https://github.com/user-attachments/assets/6bec0ca1-b56a-49e4-9722-ff5376214b98)
+
+
+
 *В качестве результата работы по всем заданиям приложите ссылки на ваши репозитории в GitHub, GitLab и Bitbucket*.  
+
  
 ----
 
