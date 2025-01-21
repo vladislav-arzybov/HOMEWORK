@@ -160,6 +160,8 @@ https://gitlab.com/YOUR_LOGIN/devops-netology. Изучите предлагае
 
 ![изображение](https://github.com/user-attachments/assets/d488f25e-c7b6-4d82-bb78-620e97e8eec2)
 
+![изображение](https://github.com/user-attachments/assets/c58dbf23-4b41-4e0a-9491-2b6bff3b18ef)
+
 ![изображение](https://github.com/user-attachments/assets/82c99e6d-ce19-49c0-96a2-55475968f2ca)
 
 
