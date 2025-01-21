@@ -104,11 +104,11 @@ https://gitlab.com/YOUR_LOGIN/devops-netology. Изучите предлагае
 
 ![изображение](https://github.com/user-attachments/assets/2ed9a0f6-d61c-4f15-aee3-9299a22bd227)
 
-1. Аналогично создайте аннотированный тег `v0.1`.
+2. Аналогично создайте аннотированный тег `v0.1`.
 
 ![изображение](https://github.com/user-attachments/assets/471e81b0-0fcb-4847-8611-3af11e14a34e)
 
-1. Перейдите на страницу просмотра тегов в GitHab (и в других репозиториях) и посмотрите, чем отличаются созданные теги. 
+3. Перейдите на страницу просмотра тегов в GitHab (и в других репозиториях) и посмотрите, чем отличаются созданные теги. 
     * в GitHub — https://github.com/YOUR_ACCOUNT/devops-netology/releases;
 
 ![изображение](https://github.com/user-attachments/assets/9e786647-3e50-4258-be6f-9d7dfd986aa0)
@@ -128,14 +128,40 @@ https://gitlab.com/YOUR_LOGIN/devops-netology. Изучите предлагае
 Давайте посмотрим, как будет выглядеть история коммитов при создании веток. 
 
 1. Переключитесь обратно на ветку `main`, которая должна быть связана с веткой `main` репозитория на `github`.
-1. Посмотрите лог коммитов и найдите хеш коммита с названием `Prepare to delete and move`, который был создан в пределах предыдущего домашнего задания. 
-1. Выполните `git checkout` по хешу найденного коммита. 
-1. Создайте новую ветку `fix`, базируясь на этом коммите `git switch -c fix`.
-1. Отправьте новую ветку в репозиторий на GitHub `git push -u origin fix`.
-1. Посмотрите, как визуально выглядит ваша схема коммитов: https://github.com/YOUR_ACCOUNT/devops-netology/network. 
-1. Теперь измените содержание файла `README.md`, добавив новую строчку.
-1. Отправьте изменения в репозиторий и посмотрите, как изменится схема на странице https://github.com/YOUR_ACCOUNT/devops-netology/network 
+
+![изображение](https://github.com/user-attachments/assets/dd7d74d6-1ef9-465b-a866-a7b1c4b5d34d)
+
+2. Посмотрите лог коммитов и найдите хеш коммита с названием `Prepare to delete and move`, который был создан в пределах предыдущего домашнего задания.
+
+![изображение](https://github.com/user-attachments/assets/89bf02b2-418b-4e9d-86de-bd03c5c08384)
+
+3. Выполните `git checkout` по хешу найденного коммита.
+
+![изображение](https://github.com/user-attachments/assets/e1f6f35c-139b-4dd5-a9d7-7d24051d0ebc)
+
+4. Создайте новую ветку `fix`, базируясь на этом коммите `git switch -c fix`.
+
+![изображение](https://github.com/user-attachments/assets/e62235d8-a288-4422-b97b-f8a9e993266b)
+
+5. Отправьте новую ветку в репозиторий на GitHub `git push -u origin fix`.
+
+![изображение](https://github.com/user-attachments/assets/3d4b65ad-de04-4dea-8a11-adea430cfeed)
+
+6. Посмотрите, как визуально выглядит ваша схема коммитов: https://github.com/YOUR_ACCOUNT/devops-netology/network.
+
+![изображение](https://github.com/user-attachments/assets/7cce9c8d-6c70-43a1-9cab-ae74f986c6b2)
+
+7. Теперь измените содержание файла `README.md`, добавив новую строчку.
+
+![изображение](https://github.com/user-attachments/assets/7ab72fa2-0c26-408a-b38b-ffaa2e171e80)
+
+8. Отправьте изменения в репозиторий и посмотрите, как изменится схема на странице https://github.com/YOUR_ACCOUNT/devops-netology/network 
 и как изменится вывод команды `git log`.
+
+![изображение](https://github.com/user-attachments/assets/d488f25e-c7b6-4d82-bb78-620e97e8eec2)
+
+![изображение](https://github.com/user-attachments/assets/82c99e6d-ce19-49c0-96a2-55475968f2ca)
+
 
 ## Задание 4. Упрощаем себе жизнь
 
