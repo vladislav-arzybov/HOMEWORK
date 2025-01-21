@@ -170,6 +170,11 @@ https://gitlab.com/YOUR_LOGIN/devops-netology. Изучите предлагае
 Попробуем поработь с Git при помощи визуального редактора. 
 
 1. В используемой IDE PyCharm откройте визуальный редактор работы с Git, находящийся в меню View -> Tool Windows -> Git.
+
+https://www.jetbrains.com/pycharm/download/other.html
+
+https://www.jetbrains.com/help/pycharm/installation-guide.html#standalone_linux
+
 1. Измените какой-нибудь файл, и он сразу появится на вкладке `Local Changes`, отсюда можно выполнить коммит, нажав на кнопку внизу этого диалога. 
 1. Элементы управления для работы с Git будут выглядеть примерно так:
 
