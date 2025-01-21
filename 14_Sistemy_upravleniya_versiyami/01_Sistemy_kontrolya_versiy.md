@@ -153,6 +153,7 @@
 
 В личном кабинете отправлена ссылка на ваш репозиторий.
 
+https://github.com/vladislav-arzybov/devops-netology
 
 ### Критерии оценки
 
