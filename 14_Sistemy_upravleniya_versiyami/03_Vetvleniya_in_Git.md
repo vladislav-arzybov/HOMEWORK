@@ -126,7 +126,13 @@ echo "====="
 `merge.sh` и `rebase.sh` на первом шаге.  
 Для этого при помощи команды `git log` найдём хеш коммита `prepare for merge and rebase` и выполним `git checkout` на него так:
 `git checkout 8baf217e80ef17ff577883fda90f6487f67bbcea` (хеш будет другой).
+
+![изображение](https://github.com/user-attachments/assets/5c83f6e6-f9d4-4eef-99b8-4bc74d399792)
+
 **Шаг 2.** Создадим ветку `git-rebase`, основываясь на текущем коммите. 
+
+![изображение](https://github.com/user-attachments/assets/896bc8db-3fe0-41fe-b134-01c30ad1c381)
+
 **Шаг 3.** И изменим содержимое файла `rebase.sh` на следующее, тоже починив скрипт, но немного в другом стиле:
 
 ```bash
@@ -144,7 +150,12 @@ echo "====="
 
 **Шаг 4.** Отправим эти изменения в ветку `git-rebase` с комментарием `git-rebase 1`.
 
+![изображение](https://github.com/user-attachments/assets/281212ab-1887-47a8-806c-015212e22e05)
+
 **Шаг 5.** И сделаем ещё один коммит `git-rebase 2` с пушем, заменив `echo "Parameter: $param"` на `echo "Next parameter: $param"`.
+
+![изображение](https://github.com/user-attachments/assets/ff6bcd3e-2c0c-40a9-a736-bdd4dc93afb5)
+
 
 #### Промежуточный итог  
 
