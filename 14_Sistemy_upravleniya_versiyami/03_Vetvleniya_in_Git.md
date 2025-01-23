@@ -88,6 +88,9 @@ done
 
 **Шаг 5.** Создайте коммит `merge: use shift` и отправьте изменения в репозиторий. 
 
+![изображение](https://github.com/user-attachments/assets/5a2a938e-516d-46f7-8a51-211de04cb4e8)
+
+
 #### Изменим main  
 
 **Шаг 1.** Вернитесь в ветку `main`. 
