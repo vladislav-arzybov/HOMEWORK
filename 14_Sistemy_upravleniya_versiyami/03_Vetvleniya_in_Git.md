@@ -45,6 +45,8 @@ done
 
 **Шаг 2.** Создадим коммит с описанием `prepare for merge and rebase` и отправим его в ветку main. 
 
+![изображение](https://github.com/user-attachments/assets/11500ca2-a088-4fb2-8503-4e938e91abb8)
+
 #### Подготовка файла merge.sh 
  
 **Шаг 1.** Создайте ветку `git-merge`. 
