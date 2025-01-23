@@ -51,6 +51,8 @@ done
  
 **Шаг 1.** Создайте ветку `git-merge`. 
 
+![изображение](https://github.com/user-attachments/assets/9f97e7f7-1498-4914-9913-c6217cc3d042)
+
 **Шаг 2**. Замените в ней содержимое файла `merge.sh` на:
 
 ```bash
