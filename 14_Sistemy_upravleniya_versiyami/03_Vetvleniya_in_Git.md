@@ -301,6 +301,9 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 Это произошло, потому что мы пытаемся перезаписать историю. 
 
+![изображение](https://github.com/user-attachments/assets/0385dd34-77f4-4ae1-b227-fd4e26c7176c)
+
+
 **Шаг 8.** Чтобы Git позволил нам это сделать, добавим флаг `force`:
 
 ```bash
@@ -317,6 +320,9 @@ To github.com:andrey-borue/devops-netology.git
 Branch 'git-rebase' set up to track remote branch 'git-rebase' from 'origin'.
 ```
 
+![изображение](https://github.com/user-attachments/assets/33471d8b-abb7-4bb1-bdc9-36d4dbdb4212)
+
+
 **Шаг 9**. Теперь можно смержить ветку `git-rebase` в main без конфликтов и без дополнительного мерж-комита простой перемоткой: 
 
 ```
@@ -331,7 +337,12 @@ Fast-forward
  1 file changed, 1 insertion(+), 2 deletions(-)
 ```
 
+![изображение](https://github.com/user-attachments/assets/0cce158d-6a13-490e-9acd-c532da1d8159)
+
 *В качестве результата работы по всем заданиям приложите ссылку на .md-файл в вашем репозитории.*
+
+![изображение](https://github.com/user-attachments/assets/5f350da0-1393-4bdb-85a8-c27ab6fd31b3)
+
  
 ----
 
