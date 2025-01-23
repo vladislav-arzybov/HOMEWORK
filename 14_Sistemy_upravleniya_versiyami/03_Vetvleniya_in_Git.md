@@ -343,6 +343,9 @@ Fast-forward
 
 ![изображение](https://github.com/user-attachments/assets/5f350da0-1393-4bdb-85a8-c27ab6fd31b3)
 
+
+![изображение](https://github.com/user-attachments/assets/3b3dc01e-8a29-4744-94fb-8aa01275d480)
+
  
 ----
 
