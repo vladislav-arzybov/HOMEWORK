@@ -189,9 +189,14 @@ Writing objects: 100% (1/1), 223 bytes | 223.00 KiB/s, done.
 Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
 ```  
 
+![изображение](https://github.com/user-attachments/assets/3a2d9d6b-c971-42ab-af7e-bf559ff6e486)
+
 В результате получаем такую схему:
   
 ![Первый мерж](img/02.png)
+
+![изображение](https://github.com/user-attachments/assets/f3ab5536-811c-4372-9087-e5317a6c3e4b)
+
 
 #### Rebase
 
