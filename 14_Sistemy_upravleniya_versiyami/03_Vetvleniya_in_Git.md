@@ -201,6 +201,7 @@ Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
 #### Rebase
 
 **Шаг 1.** Перед мержем ветки `git-rebase` выполним её `rebase` на main. Да, мы специально создали ситуацию с конфликтами, чтобы потренироваться их решать. 
+
 **Шаг 2.** Переключаемся на ветку `git-rebase` и выполняем `git rebase -i main`. 
 В открывшемся диалоге должно быть два выполненных коммита, давайте заодно объединим их в один, 
 указав слева от нижнего `fixup`. 
@@ -217,6 +218,9 @@ You can instead skip this commit: run "git rebase --skip".
 To abort and get back to the state before "git rebase", run "git rebase --abort".
 Could not apply dc4688f... git 2.3 rebase @ instead *
 ``` 
+
+![изображение](https://github.com/user-attachments/assets/4be37a62-549d-4ada-bf2d-6b9f1006dd70)
+
 
 Если посмотреть содержимое файла `rebase.sh`, то увидим метки, оставленные Git для решения конфликта:
 
@@ -241,9 +245,18 @@ done
 echo "\$@ Parameter #$count = $param"
 ```
 
+![изображение](https://github.com/user-attachments/assets/5ef51b78-6cd6-46c9-affb-a585bfee57cd)
+
+
 **Шаг 4.** Сообщим Git, что конфликт решён `git add rebase.sh` и продолжим rebase `git rebase --continue`.
 
+![изображение](https://github.com/user-attachments/assets/faabedf0-475f-4751-aae0-512dc1f02681)
+
+
 **Шаг 5.** Опять получим конфликт в файле `rebase.sh` при попытке применения нашего второго коммита. Давайте разрешим конфликт, оставив строчку `echo "Next parameter: $param"`.
+
+![изображение](https://github.com/user-attachments/assets/ace9162a-db00-4992-b212-5b12949a61ef)
+
 
 **Шаг 6.** Далее опять сообщаем Git о том, что конфликт разрешён — `git add rebase.sh` — и продолжим rebase — `git rebase --continue`.
 
@@ -267,6 +280,9 @@ Merge branch 'git-merge'
 ```
 Successfully rebased and updated refs/heads/git-rebase
 ```
+
+![изображение](https://github.com/user-attachments/assets/de31bb18-ab61-4e4c-a437-1823509a641c)
+
 
 **Шаг 7.** И попробуем выполнить `git push` либо `git push -u origin git-rebase`, чтобы точно указать, что и куда мы хотим запушить. 
 
