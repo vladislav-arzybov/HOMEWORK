@@ -21,9 +21,9 @@
 
 1. Найдите полный хеш и комментарий коммита, хеш которого начинается на `aefea`.
 
-# aefead2207ef7e2aa5dc81a34aedf0cad4c32545
+* aefead2207ef7e2aa5dc81a34aedf0cad4c32545
 
-# Update CHANGELOG.md
+* Update CHANGELOG.md
 
 ![изображение](https://github.com/user-attachments/assets/87c083c6-63e0-4607-8e5f-a170cca31905)
    
