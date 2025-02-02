@@ -21,9 +21,9 @@
 
 1. Найдите полный хеш и комментарий коммита, хеш которого начинается на `aefea`.
 
-## aefead2207ef7e2aa5dc81a34aedf0cad4c32545
+# aefead2207ef7e2aa5dc81a34aedf0cad4c32545
 
-## Update CHANGELOG.md
+# Update CHANGELOG.md
 
 ![изображение](https://github.com/user-attachments/assets/87c083c6-63e0-4607-8e5f-a170cca31905)
    
@@ -31,7 +31,7 @@
 
 * Какому тегу соответствует коммит `85024d3`?
 
-## v0.12.23
+# v0.12.23
 
 ![изображение](https://github.com/user-attachments/assets/f7a804ad-2d14-4984-b451-6022ad3a384b)
 
