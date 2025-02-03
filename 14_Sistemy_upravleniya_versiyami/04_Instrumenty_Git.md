@@ -81,10 +81,13 @@ c0b17610965450a89598da491ce9b6b5cbd6393f prevent log output during init
 
 * Кто автор функции `synchronizedWriters`? 
 
+Выполним команду которая покажет изменения данной данной функции, в нашем случае выведет имя автора первого коммита в котором она была добавлена:
+
+git log -S 'synchronizedWriters' --pretty=format:"%an" --reverse --date=short | head -n 1
+
 Martin Atkins
 
-![изображение](https://github.com/user-attachments/assets/247dc6ad-09b6-4148-813a-6db0ee638dfc)
-
+![изображение](https://github.com/user-attachments/assets/3ac3071e-0954-41c5-8c01-1e61681600bc)
 
 *В качестве решения ответьте на вопросы и опишите, как были получены эти ответы.*
 
