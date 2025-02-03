@@ -65,6 +65,20 @@ dd01a35078f040ca984cdd349f18d0b67e486c35 Update CHANGELOG.md
 ![изображение](https://github.com/user-attachments/assets/95418e19-9e6f-4c25-a9d2-a29244d6cdb6)
 
 * Найдите все коммиты, в которых была изменена функция `globalPluginDirs`.
+
+```bash
+7c4aeac5f30aed09c5ef3198141b033eea9912be stacks: load credentials from config file on startup (#35952)
+65c4ba736375607b6af6c035972f7f151232b6c6 Remove terraform binary
+125eb51dc40b049b38bf2ed11c32c6f594c8ef96 Remove accidentally-committed binary
+22c121df8631c4499d070329c9aa7f5b291494e1 Bump compatibility version to 1.3.0 for terraform core release (#30988)
+7c7e5d8f0a6a50812e6e4db3016ebfd36fa5eaef Don't show data while input if sensitive
+35a058fb3ddfae9cfee0b3893822c9a95b920f4c main: configure credentials from the CLI config file
+c0b17610965450a89598da491ce9b6b5cbd6393f prevent log output during init
+```
+
+![изображение](https://github.com/user-attachments/assets/b3a88d15-b75b-44e3-b43f-8c5abdee20ae)
+
+
 * Кто автор функции `synchronizedWriters`? 
 
 *В качестве решения ответьте на вопросы и опишите, как были получены эти ответы.*
