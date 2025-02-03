@@ -81,6 +81,11 @@ c0b17610965450a89598da491ce9b6b5cbd6393f prevent log output during init
 
 * Кто автор функции `synchronizedWriters`? 
 
+Martin Atkins
+
+![изображение](https://github.com/user-attachments/assets/247dc6ad-09b6-4148-813a-6db0ee638dfc)
+
+
 *В качестве решения ответьте на вопросы и опишите, как были получены эти ответы.*
 
 ---
