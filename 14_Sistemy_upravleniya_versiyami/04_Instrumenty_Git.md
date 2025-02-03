@@ -59,6 +59,11 @@ dd01a35078f040ca984cdd349f18d0b67e486c35 Update CHANGELOG.md
 ![изображение](https://github.com/user-attachments/assets/bd59085c-c343-4a8a-965b-f4fcc903abb0)
 
 * Найдите коммит, в котором была создана функция `func providerSource`, её определение в коде выглядит так: `func providerSource(...)` (вместо троеточия перечислены аргументы).
+
+8c928e83589d90a031f811fae52a81be7153e82f
+
+![изображение](https://github.com/user-attachments/assets/95418e19-9e6f-4c25-a9d2-a29244d6cdb6)
+
 * Найдите все коммиты, в которых была изменена функция `globalPluginDirs`.
 * Кто автор функции `synchronizedWriters`? 
 
