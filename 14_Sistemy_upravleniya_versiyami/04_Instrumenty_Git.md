@@ -66,22 +66,27 @@ dd01a35078f040ca984cdd349f18d0b67e486c35 Update CHANGELOG.md
 
 ![изображение](https://github.com/user-attachments/assets/95418e19-9e6f-4c25-a9d2-a29244d6cdb6)
 
-* Найдите все коммиты, в которых была изменена функция `globalPluginDirs`.
+* Найдите все коммиты, в которых была изменена функция `GlobalPluginDirs`.
 
-Найдем файл сожержащий упоминание `globalPluginDirs`, выполним команду: git grep "globalPluginDirs"
+Найдем файл сожержащий упоминание `GlobalPluginDirs`, выполним команду: git grep "func GlobalPluginDirs"
 
-![изображение](https://github.com/user-attachments/assets/f6664281-e047-4a39-b877-606856c1eebc)
+![изображение](https://github.com/user-attachments/assets/0aeae03f-c214-49cc-863f-d33395c1e208)
 
 Просмотрим историю изменений данного файла:
 
-git log --oneline -S 'globalPluginDirs' --full-history -- config_unix.go
+git log -L:'GlobalPluginDirs':internal/command/cliconfig/plugins.go --oneline -q
 
 ```bash
-e1590d0a70 command/cliconfig: Factor out CLI config handling
-c0b1761096 prevent log output during init
+7c4aeac5f3 stacks: load credentials from config file on startup (#35952)
+78b1220558 Remove config.go and update things using its aliases
+52dbf94834 keep .terraform.d/plugins for discovery
+41ab0aef7a Add missing OS_ARCH dir to global plugin paths
+66ebff90cd move some more plugin search path logic to command
+8364383c35 Push plugin discovery down into command package
 ```
 
-![изображение](https://github.com/user-attachments/assets/5fb168f5-9ca7-4f1a-a80d-c9f77e02f944)
+![изображение](https://github.com/user-attachments/assets/5f013254-00c2-4d71-9938-016f6295e290)
+
 
 * Кто автор функции `synchronizedWriters`? 
 
