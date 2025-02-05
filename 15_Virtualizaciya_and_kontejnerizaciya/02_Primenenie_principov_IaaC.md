@@ -33,10 +33,19 @@
 
 1. Убедитесь, что у вас есть ssh ключ в ОС или создайте его с помощью команды ```ssh-keygen -t ed25519```
 2. Создайте виртуальную машину Virtualbox с помощью Vagrant и  [Vagrantfile](https://github.com/netology-code/virtd-homeworks/blob/shvirtd-1/05-virt-02-iaac/src/Vagrantfile) в директории src.
-3. Зайдите внутрь ВМ и убедитесь, что Docker установлен с помощью команды:
+
+![изображение](https://github.com/user-attachments/assets/cad16650-28bb-462f-a0f6-5e1fe86c7ecf)
+
+![изображение](https://github.com/user-attachments/assets/1f41584f-ad08-470c-a995-b1def2e1bb83)
+
+4. Зайдите внутрь ВМ и убедитесь, что Docker установлен с помощью команды:
 ```
 docker version && docker compose version
 ```
+
+![изображение](https://github.com/user-attachments/assets/a7b8a6f4-d0d1-43ae-a0e0-f54ae5bf760f)
+
+![изображение](https://github.com/user-attachments/assets/cb734eae-6cdc-4111-8c27-0377b3e14cae)
 
 3. Если Vagrant выдаёт ошибку (блокировка трафика):
 ```
