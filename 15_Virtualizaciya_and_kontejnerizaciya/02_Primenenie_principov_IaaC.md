@@ -58,6 +58,9 @@ Error: The requested URL returned error: 404:
 - Скачайте с [сайта](https://app.vagrantup.com/bento/boxes/ubuntu-20.04) файл-образ "bento/ubuntu-20.04".
 - Добавьте его в список образов Vagrant: "vagrant box add bento/ubuntu-20.04 <путь к файлу>".
 
+![изображение](https://github.com/user-attachments/assets/91dccdc6-dc32-4883-b0e4-8b2724ac2151)
+
+
 **Важно:**    
 - Если ваша хостовая рабочая станция - это windows ОС, то у вас могут возникнуть проблемы со вложенной виртуализацией. Ознакомиться со cпособами решения можно [по ссылке](https://www.comss.ru/page.php?id=7726).
 
