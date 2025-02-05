@@ -1,13 +1,5 @@
 # Домашнее задание к занятию 2. «Применение принципов IaaC в работе с виртуальными машинами» - `Арзыбов Владислав`
 
-#### Это задание для самостоятельной отработки навыков и не предполагает обратной связи от преподавателя. Его выполнение не влияет на завершение модуля. Но мы рекомендуем его выполнить, чтобы закрепить полученные знания. Все вопросы, возникающие в процессе выполнения заданий, пишите в учебный чат или в раздел "Вопросы по заданиям" в личном кабинете.
----
-## Важно
-
-**Перед началом работы над заданием изучите [Инструкцию по экономии облачных ресурсов](https://github.com/netology-code/devops-materials/blob/master/cloudwork.MD).**
-Перед отправкой работы на проверку удаляйте неиспользуемые ресурсы.
-Это нужно, чтобы не расходовать средства, полученные в результате использования промокода.
-Подробные рекомендации [здесь](https://github.com/netology-code/virt-homeworks/blob/virt-11/r/README.md).
 
 ---
 
@@ -21,9 +13,18 @@
 Установите на личный Linux-компьютер или учебную **локальную** ВМ с Linux следующие сервисы(желательно ОС ubuntu 20.04):
 
 - [VirtualBox](https://www.virtualbox.org/),
+
+![изображение](https://github.com/user-attachments/assets/ad4d3a92-c9f3-47ca-b2ff-2ffb0d5d0a13)
+
+
 - [Vagrant](https://github.com/netology-code/devops-materials), рекомендуем версию 2.3.4
+
+![изображение](https://github.com/user-attachments/assets/0e8e40e9-f92d-4403-816b-df65dd828cd5)
+
 - [Packer](https://github.com/netology-code/devops-materials/blob/master/README.md) версии 1.9.х + плагин от Яндекс Облако по [инструкции](https://cloud.yandex.ru/docs/tutorials/infrastructure-management/packer-quickstart)
 - [уandex cloud cli](https://cloud.yandex.com/ru/docs/cli/quickstart) Так же инициализируйте профиль с помощью ```yc init``` .
+
+![изображение](https://github.com/user-attachments/assets/4aaed2a6-88fd-4682-829b-783612f7e12a)
 
 
 Примечание: Облачная ВМ с Linux в данной задаче не подойдёт из-за ограничений облачного провайдера. У вас просто не установится virtualbox.
