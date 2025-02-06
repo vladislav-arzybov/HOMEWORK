@@ -14,8 +14,9 @@
 
 - [VirtualBox](https://www.virtualbox.org/),
 
-![изображение](https://github.com/user-attachments/assets/ad4d3a92-c9f3-47ca-b2ff-2ffb0d5d0a13)
+![изображение](https://github.com/user-attachments/assets/020c3b1d-9207-48c6-99ff-0357ec8e3a1d)
 
+![изображение](https://github.com/user-attachments/assets/ad4d3a92-c9f3-47ca-b2ff-2ffb0d5d0a13)
 
 - [Vagrant](https://github.com/netology-code/devops-materials), рекомендуем версию 2.3.4
 
