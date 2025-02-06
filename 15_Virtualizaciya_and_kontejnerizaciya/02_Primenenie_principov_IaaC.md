@@ -26,6 +26,8 @@
 
 - [уandex cloud cli](https://cloud.yandex.com/ru/docs/cli/quickstart) Так же инициализируйте профиль с помощью ```yc init``` .
 
+![изображение](https://github.com/user-attachments/assets/9cf616ac-454c-459f-8a2e-7934e8e449c8)
+
 ![изображение](https://github.com/user-attachments/assets/4aaed2a6-88fd-4682-829b-783612f7e12a)
 
 
