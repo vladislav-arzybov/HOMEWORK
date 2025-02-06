@@ -51,6 +51,8 @@ docker version && docker compose version
 
 ![изображение](https://github.com/user-attachments/assets/cb734eae-6cdc-4111-8c27-0377b3e14cae)
 
+![изображение](https://github.com/user-attachments/assets/6720bf58-c5d4-4253-bf2a-29269dbca70e)
+
 3. Если Vagrant выдаёт ошибку (блокировка трафика):
 ```
 URL: ["https://vagrantcloud.com/bento/ubuntu-20.04"]     
@@ -106,8 +108,8 @@ Error: The requested URL returned error: 404:
 
 ![изображение](https://github.com/user-attachments/assets/5dc52888-d9ca-4c3f-b5f1-0178736b7f6f)
 
-10. **ВНИМАНИЕ!** Никогда не выкладываете oauth token от облака в git-репозиторий! Утечка секретного токена может привести к финансовым потерям. После выполнения задания обязательно удалите секретные данные из файла mydebian.json и mydebian.json.pkr.hcl. (замените содержимое токена на  "ххххх")
-11. В качестве ответа на задание  загрузите результирующий файл в ваш ЛК.
+7. **ВНИМАНИЕ!** Никогда не выкладываете oauth token от облака в git-репозиторий! Утечка секретного токена может привести к финансовым потерям. После выполнения задания обязательно удалите секретные данные из файла mydebian.json и mydebian.json.pkr.hcl. (замените содержимое токена на  "ххххх")
+8. В качестве ответа на задание  загрузите результирующий файл в ваш ЛК.
 
 Мой 
 [mydebian.json](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/15_Virtualizaciya_and_kontejnerizaciya/mydebian.json)
