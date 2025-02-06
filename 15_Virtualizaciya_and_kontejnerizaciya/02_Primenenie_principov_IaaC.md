@@ -108,4 +108,5 @@ Error: The requested URL returned error: 404:
 10. **ВНИМАНИЕ!** Никогда не выкладываете oauth token от облака в git-репозиторий! Утечка секретного токена может привести к финансовым потерям. После выполнения задания обязательно удалите секретные данные из файла mydebian.json и mydebian.json.pkr.hcl. (замените содержимое токена на  "ххххх")
 11. В качестве ответа на задание  загрузите результирующий файл в ваш ЛК.
 
-mydebian.json
+Мой 
+[mydebian.json](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/15_Virtualizaciya_and_kontejnerizaciya/mydebian.json)
