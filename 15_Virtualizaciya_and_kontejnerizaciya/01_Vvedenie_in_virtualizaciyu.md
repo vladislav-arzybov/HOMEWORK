@@ -27,7 +27,9 @@ https://yandex.cloud/ru/marketplace/products/yc/toolbox
 5. Для наглядности подождите еще 1 сутки.
 6. Перейдите по [ссылке ](https://console.cloud.yandex.ru/billing?section=accounts). Выберите свой платежный аккаунт. Перейдите на вкладку детализация (фильтр "По продуктам") и оцените график потребления финансов.
 
-![изображение](https://github.com/user-attachments/assets/269fe698-e336-468e-82e6-415c65e75cc3)
+![изображение](https://github.com/user-attachments/assets/3b3c5103-c917-41f0-aaba-78e9f564d354)
+
+![изображение](https://github.com/user-attachments/assets/815606e6-d74d-461c-ac8d-9f40e07cadb0)
 
 7. Удалите ВМ или пользуйтесь ею при выполнении последующих домашних заданий курса обучения.
 
