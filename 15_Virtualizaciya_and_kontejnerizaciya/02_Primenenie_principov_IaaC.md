@@ -22,6 +22,9 @@
 ![изображение](https://github.com/user-attachments/assets/0e8e40e9-f92d-4403-816b-df65dd828cd5)
 
 - [Packer](https://github.com/netology-code/devops-materials/blob/master/README.md) версии 1.9.х + плагин от Яндекс Облако по [инструкции](https://cloud.yandex.ru/docs/tutorials/infrastructure-management/packer-quickstart)
+
+![изображение](https://github.com/user-attachments/assets/f3c2c913-b2e3-4eca-ae2c-df1cace5e422)
+
 - [уandex cloud cli](https://cloud.yandex.com/ru/docs/cli/quickstart) Так же инициализируйте профиль с помощью ```yc init``` .
 
 ![изображение](https://github.com/user-attachments/assets/4aaed2a6-88fd-4682-829b-783612f7e12a)
