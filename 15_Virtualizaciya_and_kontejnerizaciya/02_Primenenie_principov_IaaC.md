@@ -20,7 +20,7 @@
 
 - [Vagrant](https://github.com/netology-code/devops-materials), рекомендуем версию 2.3.4
 
-![изображение](https://github.com/user-attachments/assets/0e8e40e9-f92d-4403-816b-df65dd828cd5)
+![изображение](https://github.com/user-attachments/assets/957ed402-a431-43a0-88ed-538c32d8b199)
 
 - [Packer](https://github.com/netology-code/devops-materials/blob/master/README.md) версии 1.9.х + плагин от Яндекс Облако по [инструкции](https://cloud.yandex.ru/docs/tutorials/infrastructure-management/packer-quickstart)
 
