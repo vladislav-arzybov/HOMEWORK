@@ -81,6 +81,9 @@ Error: The requested URL returned error: 404:
 
 ![изображение](https://github.com/user-attachments/assets/14382eba-4fd5-4903-8636-374f8491971b)
 
+![изображение](https://github.com/user-attachments/assets/5bfb461f-2345-434e-b5af-eddb2269599f)
+
+![изображение](https://github.com/user-attachments/assets/4cbacf4c-c73a-449a-8d33-52d9e02d1758)
 
 3. Найдите свой образ в web консоли yandex_cloud
 4. Необязательное задание(*): найдите в документации yandex cloud как найти свой образ с помощью утилиты командной строки "yc cli".
