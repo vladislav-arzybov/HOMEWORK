@@ -27,7 +27,13 @@ Hey, Netology
 </body>
 </html>
 ```
-- Соберите и отправьте созданный образ в свой dockerhub-репозитории c tag 1.0.0 (ТОЛЬКО ЕСЛИ ЕСТЬ ДОСТУП). 
+
+![изображение](https://github.com/user-attachments/assets/0dc789de-214b-4403-bf10-367e13e85c2c)
+
+- Соберите и отправьте созданный образ в свой dockerhub-репозитории c tag 1.0.0 (ТОЛЬКО ЕСЛИ ЕСТЬ ДОСТУП).
+
+![изображение](https://github.com/user-attachments/assets/96101c69-0b10-447a-a945-a40c59da12e7)
+
 - Предоставьте ответ в виде ссылки на https://hub.docker.com/<username_repo>/custom-nginx/general .
 
 ## Задача 2
