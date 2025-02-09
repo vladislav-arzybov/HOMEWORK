@@ -34,7 +34,14 @@ Hey, Netology
 
 ![изображение](https://github.com/user-attachments/assets/96101c69-0b10-447a-a945-a40c59da12e7)
 
+![изображение](https://github.com/user-attachments/assets/58d55567-867c-4aa4-8a9d-2f1785c1cc2b)
+
 - Предоставьте ответ в виде ссылки на https://hub.docker.com/<username_repo>/custom-nginx/general .
+
+https://hub.docker.com/repository/docker/arzybov/custom-nginx/general
+
+![изображение](https://github.com/user-attachments/assets/eb520e51-3932-408a-9adf-378745731def)
+
 
 ## Задача 2
 1. Запустите ваш образ custom-nginx:1.0.0 командой docker run в соответвии с требованиями:
