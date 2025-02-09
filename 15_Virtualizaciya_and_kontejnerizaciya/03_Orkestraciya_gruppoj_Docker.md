@@ -128,15 +128,25 @@ https://hub.docker.com/repository/docker/arzybov/custom-nginx/general
 
 docker run -t -d --name centos -v $(pwd):/data centos
 
+![изображение](https://github.com/user-attachments/assets/2cfc6dca-7933-4847-964f-d2b17c6e4204)
+
+- Запустите второй контейнер из образа ***debian*** в фоновом режиме, подключив текущий рабочий каталог ```$(pwd)``` в ```/data``` контейнера.
+
 docker run -t -d --name debian -v $(pwd):/data debian
 
+![изображение](https://github.com/user-attachments/assets/ad023162-54a0-486e-b1a2-08e26b942aa2)
 
-
-- Запустите второй контейнер из образа ***debian*** в фоновом режиме, подключив текущий рабочий каталог ```$(pwd)``` в ```/data``` контейнера. 
 - Подключитесь к первому контейнеру с помощью ```docker exec``` и создайте текстовый файл любого содержания в ```/data```.
+
+![изображение](https://github.com/user-attachments/assets/b4593ab4-b0dc-400b-92ba-09c337b8f3b1)
+
 - Добавьте ещё один файл в текущий каталог ```$(pwd)``` на хостовой машине.
+
+![изображение](https://github.com/user-attachments/assets/e31c5552-a059-42e9-969b-877b6c94c82f)
+
 - Подключитесь во второй контейнер и отобразите листинг и содержание файлов в ```/data``` контейнера.
 
+![изображение](https://github.com/user-attachments/assets/48a3dc42-d962-4282-9705-3d3ed9d06afe)
 
 В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод.
 
