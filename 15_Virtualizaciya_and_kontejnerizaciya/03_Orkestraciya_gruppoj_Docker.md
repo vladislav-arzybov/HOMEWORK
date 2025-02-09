@@ -115,16 +115,9 @@ https://hub.docker.com/repository/docker/arzybov/custom-nginx/general
 
 20. * Это дополнительное, необязательное задание. Попробуйте самостоятельно исправить конфигурацию контейнера, используя доступные источники в интернете. Не изменяйте конфигурацию nginx и не удаляйте контейнер. Останавливать контейнер можно. [пример источника](https://www.baeldung.com/linux/assign-port-docker-container)
 
-- Узнаем id контейнера: docker container inspect -f '{{.Id}}' custom-nginx-t2
-![изображение](https://github.com/user-attachments/assets/a2064f17-bf37-4243-8bd2-9c4ed3edbc42)
-- Остановите контейнер: docker stop custom-nginx-t2
-![изображение](https://github.com/user-attachments/assets/f9a840bd-ae6a-44f3-8844-de8f5d070df8)
-- Остановить службу докеров: sudo systemctl stop docker.socket
-- Измените порт в файле hostconfig.json: sudo nano /var/lib/docker/containers/386674f4db268391d39e9ed28688b3a353efe4e431989ba95a59896bad74b99d/hostconfig.json и sudo nano /var/lib/docker/containers/386674f4db268391d39e9ed28688b3a353efe4e431989ba95a59896bad74b99d/config.v2.json
-- Перезапустите движок Docker (чтобы очистить кэши конфигурации).
-- Запустите контейнер ( docker start <container_name>).
-
 21. Удалите запущенный контейнер "custom-nginx-t2", не останавливая его.(воспользуйтесь --help или google)
+
+![изображение](https://github.com/user-attachments/assets/ebe8dd53-de26-4257-86cb-c0647c982048)
 
 В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод.
 
