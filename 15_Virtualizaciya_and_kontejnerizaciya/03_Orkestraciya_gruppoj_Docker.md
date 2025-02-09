@@ -57,11 +57,11 @@ https://hub.docker.com/repository/docker/arzybov/custom-nginx/general
 
 ![изображение](https://github.com/user-attachments/assets/f9c5db63-814e-4ee4-8011-eef7276b5efe)
   
-4. Выполните команду ```date +"%d-%m-%Y %T.%N %Z" ; sleep 0.150 ; docker ps ; ss -tlpn | grep 127.0.0.1:8080  ; docker logs custom-nginx-t2 -n1 ; docker exec -it custom-nginx-t2 base64 /usr/share/nginx/html/index.html```
+3. Выполните команду ```date +"%d-%m-%Y %T.%N %Z" ; sleep 0.150 ; docker ps ; ss -tlpn | grep 127.0.0.1:8080  ; docker logs custom-nginx-t2 -n1 ; docker exec -it custom-nginx-t2 base64 /usr/share/nginx/html/index.html```
 
 ![изображение](https://github.com/user-attachments/assets/6886db11-3f8a-41db-a6bf-110694713d7f)
 
-6. Убедитесь с помощью curl или веб браузера, что индекс-страница доступна.
+4. Убедитесь с помощью curl или веб браузера, что индекс-страница доступна.
 
 ![изображение](https://github.com/user-attachments/assets/24ebfbc9-ef16-4d75-b3f5-63ec76acea33)
 
@@ -73,28 +73,34 @@ https://hub.docker.com/repository/docker/arzybov/custom-nginx/general
 
 ![изображение](https://github.com/user-attachments/assets/92f54207-2d26-422f-8433-ed2bec5c1213)
   
-3. Подключитесь к контейнеру и нажмите комбинацию Ctrl-C.
+2. Подключитесь к контейнеру и нажмите комбинацию Ctrl-C.
 
 ![изображение](https://github.com/user-attachments/assets/13aaca97-0b3a-4f0c-9ff5-9e1a2bbc37d7)
 
-5. Выполните ```docker ps -a``` и объясните своими словами почему контейнер остановился.
+3. Выполните ```docker ps -a``` и объясните своими словами почему контейнер остановился.
 
 ![изображение](https://github.com/user-attachments/assets/5a2b2827-18d6-40e4-9d11-0e27964fd5c8)
 
 - Нажатие Ctrl+C при присоединении к контейнеру Docker отправляет в него сигнал SIGKILL и останавливает контейнер
 
-6. Перезапустите контейнер
+4. Перезапустите контейнер
 
 ![изображение](https://github.com/user-attachments/assets/73400c42-569e-4eda-8b00-d180255fe3b5)
 
-8. Зайдите в интерактивный терминал контейнера "custom-nginx-t2" с оболочкой bash.
-9. Установите любимый текстовый редактор(vim, nano итд) с помощью apt-get.
-10. Отредактируйте файл "/etc/nginx/conf.d/default.conf", заменив порт "listen 80" на "listen 81".
-11. Запомните(!) и выполните команду ```nginx -s reload```, а затем внутри контейнера ```curl http://127.0.0.1:80 ; curl http://127.0.0.1:81```.
-12. Выйдите из контейнера, набрав в консоли  ```exit``` или Ctrl-D.
-13. Проверьте вывод команд: ```ss -tlpn | grep 127.0.0.1:8080``` , ```docker port custom-nginx-t2```, ```curl http://127.0.0.1:8080```. Кратко объясните суть возникшей проблемы.
-14. * Это дополнительное, необязательное задание. Попробуйте самостоятельно исправить конфигурацию контейнера, используя доступные источники в интернете. Не изменяйте конфигурацию nginx и не удаляйте контейнер. Останавливать контейнер можно. [пример источника](https://www.baeldung.com/linux/assign-port-docker-container)
-15. Удалите запущенный контейнер "custom-nginx-t2", не останавливая его.(воспользуйтесь --help или google)
+5. Зайдите в интерактивный терминал контейнера "custom-nginx-t2" с оболочкой bash.
+
+![изображение](https://github.com/user-attachments/assets/8a4a6a49-41eb-440e-844a-9ed27b8cac32)
+
+10. Установите любимый текстовый редактор(vim, nano итд) с помощью apt-get.
+- apt-get update
+- apt-get install nano
+
+12. Отредактируйте файл "/etc/nginx/conf.d/default.conf", заменив порт "listen 80" на "listen 81".
+13. Запомните(!) и выполните команду ```nginx -s reload```, а затем внутри контейнера ```curl http://127.0.0.1:80 ; curl http://127.0.0.1:81```.
+14. Выйдите из контейнера, набрав в консоли  ```exit``` или Ctrl-D.
+15. Проверьте вывод команд: ```ss -tlpn | grep 127.0.0.1:8080``` , ```docker port custom-nginx-t2```, ```curl http://127.0.0.1:8080```. Кратко объясните суть возникшей проблемы.
+16. * Это дополнительное, необязательное задание. Попробуйте самостоятельно исправить конфигурацию контейнера, используя доступные источники в интернете. Не изменяйте конфигурацию nginx и не удаляйте контейнер. Останавливать контейнер можно. [пример источника](https://www.baeldung.com/linux/assign-port-docker-container)
+17. Удалите запущенный контейнер "custom-nginx-t2", не останавливая его.(воспользуйтесь --help или google)
 
 В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод.
 
