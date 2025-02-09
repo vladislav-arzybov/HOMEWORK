@@ -4,9 +4,18 @@
 
 Сценарий выполнения задачи:
 - Установите docker и docker compose plugin на свою linux рабочую станцию или ВМ.
+
+![изображение](https://github.com/user-attachments/assets/809f801c-b4a0-4e5d-b1ed-c76ff7c0f9dc)
+
 - Если dockerhub недоступен создайте файл /etc/docker/daemon.json с содержимым: ```{"registry-mirrors": ["https://mirror.gcr.io", "https://daocloud.io", "https://c.163.com/", "https://registry.docker-cn.com"]}```
 - Зарегистрируйтесь и создайте публичный репозиторий  с именем "custom-nginx" на https://hub.docker.com (ТОЛЬКО ЕСЛИ У ВАС ЕСТЬ ДОСТУП);
+
+![изображение](https://github.com/user-attachments/assets/71b4676b-b154-48d6-bb35-3e64570431e4)
+
 - скачайте образ nginx:1.21.1;
+
+![Uploading изображение.png…]()
+
 - Создайте Dockerfile и реализуйте в нем замену дефолтной индекс-страницы(/usr/share/nginx/html/index.html), на файл index.html с содержимым:
 ```
 <html>
