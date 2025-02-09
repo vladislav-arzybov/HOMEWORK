@@ -14,7 +14,7 @@
 
 - скачайте образ nginx:1.21.1;
 
-![Uploading изображение.png…]()
+![изображение](https://github.com/user-attachments/assets/92fca729-7283-4717-845d-eac4cd23e075)
 
 - Создайте Dockerfile и реализуйте в нем замену дефолтной индекс-страницы(/usr/share/nginx/html/index.html), на файл index.html с содержимым:
 ```
