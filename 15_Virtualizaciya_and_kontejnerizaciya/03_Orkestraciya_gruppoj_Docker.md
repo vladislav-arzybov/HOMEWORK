@@ -54,8 +54,11 @@ https://hub.docker.com/repository/docker/arzybov/custom-nginx/general
 ![изображение](https://github.com/user-attachments/assets/6567ae63-8466-446e-a935-7f3657ce091f)
 
 2. Не удаляя, переименуйте контейнер в "custom-nginx-t2"
-3. Выполните команду ```date +"%d-%m-%Y %T.%N %Z" ; sleep 0.150 ; docker ps ; ss -tlpn | grep 127.0.0.1:8080  ; docker logs custom-nginx-t2 -n1 ; docker exec -it custom-nginx-t2 base64 /usr/share/nginx/html/index.html```
-4. Убедитесь с помощью curl или веб браузера, что индекс-страница доступна.
+
+![изображение](https://github.com/user-attachments/assets/f9c5db63-814e-4ee4-8011-eef7276b5efe)
+  
+4. Выполните команду ```date +"%d-%m-%Y %T.%N %Z" ; sleep 0.150 ; docker ps ; ss -tlpn | grep 127.0.0.1:8080  ; docker logs custom-nginx-t2 -n1 ; docker exec -it custom-nginx-t2 base64 /usr/share/nginx/html/index.html```
+5. Убедитесь с помощью curl или веб браузера, что индекс-страница доступна.
 
 В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод.
 
