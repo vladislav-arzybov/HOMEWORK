@@ -206,10 +206,6 @@ include:
 
 7. Откройте страницу "http://127.0.0.1:9000/#!/home", выберите ваше local  окружение. Перейдите на вкладку "stacks" и в "web editor" задеплойте следующий компоуз:
 
-![изображение](https://github.com/user-attachments/assets/65ccf863-d96e-4f3e-8700-6ab84c8a3a25)
-
-![изображение](https://github.com/user-attachments/assets/1b24fdeb-69c8-4362-a4e5-4025283a0bcc)
-
 ```
 version: '3'
 
@@ -219,6 +215,10 @@ services:
     ports:
       - "9090:80"
 ```
+
+![изображение](https://github.com/user-attachments/assets/65ccf863-d96e-4f3e-8700-6ab84c8a3a25)
+
+![изображение](https://github.com/user-attachments/assets/1b24fdeb-69c8-4362-a4e5-4025283a0bcc)
 
 ![изображение](https://github.com/user-attachments/assets/bee2f8b1-5a46-4e07-93ec-2dd562dcf94d)
 
