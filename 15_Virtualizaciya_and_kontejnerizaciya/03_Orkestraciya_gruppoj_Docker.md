@@ -190,8 +190,15 @@ services:
 2. Отредактируйте файл compose.yaml так, чтобы были запущенны оба файла. (подсказка: https://docs.docker.com/compose/compose-file/14-include/)
 
 ```bash
+version: "3"
 include:
-  - docker-compose.yaml 
+  - docker-compose.yaml
+services:
+  portainer:
+    network_mode: host
+    image: portainer/portainer-ce:latest
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
 ```
 
 ![изображение](https://github.com/user-attachments/assets/36ec53cf-58da-41e6-a36f-6a8f90537304)
@@ -200,11 +207,11 @@ include:
 
 ![изображение](https://github.com/user-attachments/assets/2ad8e558-3bf7-4c00-9000-c3710c18e606)
 
-5. Откройте страницу "https://127.0.0.1:9000" и произведите начальную настройку portainer.(логин и пароль адмнистратора)
+4. Откройте страницу "https://127.0.0.1:9000" и произведите начальную настройку portainer.(логин и пароль адмнистратора)
 
 ![изображение](https://github.com/user-attachments/assets/2b272e7c-3e7c-4fb4-9619-714d7d5bad75)
 
-7. Откройте страницу "http://127.0.0.1:9000/#!/home", выберите ваше local  окружение. Перейдите на вкладку "stacks" и в "web editor" задеплойте следующий компоуз:
+5. Откройте страницу "http://127.0.0.1:9000/#!/home", выберите ваше local  окружение. Перейдите на вкладку "stacks" и в "web editor" задеплойте следующий компоуз:
 
 ```
 version: '3'
@@ -228,10 +235,21 @@ services:
 
 ![изображение](https://github.com/user-attachments/assets/d9f92240-b4a6-4436-89fb-fb910c791f47)
 
-
 7. Удалите любой из манифестов компоуза(например compose.yaml).  Выполните команду "docker compose up -d". Прочитайте warning, объясните суть предупреждения и выполните предложенное действие. Погасите compose-проект ОДНОЙ(обязательно!!) командой.
 
+![изображение](https://github.com/user-attachments/assets/73173955-36dd-4952-9b03-85588b9d4ca0)
+
+![изображение](https://github.com/user-attachments/assets/c9bcde43-81b8-45d9-92f1-bcdb86030d72)
+
+Обнаружил контейнеры-сироты task5-nginx-1 и task5-portainer-1 которые были созданы ранее, но не указаны в настоящий момент в yaml файле. Предлагает добавив флаг "--remove-orphans", чтобы удалить их.
+
+![изображение](https://github.com/user-attachments/assets/a113810c-ee3e-4a4c-a0a0-8d4df51c64af)
+
 В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод, файл compose.yaml , скриншот portainer c задеплоенным компоузом.
+
+![изображение](https://github.com/user-attachments/assets/4cc33dd9-47ba-405f-9916-ad016a3b2c33)
+
+В случае если необходимо не только остановить, но и удалить все контейнеры по данному проекту, то необходимо воспользоваться командой: docker compose down
 
 ---
 
