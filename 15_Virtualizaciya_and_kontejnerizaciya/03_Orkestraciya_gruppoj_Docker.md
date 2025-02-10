@@ -206,6 +206,10 @@ include:
 
 7. Откройте страницу "http://127.0.0.1:9000/#!/home", выберите ваше local  окружение. Перейдите на вкладку "stacks" и в "web editor" задеплойте следующий компоуз:
 
+![изображение](https://github.com/user-attachments/assets/65ccf863-d96e-4f3e-8700-6ab84c8a3a25)
+
+![изображение](https://github.com/user-attachments/assets/1b24fdeb-69c8-4362-a4e5-4025283a0bcc)
+
 ```
 version: '3'
 
@@ -215,6 +219,9 @@ services:
     ports:
       - "9090:80"
 ```
+
+![изображение](https://github.com/user-attachments/assets/bee2f8b1-5a46-4e07-93ec-2dd562dcf94d)
+
 6. Перейдите на страницу "http://127.0.0.1:9000/#!/2/docker/containers", выберите контейнер с nginx и нажмите на кнопку "inspect". В представлении <> Tree разверните поле "Config" и сделайте скриншот от поля "AppArmorProfile" до "Driver".
 
 7. Удалите любой из манифестов компоуза(например compose.yaml).  Выполните команду "docker compose up -d". Прочитайте warning, объясните суть предупреждения и выполните предложенное действие. Погасите compose-проект ОДНОЙ(обязательно!!) командой.
