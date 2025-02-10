@@ -154,6 +154,9 @@ docker run -t -d --name debian -v $(pwd):/data debian
 ## Задача 5
 
 1. Создайте отдельную директорию(например /tmp/netology/docker/task5) и 2 файла внутри него.
+
+![изображение](https://github.com/user-attachments/assets/c2aab51a-1448-4eb8-abbe-0db10613c059)
+
 "compose.yaml" с содержимым:
 ```
 version: "3"
@@ -174,6 +177,9 @@ services:
     ports:
     - "5000:5000"
 ```
+
+![изображение](https://github.com/user-attachments/assets/337db934-6c7d-4c7d-8c13-85bb1f81b7da)
+
 
 И выполните команду "docker compose up -d". Какой из файлов был запущен и почему? (подсказка: https://docs.docker.com/compose/compose-application-model/#the-compose-file )
 
