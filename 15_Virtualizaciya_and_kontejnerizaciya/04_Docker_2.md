@@ -14,6 +14,9 @@
 
 ## Задача 0
 1. Убедитесь что у вас НЕ(!) установлен ```docker-compose```, для этого получите следующую ошибку от команды ```docker-compose --version```
+
+![изображение](https://github.com/user-attachments/assets/7d3e7ec5-3b72-44fd-b4af-93271ed0ddf2)
+
 ```
 Command 'docker-compose' not found, but can be installed with:
 
