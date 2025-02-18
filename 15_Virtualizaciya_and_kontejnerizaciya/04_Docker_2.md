@@ -80,7 +80,12 @@ See 'snap info docker' for additional versions.
 
 5. Подключитесь к БД mysql с помощью команды ```docker exec -ti <имя_контейнера> mysql -uroot -p<пароль root-пользователя>```(обратите внимание что между ключем -u и логином root нет пробела. это важно!!! тоже самое с паролем) . Введите последовательно команды (не забываем в конце символ ; ): ```show databases; use <имя вашей базы данных(по-умолчанию example)>; show tables; SELECT * from requests LIMIT 10;```.
 
+![изображение](https://github.com/user-attachments/assets/08a9b75f-e17c-4621-837c-7709c5bd5e91)
+
 6. Остановите проект. В качестве ответа приложите скриншот sql-запроса.
+
+![изображение](https://github.com/user-attachments/assets/58480bbf-0561-48ee-a63d-3b3dae735eb1)
+
 
 ## Задача 4
 1. Запустите в Yandex Cloud ВМ (вам хватит 2 Гб Ram).
