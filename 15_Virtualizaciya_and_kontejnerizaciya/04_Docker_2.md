@@ -107,7 +107,10 @@ See 'snap info docker' for additional versions.
 ![изображение](https://github.com/user-attachments/assets/81306e74-0c8d-4b23-9073-291d9f50a95a)
 
 9. (Необязательная часть) Дополнительно настройте remote ssh context к вашему серверу. Отобразите список контекстов и результат удаленного выполнения ```docker ps -a```
-10. В качестве ответа повторите  sql-запрос и приложите скриншот с данного сервера, bash-скрипт и ссылку на fork-репозиторий.
+
+![изображение](https://github.com/user-attachments/assets/a4cd18ff-ef4b-4295-84a7-ea350da0ac4d)
+
+11. В качестве ответа повторите  sql-запрос и приложите скриншот с данного сервера, bash-скрипт и ссылку на fork-репозиторий.
 
 [script.sh](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/15_Virtualizaciya_and_kontejnerizaciya/script.sh)
 
