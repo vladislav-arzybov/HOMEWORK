@@ -144,13 +144,13 @@ See 'snap info docker' for additional versions.
 
 ![изображение](https://github.com/user-attachments/assets/34aa8021-4f74-4c4a-8dab-de14fad44029)
 
-docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest hashicorp/terraform:latest
+# docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest hashicorp/terraform:latest
 
 Находим идентификатор слоя с необходимым нам файлом
 
 ![изображение](https://github.com/user-attachments/assets/6dbeb686-aa5f-4e76-a1d7-3c29e7d4a23f)
 
-sha256:da25c3c268493bc8d1313c7698a81a97a99c917ae09a248795e969d82cb53f65
+# sha256:da25c3c268493bc8d1313c7698a81a97a99c917ae09a248795e969d82cb53f65
 
 Сохраняем образ в архив и распаковываем его в каталоге /tmp
 ```
@@ -159,6 +159,17 @@ cd /tmp/
 tar xf /tmp/image.tar.gz
 ```
 ![изображение](https://github.com/user-attachments/assets/b4e5faea-88d3-41d1-aea9-20f26af5f281)
+
+Переходим в каталог blobs/sha256/ где находятся все слои
+
+![изображение](https://github.com/user-attachments/assets/df67e82c-884f-4e50-b929-170438bf0e05)
+
+Указываем идентификатор необходимого нам слоя и распаковываем его: tar xf da25c3c268493bc8d1313c7698a81a97a99c917ae09a248795e969d82cb53f65
+
+Переходим в распакованный каталог bin где содержится необходимый нам файл terraform
+
+![изображение](https://github.com/user-attachments/assets/f8f9aced-6d16-44c3-af49-6be6e4dd2e5c)
+
 
 
 
