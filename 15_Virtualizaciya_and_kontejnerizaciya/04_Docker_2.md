@@ -108,7 +108,21 @@ See 'snap info docker' for additional versions.
 
 9. (Необязательная часть) Дополнительно настройте remote ssh context к вашему серверу. Отобразите список контекстов и результат удаленного выполнения ```docker ps -a```
 
-![изображение](https://github.com/user-attachments/assets/a4cd18ff-ef4b-4295-84a7-ea350da0ac4d)
+На хосте добавляем пользователя в грппу docker: "sudo usermod -aG docker $USER", запускаем тестовый контейнер из образа
+
+![изображение](https://github.com/user-attachments/assets/b7564413-6802-46b0-aadb-4fe08fc7b0df)
+
+Настраиваем подключение на клиенте и проверяем наличие образов и контейнеров
+
+![изображение](https://github.com/user-attachments/assets/9041604d-be3f-4912-bb88-8fc929d93ede)
+
+Дополнительно скачиваем ещё один образ через клиент на удаленный хост
+
+![изображение](https://github.com/user-attachments/assets/30fccc80-c03b-469f-9bf0-046162faf534)
+
+Проверяем на хосте
+
+![изображение](https://github.com/user-attachments/assets/f3cbf533-aebf-41de-b59b-43ba05d85c99)
 
 11. В качестве ответа повторите  sql-запрос и приложите скриншот с данного сервера, bash-скрипт и ссылку на fork-репозиторий.
 
