@@ -152,6 +152,15 @@ docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:
 
 sha256:da25c3c268493bc8d1313c7698a81a97a99c917ae09a248795e969d82cb53f65
 
+Сохраняем образ в архив и распаковываем его в каталоге /tmp
+```
+docker image save -o /tmp/image.tar.gz hashicorp/terraform:latest
+cd /tmp/ 
+tar xf /tmp/image.tar.gz
+```
+![изображение](https://github.com/user-attachments/assets/b4e5faea-88d3-41d1-aea9-20f26af5f281)
+
+
 
 ## Задача 6.1
 Добейтесь аналогичного результата, используя docker cp.  
