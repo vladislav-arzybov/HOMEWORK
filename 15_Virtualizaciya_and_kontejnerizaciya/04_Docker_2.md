@@ -170,12 +170,19 @@ tar xf /tmp/image.tar.gz
 
 ![изображение](https://github.com/user-attachments/assets/f8f9aced-6d16-44c3-af49-6be6e4dd2e5c)
 
-
-
-
 ## Задача 6.1
 Добейтесь аналогичного результата, используя docker cp.  
 Предоставьте скриншоты  действий .
+
+Заранее создадим каталог /tmp/ter/ и перейдем в него
+
+![изображение](https://github.com/user-attachments/assets/3d84de73-a06a-470e-9114-108bc50cf15c)
+
+Запускаем контейнер и копируем файл terraform в заранее подготовленный каталог: docker cp terraform:/bin/terraform ./
+
+![изображение](https://github.com/user-attachments/assets/c81bd41a-433a-4e36-b859-facc8371cb4b)
+
+
 
 ## Задача 6.2 (**)
 Предложите способ извлечь файл из контейнера, используя только команду docker build и любой Dockerfile.  
