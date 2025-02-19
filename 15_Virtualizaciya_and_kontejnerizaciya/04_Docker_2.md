@@ -140,7 +140,17 @@ See 'snap info docker' for additional versions.
 Скачайте docker образ ```hashicorp/terraform:latest``` и скопируйте бинарный файл ```/bin/terraform``` на свою локальную машину, используя dive и docker save.
 Предоставьте скриншоты  действий .
 
+Скачиваем образ и запускаем dive
+
 ![изображение](https://github.com/user-attachments/assets/34aa8021-4f74-4c4a-8dab-de14fad44029)
+
+docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest hashicorp/terraform:latest
+
+Находим идентификатор слоя с необходимым нам файлом
+
+![изображение](https://github.com/user-attachments/assets/6dbeb686-aa5f-4e76-a1d7-3c29e7d4a23f)
+
+sha256:da25c3c268493bc8d1313c7698a81a97a99c917ae09a248795e969d82cb53f65
 
 
 ## Задача 6.1
