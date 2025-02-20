@@ -59,6 +59,12 @@
 
 - A managed resource "random_password" "random_string_FAKE" has not been declared in the root module. - Ресурс "random_password" "random_string_FAKE" ранее не был объявлен, необходимо заменить "random_string_FAKE" на "random_string"
 
+![изображение](https://github.com/user-attachments/assets/fae990f3-1a5a-498f-9144-b53fd9863c44)
+
+- This object has no argument, nested block, or exported attribute named "resulT". Did you mean "result"? - У этого объекта нет аргумента, вложенного блока или экспортируемого атрибута с именем "resulT", необходимо заменить на "result"
+
+![изображение](https://github.com/user-attachments/assets/31e958b3-610e-4bb5-82b4-de004e420b27)
+
 9. Выполните код. В качестве ответа приложите: исправленный фрагмент кода и вывод команды ```docker ps```.
 10. Замените имя docker-контейнера в блоке кода на ```hello_world```. Не перепутайте имя контейнера и имя образа. Мы всё ещё продолжаем использовать name = "nginx:latest". Выполните команду ```terraform apply -auto-approve```.
 Объясните своими словами, в чём может быть опасность применения ключа  ```-auto-approve```. Догадайтесь или нагуглите зачем может пригодиться данный ключ? В качестве ответа дополнительно приложите вывод команды ```docker ps```.
