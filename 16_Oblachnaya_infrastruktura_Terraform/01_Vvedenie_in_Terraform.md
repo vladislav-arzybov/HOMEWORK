@@ -50,8 +50,14 @@
 7. Раскомментируйте блок кода, примерно расположенный на строчках 29–42 файла **main.tf**.
 Выполните команду ```terraform validate```. Объясните, в чём заключаются намеренно допущенные ошибки. Исправьте их.
 
-- All resource blocks must have 2 labels (type, name) - Блок resource должно быть указано не только тип "docker_image", но и название "nginx"
-- 
+![изображение](https://github.com/user-attachments/assets/6a7c18b8-dc87-4e04-839a-2ce2b5523d27)
+
+- All resource blocks must have 2 labels (type, name). - В блоках resource должен быть указан не только тип "docker_image", но и название "nginx"
+- A name must start with a letter or underscore and may contain only letters, digits, underscores, and dashes. - Имя должно начинаться с буквы или символа подчеркивания и может содержать только буквы, цифры, знаки подчеркивания и тире, в данном случае необходимо заменить "1nginx" на "nginx"
+
+![изображение](https://github.com/user-attachments/assets/3a924174-8be9-4332-87ea-c91cb81436d5)
+
+- A managed resource "random_password" "random_string_FAKE" has not been declared in the root module. - Ресурс "random_password" "random_string_FAKE" ранее не был объявлен, необходимо заменить "random_string_FAKE" на "random_string"
 
 9. Выполните код. В качестве ответа приложите: исправленный фрагмент кода и вывод команды ```docker ps```.
 10. Замените имя docker-контейнера в блоке кода на ```hello_world```. Не перепутайте имя контейнера и имя образа. Мы всё ещё продолжаем использовать name = "nginx:latest". Выполните команду ```terraform apply -auto-approve```.
