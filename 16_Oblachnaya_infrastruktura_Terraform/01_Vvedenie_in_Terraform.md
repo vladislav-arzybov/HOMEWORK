@@ -102,6 +102,8 @@ resource "docker_container" "nginx" {
   
 15. Объясните, почему при этом не был удалён docker-образ **nginx:latest**. Ответ **ОБЯЗАТЕЛЬНО НАЙДИТЕ В ПРЕДОСТАВЛЕННОМ КОДЕ**, а затем **ОБЯЗАТЕЛЬНО ПОДКРЕПИТЕ** строчкой из документации [**terraform провайдера docker**](https://docs.comcloud.xyz/providers/kreuzwerker/docker/latest/docs).  (ищите в классификаторе resource docker_image )
 
+- При использовании аргумента "keep_locally = true" образ не будет удален при операции уничтожения, для этого необходимо указать false, тогда образ будет удален из локального хранилища docker при выполнении terraform destroy.
+
 
 ------
 
