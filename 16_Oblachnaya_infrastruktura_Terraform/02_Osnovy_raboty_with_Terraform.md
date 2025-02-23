@@ -39,9 +39,14 @@
 
 ![изображение](https://github.com/user-attachments/assets/d136f696-e157-47cf-b62e-205b4b414e66)
 
+![изображение](https://github.com/user-attachments/assets/def55a62-2507-406d-bd25-cbd59f0f6531)
+
 7. Подключитесь к консоли ВМ через ssh и выполните команду ``` curl ifconfig.me```.
 Примечание: К OS ubuntu "out of a box, те из коробки" необходимо подключаться под пользователем ubuntu: ```"ssh ubuntu@vm_ip_address"```. Предварительно убедитесь, что ваш ключ добавлен в ssh-агент: ```eval $(ssh-agent) && ssh-add``` Вы познакомитесь с тем как при создании ВМ создать своего пользователя в блоке metadata в следующей лекции.;
-8. Ответьте, как в процессе обучения могут пригодиться параметры ```preemptible = true``` и ```core_fraction=5``` в параметрах ВМ.
+
+![изображение](https://github.com/user-attachments/assets/b14d1b2c-e599-4aa4-8420-516d9526ed41)
+
+9. Ответьте, как в процессе обучения могут пригодиться параметры ```preemptible = true``` и ```core_fraction=5``` в параметрах ВМ.
 
 В качестве решения приложите:
 
