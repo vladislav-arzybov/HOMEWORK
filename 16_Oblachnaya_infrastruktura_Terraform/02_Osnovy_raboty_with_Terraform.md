@@ -37,14 +37,14 @@
 - Platform "standart-v4" not found - Тип создаваемой виртуальной машины. По умолчанию используется значение "standard-v1
 - The specified number of cores is not available on platform "standard-v1"; allowed core number: 2, 4 - допустимое количество ядер: 2 или 4
 
-![изображение](https://github.com/user-attachments/assets/d136f696-e157-47cf-b62e-205b4b414e66)
+![изображение](https://github.com/user-attachments/assets/146b7261-f4ad-4271-9a22-16192d0f6b4f)
 
-![изображение](https://github.com/user-attachments/assets/def55a62-2507-406d-bd25-cbd59f0f6531)
+![изображение](https://github.com/user-attachments/assets/d10c89a3-f6db-46ae-9379-0388926c3f87)
 
 7. Подключитесь к консоли ВМ через ssh и выполните команду ``` curl ifconfig.me```.
 Примечание: К OS ubuntu "out of a box, те из коробки" необходимо подключаться под пользователем ubuntu: ```"ssh ubuntu@vm_ip_address"```. Предварительно убедитесь, что ваш ключ добавлен в ssh-агент: ```eval $(ssh-agent) && ssh-add``` Вы познакомитесь с тем как при создании ВМ создать своего пользователя в блоке metadata в следующей лекции.;
 
-![изображение](https://github.com/user-attachments/assets/b14d1b2c-e599-4aa4-8420-516d9526ed41)
+![изображение](https://github.com/user-attachments/assets/c0989a43-f6b5-43a7-a4ae-256d4b4e14d4)
 
 9. Ответьте, как в процессе обучения могут пригодиться параметры ```preemptible = true``` и ```core_fraction=5``` в параметрах ВМ.
 
