@@ -64,6 +64,9 @@
 2. Объявите нужные переменные в файле variables.tf, обязательно указывайте тип переменной. Заполните их **default** прежними значениями из main.tf. 
 3. Проверьте terraform plan. Изменений быть не должно. 
 
+- [variables.tf](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/16_Oblachnaya_infrastruktura_Terraform/variables.tf_2)
+- [main.tf](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/16_Oblachnaya_infrastruktura_Terraform/main.tf_2_2)
+
 ![изображение](https://github.com/user-attachments/assets/25188685-f6a9-4e9e-be48-0b12b7c6639f)
 
 ### Задание 3
