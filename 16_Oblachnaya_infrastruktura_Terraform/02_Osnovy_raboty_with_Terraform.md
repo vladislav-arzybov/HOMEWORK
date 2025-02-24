@@ -148,6 +148,13 @@
 5. Найдите и закоментируйте все, более не используемые переменные проекта.
 6. Проверьте terraform plan. Изменений быть не должно.
 
+- [main.tf_2_6](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/16_Oblachnaya_infrastruktura_Terraform/main.tf_2_6)
+- [vms_platform.tf_2_6](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/16_Oblachnaya_infrastruktura_Terraform/vms_platform.tf_2_6)
+- [variables.tf_2_6](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/16_Oblachnaya_infrastruktura_Terraform/variables.tf_2_6)
+
+![изображение](https://github.com/user-attachments/assets/5c4c081d-8ac5-436e-9490-2308844bf565)
+
+
 ------
 
 ## Дополнительное задание (со звёздочкой*)
