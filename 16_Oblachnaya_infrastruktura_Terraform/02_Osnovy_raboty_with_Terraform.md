@@ -27,7 +27,7 @@
 Убедитесь что ваша версия **Terraform** ~>1.8.4
 
 1. Изучите проект. В файле variables.tf объявлены переменные для Yandex provider.
-2. Создайте сервисный аккаунт и ключ. [service_account_key_file](https://terraform-provider.yandexcloud.net).
+2. Создайте сервисный аккаунт и ключ. [service_account_key_file](https://terraform-provider.yandexcloud.net). [Получить IAM-токен с помощью CLI](https://yandex.cloud/ru/docs/iam/operations/iam-token/create-for-sa#keys-create)
 
 ![изображение](https://github.com/user-attachments/assets/a87dde21-ef74-4e34-908c-05a137c98784)
 
