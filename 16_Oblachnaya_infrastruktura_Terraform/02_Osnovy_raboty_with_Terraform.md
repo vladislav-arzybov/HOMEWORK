@@ -90,6 +90,8 @@
 
 В качестве решения приложите вывод значений ip-адресов команды ```terraform output```.
 
+![изображение](https://github.com/user-attachments/assets/ed823152-ade1-4331-89c2-79dd15d1ec42)
+
 
 ### Задание 5
 
