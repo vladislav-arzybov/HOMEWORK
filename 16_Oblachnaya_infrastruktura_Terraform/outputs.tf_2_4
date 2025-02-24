@@ -1,0 +1,34 @@
+
+###VM-1
+
+output "vm_instance_name_web" {
+  value = yandex_compute_instance.platform.name
+  description = "VM name"
+}
+
+output "vm_external_ip_web" {
+  value = yandex_compute_instance.platform.*.network_interface.0.nat_ip_address
+  description = "The external IP address of the instance"
+}
+
+output "vm_fqdn_web" {
+  value = yandex_compute_instance.platform.fqdn
+  description = "DNS record FQDN"
+}
+
+###VM-2
+
+output "vm_instance_name_db" {
+  value = yandex_compute_instance.platform_db.name
+  description = "VM name"
+}
+
+output "vm_external_ip_bd" {
+  value = yandex_compute_instance.platform_db.*.network_interface.0.nat_ip_address
+  description = "The external IP address of the instance"
+}
+
+output "vm_fqdn_db" {
+  value = yandex_compute_instance.platform_db.fqdn
+  description = "DNS record FQDN"
+}
