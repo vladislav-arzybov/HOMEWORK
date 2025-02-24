@@ -94,6 +94,8 @@
 
 В качестве решения приложите вывод значений ip-адресов команды ```terraform output```.
 
+- [outputs.tf_2_4](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/16_Oblachnaya_infrastruktura_Terraform/outputs.tf_2_4)
+
 ![изображение](https://github.com/user-attachments/assets/ed823152-ade1-4331-89c2-79dd15d1ec42)
 
 
