@@ -105,6 +105,9 @@
 2. Замените переменные внутри ресурса ВМ на созданные вами local-переменные.
 3. Примените изменения.
 
+- [locals.tf_2_5](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/16_Oblachnaya_infrastruktura_Terraform/locals.tf_2_5)
+- [main.tf_2_5](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/16_Oblachnaya_infrastruktura_Terraform/main.tf_2_5)
+
 ![изображение](https://github.com/user-attachments/assets/56d4b975-45e9-42a5-9fed-f0274b521f07)
 
 
