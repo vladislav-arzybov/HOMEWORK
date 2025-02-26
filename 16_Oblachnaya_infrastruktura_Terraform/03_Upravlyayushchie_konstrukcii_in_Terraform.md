@@ -30,7 +30,7 @@
 
 Приложите скриншот входящих правил «Группы безопасности» в ЛК Yandex Cloud .
 
-![изображение](https://github.com/user-attachments/assets/39e9d293-d7a5-40de-b6ab-c1687e628235)
+![изображение](https://github.com/user-attachments/assets/419dee09-8723-41f2-b8a5-2838d94762a3)
 
 
 ------
