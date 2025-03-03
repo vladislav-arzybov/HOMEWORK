@@ -109,6 +109,53 @@
 
 </details>
 
+<details>
+  <summary>module.example-vm</summary>
+
+  ```bash
+
+{
+  "external_ip_address" = [
+    "89.169.129.38",
+  ]
+  "fqdn" = [
+    "stage-web-stage-0.ru-central1.internal",
+  ]
+  "internal_ip_address" = [
+    "10.0.1.14",
+  ]
+  "labels" = [
+    tomap({
+      "owner" = "v.arzybov"
+      "project" = "analytics"
+    }),
+  ]
+  "network_interface" = [
+    tolist([
+      {
+        "dns_record" = tolist([])
+        "index" = 0
+        "ip_address" = "10.0.1.14"
+        "ipv4" = true
+        "ipv6" = false
+        "ipv6_address" = ""
+        "ipv6_dns_record" = tolist([])
+        "mac_address" = "d0:0d:17:27:c9:38"
+        "nat" = true
+        "nat_dns_record" = tolist([])
+        "nat_ip_address" = "89.169.129.38"
+        "nat_ip_version" = "IPV4"
+        "security_group_ids" = toset([])
+        "subnet_id" = "e9bu2ppknsjpgh2420gs"
+      },
+    ]),
+  ]
+}
+
+```  
+
+</details>
+
 ------
 В случае использования MacOS вы получите ошибку "Incompatible provider version" . В этом случае скачайте remote модуль локально и поправьте в нем версию template провайдера на более старую.
 ------
