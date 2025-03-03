@@ -39,7 +39,9 @@
 
 <details>
   <summary>module.test-vm</summary>
-```bash
+
+  ```bash
+
   {
   "external_ip_address" = [
     "84.201.157.180",
@@ -102,7 +104,9 @@
     ]),
   ]
 }
+
 ```  
+
 </details>
 
 ------
