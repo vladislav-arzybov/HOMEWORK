@@ -39,6 +39,7 @@
 
 <details>
   <summary>module.test-vm</summary>
+  ```
   {
   "external_ip_address" = [
     "84.201.157.180",
@@ -101,6 +102,7 @@
     ]),
   ]
 }
+```  
 </details>
 
 ------
