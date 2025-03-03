@@ -37,7 +37,71 @@
 
 ![изображение](https://github.com/user-attachments/assets/02ac7e25-1dd9-40aa-94e2-a32aaa17f1de)
 
-
+<details>
+  <summary>module.test-vm</summary>
+  {
+  "external_ip_address" = [
+    "84.201.157.180",
+    "158.160.15.248",
+  ]
+  "fqdn" = [
+    "develop-webs-0.ru-central1.internal",
+    "develop-webs-1.ru-central1.internal",
+  ]
+  "internal_ip_address" = [
+    "10.0.1.13",
+    "10.0.2.8",
+  ]
+  "labels" = [
+    tomap({
+      "owner" = "v.arzybov"
+      "project" = "marketing"
+    }),
+    tomap({
+      "owner" = "v.arzybov"
+      "project" = "marketing"
+    }),
+  ]
+  "network_interface" = [
+    tolist([
+      {
+        "dns_record" = tolist([])
+        "index" = 0
+        "ip_address" = "10.0.1.13"
+        "ipv4" = true
+        "ipv6" = false
+        "ipv6_address" = ""
+        "ipv6_dns_record" = tolist([])
+        "mac_address" = "d0:0d:20:90:ec:7e"
+        "nat" = true
+        "nat_dns_record" = tolist([])
+        "nat_ip_address" = "84.201.157.180"
+        "nat_ip_version" = "IPV4"
+        "security_group_ids" = toset([])
+        "subnet_id" = "e9bu2ppknsjpgh2420gs"
+      },
+    ]),
+    tolist([
+      {
+        "dns_record" = tolist([])
+        "index" = 0
+        "ip_address" = "10.0.2.8"
+        "ipv4" = true
+        "ipv6" = false
+        "ipv6_address" = ""
+        "ipv6_dns_record" = tolist([])
+        "mac_address" = "d0:0d:14:59:46:55"
+        "nat" = true
+        "nat_dns_record" = tolist([])
+        "nat_ip_address" = "158.160.15.248"
+        "nat_ip_version" = "IPV4"
+        "security_group_ids" = toset([])
+        "subnet_id" = "e2lu0po690706ce7nhdi"
+      },
+    ]),
+  ]
+}
+</details>
 
 ------
 В случае использования MacOS вы получите ошибку "Incompatible provider version" . В этом случае скачайте remote модуль локально и поправьте в нем версию template провайдера на более старую.
