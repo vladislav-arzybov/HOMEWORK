@@ -177,6 +177,8 @@ packages:
 6. Сгенерируйте документацию к модулю с помощью terraform-docs.
 
 [doc.md](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/16_Oblachnaya_infrastruktura_Terraform/doc.md)
+
+[doc_vpc.md](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/16_Oblachnaya_infrastruktura_Terraform/doc_vpc.md)
  
 Пример вызова
 
