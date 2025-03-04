@@ -175,6 +175,8 @@ packages:
  
 5. Замените ресурсы yandex_vpc_network и yandex_vpc_subnet созданным модулем. Не забудьте передать необходимые параметры сети из модуля vpc в модуль с виртуальной машиной.
 6. Сгенерируйте документацию к модулю с помощью terraform-docs.
+
+[doc.md](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/16_Oblachnaya_infrastruktura_Terraform/doc.md)
  
 Пример вызова
 
