@@ -59,39 +59,30 @@ packages:
 
 5. Предоставьте скриншот подключения к консоли и вывод команды ```sudo nginx -t```, скриншот консоли ВМ yandex cloud с их метками. Откройте terraform console и предоставьте скриншот содержимого модуля. Пример: > module.marketing_vm
 
-![изображение](https://github.com/user-attachments/assets/00214fa9-71cc-4150-83f3-f1a9c361b5a1)
+![изображение](https://github.com/user-attachments/assets/98192c45-34b3-44e8-a17f-ed1a90a2ba3c)
 
-![изображение](https://github.com/user-attachments/assets/c5f8607b-974a-4e24-ae25-145654e8f935)
+![изображение](https://github.com/user-attachments/assets/e505fdda-c278-4b3a-ac86-f9396a63d42b)
 
-![изображение](https://github.com/user-attachments/assets/e8bbeaa5-9a4c-4fa6-a557-861389211bc5)
+![изображение](https://github.com/user-attachments/assets/fec0c028-25d7-4152-ac47-faf7ab91cf15)
 
-![изображение](https://github.com/user-attachments/assets/484aaca0-fbd0-41f7-89eb-389defe12be0)
-
-![изображение](https://github.com/user-attachments/assets/02ac7e25-1dd9-40aa-94e2-a32aaa17f1de)
+![изображение](https://github.com/user-attachments/assets/f879377f-e778-437e-876a-63d051ee07b0)
 
 <details>
-  <summary>module.test-vm</summary>
+  <summary>module.marketing_vm</summary>
 
   ```bash
 
-  {
+{
   "external_ip_address" = [
-    "84.201.157.180",
-    "158.160.15.248",
+    "89.169.156.86",
   ]
   "fqdn" = [
     "develop-webs-0.ru-central1.internal",
-    "develop-webs-1.ru-central1.internal",
   ]
   "internal_ip_address" = [
-    "10.0.1.13",
-    "10.0.2.8",
+    "10.0.1.4",
   ]
   "labels" = [
-    tomap({
-      "owner" = "v.arzybov"
-      "project" = "marketing"
-    }),
     tomap({
       "owner" = "v.arzybov"
       "project" = "marketing"
@@ -102,36 +93,18 @@ packages:
       {
         "dns_record" = tolist([])
         "index" = 0
-        "ip_address" = "10.0.1.13"
+        "ip_address" = "10.0.1.4"
         "ipv4" = true
         "ipv6" = false
         "ipv6_address" = ""
         "ipv6_dns_record" = tolist([])
-        "mac_address" = "d0:0d:20:90:ec:7e"
+        "mac_address" = "d0:0d:ac:e9:b4:18"
         "nat" = true
         "nat_dns_record" = tolist([])
-        "nat_ip_address" = "84.201.157.180"
+        "nat_ip_address" = "89.169.156.86"
         "nat_ip_version" = "IPV4"
         "security_group_ids" = toset([])
-        "subnet_id" = "e9bu2ppknsjpgh2420gs"
-      },
-    ]),
-    tolist([
-      {
-        "dns_record" = tolist([])
-        "index" = 0
-        "ip_address" = "10.0.2.8"
-        "ipv4" = true
-        "ipv6" = false
-        "ipv6_address" = ""
-        "ipv6_dns_record" = tolist([])
-        "mac_address" = "d0:0d:14:59:46:55"
-        "nat" = true
-        "nat_dns_record" = tolist([])
-        "nat_ip_address" = "158.160.15.248"
-        "nat_ip_version" = "IPV4"
-        "security_group_ids" = toset([])
-        "subnet_id" = "e2lu0po690706ce7nhdi"
+        "subnet_id" = "e9bv5b4fvurhqg1n738f"
       },
     ]),
   ]
@@ -142,19 +115,19 @@ packages:
 </details>
 
 <details>
-  <summary>module.example-vm</summary>
+  <summary>module.analytics_vm</summary>
 
   ```bash
 
 {
   "external_ip_address" = [
-    "89.169.129.38",
+    "89.169.134.73",
   ]
   "fqdn" = [
     "stage-web-stage-0.ru-central1.internal",
   ]
   "internal_ip_address" = [
-    "10.0.1.14",
+    "10.0.1.26",
   ]
   "labels" = [
     tomap({
@@ -167,18 +140,18 @@ packages:
       {
         "dns_record" = tolist([])
         "index" = 0
-        "ip_address" = "10.0.1.14"
+        "ip_address" = "10.0.1.26"
         "ipv4" = true
         "ipv6" = false
         "ipv6_address" = ""
         "ipv6_dns_record" = tolist([])
-        "mac_address" = "d0:0d:17:27:c9:38"
+        "mac_address" = "d0:0d:86:f7:2c:e2"
         "nat" = true
         "nat_dns_record" = tolist([])
-        "nat_ip_address" = "89.169.129.38"
+        "nat_ip_address" = "89.169.134.73"
         "nat_ip_version" = "IPV4"
         "security_group_ids" = toset([])
-        "subnet_id" = "e9bu2ppknsjpgh2420gs"
+        "subnet_id" = "e9bv5b4fvurhqg1n738f"
       },
     ]),
   ]
