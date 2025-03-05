@@ -196,6 +196,15 @@ module "vpc_dev" {
 
 ![изображение](https://github.com/user-attachments/assets/c619048c-c5c8-49e3-a513-72c1c5d50967)
 
+```
+reivol@Zabbix:~/GitHub/ter-homeworks/04/src$ terraform state show module.analytics_vm.yandex_compute_instance.vm[0] | grep -P ' id |image_id ' 
+    id          = "fhmt37kq2cge288qbnus"
+    image_id    = "fd805090je9atk2b9jon"
+reivol@Zabbix:~/GitHub/ter-homeworks/04/src$ terraform state show module.marketing_vm.yandex_compute_instance.vm[0] | grep -P ' id |image_id '
+    id          = "fhmmpeubp03rfdet29ja"
+    image_id    = "fd805090je9atk2b9jon"
+```
+
 3. Полностью удалите из стейта модуль vpc.
 4. Полностью удалите из стейта модуль vm.
 5. Импортируйте всё обратно. Проверьте terraform plan. Значимых(!!) изменений быть не должно.
