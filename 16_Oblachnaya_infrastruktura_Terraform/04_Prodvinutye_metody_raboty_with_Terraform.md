@@ -221,6 +221,18 @@ reivol@Zabbix:~/GitHub/ter-homeworks/04/src$ terraform state show module.vpc_dev
 7. Импортируйте всё обратно. Проверьте terraform plan. Значимых(!!) изменений быть не должно.
 Приложите список выполненных команд и скриншоты процессы.
 
+- terraform import 'module.vpc_dev.yandex_vpc_network.develop' 'enpnt29pial4a6671p6d'
+
+![изображение](https://github.com/user-attachments/assets/fb8eb21e-3522-4fd7-95b3-07571672227f)
+
+- terraform import 'module.vpc_dev.yandex_vpc_subnet.develop' 'e9bqhs9earuj02gsmdn4'
+
+![изображение](https://github.com/user-attachments/assets/1f549c12-384a-4845-94ed-b5791440718d)
+
+![изображение](https://github.com/user-attachments/assets/5566f883-2fd2-4220-b457-59339e6f2475)
+
+
+
 ## Дополнительные задания (со звёздочкой*)
 
 **Настоятельно рекомендуем выполнять все задания со звёздочкой.**   Они помогут глубже разобраться в материале.   
