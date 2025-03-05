@@ -203,6 +203,9 @@ reivol@Zabbix:~/GitHub/ter-homeworks/04/src$ terraform state show module.analyti
 reivol@Zabbix:~/GitHub/ter-homeworks/04/src$ terraform state show module.marketing_vm.yandex_compute_instance.vm[0] | grep -P ' id |image_id '
     id          = "fhmmpeubp03rfdet29ja"
     image_id    = "fd805090je9atk2b9jon"
+reivol@Zabbix:~/GitHub/ter-homeworks/04/src$ terraform state show module.vpc_dev.yandex_vpc_subnet.develop | grep -P ' id |network_id'
+    id             = "e9bqhs9earuj02gsmdn4"
+    network_id     = "enpnt29pial4a6671p6d"
 ```
 
 3. Полностью удалите из стейта модуль vpc.
