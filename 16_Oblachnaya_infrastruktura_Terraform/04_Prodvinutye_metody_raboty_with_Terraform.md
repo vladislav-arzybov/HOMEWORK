@@ -210,15 +210,15 @@ reivol@Zabbix:~/GitHub/ter-homeworks/04/src$ terraform state show module.vpc_dev
     network_id     = "enpnt29pial4a6671p6d"
 ```
 
-3. Полностью удалите из стейта модуль vpc.
+2. Полностью удалите из стейта модуль vpc.
 
 ![изображение](https://github.com/user-attachments/assets/345976a4-4039-4f8f-9d89-e77cc4f669fb)
   
-5. Полностью удалите из стейта модуль vm.
+3. Полностью удалите из стейта модуль vm.
 
 ![изображение](https://github.com/user-attachments/assets/71aa9053-9db2-4269-849c-de4af2be7fee)
 
-7. Импортируйте всё обратно. Проверьте terraform plan. Значимых(!!) изменений быть не должно.
+4. Импортируйте всё обратно. Проверьте terraform plan. Значимых(!!) изменений быть не должно.
 Приложите список выполненных команд и скриншоты процессы.
 
 - terraform import 'module.vpc_dev.yandex_vpc_network.develop' 'enpnt29pial4a6671p6d'
@@ -231,6 +231,19 @@ reivol@Zabbix:~/GitHub/ter-homeworks/04/src$ terraform state show module.vpc_dev
 
 ![изображение](https://github.com/user-attachments/assets/5566f883-2fd2-4220-b457-59339e6f2475)
 
+- terraform import 'module.analytics_vm.yandex_compute_instance.vm[0]' 'fhmt37kq2cge288qbnus'
+
+![изображение](https://github.com/user-attachments/assets/06caf5cf-1059-41ed-8f8a-784b7a94b37e)
+
+- terraform import 'module.marketing_vm.yandex_compute_instance.vm[0]' 'fhmmpeubp03rfdet29ja'
+
+![изображение](https://github.com/user-attachments/assets/024eedd8-4b77-4d7e-8318-b62614c67865)
+
+![изображение](https://github.com/user-attachments/assets/41607814-f5f4-4512-92f4-879f9299372b)
+
+- terraform plan
+
+![изображение](https://github.com/user-attachments/assets/a1b741b1-4ade-4312-b9c1-379ebecf5257)
 
 
 ## Дополнительные задания (со звёздочкой*)
