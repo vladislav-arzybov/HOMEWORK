@@ -61,10 +61,25 @@
 ![изображение](https://github.com/user-attachments/assets/85c3ae1e-ccee-40db-ac82-4e44a271b9d3)
 
 3. Повторите демонстрацию лекции: настройте YDB, S3 bucket, yandex service account, права доступа и мигрируйте state проекта в S3 с блокировками. Предоставьте скриншоты процесса в качестве ответа.
-4. Закоммитьте в ветку 'terraform-05' все изменения.
-5. Откройте в проекте terraform console, а в другом окне из этой же директории попробуйте запустить terraform apply.
-6. Пришлите ответ об ошибке доступа к state.
-7. Принудительно разблокируйте state. Пришлите команду и вывод.
+
+Создаем бакет в Object Storage
+
+![изображение](https://github.com/user-attachments/assets/6ff2672c-4ff2-444d-a36b-cabb8b3131d9)
+
+Создадим сервисный аккаунт в Identity and Access Management
+
+![изображение](https://github.com/user-attachments/assets/fd5c8644-370f-48f9-8af0-b46b8abf541d)
+
+Создаем ключ в настройках сервисного аккаунта
+
+![изображение](https://github.com/user-attachments/assets/04861a6e-a2ff-42d8-9e12-c8b7d3978b5e)
+
+
+
+5. Закоммитьте в ветку 'terraform-05' все изменения.
+6. Откройте в проекте terraform console, а в другом окне из этой же директории попробуйте запустить terraform apply.
+7. Пришлите ответ об ошибке доступа к state.
+8. Принудительно разблокируйте state. Пришлите команду и вывод.
 
 
 ------
