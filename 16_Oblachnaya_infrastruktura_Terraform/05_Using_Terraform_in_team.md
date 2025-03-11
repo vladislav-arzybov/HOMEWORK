@@ -32,7 +32,7 @@
 2. Проверьте код с помощью tflint и checkov. Вам не нужно инициализировать этот проект.
 3. Перечислите, какие **типы** ошибок обнаружены в проекте (без дублей).
 
-#### tflint
+#### tflint: docker run --rm -v $(pwd):/data -t ghcr.io/terraform-linters/tflint
 
 - Warning: Missing version constraint for provider "yandex" in `required_providers` (terraform_required_providers) - Отсутствует ограничение версии для провайдера в разделе провайдеры, required_providers.
 - Warning: [Fixable] variable "vms_ssh_root_key" is declared but not used (terraform_unused_declarations) - Переменная "имя_переменной" объявлена, но не используется.
