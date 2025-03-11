@@ -39,7 +39,16 @@
 - Warning: Module source "git::https://github.com/udjin10/yandex_compute_instance.git?ref=main" uses a default branch as ref (main) (terraform_module_pinned_source) - Исходный код модуля "git::https://..." использует в качестве ссылки ветку по умолчанию, main.
 - Warning: Missing version constraint for provider "template" in `required_providers` (terraform_required_providers) - Отсутствует ограничение версии для провайдера в "шаблоне template".
 
-  
+#### checkov: docker run --rm --tty --volume $(pwd):/tf --workdir /tf bridgecrew/checkov --download-external-modules true --directory /tf
+
+![изображение](https://github.com/user-attachments/assets/35ac042f-9281-4d48-acd3-e975e48cd9db)
+
+- Check: CKV_YC_4: "Ensure compute instance does not have serial console enabled." - Убедитесь, что у экземпляра не включена последовательная консоль.
+- Check: CKV_YC_11: "Ensure security group is assigned to network interface." - Убедитесь, что сетевому интерфейсу назначена группа безопасности
+- Check: CKV_YC_2: "Ensure compute instance does not have public IP." - Убедитесь, что экземпляр не имеет внешнего IP-адреса.
+- Check: CKV_TF_1: "Ensure Terraform module sources use a commit hash" - Убедитесь, что в исходных кодах модуля Terraform используется хэш фиксации.
+- Check: CKV_TF_2: "Ensure Terraform module sources use a tag with a version number" - Убедитесь, что в исходных текстах модуля Terraform используется тег с номером версии.
+
 
 ------
 
