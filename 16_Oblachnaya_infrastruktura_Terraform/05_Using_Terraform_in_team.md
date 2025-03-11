@@ -78,12 +78,17 @@
 
 ![изображение](https://github.com/user-attachments/assets/110de4f2-ca17-45ee-a2b1-7d0badcae48f)
 
-
-
-
 Создаем базу данных YDB размером 1Гб в Managed Service for YDB
 
 ![изображение](https://github.com/user-attachments/assets/8c5946bb-59e4-46f1-974e-3c845fd72b29)
+
+Переходим в пункт Навигация, создаем таблицу, Документная таблица. Имя колонки: LockID, Тип: string, Ключ партицирования - ок.
+
+![изображение](https://github.com/user-attachments/assets/a280155c-7a56-4976-9571-27f3f509648d)
+
+![изображение](https://github.com/user-attachments/assets/d977686f-2da1-4ce0-a00a-bb0595c17637)
+
+Во вкладке Обзор копируем значение Document API эндпоинт, настраиваем конфиг
 
 
 5. Закоммитьте в ветку 'terraform-05' все изменения.
