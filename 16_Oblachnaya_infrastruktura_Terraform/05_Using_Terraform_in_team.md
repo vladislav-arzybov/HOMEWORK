@@ -62,10 +62,6 @@
 
 3. Повторите демонстрацию лекции: настройте YDB, S3 bucket, yandex service account, права доступа и мигрируйте state проекта в S3 с блокировками. Предоставьте скриншоты процесса в качестве ответа.
 
-Создаем бакет в Object Storage
-
-![изображение](https://github.com/user-attachments/assets/6ff2672c-4ff2-444d-a36b-cabb8b3131d9)
-
 Создадим сервисный аккаунт в Identity and Access Management
 
 ![изображение](https://github.com/user-attachments/assets/fd5c8644-370f-48f9-8af0-b46b8abf541d)
@@ -74,6 +70,20 @@
 
 ![изображение](https://github.com/user-attachments/assets/04861a6e-a2ff-42d8-9e12-c8b7d3978b5e)
 
+Создаем бакет в Object Storage
+
+![изображение](https://github.com/user-attachments/assets/6ff2672c-4ff2-444d-a36b-cabb8b3131d9)
+
+Выбираем редактировать ACL, в поиске находим созданный сервисный аккаунт, добавить, сохранить.
+
+![изображение](https://github.com/user-attachments/assets/110de4f2-ca17-45ee-a2b1-7d0badcae48f)
+
+
+
+
+Создаем базу данных YDB размером 1Гб в Managed Service for YDB
+
+![изображение](https://github.com/user-attachments/assets/8c5946bb-59e4-46f1-974e-3c845fd72b29)
 
 
 5. Закоммитьте в ветку 'terraform-05' все изменения.
