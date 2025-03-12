@@ -114,6 +114,8 @@ terraform {
 
 ![изображение](https://github.com/user-attachments/assets/74a3337b-a8cf-470b-8edf-6b8f5888e4a7)
 
+![изображение](https://github.com/user-attachments/assets/e17aa1d2-85d2-47eb-aefa-72e728bc2a62)
+
 5. Закоммитьте в ветку 'terraform-05' все изменения.
 6. Откройте в проекте terraform console, а в другом окне из этой же директории попробуйте запустить terraform apply.
 7. Пришлите ответ об ошибке доступа к state.
