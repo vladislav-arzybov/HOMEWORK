@@ -88,7 +88,7 @@
 
 ![изображение](https://github.com/user-attachments/assets/d977686f-2da1-4ce0-a00a-bb0595c17637)
 
-Во вкладке Обзор копируем значение Document API эндпоинт, настраиваем конфиг backend "s3"
+Во вкладке Обзор копируем значение Document API эндпоинт и подставляем в dynamodb, настраиваем конфиг backend "s3"
 
 ```
 terraform {
