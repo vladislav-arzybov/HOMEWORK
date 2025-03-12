@@ -60,7 +60,7 @@
 
 ![изображение](https://github.com/user-attachments/assets/85c3ae1e-ccee-40db-ac82-4e44a271b9d3)
 
-3. Повторите демонстрацию лекции: настройте YDB, S3 bucket, yandex service account, права доступа и мигрируйте state проекта в S3 с блокировками. Предоставьте скриншоты процесса в качестве ответа.
+2. Повторите демонстрацию лекции: настройте YDB, S3 bucket, yandex service account, права доступа и мигрируйте state проекта в S3 с блокировками. Предоставьте скриншоты процесса в качестве ответа.
 
 Создадим сервисный аккаунт в Identity and Access Management
 
@@ -116,10 +116,24 @@ terraform {
 
 ![изображение](https://github.com/user-attachments/assets/e17aa1d2-85d2-47eb-aefa-72e728bc2a62)
 
-5. Закоммитьте в ветку 'terraform-05' все изменения.
-6. Откройте в проекте terraform console, а в другом окне из этой же директории попробуйте запустить terraform apply.
-7. Пришлите ответ об ошибке доступа к state.
-8. Принудительно разблокируйте state. Пришлите команду и вывод.
+3. Закоммитьте в ветку 'terraform-05' все изменения.
+
+![изображение](https://github.com/user-attachments/assets/abf22c81-eeda-4767-b289-37b8acdf54d4)
+
+4. Откройте в проекте terraform console, а в другом окне из этой же директории попробуйте запустить terraform apply.
+
+![изображение](https://github.com/user-attachments/assets/9b832eb6-008a-4e5c-b410-76cdac9de8da)
+
+5. Пришлите ответ об ошибке доступа к state.
+
+![изображение](https://github.com/user-attachments/assets/67d3213a-481e-4179-84c8-37bdee3b9ec0)
+
+6. Принудительно разблокируйте state. Пришлите команду и вывод.
+
+#### terraform force-unlock <LOCK_ID>
+
+![изображение](https://github.com/user-attachments/assets/a0a47439-0f37-4ec7-bb4d-461f0867251f)
+
 
 
 ------
