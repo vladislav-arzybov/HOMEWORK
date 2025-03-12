@@ -88,7 +88,27 @@
 
 ![изображение](https://github.com/user-attachments/assets/d977686f-2da1-4ce0-a00a-bb0595c17637)
 
-Во вкладке Обзор копируем значение Document API эндпоинт, настраиваем конфиг
+Во вкладке Обзор копируем значение Document API эндпоинт, настраиваем конфиг backend "s3"
+
+```
+terraform {
+  required_version = "1.8.4"
+  backend "s3" {
+    bucket     = "reivol" #FIO-netology-tfstate
+    region="ru-central1"
+    key = "terraform.tfstate"
+    skip_region_validation      = true
+    skip_credentials_validation = true
+    skip_requesting_account_id  = true # Необходимая опция Terraform для версии 1.6.1 и старше.
+    skip_s3_checksum            = true # Необходимая опция при описании бэкенда для Terraform версии 1.6.3 и старше.
+  endpoints ={
+    dynamodb = "https://docapi.serverless.yandexcloud.net/ru-central1/....."
+    s3 = "https://storage.yandexcloud.net"
+  }
+    dynamodb_table              = "table_name"  # Название таблицы в БД
+  }
+}
+```
 
 
 5. Закоммитьте в ветку 'terraform-05' все изменения.
