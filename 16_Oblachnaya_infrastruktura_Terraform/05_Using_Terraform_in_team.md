@@ -173,6 +173,21 @@ https://github.com/vladislav-arzybov/HOMEWORK/pull/1/files
 1. Напишите переменные с валидацией и протестируйте их, заполнив default верными и неверными значениями. Предоставьте скриншоты проверок из terraform console. 
 
 - type=string, description="ip-адрес" — проверка, что значение переменной содержит верный IP-адрес с помощью функций cidrhost() или regex(). Тесты:  "192.168.0.1" и "1920.1680.0.1";
+
+```
+variable "test1" {
+  type = string
+  default = "1920.1680.0.1"
+  description = "ip-адрес"
+  validation {
+    condition = can(regex("^((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])$", var.test1))
+    error_message = "ERROR: Invalid ip!"
+  }
+}
+```
+
+![изображение](https://github.com/user-attachments/assets/a69cc97f-6cb2-487f-b747-815ebb0adceb)
+
 - type=list(string), description="список ip-адресов" — проверка, что все адреса верны. Тесты:  ["192.168.0.1", "1.1.1.1", "127.0.0.1"] и ["192.168.0.1", "1.1.1.1", "1270.0.0.1"].
 
 ## Дополнительные задания (со звёздочкой*)
