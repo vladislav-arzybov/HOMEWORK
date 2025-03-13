@@ -2,6 +2,8 @@
 **/.terraform/*
 .terraform*
 
+.external_modules*
+
 !.terraformrc
 
 # .tfstate files
