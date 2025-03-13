@@ -10,7 +10,7 @@ module "vpc_dev" {
 ##module VM
 
 module "marketing_vm" {
-  source         = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=main"
+  source         = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=f96532a351d512ef1888e6c12a3d47c65fa10479"
   env_name       = "develop" 
   network_id     = module.vpc_dev.network_id
   subnet_zones   = ["ru-central1-a"]
@@ -18,7 +18,9 @@ module "marketing_vm" {
   instance_name  = "webs"
   instance_count = 1
   image_family   = "ubuntu-2004-lts"
-  public_ip      = true
+  public_ip      = false
+  security_group_ids = [ module.vpc_dev.security_id ]
+
 
   labels = { 
     owner= "v.arzybov",
@@ -33,7 +35,7 @@ module "marketing_vm" {
 }
 
 module "analytics_vm" {
-  source         = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=main"
+  source         = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=f96532a351d512ef1888e6c12a3d47c65fa10479"
   env_name       = "stage"
   network_id     = module.vpc_dev.network_id
   subnet_zones   = ["ru-central1-a"]
@@ -41,7 +43,9 @@ module "analytics_vm" {
   instance_name  = "web-stage"
   instance_count = 1
   image_family   = "ubuntu-2004-lts"
-  public_ip      = true
+  public_ip      = false
+  security_group_ids = [ module.vpc_dev.security_id ]
+
 
   labels = { 
     owner= "v.arzybov",
@@ -59,11 +63,11 @@ module "analytics_vm" {
 #Пример передачи cloud-config в ВМ
 data "template_file" "cloudinit" {
   template = file("./cloud-init.yml")
-
+  
     vars = {
     username           = var.username
     ssh_public_key     = file("~/.ssh/id_rsa.pub")
   }
-
+  
 }
 
