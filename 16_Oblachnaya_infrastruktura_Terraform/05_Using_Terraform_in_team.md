@@ -144,9 +144,12 @@ terraform {
 ![изображение](https://github.com/user-attachments/assets/57d0ca46-2954-406b-954d-4a0aaec4e082)
 
 3. Проверье код с помощью tflint и checkov, исправьте все предупреждения и ошибки в 'terraform-hotfix', сделайте коммит.
-4. Откройте новый pull request 'terraform-hotfix' --> 'terraform-05'. 
-5. Вставьте в комментарий PR результат анализа tflint и checkov, план изменений инфраструктуры из вывода команды terraform plan.
-6. Пришлите ссылку на PR для ревью. Вливать код в 'terraform-05' не нужно.
+
+![изображение](https://github.com/user-attachments/assets/6df1013c-3c8c-4c80-88db-e21fa65f171c)
+
+5. Откройте новый pull request 'terraform-hotfix' --> 'terraform-05'. 
+6. Вставьте в комментарий PR результат анализа tflint и checkov, план изменений инфраструктуры из вывода команды terraform plan.
+7. Пришлите ссылку на PR для ревью. Вливать код в 'terraform-05' не нужно.
 
 ------
 ### Задание 4
