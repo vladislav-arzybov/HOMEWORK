@@ -157,7 +157,7 @@ terraform {
 
 5. Откройте новый pull request 'terraform-hotfix' --> 'terraform-05'.
 
-![изображение](https://github.com/user-attachments/assets/c002ba86-c0bd-4cb7-a5db-b7bfdc5ebf60)
+![изображение](https://github.com/user-attachments/assets/25bf9d05-9099-43e8-ab4a-17106a2d401d)
 
 7. Вставьте в комментарий PR результат анализа tflint и checkov, план изменений инфраструктуры из вывода команды terraform plan.
 8. Пришлите ссылку на PR для ревью. Вливать код в 'terraform-05' не нужно.
