@@ -19,4 +19,10 @@ variable "cidr" {
 }
 
 
+####checkov vars
+variable "folder_id" {
+  type        = string
+  default     = "b1g51e5v9mh6c4gtt2he"
+  description = "https://cloud.yandex.ru/docs/resource-manager/operations/folder/get-id"
+}
 
