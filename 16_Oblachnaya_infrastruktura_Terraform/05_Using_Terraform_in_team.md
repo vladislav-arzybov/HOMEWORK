@@ -148,7 +148,7 @@ terraform {
 - tflint
 ![изображение](https://github.com/user-attachments/assets/6df1013c-3c8c-4c80-88db-e21fa65f171c)
 
-- checkov, отключил внешние IP и добавил security_group из предыдущего ДЗ№3
+- checkov: указал хэш коммита ветки main, отключил внешние IP и добавил в модуль security_group из предыдущего ДЗ№3
 ![изображение](https://github.com/user-attachments/assets/5f77da12-f6f3-47fc-a07e-54ba18836ce6)
 
 ![изображение](https://github.com/user-attachments/assets/d977b1ae-24e5-4f13-889a-c653b4f7928d)
