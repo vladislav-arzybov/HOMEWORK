@@ -36,7 +36,7 @@
 
 - Warning: Missing version constraint for provider "yandex" in `required_providers` (terraform_required_providers) - Отсутствует ограничение версии для провайдера в разделе провайдеры, required_providers.
 - Warning: [Fixable] variable "vms_ssh_root_key" is declared but not used (terraform_unused_declarations) - Переменная "имя_переменной" объявлена, но не используется.
-- Warning: Module source "git::https://github.com/udjin10/yandex_compute_instance.git?ref=main" uses a default branch as ref (main) (terraform_module_pinned_source) - Исходный код модуля "git::https://..." использует в качестве ссылки ветку по умолчанию, main.
+- Warning: Module source "git::https://github.com/udjin10/yandex_compute_instance.git?ref=main" uses a default branch as ref (main) (terraform_module_pinned_source) - Исходный код модуля "git::https://..." использует в качестве ссылки ветку по умолчанию, без указания версии.
 - Warning: Missing version constraint for provider "template" in `required_providers` (terraform_required_providers) - Отсутствует ограничение версии для провайдера в "шаблоне template".
 
 
