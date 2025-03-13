@@ -92,7 +92,7 @@
 
 ```
 terraform {
-  required_version = "1.8.4"
+ # required_version = "1.8.4"
   backend "s3" {
     bucket     = "reivol" #FIO-netology-tfstate
     region="ru-central1"
