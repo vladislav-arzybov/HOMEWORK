@@ -148,9 +148,10 @@ terraform {
 - tflint
 ![изображение](https://github.com/user-attachments/assets/6df1013c-3c8c-4c80-88db-e21fa65f171c)
 
-- checkov
-![изображение](https://github.com/user-attachments/assets/d977b1ae-24e5-4f13-889a-c653b4f7928d)
+- checkov, отключил внешние IP и добавил security_group из предыдущего ДЗ№3
+![изображение](https://github.com/user-attachments/assets/5f77da12-f6f3-47fc-a07e-54ba18836ce6)
 
+![изображение](https://github.com/user-attachments/assets/d977b1ae-24e5-4f13-889a-c653b4f7928d)
 
 5. Откройте новый pull request 'terraform-hotfix' --> 'terraform-05'. 
 6. Вставьте в комментарий PR результат анализа tflint и checkov, план изменений инфраструктуры из вывода команды terraform plan.
