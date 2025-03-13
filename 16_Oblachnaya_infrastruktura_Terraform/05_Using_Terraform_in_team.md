@@ -118,7 +118,7 @@ terraform {
 
 3. Закоммитьте в ветку 'terraform-05' все изменения.
 
-![изображение](https://github.com/user-attachments/assets/abf22c81-eeda-4767-b289-37b8acdf54d4)
+![изображение](https://github.com/user-attachments/assets/9cbbd673-e507-4d81-b2b8-9561ecbe19a4)
 
 4. Откройте в проекте terraform console, а в другом окне из этой же директории попробуйте запустить terraform apply.
 
