@@ -3,8 +3,16 @@
 ## Подготовка к выполнению
 
 1. Установите Ansible версии 2.10 или выше.
+
+![изображение](https://github.com/user-attachments/assets/5695f6ae-fb02-4075-9721-2bdf66a3ef89)
+
 2. Создайте свой публичный репозиторий на GitHub с произвольным именем.
+
+![изображение](https://github.com/user-attachments/assets/24d5e633-d8d5-46b4-9489-cab99243be38)
+
 3. Скачайте [Playbook](./playbook/) из репозитория с домашним заданием и перенесите его в свой репозиторий.
+
+![изображение](https://github.com/user-attachments/assets/d89ccbfe-8a22-402a-90a9-f2a75fca0978)
 
 ## Основная часть
 
