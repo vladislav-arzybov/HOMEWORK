@@ -4,7 +4,7 @@
 
 1. Установите Ansible версии 2.10 или выше.
 
-![изображение](https://github.com/user-attachments/assets/5695f6ae-fb02-4075-9721-2bdf66a3ef89)
+![изображение](https://github.com/user-attachments/assets/c6a5d126-ae50-44f2-b683-d74576adbd01)
 
 2. Создайте свой публичный репозиторий на GitHub с произвольным именем.
 
@@ -30,11 +30,13 @@
 
 3. Воспользуйтесь подготовленным (используется `docker`) или создайте собственное окружение для проведения дальнейших испытаний.
 
-![изображение](https://github.com/user-attachments/assets/d950ee16-9e28-4aa0-9d77-3e274fdc029e)
+![изображение](https://github.com/user-attachments/assets/4530bebd-28c3-4dae-a73b-71329e424718)
 
 5. Проведите запуск playbook на окружении из `prod.yml`. Зафиксируйте полученные значения `some_fact` для каждого из `managed host`.
 
+- ansible-playbook -i inventory/prod.yml site.yml
 
+![изображение](https://github.com/user-attachments/assets/da69acb0-c086-4019-a8e4-423aa2a636cb)
 
 7. Добавьте факты в `group_vars` каждой из групп хостов так, чтобы для `some_fact` получились значения: для `deb` — `deb default fact`, для `el` — `el default fact`.
 8.  Повторите запуск playbook на окружении `prod.yml`. Убедитесь, что выдаются корректные значения для всех хостов.
