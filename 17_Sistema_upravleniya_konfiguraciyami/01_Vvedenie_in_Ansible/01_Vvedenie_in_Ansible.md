@@ -129,7 +129,69 @@
 ![изображение](https://github.com/user-attachments/assets/57bf99f8-c58c-4a28-a07a-7af8fa901f01)
 
 9. Напишите скрипт на bash: автоматизируйте поднятие необходимых контейнеров, запуск ansible-playbook и остановку контейнеров.
-10. Все изменения должны быть зафиксированы и отправлены в ваш личный репозиторий.
+
+<details>
+  <summary>script.sh</summary>
+
+```
+reivol@Zabbix:~/GitHub/HOMEWORK/17_Sistema_upravleniya_konfiguraciyami/01_Vvedenie_in_Ansible/playbook$ ./script.sh 
+fedora
+centos7
+ubuntu
+
+PLAY [Print os facts] **************************************************************************************************************************************************
+
+TASK [Gathering Facts] *************************************************************************************************************************************************
+ok: [localhost]
+ok: [fedora]
+ok: [ubuntu]
+ok: [centos7]
+
+TASK [Print OS] ********************************************************************************************************************************************************
+ok: [localhost] => {
+    "msg": "Ubuntu"
+}
+ok: [centos7] => {
+    "msg": "CentOS"
+}
+ok: [ubuntu] => {
+    "msg": "Ubuntu"
+}
+ok: [fedora] => {
+    "msg": "Fedora"
+}
+
+TASK [Print fact] ******************************************************************************************************************************************************
+ok: [centos7] => {
+    "msg": "el default fact"
+}
+ok: [localhost] => {
+    "msg": "PaSSw0rd"
+}
+ok: [ubuntu] => {
+    "msg": "deb default fact"
+}
+ok: [fedora] => {
+    "msg": "fedora default fact"
+}
+
+PLAY RECAP *************************************************************************************************************************************************************
+centos7                    : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+fedora                     : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+localhost                  : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+ubuntu                     : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+fedora
+centos7
+ubuntu
+reivol@Zabbix:~/GitHub/HOMEWORK/17_Sistema_upravleniya_konfiguraciyami/01_Vvedenie_in_Ansible/playbook$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+reivol@Zabbix:~/GitHub/HOMEWORK/17_Sistema_upravleniya_konfiguraciyami/01_Vvedenie_in_Ansible/playbook$ 
+```
+
+</details>
+
+11. Все изменения должны быть зафиксированы и отправлены в ваш личный репозиторий.
 
 ---
 
