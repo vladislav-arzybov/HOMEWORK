@@ -30,6 +30,9 @@
 
 3. Воспользуйтесь подготовленным (используется `docker`) или создайте собственное окружение для проведения дальнейших испытаний.
 
+- docker run -t -d --name ubuntu pycontribs/ubuntu
+- docker run -t -d --name centos7 pycontribs/centos:7
+
 ![изображение](https://github.com/user-attachments/assets/4530bebd-28c3-4dae-a73b-71329e424718)
 
 4. Проведите запуск playbook на окружении из `prod.yml`. Зафиксируйте полученные значения `some_fact` для каждого из `managed host`.
@@ -109,8 +112,24 @@
 ![изображение](https://github.com/user-attachments/assets/b8a33fe7-f161-4062-bcd9-ee16ba151da1)
 
 7. Добавьте новую группу хостов `fedora`, самостоятельно придумайте для неё переменную. В качестве образа можно использовать [этот вариант](https://hub.docker.com/r/pycontribs/fedora).
-8. Напишите скрипт на bash: автоматизируйте поднятие необходимых контейнеров, запуск ansible-playbook и остановку контейнеров.
-9. Все изменения должны быть зафиксированы и отправлены в ваш личный репозиторий.
+
+- docker run -t -d --name fedora pycontribs/fedora
+
+![изображение](https://github.com/user-attachments/assets/72919a8e-6a61-4ab4-ad2f-f5eed63c98c9)
+
+```
+  fed:
+    hosts:
+      fedora:
+        ansible_connection: docker
+```
+
+![изображение](https://github.com/user-attachments/assets/b5ef332f-c208-4829-a127-af3b0943998f)
+
+![изображение](https://github.com/user-attachments/assets/57bf99f8-c58c-4a28-a07a-7af8fa901f01)
+
+9. Напишите скрипт на bash: автоматизируйте поднятие необходимых контейнеров, запуск ansible-playbook и остановку контейнеров.
+10. Все изменения должны быть зафиксированы и отправлены в ваш личный репозиторий.
 
 ---
 
