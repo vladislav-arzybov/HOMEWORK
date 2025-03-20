@@ -101,17 +101,17 @@
 - ansible-vault decrypt group_vars/deb/examp.yml
 - ansible-vault decrypt group_vars/el/examp.yml
 
-3. Зашифруйте отдельное значение `PaSSw0rd` для переменной `some_fact` паролем `netology`. Добавьте полученное значение в `group_vars/all/exmp.yml`.
+2. Зашифруйте отдельное значение `PaSSw0rd` для переменной `some_fact` паролем `netology`. Добавьте полученное значение в `group_vars/all/exmp.yml`.
 
 ![изображение](https://github.com/user-attachments/assets/1094f9b9-e011-4753-a646-58d72715a62e)
 
 ![изображение](https://github.com/user-attachments/assets/d93d7be9-9a10-4667-abff-4ae3efdef972)
 
-5. Запустите `playbook`, убедитесь, что для нужных хостов применился новый `fact`.
+3. Запустите `playbook`, убедитесь, что для нужных хостов применился новый `fact`.
 
 ![изображение](https://github.com/user-attachments/assets/b8a33fe7-f161-4062-bcd9-ee16ba151da1)
 
-7. Добавьте новую группу хостов `fedora`, самостоятельно придумайте для неё переменную. В качестве образа можно использовать [этот вариант](https://hub.docker.com/r/pycontribs/fedora).
+4. Добавьте новую группу хостов `fedora`, самостоятельно придумайте для неё переменную. В качестве образа можно использовать [этот вариант](https://hub.docker.com/r/pycontribs/fedora).
 
 - docker run -t -d --name fedora pycontribs/fedora
 
@@ -128,7 +128,7 @@
 
 ![изображение](https://github.com/user-attachments/assets/57bf99f8-c58c-4a28-a07a-7af8fa901f01)
 
-9. Напишите скрипт на bash: автоматизируйте поднятие необходимых контейнеров, запуск ansible-playbook и остановку контейнеров.
+5. Напишите скрипт на bash: автоматизируйте поднятие необходимых контейнеров, запуск ansible-playbook и остановку контейнеров.
 
 <details>
   <summary>script.sh</summary>
@@ -193,7 +193,7 @@ reivol@Zabbix:~/GitHub/HOMEWORK/17_Sistema_upravleniya_konfiguraciyami/01_Vveden
 
 </details>
 
-11. Все изменения должны быть зафиксированы и отправлены в ваш личный репозиторий.
+6. Все изменения должны быть зафиксированы и отправлены в ваш личный репозиторий.
 
 ---
 
