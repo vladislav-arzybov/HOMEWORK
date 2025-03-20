@@ -85,6 +85,10 @@
 
 12. Заполните `README.md` ответами на вопросы. Сделайте `git push` в ветку `master`. В ответе отправьте ссылку на ваш открытый репозиторий с изменённым `playbook` и заполненным `README.md`.
 
+![изображение](https://github.com/user-attachments/assets/d29be238-fcca-4b11-a7c5-5b769dc939f1)
+
+[playbook](https://github.com/vladislav-arzybov/HOMEWORK/tree/main/17_Sistema_upravleniya_konfiguraciyami/01_Vvedenie_in_Ansible/playbook)
+
 13. Предоставьте скриншоты результатов запуска команд.
 
 ## Необязательная часть
