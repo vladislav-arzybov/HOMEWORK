@@ -80,6 +80,11 @@ Finished with 9 failure(s), 3 warning(s) on 1 files.
 ```  
 </details>
 
+После исправления
+
+![изображение](https://github.com/user-attachments/assets/119c93b4-e91a-46db-847f-9b48903acc63)
+
+
 8. Попробуйте запустить playbook на этом окружении с флагом `--check`.
 9. Запустите playbook на `prod.yml` окружении с флагом `--diff`. Убедитесь, что изменения на системе произведены.
 10. Повторно запустите playbook с флагом `--diff` и убедитесь, что playbook идемпотентен.
