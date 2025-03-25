@@ -21,13 +21,13 @@ clickhouse:
       ansible_host: 158.160.129.222
 ```
 
-3. Допишите playbook: нужно сделать ещё один play, который устанавливает и настраивает [vector](https://vector.dev). Конфигурация vector должна деплоиться через template файл jinja2. От вас не требуется использовать все возможности шаблонизатора, просто вставьте стандартный конфиг в template файл. Информация по шаблонам по [ссылке](https://www.dmosk.ru/instruktions.php?object=ansible-nginx-install). не забудьте сделать handler на перезапуск vector в случае изменения конфигурации!
-4. При создании tasks рекомендую использовать модули: `get_url`, `template`, `unarchive`, `file`.
-5. Tasks должны: скачать дистрибутив нужной версии, выполнить распаковку в выбранную директорию, установить vector.
+2. Допишите playbook: нужно сделать ещё один play, который устанавливает и настраивает [vector](https://vector.dev). Конфигурация vector должна деплоиться через template файл jinja2. От вас не требуется использовать все возможности шаблонизатора, просто вставьте стандартный конфиг в template файл. Информация по шаблонам по [ссылке](https://www.dmosk.ru/instruktions.php?object=ansible-nginx-install). не забудьте сделать handler на перезапуск vector в случае изменения конфигурации!
+3. При создании tasks рекомендую использовать модули: `get_url`, `template`, `unarchive`, `file`.
+4. Tasks должны: скачать дистрибутив нужной версии, выполнить распаковку в выбранную директорию, установить vector.
 
 [site.yml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/17_Sistema_upravleniya_konfiguraciyami/02_Working_with_Playbook/playbooks/site.yml)
 
-7. Запустите `ansible-lint site.yml` и исправьте ошибки, если они есть.
+5. Запустите `ansible-lint site.yml` и исправьте ошибки, если они есть.
 
 <details>
   <summary>ansible-lint site.yml</summary>
@@ -87,7 +87,7 @@ Finished with 9 failure(s), 3 warning(s) on 1 files.
 ![изображение](https://github.com/user-attachments/assets/119c93b4-e91a-46db-847f-9b48903acc63)
 
 
-8. Попробуйте запустить playbook на этом окружении с флагом `--check`.
+6. Попробуйте запустить playbook на этом окружении с флагом `--check`.
 
 - Закоментировал блок Rescue чтобы не смущала ошибка при запуске плейбука, т.к. пакет clickhouse-common-static.noarch.rpm отсутствует для данной версии  
 
@@ -95,7 +95,7 @@ Finished with 9 failure(s), 3 warning(s) on 1 files.
 
 - Проверка останавливается на этапе установки пакетов Clickhouse, т.к. при использовании флага --check никакие изменния не вносятся в систему и пакеты ещё не загружены.
 
-10. Запустите playbook на `prod.yml` окружении с флагом `--diff`. Убедитесь, что изменения на системе произведены.
+7. Запустите playbook на `prod.yml` окружении с флагом `--diff`. Убедитесь, что изменения на системе произведены.
 
 Результат: [prod.yml--diff](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/17_Sistema_upravleniya_konfiguraciyami/02_Working_with_Playbook/prodyml--diff.md)
 
@@ -111,14 +111,14 @@ Finished with 9 failure(s), 3 warning(s) on 1 files.
 
 ![изображение](https://github.com/user-attachments/assets/d7528475-6b19-4548-a4cd-25d4bfcbba79)
 
-12. Повторно запустите playbook с флагом `--diff` и убедитесь, что playbook идемпотентен.
+8. Повторно запустите playbook с флагом `--diff` и убедитесь, что playbook идемпотентен.
 
 Результат: [prod.yml--diff_2](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/17_Sistema_upravleniya_konfiguraciyami/02_Working_with_Playbook/prodyml--diff_2.md)
 
 - В процессе настройки выполняется копирование базового конфига vaector'а из архива с последующей заменой на измененный конфиг из шаблона vector.toml.j2, при запуске плейбука конфиги перезаписывают друг-друга, playbook идемпотентен.
 
-14. Подготовьте README.md-файл по своему playbook. В нём должно быть описано: что делает playbook, какие у него есть параметры и теги. Пример качественной документации ansible playbook по [ссылке](https://github.com/opensearch-project/ansible-playbook). Так же приложите скриншоты выполнения заданий №5-8
-15. Готовый playbook выложите в свой репозиторий, поставьте тег `08-ansible-02-playbook` на фиксирующий коммит, в ответ предоставьте ссылку на него.
+9. Подготовьте README.md-файл по своему playbook. В нём должно быть описано: что делает playbook, какие у него есть параметры и теги. Пример качественной документации ansible playbook по [ссылке](https://github.com/opensearch-project/ansible-playbook). Так же приложите скриншоты выполнения заданий №5-8
+10. Готовый playbook выложите в свой репозиторий, поставьте тег `08-ansible-02-playbook` на фиксирующий коммит, в ответ предоставьте ссылку на него.
 
 ---
 
