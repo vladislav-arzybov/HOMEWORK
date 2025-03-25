@@ -118,6 +118,9 @@ Finished with 9 failure(s), 3 warning(s) on 1 files.
 - В процессе настройки выполняется копирование базового конфига vaector'а из архива с последующей заменой на измененный конфиг из шаблона vector.toml.j2, при запуске плейбука конфиги перезаписывают друг-друга, playbook идемпотентен.
 
 9. Подготовьте README.md-файл по своему playbook. В нём должно быть описано: что делает playbook, какие у него есть параметры и теги. Пример качественной документации ansible playbook по [ссылке](https://github.com/opensearch-project/ansible-playbook). Так же приложите скриншоты выполнения заданий №5-8
+
+[README.md](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/17_Sistema_upravleniya_konfiguraciyami/02_Working_with_Playbook/README.md)
+
 10. Готовый playbook выложите в свой репозиторий, поставьте тег `08-ansible-02-playbook` на фиксирующий коммит, в ответ предоставьте ссылку на него.
 
 ---
