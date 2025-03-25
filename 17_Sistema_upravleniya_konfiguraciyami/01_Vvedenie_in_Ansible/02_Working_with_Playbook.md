@@ -26,11 +26,65 @@ clickhouse:
 4. При создании tasks рекомендую использовать модули: `get_url`, `template`, `unarchive`, `file`.
 5. Tasks должны: скачать дистрибутив нужной версии, выполнить распаковку в выбранную директорию, установить vector.
 6. Запустите `ansible-lint site.yml` и исправьте ошибки, если они есть.
-7. Попробуйте запустить playbook на этом окружении с флагом `--check`.
-8. Запустите playbook на `prod.yml` окружении с флагом `--diff`. Убедитесь, что изменения на системе произведены.
-9. Повторно запустите playbook с флагом `--diff` и убедитесь, что playbook идемпотентен.
-10. Подготовьте README.md-файл по своему playbook. В нём должно быть описано: что делает playbook, какие у него есть параметры и теги. Пример качественной документации ansible playbook по [ссылке](https://github.com/opensearch-project/ansible-playbook). Так же приложите скриншоты выполнения заданий №5-8
-11. Готовый playbook выложите в свой репозиторий, поставьте тег `08-ansible-02-playbook` на фиксирующий коммит, в ответ предоставьте ссылку на него.
+
+<details>
+  <summary>ansible-lint</summary>
+
+```bash
+reivol@Zabbix:~/GitHub/mnt-homeworks/08-ansible-02-playbook/playbooks$ ansible-lint site.yml
+WARNING  Listing 12 violation(s) that are fatal
+yaml: trailing spaces (trailing-spaces)
+site.yml:42
+
+risky-file-permissions: File permissions unset or incorrect
+site.yml:57 Task/Handler: Create Directories
+
+yaml: wrong indentation: expected 4 but found 2 (indentation)
+site.yml:57
+
+yaml: missing starting space in comment (comments)
+site.yml:58
+
+yaml: trailing spaces (trailing-spaces)
+site.yml:60
+
+yaml: truthy value should be one of [false, true] (truthy)
+site.yml:74
+
+yaml: truthy value should be one of [false, true] (truthy)
+site.yml:83
+
+risky-file-permissions: File permissions unset or incorrect
+site.yml:85 Task/Handler: Copy systemd service vector
+
+yaml: truthy value should be one of [false, true] (truthy)
+site.yml:90
+
+risky-file-permissions: File permissions unset or incorrect
+site.yml:116 Task/Handler: Config vector j2 template
+
+yaml: trailing spaces (trailing-spaces)
+site.yml:121
+
+yaml: no new line character at the end of file (new-line-at-end-of-file)
+site.yml:122
+
+You can skip specific rules or tags by adding them to your configuration file:
+# .ansible-lint
+warn_list:  # or 'skip_list' to silence them completely
+  - experimental  # all rules tagged as experimental
+  - yaml  # Violations reported by yamllint
+
+Finished with 9 failure(s), 3 warning(s) on 1 files.
+
+```  
+</details>
+
+8. Попробуйте запустить playbook на этом окружении с флагом `--check`.
+9. Запустите playbook на `prod.yml` окружении с флагом `--diff`. Убедитесь, что изменения на системе произведены.
+10. Повторно запустите playbook с флагом `--diff` и убедитесь, что playbook идемпотентен.
+11. Подготовьте README.md-файл по своему playbook. В нём должно быть описано: что делает playbook, какие у него есть параметры и теги. Пример качественной документации ansible playbook по [ссылке](https://github.com/opensearch-project/ansible-playbook). Так же приложите скриншоты выполнения заданий №5-8
+12. Готовый playbook выложите в свой репозиторий, поставьте тег `08-ansible-02-playbook` на фиксирующий коммит, в ответ предоставьте ссылку на него.
 
 ---
 
