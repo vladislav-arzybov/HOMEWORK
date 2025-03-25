@@ -100,12 +100,16 @@ Finished with 9 failure(s), 3 warning(s) on 1 files.
 Результат: [prod.yml--diff](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/17_Sistema_upravleniya_konfiguraciyami/02_Working_with_Playbook/prodyml--diff.md)
 
 - Проверка состояния слежбы clickhouse-server
+
 ![изображение](https://github.com/user-attachments/assets/b94d36eb-2f20-484f-b261-825bed2851e4)
 
 - Проверка создания БД
+
 ![изображение](https://github.com/user-attachments/assets/6755ba88-5192-402f-89c2-f2af014b5a33)
 
+- Проверска состояния службы vector.service и замены конфига vector.toml.j2
 
+![изображение](https://github.com/user-attachments/assets/d7528475-6b19-4548-a4cd-25d4bfcbba79)
 
 12. Повторно запустите playbook с флагом `--diff` и убедитесь, что playbook идемпотентен.
 13. Подготовьте README.md-файл по своему playbook. В нём должно быть описано: что делает playbook, какие у него есть параметры и теги. Пример качественной документации ansible playbook по [ссылке](https://github.com/opensearch-project/ansible-playbook). Так же приложите скриншоты выполнения заданий №5-8
