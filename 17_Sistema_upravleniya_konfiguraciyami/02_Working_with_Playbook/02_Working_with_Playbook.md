@@ -7,8 +7,7 @@
 3. Скачайте [Playbook](./playbook/) из репозитория с домашним заданием и перенесите его в свой репозиторий.
 4. Подготовьте хосты в соответствии с группами из предподготовленного playbook.
 
-![изображение](https://github.com/user-attachments/assets/2f6e9806-e2f1-4aef-a34b-2570fc2b649b)
-
+![изображение](https://github.com/user-attachments/assets/5f8cdac0-1172-4d94-b61f-60608e5b1e6b)
 
 ## Основная часть
 
