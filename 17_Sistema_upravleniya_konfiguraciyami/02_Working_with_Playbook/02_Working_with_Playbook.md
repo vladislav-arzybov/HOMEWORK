@@ -97,7 +97,7 @@ Finished with 9 failure(s), 3 warning(s) on 1 files.
 
 10. Запустите playbook на `prod.yml` окружении с флагом `--diff`. Убедитесь, что изменения на системе произведены.
 
-[prod.yml--diff](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/17_Sistema_upravleniya_konfiguraciyami/02_Working_with_Playbook/prodyml--diff.md)
+Результат: [prod.yml--diff](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/17_Sistema_upravleniya_konfiguraciyami/02_Working_with_Playbook/prodyml--diff.md)
 
 12. Повторно запустите playbook с флагом `--diff` и убедитесь, что playbook идемпотентен.
 13. Подготовьте README.md-файл по своему playbook. В нём должно быть описано: что делает playbook, какие у него есть параметры и теги. Пример качественной документации ansible playbook по [ссылке](https://github.com/opensearch-project/ansible-playbook). Так же приложите скриншоты выполнения заданий №5-8
