@@ -123,6 +123,8 @@ Finished with 9 failure(s), 3 warning(s) on 1 files.
 
 10. Готовый playbook выложите в свой репозиторий, поставьте тег `08-ansible-02-playbook` на фиксирующий коммит, в ответ предоставьте ссылку на него.
 
+[08-ansible-02-playbook](https://github.com/vladislav-arzybov/HOMEWORK/commit/322cb6e8f20ebb0443ebc482a855bd91ff302785)
+
 ---
 
 ### Как оформить решение задания
