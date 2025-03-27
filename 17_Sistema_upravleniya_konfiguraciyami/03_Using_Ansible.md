@@ -3,6 +3,9 @@
 ## Подготовка к выполнению
 
 1. Подготовьте в Yandex Cloud три хоста: для `clickhouse`, для `vector` и для `lighthouse`.
+
+![изображение](https://github.com/user-attachments/assets/74ec6682-4eed-4689-a370-3cdc19c85226)
+
 2. Репозиторий LightHouse находится [по ссылке](https://github.com/VKCOM/lighthouse).
 
 ## Основная часть
@@ -11,6 +14,23 @@
 2. При создании tasks рекомендую использовать модули: `get_url`, `template`, `yum`, `apt`.
 3. Tasks должны: скачать статику LightHouse, установить Nginx или любой другой веб-сервер, настроить его конфиг для открытия LightHouse, запустить веб-сервер.
 4. Подготовьте свой inventory-файл `prod.yml`.
+
+```
+---
+clickhouse:
+  hosts:
+    clickhouse-01:
+      ansible_host: 89.169.137.146
+vector:
+  hosts:
+    vector-01:
+      ansible_host: 89.169.144.160
+lighthouse:
+  hosts:
+    lighthouse-01:
+      ansible_host: 89.169.137.33
+```
+
 5. Запустите `ansible-lint site.yml` и исправьте ошибки, если они есть.
 
 ![изображение](https://github.com/user-attachments/assets/d7f40121-1057-42be-a4a5-b4cd723dffc8)
