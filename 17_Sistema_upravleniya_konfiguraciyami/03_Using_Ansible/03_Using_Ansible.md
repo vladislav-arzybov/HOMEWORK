@@ -49,7 +49,7 @@ lighthouse:
 
 7. Запустите playbook на `prod.yml` окружении с флагом `--diff`. Убедитесь, что изменения на системе произведены.
 
-Результат: [prod.yml--diff.md](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/17_Sistema_upravleniya_konfiguraciyami/prodyml--diff.md)
+Результат: [prod.yml--diff.md](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/17_Sistema_upravleniya_konfiguraciyami/03_Using_Ansible/prodyml--diff.md)
 
 Проверяем что на сервере lighthouse nginx установлен и работает:
 
@@ -63,15 +63,17 @@ lighthouse:
 
 8. Повторно запустите playbook с флагом `--diff` и убедитесь, что playbook идемпотентен.
 
-результат: [prod.yml--diff2.md](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/17_Sistema_upravleniya_konfiguraciyami/prodyml--diff2.md)
+результат: [prod.yml--diff2.md](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/17_Sistema_upravleniya_konfiguraciyami/03_Using_Ansible/prodyml--diff2.md)
 
 В процессе настройки выполняется копирование базового конфига vaector'а из архива с последующей заменой на измененный конфиг из шаблона vector.toml.j2, при запуске плейбука конфиги перезаписывают друг-друга, playbook идемпотентен.
 
 9. Подготовьте README.md-файл по своему playbook. В нём должно быть описано: что делает playbook, какие у него есть параметры и теги.
 
-[README.md](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/17_Sistema_upravleniya_konfiguraciyami/README.md)
+[README.md](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/17_Sistema_upravleniya_konfiguraciyami/03_Using_Ansible/README.md)
 
 10. Готовый playbook выложите в свой репозиторий, поставьте тег `08-ansible-03-yandex` на фиксирующий коммит, в ответ предоставьте ссылку на него.
+
+[08-ansible-03-yandex](https://github.com/vladislav-arzybov/HOMEWORK/commit/da3357a6c6e6fa97b3fbb426c16d15dab070463c)
 
 ---
 
