@@ -19,7 +19,7 @@
 
 ![изображение](https://github.com/user-attachments/assets/78d5dc29-faa7-495e-a83b-67d830314f47)
 
-7. Попробуйте запустить playbook на этом окружении с флагом `--check`.
+6. Попробуйте запустить playbook на этом окружении с флагом `--check`.
 
 ![изображение](https://github.com/user-attachments/assets/87042826-b137-418a-9b9d-3e6de10a8c2a)
 
@@ -27,10 +27,28 @@
 
 Проверка останавливается на этапе установки пакетов Clickhouse либо клонирования репозитория, т.к. при использовании флага --check никакие изменния в систему не вносятся и необходимые пакеты для выполнения команд ещё не загружены.
 
-9. Запустите playbook на `prod.yml` окружении с флагом `--diff`. Убедитесь, что изменения на системе произведены.
-10. Повторно запустите playbook с флагом `--diff` и убедитесь, что playbook идемпотентен.
-11. Подготовьте README.md-файл по своему playbook. В нём должно быть описано: что делает playbook, какие у него есть параметры и теги.
-12. Готовый playbook выложите в свой репозиторий, поставьте тег `08-ansible-03-yandex` на фиксирующий коммит, в ответ предоставьте ссылку на него.
+7. Запустите playbook на `prod.yml` окружении с флагом `--diff`. Убедитесь, что изменения на системе произведены.
+
+Результат: [prod.yml--diff.md](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/17_Sistema_upravleniya_konfiguraciyami/prodyml--diff.md)
+
+Проверяем что на сервере lighthouse nginx установлен и работает:
+
+![изображение](https://github.com/user-attachments/assets/770abc80-ed55-4af9-8f26-e55854fc10cd)
+
+Подключаемся к серверу по ip для проверки работы LightHouse
+
+![изображение](https://github.com/user-attachments/assets/6582dc2c-295c-49b5-aa23-137b0520c511)
+
+![изображение](https://github.com/user-attachments/assets/75e86e55-46c4-4e5e-8f67-e2ee038c41eb)
+
+8. Повторно запустите playbook с флагом `--diff` и убедитесь, что playbook идемпотентен.
+
+результат: [prod.yml--diff2.md](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/17_Sistema_upravleniya_konfiguraciyami/prodyml--diff2.md)
+
+В процессе настройки выполняется копирование базового конфига vaector'а из архива с последующей заменой на измененный конфиг из шаблона vector.toml.j2, при запуске плейбука конфиги перезаписывают друг-друга, playbook идемпотентен.
+
+9. Подготовьте README.md-файл по своему playbook. В нём должно быть описано: что делает playbook, какие у него есть параметры и теги.
+10. Готовый playbook выложите в свой репозиторий, поставьте тег `08-ansible-03-yandex` на фиксирующий коммит, в ответ предоставьте ссылку на него.
 
 ---
 
