@@ -1,0 +1,5 @@
+---
+url_to_lighthouse: https://github.com/VKCOM/lighthouse.git
+site_path: /home/reivol/lighthouse
+nginx_version: "1.24.0"
+nginx_user_name: root
