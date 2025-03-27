@@ -21,7 +21,7 @@
 
 7. Попробуйте запустить playbook на этом окружении с флагом `--check`.
 
-![изображение](https://github.com/user-attachments/assets/647ab52b-5bb3-42ff-ae86-8ef58b961e40)
+![изображение](https://github.com/user-attachments/assets/87042826-b137-418a-9b9d-3e6de10a8c2a)
 
 ![изображение](https://github.com/user-attachments/assets/c99519dd-1035-4cdd-97bf-1664b27a176f)
 
