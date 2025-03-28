@@ -61,9 +61,10 @@
 9. Переработайте playbook на использование roles. Не забудьте про зависимости LightHouse и возможности совмещения `roles` с `tasks`.
 
 - ansible-galaxy install -r requirements.yml -p roles
-- ansible-playbook -i inventory/prod.yml site.yml
 
 ![изображение](https://github.com/user-attachments/assets/07b1ead9-19fa-44c4-845e-e6127232eaee)
+
+- ansible-playbook -i inventory/prod.yml site.yml
 
 ![изображение](https://github.com/user-attachments/assets/9409863f-4a8e-4601-bc9d-6ee0d766948c)
 
