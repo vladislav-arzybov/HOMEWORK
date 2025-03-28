@@ -71,6 +71,10 @@
 10. Выложите playbook в репозиторий.
 11. В ответе дайте ссылки на оба репозитория с roles и одну ссылку на репозиторий с playbook.
 
+- [playbook](https://github.com/vladislav-arzybov/HOMEWORK/tree/main/17_Sistema_upravleniya_konfiguraciyami/04_Working_with_roles/playbooks)
+- [vector-role](https://github.com/vladislav-arzybov/vector-role)
+- [lighthouse-role](https://github.com/vladislav-arzybov/lighthouse-role)
+
 ---
 
 ### Как оформить решение задания
