@@ -4,6 +4,10 @@
 
 1. * Необязательно. Познакомьтесь с [LightHouse](https://youtu.be/ymlrNlaHzIY?t=929).
 2. Создайте два пустых публичных репозитория в любом своём проекте: vector-role и lighthouse-role.
+
+- git@github.com:vladislav-arzybov/vector-role.git
+- git@github.com:vladislav-arzybov/lighthouse-role.git
+
 3. Добавьте публичную часть своего ключа к своему профилю на GitHub.
 
 ## Основная часть
