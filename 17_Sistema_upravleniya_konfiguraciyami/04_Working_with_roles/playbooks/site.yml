@@ -1,0 +1,20 @@
+---
+- name: Install Clickhouse
+  hosts: clickhouse
+  roles:
+    - clickhouse
+- name: Install Vector
+  hosts: vector
+  roles:
+    - vector-role
+- name: Install lighthouse
+  hosts: lighthouse
+  roles:
+    - lighthouse-role
+  pre_tasks:
+    - name: LIGHTHOUSE | Install git
+      become: true
+      package:
+        name: git
+        state: present
+
