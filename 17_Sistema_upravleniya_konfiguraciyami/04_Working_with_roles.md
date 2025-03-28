@@ -58,6 +58,9 @@
     version: "1.0.0"
 ```
 
+![изображение](https://github.com/user-attachments/assets/07b1ead9-19fa-44c4-845e-e6127232eaee)
+
+
 9. Переработайте playbook на использование roles. Не забудьте про зависимости LightHouse и возможности совмещения `roles` с `tasks`.
 10. Выложите playbook в репозиторий.
 11. В ответе дайте ссылки на оба репозитория с roles и одну ссылку на репозиторий с playbook.
