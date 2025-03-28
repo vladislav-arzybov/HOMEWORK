@@ -34,21 +34,33 @@
 
 ![изображение](https://github.com/user-attachments/assets/81fc4e3b-42bc-4f5c-9b30-02f26c6309cf)
 
-4. Создайте новый каталог с ролью при помощи `ansible-galaxy role init vector-role`.
+3. Создайте новый каталог с ролью при помощи `ansible-galaxy role init vector-role`.
 
 ![изображение](https://github.com/user-attachments/assets/43afb532-e91e-40be-939c-a81a9b0d52d4)
 
-6. На основе tasks из старого playbook заполните новую role. Разнесите переменные между `vars` и `default`. 
-7. Перенести нужные шаблоны конфигов в `templates`.
-8. Опишите в `README.md` обе роли и их параметры. Пример качественной документации ansible role [по ссылке](https://github.com/cloudalchemy/ansible-prometheus).
-9. Повторите шаги 3–6 для LightHouse. Помните, что одна роль должна настраивать один продукт.
+4. На основе tasks из старого playbook заполните новую role. Разнесите переменные между `vars` и `default`. 
+5. Перенести нужные шаблоны конфигов в `templates`.
+6. Опишите в `README.md` обе роли и их параметры. Пример качественной документации ansible role [по ссылке](https://github.com/cloudalchemy/ansible-prometheus).
+7. Повторите шаги 3–6 для LightHouse. Помните, что одна роль должна настраивать один продукт.
 
 ![изображение](https://github.com/user-attachments/assets/e473b03f-5fcc-4ddf-9ece-74599c426852)
 
-11. Выложите все roles в репозитории. Проставьте теги, используя семантическую нумерацию. Добавьте roles в `requirements.yml` в playbook.
-12. Переработайте playbook на использование roles. Не забудьте про зависимости LightHouse и возможности совмещения `roles` с `tasks`.
-13. Выложите playbook в репозиторий.
-14. В ответе дайте ссылки на оба репозитория с roles и одну ссылку на репозиторий с playbook.
+8. Выложите все roles в репозитории. Проставьте теги, используя семантическую нумерацию. Добавьте roles в `requirements.yml` в playbook.
+
+```
+  - name: vector-role
+    src: git@github.com:vladislav-arzybov/vector-role.git
+    scm: git
+    version: "1.0.0"
+  - name: lighthouse-role
+    src: git@github.com:vladislav-arzybov/lighthouse-role.git
+    scm: git
+    version: "1.0.0"
+```
+
+9. Переработайте playbook на использование roles. Не забудьте про зависимости LightHouse и возможности совмещения `roles` с `tasks`.
+10. Выложите playbook в репозиторий.
+11. В ответе дайте ссылки на оба репозитория с roles и одну ссылку на репозиторий с playbook.
 
 ---
 
