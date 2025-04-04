@@ -35,8 +35,10 @@
 7. Запустите тестирование роли повторно и проверьте, что оно прошло успешно.
 
 <details>
-<summary>molecule test</summary>
-```bash
+  <summary>module.marketing_vm</summary>
+
+  ```bash
+
 WARNING  Driver docker does not provide a schema.
 INFO     default scenario test matrix: dependency, cleanup, destroy, syntax, create, prepare, converge, idempotence, side_effect, verify, cleanup, destroy
 INFO     Performing prerun with role_name_check=0...
@@ -119,9 +121,9 @@ included: reivol.vector for oraclelinux8, ubuntu
 TASK [reivol.vector : VECTOR | Create dir] *************************************
 
 
-```
+```  
 
-  </details>
+</details>
 
 
 5. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
