@@ -33,6 +33,95 @@
 
 6. Добавьте несколько assert в verify.yml-файл для  проверки работоспособности vector-role (проверка, что конфиг валидный, проверка успешности запуска и др.). 
 7. Запустите тестирование роли повторно и проверьте, что оно прошло успешно.
+
+<details>
+<summary>molecule test</summary>
+```bash
+WARNING  Driver docker does not provide a schema.
+INFO     default scenario test matrix: dependency, cleanup, destroy, syntax, create, prepare, converge, idempotence, side_effect, verify, cleanup, destroy
+INFO     Performing prerun with role_name_check=0...
+WARNING  Another version of 'ansible.posix' 1.1.1 was found installed in /usr/lib/python3/dist-packages/ansible_collections, only the first one will be used, 2.0.0 (/home/reivol/.ansible/collections/ansible_collections).
+WARNING  Another version of 'community.docker' 1.2.2 was found installed in /usr/lib/python3/dist-packages/ansible_collections, only the first one will be used, 4.5.2 (/home/reivol/.ansible/collections/ansible_collections).
+INFO     Running default > dependency
+WARNING  Skipping, missing the requirements file.
+WARNING  Skipping, missing the requirements file.
+INFO     Running default > cleanup
+WARNING  Skipping, cleanup playbook not configured.
+INFO     Running default > destroy
+WARNING  Skipping, '--destroy=never' requested.
+INFO     Running default > syntax
+INFO     Sanity checks: 'docker'
+
+playbook: /home/reivol/Ansible_v2/Les_5/vector-role/molecule/default/converge.yml
+INFO     Running default > create
+
+PLAY [Create] ******************************************************************
+
+TASK [Set async_dir for HOME env] **********************************************
+ok: [localhost]
+
+TASK [Log into a Docker registry] **********************************************
+skipping: [localhost] => (item=None) 
+skipping: [localhost] => (item=None) 
+skipping: [localhost]
+
+TASK [Check presence of custom Dockerfiles] ************************************
+ok: [localhost] => (item=ubuntu)
+ok: [localhost] => (item=oraclelinux8)
+
+TASK [Create Dockerfiles from image names] *************************************
+skipping: [localhost] => (item=ubuntu) 
+skipping: [localhost] => (item=oraclelinux8) 
+skipping: [localhost]
+
+TASK [Synchronization the context] *********************************************
+skipping: [localhost] => (item=ubuntu) 
+skipping: [localhost] => (item=oraclelinux8) 
+skipping: [localhost]
+
+TASK [Discover local Docker images] ********************************************
+ok: [localhost] => (item=unix://var/run/docker.sock)
+ok: [localhost] => (item=unix://var/run/docker.sock)
+
+TASK [Create docker network(s)] ************************************************
+skipping: [localhost]
+
+TASK [Build an Ansible compatible image (new)] *********************************
+skipping: [localhost] => (item=molecule_local/docker.io/ubuntu:latest) 
+skipping: [localhost] => (item=molecule_local/docker.io/oraclelinux:8) 
+skipping: [localhost]
+
+TASK [Determine the CMD directives] ********************************************
+ok: [localhost] => (item=ubuntu)
+ok: [localhost] => (item=oraclelinux8)
+
+TASK [Create molecule instance(s)] *********************************************
+changed: [localhost] => (item=ubuntu)
+changed: [localhost] => (item=oraclelinux8)
+
+TASK [Wait for instance(s) creation to complete] *******************************
+FAILED - RETRYING: [localhost]: Wait for instance(s) creation to complete (300 retries left).
+changed: [localhost] => (item=ubuntu)
+changed: [localhost] => (item=oraclelinux8)
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=6    changed=2    unreachable=0    failed=0    skipped=5    rescued=0    ignored=0
+
+INFO     Running default > prepare
+WARNING  Skipping, prepare playbook not configured.
+INFO     Running default > converge
+
+PLAY [Converge] ****************************************************************
+
+TASK [Include vector] **********************************************************
+included: reivol.vector for oraclelinux8, ubuntu
+
+TASK [reivol.vector : VECTOR | Create dir] *************************************
+
+
+```  
+</details>
+
 5. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
 
 ### Tox
