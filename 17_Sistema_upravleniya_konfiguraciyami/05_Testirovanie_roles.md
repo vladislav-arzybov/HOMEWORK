@@ -25,7 +25,7 @@
 
 3. Перейдите в каталог с ролью vector-role и создайте сценарий тестирования по умолчанию при помощи `molecule init scenario --driver-name docker`.
 
-![изображение](https://github.com/user-attachments/assets/efcb5374-b374-4619-bb9f-1a1cbb3f7f59)
+![изображение](https://github.com/user-attachments/assets/6c499076-36f7-4fc5-ac67-48c0dbf618c4)
 
 4. Добавьте несколько разных дистрибутивов (oraclelinux:8, ubuntu:latest) для инстансов и протестируйте роль, исправьте найденные ошибки, если они есть.
 
