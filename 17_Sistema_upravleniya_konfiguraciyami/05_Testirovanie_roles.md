@@ -119,8 +119,10 @@ included: reivol.vector for oraclelinux8, ubuntu
 TASK [reivol.vector : VECTOR | Create dir] *************************************
 
 
-```  
+```
+
   </details>
+
 
 5. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
 
