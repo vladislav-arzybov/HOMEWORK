@@ -578,6 +578,9 @@ INFO     Pruning extra files from scenario ephemeral directory
 
 6. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
 
+[1.1.0](https://github.com/vladislav-arzybov/vector-role/commit/c9d52f2aa9bbe411f63f19615d632a9fe6cd5019)
+
+
 ### Tox
 
 1. Добавьте в директорию с vector-role файлы из [директории](./example).
