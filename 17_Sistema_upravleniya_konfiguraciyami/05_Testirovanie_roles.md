@@ -592,6 +592,8 @@ INFO     Pruning extra files from scenario ephemeral directory
 
 3. Запустите `docker run --privileged=True -v <path_to_repo>:/opt/vector-role -w /opt/vector-role -it aragast/netology:latest /bin/bash`, где path_to_repo — путь до корня репозитория с vector-role на вашей файловой системе.
 
+- docker run --privileged=True -v /home/reivol/Ansible_v2/Les_5/vector-role/:/opt/vector-role -w /opt/vector-role -it aragast/netology:latest /bin/bash
+
 ![изображение](https://github.com/user-attachments/assets/78da9718-5fd0-416b-907c-fe72d2f80a9a)
 
 4. Внутри контейнера выполните команду `tox`, посмотрите на вывод.
