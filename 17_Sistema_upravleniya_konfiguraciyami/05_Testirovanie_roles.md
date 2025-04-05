@@ -52,7 +52,7 @@ platforms:
 ```
 
 <details>
-  <summary>module.marketing_vm</summary>
+  <summary>molecule test</summary>
 
   ```bash
 
