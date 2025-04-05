@@ -3,6 +3,9 @@
 ## Подготовка к выполнению
 
 1. Установите molecule и его драйвера: `pip3 install "molecule molecule_docker molecule_podman`.
+
+![изображение](https://github.com/user-attachments/assets/e7b56914-3d79-410c-a720-f980eb820f08)
+
 2. Выполните `docker pull aragast/netology:latest` —  это образ с podman, tox и несколькими пайтонами (3.7 и 3.9) внутри.
 
 ![изображение](https://github.com/user-attachments/assets/76c9233e-ffac-4319-a402-3f29816ffe19)
