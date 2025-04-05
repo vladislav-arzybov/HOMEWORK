@@ -23,11 +23,11 @@
 
 ![изображение](https://github.com/user-attachments/assets/854e5e6d-db52-4023-8fe9-117318c815ed)
 
-3. Перейдите в каталог с ролью vector-role и создайте сценарий тестирования по умолчанию при помощи `molecule init scenario --driver-name docker`.
+2. Перейдите в каталог с ролью vector-role и создайте сценарий тестирования по умолчанию при помощи `molecule init scenario --driver-name docker`.
 
 ![изображение](https://github.com/user-attachments/assets/6c499076-36f7-4fc5-ac67-48c0dbf618c4)
 
-4. Добавьте несколько разных дистрибутивов (oraclelinux:8, ubuntu:latest) для инстансов и протестируйте роль, исправьте найденные ошибки, если они есть.
+3. Добавьте несколько разных дистрибутивов (oraclelinux:8, ubuntu:latest) для инстансов и протестируйте роль, исправьте найденные ошибки, если они есть.
 
 Образы для тестов были собраны заранее из Dockerfile на основе images oraclelinux:8 и ubuntu:latest с предустановкой python3.12 и systemd
 
@@ -284,14 +284,36 @@ INFO     Pruning extra files from scenario ephemeral directory
 </details>
 
 
-6. Добавьте несколько assert в verify.yml-файл для  проверки работоспособности vector-role (проверка, что конфиг валидный, проверка успешности запуска и др.). 
-7. Запустите тестирование роли повторно и проверьте, что оно прошло успешно.
+4. Добавьте несколько assert в verify.yml-файл для  проверки работоспособности vector-role (проверка, что конфиг валидный, проверка успешности запуска и др.).
+
+```
+  tasks:
+  - name: Ansible check file exists.
+    stat:
+      path: "/etc/vector/vector.toml"
+    register: file_status
+  - debug:
+      msg: "File exists."
+    when: file_status.stat.exists
+  - debug:
+      msg: "ERROR: File not found!"
+    when: file_status.stat.exists == False
+  - name: Get Service Status
+    ansible.builtin.service:
+      name: vector.service
+    register: service_status
+  - debug:
+      var: service_status.status.ActiveState
+```
+
+5. Запустите тестирование роли повторно и проверьте, что оно прошло успешно.
 
 <details>
-  <summary>module.marketing_vm</summary>
+  <summary>molecule test with verify.yml</summary>
 
   ```bash
 
+reivol@Zabbix:~/Ansible_v2/Les_5/vector-role$ molecule test
 WARNING  Driver docker does not provide a schema.
 INFO     default scenario test matrix: dependency, cleanup, destroy, syntax, create, prepare, converge, idempotence, side_effect, verify, cleanup, destroy
 INFO     Performing prerun with role_name_check=0...
@@ -303,9 +325,29 @@ WARNING  Skipping, missing the requirements file.
 INFO     Running default > cleanup
 WARNING  Skipping, cleanup playbook not configured.
 INFO     Running default > destroy
-WARNING  Skipping, '--destroy=never' requested.
-INFO     Running default > syntax
 INFO     Sanity checks: 'docker'
+
+PLAY [Destroy] *****************************************************************
+
+TASK [Set async_dir for HOME env] **********************************************
+ok: [localhost]
+
+TASK [Destroy molecule instance(s)] ********************************************
+changed: [localhost] => (item=ubuntu)
+changed: [localhost] => (item=oraclelinux8)
+
+TASK [Wait for instance(s) deletion to complete] *******************************
+FAILED - RETRYING: [localhost]: Wait for instance(s) deletion to complete (300 retries left).
+changed: [localhost] => (item=ubuntu)
+changed: [localhost] => (item=oraclelinux8)
+
+TASK [Delete docker networks(s)] ***********************************************
+skipping: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0
+
+INFO     Running default > syntax
 
 playbook: /home/reivol/Ansible_v2/Les_5/vector-role/molecule/default/converge.yml
 INFO     Running default > create
@@ -342,8 +384,8 @@ TASK [Create docker network(s)] ************************************************
 skipping: [localhost]
 
 TASK [Build an Ansible compatible image (new)] *********************************
-skipping: [localhost] => (item=molecule_local/docker.io/ubuntu:latest) 
-skipping: [localhost] => (item=molecule_local/docker.io/oraclelinux:8) 
+skipping: [localhost] => (item=molecule_local/ubuntu_sistem:latest) 
+skipping: [localhost] => (item=molecule_local/oraclelinux_sistem:latest) 
 skipping: [localhost]
 
 TASK [Determine the CMD directives] ********************************************
@@ -372,14 +414,169 @@ TASK [Include vector] **********************************************************
 included: reivol.vector for oraclelinux8, ubuntu
 
 TASK [reivol.vector : VECTOR | Create dir] *************************************
+changed: [oraclelinux8]
+changed: [ubuntu]
 
+TASK [reivol.vector : VECTOR | Get vector distrib] *****************************
+changed: [ubuntu]
+changed: [oraclelinux8]
+
+TASK [reivol.vector : VECTOR | Unarchive vector] *******************************
+changed: [ubuntu]
+changed: [oraclelinux8]
+
+TASK [reivol.vector : VECTOR | Copy bin file vector] ***************************
+changed: [ubuntu]
+changed: [oraclelinux8]
+
+TASK [reivol.vector : VECTOR | Copy systemd service vector] ********************
+changed: [ubuntu]
+changed: [oraclelinux8]
+
+TASK [reivol.vector : VECTOR | Create user vector] *****************************
+changed: [oraclelinux8]
+changed: [ubuntu]
+
+TASK [reivol.vector : VECTOR | Create vector catalog] **************************
+changed: [ubuntu]
+changed: [oraclelinux8]
+
+TASK [reivol.vector : VECTOR | Create vector config dir] ***********************
+changed: [ubuntu]
+changed: [oraclelinux8]
+
+TASK [reivol.vector : VECTOR | Config vector j2 template] **********************
+changed: [oraclelinux8]
+changed: [ubuntu]
+
+RUNNING HANDLER [reivol.vector : Start vector service] *************************
+changed: [oraclelinux8]
+changed: [ubuntu]
+
+PLAY RECAP *********************************************************************
+oraclelinux8               : ok=11   changed=10   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+ubuntu                     : ok=11   changed=10   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+INFO     Running default > idempotence
+
+PLAY [Converge] ****************************************************************
+
+TASK [Include vector] **********************************************************
+included: reivol.vector for oraclelinux8, ubuntu
+
+TASK [reivol.vector : VECTOR | Create dir] *************************************
+ok: [oraclelinux8]
+ok: [ubuntu]
+
+TASK [reivol.vector : VECTOR | Get vector distrib] *****************************
+ok: [oraclelinux8]
+ok: [ubuntu]
+
+TASK [reivol.vector : VECTOR | Unarchive vector] *******************************
+ok: [oraclelinux8]
+ok: [ubuntu]
+
+TASK [reivol.vector : VECTOR | Copy bin file vector] ***************************
+ok: [oraclelinux8]
+ok: [ubuntu]
+
+TASK [reivol.vector : VECTOR | Copy systemd service vector] ********************
+ok: [oraclelinux8]
+ok: [ubuntu]
+
+TASK [reivol.vector : VECTOR | Create user vector] *****************************
+ok: [ubuntu]
+ok: [oraclelinux8]
+
+TASK [reivol.vector : VECTOR | Create vector catalog] **************************
+ok: [oraclelinux8]
+ok: [ubuntu]
+
+TASK [reivol.vector : VECTOR | Create vector config dir] ***********************
+ok: [oraclelinux8]
+ok: [ubuntu]
+
+TASK [reivol.vector : VECTOR | Config vector j2 template] **********************
+ok: [oraclelinux8]
+ok: [ubuntu]
+
+PLAY RECAP *********************************************************************
+oraclelinux8               : ok=10   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+ubuntu                     : ok=10   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+INFO     Idempotence completed successfully.
+INFO     Running default > side_effect
+WARNING  Skipping, side effect playbook not configured.
+INFO     Running default > verify
+INFO     Running Ansible Verifier
+
+PLAY [Verify] ******************************************************************
+
+TASK [Ansible check file exists.] **********************************************
+ok: [ubuntu]
+ok: [oraclelinux8]
+
+TASK [debug] *******************************************************************
+ok: [oraclelinux8] => {
+    "msg": "File exists."
+}
+ok: [ubuntu] => {
+    "msg": "File exists."
+}
+
+TASK [debug] *******************************************************************
+skipping: [oraclelinux8]
+skipping: [ubuntu]
+
+TASK [Get Service Status] ******************************************************
+ok: [ubuntu]
+ok: [oraclelinux8]
+
+TASK [debug] *******************************************************************
+ok: [oraclelinux8] => {
+    "service_status.status.ActiveState": "active"
+}
+ok: [ubuntu] => {
+    "service_status.status.ActiveState": "active"
+}
+
+PLAY RECAP *********************************************************************
+oraclelinux8               : ok=4    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0
+ubuntu                     : ok=4    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0
+
+INFO     Verifier completed successfully.
+INFO     Running default > cleanup
+WARNING  Skipping, cleanup playbook not configured.
+INFO     Running default > destroy
+
+PLAY [Destroy] *****************************************************************
+
+TASK [Set async_dir for HOME env] **********************************************
+ok: [localhost]
+
+TASK [Destroy molecule instance(s)] ********************************************
+changed: [localhost] => (item=ubuntu)
+changed: [localhost] => (item=oraclelinux8)
+
+TASK [Wait for instance(s) deletion to complete] *******************************
+FAILED - RETRYING: [localhost]: Wait for instance(s) deletion to complete (300 retries left).
+changed: [localhost] => (item=ubuntu)
+changed: [localhost] => (item=oraclelinux8)
+
+TASK [Delete docker networks(s)] ***********************************************
+skipping: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0
+
+INFO     Pruning extra files from scenario ephemeral directory
 
 ```  
 
 </details>
 
 
-5. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
+6. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
 
 ### Tox
 
