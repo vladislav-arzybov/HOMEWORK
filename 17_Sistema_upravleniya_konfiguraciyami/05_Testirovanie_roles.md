@@ -29,6 +29,259 @@
 
 4. Добавьте несколько разных дистрибутивов (oraclelinux:8, ubuntu:latest) для инстансов и протестируйте роль, исправьте найденные ошибки, если они есть.
 
+Образы для тестов были собраны заранее из Dockerfile на основе images oraclelinux:8 и ubuntu:latest с предустановкой python3.12 и systemd
+
+```
+platforms:
+  - name: ubuntu
+    image: ubuntu_sistem:latest
+    command: /lib/systemd/systemd
+    pre_build_image: true
+    privileged: true
+    cgroupns_mode: host
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+  - name: oraclelinux8
+    image: oraclelinux_sistem:latest
+    command: /usr/sbin/init
+    pre_build_image: true
+    privileged: true
+    cgroupns_mode: host
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+```
+
+<details>
+  <summary>module.marketing_vm</summary>
+
+  ```bash
+
+reivol@Zabbix:~/Ansible_v2/Les_5/vector-role$ molecule test
+WARNING  Driver docker does not provide a schema.
+INFO     default scenario test matrix: dependency, cleanup, destroy, syntax, create, prepare, converge, idempotence, side_effect, verify, cleanup, destroy
+INFO     Performing prerun with role_name_check=0...
+WARNING  Another version of 'ansible.posix' 1.1.1 was found installed in /usr/lib/python3/dist-packages/ansible_collections, only the first one will be used, 2.0.0 (/home/reivol/.ansible/collections/ansible_collections).
+WARNING  Another version of 'community.docker' 1.2.2 was found installed in /usr/lib/python3/dist-packages/ansible_collections, only the first one will be used, 4.5.2 (/home/reivol/.ansible/collections/ansible_collections).
+INFO     Running default > dependency
+WARNING  Skipping, missing the requirements file.
+WARNING  Skipping, missing the requirements file.
+INFO     Running default > cleanup
+WARNING  Skipping, cleanup playbook not configured.
+INFO     Running default > destroy
+INFO     Sanity checks: 'docker'
+
+PLAY [Destroy] *****************************************************************
+
+TASK [Set async_dir for HOME env] **********************************************
+ok: [localhost]
+
+TASK [Destroy molecule instance(s)] ********************************************
+changed: [localhost] => (item=ubuntu)
+changed: [localhost] => (item=oraclelinux8)
+
+TASK [Wait for instance(s) deletion to complete] *******************************
+ok: [localhost] => (item=ubuntu)
+ok: [localhost] => (item=oraclelinux8)
+
+TASK [Delete docker networks(s)] ***********************************************
+skipping: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0
+
+INFO     Running default > syntax
+
+playbook: /home/reivol/Ansible_v2/Les_5/vector-role/molecule/default/converge.yml
+INFO     Running default > create
+
+PLAY [Create] ******************************************************************
+
+TASK [Set async_dir for HOME env] **********************************************
+ok: [localhost]
+
+TASK [Log into a Docker registry] **********************************************
+skipping: [localhost] => (item=None) 
+skipping: [localhost] => (item=None) 
+skipping: [localhost]
+
+TASK [Check presence of custom Dockerfiles] ************************************
+ok: [localhost] => (item=ubuntu)
+ok: [localhost] => (item=oraclelinux8)
+
+TASK [Create Dockerfiles from image names] *************************************
+skipping: [localhost] => (item=ubuntu) 
+skipping: [localhost] => (item=oraclelinux8) 
+skipping: [localhost]
+
+TASK [Synchronization the context] *********************************************
+skipping: [localhost] => (item=ubuntu) 
+skipping: [localhost] => (item=oraclelinux8) 
+skipping: [localhost]
+
+TASK [Discover local Docker images] ********************************************
+ok: [localhost] => (item=unix://var/run/docker.sock)
+ok: [localhost] => (item=unix://var/run/docker.sock)
+
+TASK [Create docker network(s)] ************************************************
+skipping: [localhost]
+
+TASK [Build an Ansible compatible image (new)] *********************************
+skipping: [localhost] => (item=molecule_local/ubuntu_sistem:latest) 
+skipping: [localhost] => (item=molecule_local/oraclelinux_sistem:latest) 
+skipping: [localhost]
+
+TASK [Determine the CMD directives] ********************************************
+ok: [localhost] => (item=ubuntu)
+ok: [localhost] => (item=oraclelinux8)
+
+TASK [Create molecule instance(s)] *********************************************
+changed: [localhost] => (item=ubuntu)
+changed: [localhost] => (item=oraclelinux8)
+
+TASK [Wait for instance(s) creation to complete] *******************************
+FAILED - RETRYING: [localhost]: Wait for instance(s) creation to complete (300 retries left).
+changed: [localhost] => (item=ubuntu)
+changed: [localhost] => (item=oraclelinux8)
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=6    changed=2    unreachable=0    failed=0    skipped=5    rescued=0    ignored=0
+
+INFO     Running default > prepare
+WARNING  Skipping, prepare playbook not configured.
+INFO     Running default > converge
+
+PLAY [Converge] ****************************************************************
+
+TASK [Include vector] **********************************************************
+included: reivol.vector for oraclelinux8, ubuntu
+
+TASK [reivol.vector : VECTOR | Create dir] *************************************
+changed: [oraclelinux8]
+changed: [ubuntu]
+
+TASK [reivol.vector : VECTOR | Get vector distrib] *****************************
+changed: [oraclelinux8]
+changed: [ubuntu]
+
+TASK [reivol.vector : VECTOR | Unarchive vector] *******************************
+changed: [oraclelinux8]
+changed: [ubuntu]
+
+TASK [reivol.vector : VECTOR | Copy bin file vector] ***************************
+changed: [ubuntu]
+changed: [oraclelinux8]
+
+TASK [reivol.vector : VECTOR | Copy systemd service vector] ********************
+changed: [ubuntu]
+changed: [oraclelinux8]
+
+TASK [reivol.vector : VECTOR | Create user vector] *****************************
+changed: [oraclelinux8]
+changed: [ubuntu]
+
+TASK [reivol.vector : VECTOR | Create vector catalog] **************************
+changed: [ubuntu]
+changed: [oraclelinux8]
+
+TASK [reivol.vector : VECTOR | Create vector config dir] ***********************
+changed: [oraclelinux8]
+changed: [ubuntu]
+
+TASK [reivol.vector : VECTOR | Config vector j2 template] **********************
+changed: [ubuntu]
+changed: [oraclelinux8]
+
+RUNNING HANDLER [reivol.vector : Start vector service] *************************
+changed: [ubuntu]
+changed: [oraclelinux8]
+
+PLAY RECAP *********************************************************************
+oraclelinux8               : ok=11   changed=10   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+ubuntu                     : ok=11   changed=10   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+INFO     Running default > idempotence
+
+PLAY [Converge] ****************************************************************
+
+TASK [Include vector] **********************************************************
+included: reivol.vector for oraclelinux8, ubuntu
+
+TASK [reivol.vector : VECTOR | Create dir] *************************************
+ok: [oraclelinux8]
+ok: [ubuntu]
+
+TASK [reivol.vector : VECTOR | Get vector distrib] *****************************
+ok: [oraclelinux8]
+ok: [ubuntu]
+
+TASK [reivol.vector : VECTOR | Unarchive vector] *******************************
+ok: [ubuntu]
+ok: [oraclelinux8]
+
+TASK [reivol.vector : VECTOR | Copy bin file vector] ***************************
+ok: [ubuntu]
+ok: [oraclelinux8]
+
+TASK [reivol.vector : VECTOR | Copy systemd service vector] ********************
+ok: [oraclelinux8]
+ok: [ubuntu]
+
+TASK [reivol.vector : VECTOR | Create user vector] *****************************
+ok: [oraclelinux8]
+ok: [ubuntu]
+
+TASK [reivol.vector : VECTOR | Create vector catalog] **************************
+ok: [oraclelinux8]
+ok: [ubuntu]
+
+TASK [reivol.vector : VECTOR | Create vector config dir] ***********************
+ok: [oraclelinux8]
+ok: [ubuntu]
+
+TASK [reivol.vector : VECTOR | Config vector j2 template] **********************
+ok: [oraclelinux8]
+ok: [ubuntu]
+
+PLAY RECAP *********************************************************************
+oraclelinux8               : ok=10   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+ubuntu                     : ok=10   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+INFO     Idempotence completed successfully.
+INFO     Running default > side_effect
+WARNING  Skipping, side effect playbook not configured.
+INFO     Running default > verify
+INFO     Running Ansible Verifier
+WARNING  Skipping, verify playbook not configured.
+INFO     Verifier completed successfully.
+INFO     Running default > cleanup
+WARNING  Skipping, cleanup playbook not configured.
+INFO     Running default > destroy
+
+PLAY [Destroy] *****************************************************************
+
+TASK [Set async_dir for HOME env] **********************************************
+ok: [localhost]
+
+TASK [Destroy molecule instance(s)] ********************************************
+changed: [localhost] => (item=ubuntu)
+changed: [localhost] => (item=oraclelinux8)
+
+TASK [Wait for instance(s) deletion to complete] *******************************
+FAILED - RETRYING: [localhost]: Wait for instance(s) deletion to complete (300 retries left).
+changed: [localhost] => (item=ubuntu)
+changed: [localhost] => (item=oraclelinux8)
+
+TASK [Delete docker networks(s)] ***********************************************
+skipping: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0
+
+INFO     Pruning extra files from scenario ephemeral directory
+
+```  
+
+</details>
 
 
 6. Добавьте несколько assert в verify.yml-файл для  проверки работоспособности vector-role (проверка, что конфиг валидный, проверка успешности запуска и др.). 
