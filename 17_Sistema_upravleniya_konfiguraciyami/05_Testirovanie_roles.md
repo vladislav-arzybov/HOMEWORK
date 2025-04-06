@@ -32,7 +32,7 @@
 
 3. Добавьте несколько разных дистрибутивов (oraclelinux:8, ubuntu:latest) для инстансов и протестируйте роль, исправьте найденные ошибки, если они есть.
 
-Образы для тестов были собраны заранее из Dockerfile на основе images oraclelinux:8 и ubuntu:latest с предустановкой python3.12 и systemd
+Образы для тестов были собраны заранее из [Dockerfile](https://github.com/vladislav-arzybov/vector-role/tree/main/DOCK) на основе images oraclelinux:8 и ubuntu:latest с предустановкой python3.12 и systemd
 
 ```
 platforms:
