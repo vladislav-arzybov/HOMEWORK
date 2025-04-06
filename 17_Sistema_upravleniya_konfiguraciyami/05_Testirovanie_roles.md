@@ -1239,7 +1239,7 @@ ERROR:   py39-ansible30: commands failed
 
 
 <details>
-  <summary>tox compatibility ERR</summary>
+  <summary>tox compatibility ansible50</summary>
 
   ```bash
 [root@850df218c797 vector-role]# tox
