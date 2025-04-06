@@ -657,7 +657,8 @@ driver:
   name: podman
 platforms:
   - name: instance
-    image: localhost/ubuntu_podman:latest
+  #  image: localhost/ubuntu_podman:latest
+    image: docker.io/pycontribs/centos:7
     pre_build_image: true
 scenario:
   test_sequence:
@@ -667,7 +668,7 @@ scenario:
     - destroy
 ```
 
-Образ ubuntu_podman:latest заранее создан на основе Dockerfile: podman build -f Dockerfile -t ubuntu_podman .
+Образ ubuntu_podman:latest был создан заранее на основе Dockerfile, чтобы осуществить первичную проверку на localhost машине: podman build -f Dockerfile -t ubuntu_podman .
 
 ```
 FROM ubuntu:latest
@@ -819,10 +820,39 @@ INFO     Pruning extra files from scenario ephemeral directory
 </details>
 
 8. Пропишите правильную команду в `tox.ini`, чтобы запускался облегчённый сценарий.
-9. Запустите команду `tox`. Убедитесь, что всё отработало успешно.
+
+- Сценарий успешно запускается на python3.7, но падает в ошибку совместимости на python3.9
+
+![изображение](https://github.com/user-attachments/assets/e70df590-059f-4a35-8f2c-a4d09be6fe5b)
+
+- Чтобы проверить работу на python3.9 была изменена версия  ansible на ansible50: ansible<5.0
+
+![изображение](https://github.com/user-attachments/assets/ef789fa8-e15b-408c-8cae-8363edb7cbf4)
+
+
+```
+[tox]
+minversion = 1.8
+basepython = python3.6
+#envlist = py{37,39}-ansible{210,30}
+envlist = py{37,39}-ansible{50}
+skipsdist = true
+
+[testenv]
+passenv = *
+deps =
+    -r tox-requirements.txt
+    ansible210: ansible<3.0
+    ansible30: ansible<3.1
+    ansible50: ansible<5.0
+commands =
+    {posargs:molecule test -s compatibility --destroy always}
+```
+
+10. Запустите команду `tox`. Убедитесь, что всё отработало успешно.
 
 <details>
-  <summary>tox compatibility</summary>
+  <summary>tox compatibility ERR</summary>
 
   ```bash
 [root@850df218c797 vector-role]# tox
@@ -1207,6 +1237,333 @@ ERROR:   py39-ansible30: commands failed
 ```  
 
 </details>
+
+
+<details>
+  <summary>tox compatibility ERR</summary>
+
+  ```bash
+[root@850df218c797 vector-role]# tox
+py37-ansible50 installed: ansible==4.10.0,ansible-compat==1.0.0,ansible-core==2.11.12,arrow==1.2.3,bcrypt==4.2.1,binaryornot==0.4.4,cached-property==1.5.2,Cerberus==1.3.7,certifi==2025.1.31,cffi==1.15.1,chardet==5.2.0,charset-normalizer==3.4.1,click==8.1.8,click-help-colors==0.9.4,cookiecutter==2.6.0,cryptography==44.0.2,distro==1.9.0,enrich==1.2.7,idna==3.10,importlib-metadata==6.7.0,Jinja2==3.1.6,jmespath==1.0.1,lxml==5.3.2,markdown-it-py==2.2.0,MarkupSafe==2.1.5,mdurl==0.1.2,molecule==3.6.1,molecule-podman==1.1.0,packaging==24.0,paramiko==2.12.0,pluggy==1.2.0,pycparser==2.21,Pygments==2.17.2,PyNaCl==1.5.0,python-dateutil==2.9.0.post0,python-slugify==8.0.4,PyYAML==6.0.1,requests==2.31.0,resolvelib==0.5.4,rich==13.8.1,selinux==0.2.1,six==1.17.0,subprocess-tee==0.3.5,text-unidecode==1.3,typing_extensions==4.7.1,urllib3==2.0.7,zipp==3.15.0
+py37-ansible50 run-test-pre: PYTHONHASHSEED='595986026'
+py37-ansible50 run-test: commands[0] | molecule test -s compatibility --destroy always
+[DEPRECATION WARNING]: Ansible will require Python 3.8 or newer on the 
+controller starting with Ansible 2.12. Current version: 3.7.10 (default, Jun 13
+ 2022, 19:37:24) [GCC 8.5.0 20210514 (Red Hat 8.5.0-10)]. This feature will be 
+removed from ansible-core in version 2.12. Deprecation warnings can be disabled
+ by setting deprecation_warnings=False in ansible.cfg.
+/opt/vector-role/.tox/py37-ansible50/lib/python3.7/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 3.7 is no longer supported by the Python core team and support for it is deprecated in cryptography. A future release of cryptography will remove support for Python 3.7.
+  from cryptography.exceptions import InvalidSignature
+INFO     compatibility scenario test matrix: destroy, create, converge, destroy
+INFO     Performing prerun...
+INFO     Set ANSIBLE_LIBRARY=/root/.cache/ansible-compat/b984a4/modules:/root/.ansible/plugins/modules:/usr/share/ansible/plugins/modules
+INFO     Set ANSIBLE_COLLECTIONS_PATH=/root/.cache/ansible-compat/b984a4/collections:/root/.ansible/collections:/usr/share/ansible/collections
+INFO     Set ANSIBLE_ROLES_PATH=/root/.cache/ansible-compat/b984a4/roles:/root/.ansible/roles:/usr/share/ansible/roles:/etc/ansible/roles
+INFO     Using /root/.ansible/roles/reivol.vector symlink to current repository in order to enable Ansible to find the role using its expected full name.
+INFO     Running compatibility > destroy
+INFO     Sanity checks: 'podman'
+[DEPRECATION WARNING]: Ansible will require Python 3.8 or newer on the 
+controller starting with Ansible 2.12. Current version: 3.7.10 (default, Jun 13
+ 2022, 19:37:24) [GCC 8.5.0 20210514 (Red Hat 8.5.0-10)]. This feature will be 
+removed from ansible-core in version 2.12. Deprecation warnings can be disabled
+ by setting deprecation_warnings=False in ansible.cfg.
+/opt/vector-role/.tox/py37-ansible50/lib/python3.7/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 3.7 is no longer supported by the Python core team and support for it is deprecated in cryptography. A future release of cryptography will remove support for Python 3.7.
+  from cryptography.exceptions import InvalidSignature
+[DEPRECATION WARNING]: Ansible will require Python 3.8 or newer on the 
+controller starting with Ansible 2.12. Current version: 3.7.10 (default, Jun 13
+ 2022, 19:37:24) [GCC 8.5.0 20210514 (Red Hat 8.5.0-10)]. This feature will be 
+removed from ansible-core in version 2.12. Deprecation warnings can be disabled
+ by setting deprecation_warnings=False in ansible.cfg.
+
+PLAY [Destroy] *****************************************************************
+
+TASK [Destroy molecule instance(s)] ********************************************
+/opt/vector-role/.tox/py37-ansible50/lib/python3.7/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 3.7 is no longer supported by the Python core team and support for it is deprecated in cryptography. A future release of cryptography will remove support for Python 3.7.
+  from cryptography.exceptions import InvalidSignature
+/opt/vector-role/.tox/py37-ansible50/lib/python3.7/site-packages/paramiko/pkey.py:82: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  "cipher": algorithms.TripleDES,
+/opt/vector-role/.tox/py37-ansible50/lib/python3.7/site-packages/paramiko/transport.py:253: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  "class": algorithms.TripleDES,
+changed: [localhost] => (item={'image': 'docker.io/pycontribs/centos:7', 'name': 'instance', 'pre_build_image': True})
+
+TASK [Wait for instance(s) deletion to complete] *******************************
+changed: [localhost] => (item={'started': 1, 'finished': 0, 'ansible_job_id': '897703193618.15515', 'results_file': '/root/.ansible_async/897703193618.15515', 'changed': True, 'failed': False, 'item': {'image': 'docker.io/pycontribs/centos:7', 'name': 'instance', 'pre_build_image': True}, 'ansible_loop_var': 'item'})
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=2    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+INFO     Running compatibility > create
+[DEPRECATION WARNING]: Ansible will require Python 3.8 or newer on the 
+controller starting with Ansible 2.12. Current version: 3.7.10 (default, Jun 13
+ 2022, 19:37:24) [GCC 8.5.0 20210514 (Red Hat 8.5.0-10)]. This feature will be 
+removed from ansible-core in version 2.12. Deprecation warnings can be disabled
+ by setting deprecation_warnings=False in ansible.cfg.
+
+PLAY [Create] ******************************************************************
+
+TASK [get podman executable path] **********************************************
+/opt/vector-role/.tox/py37-ansible50/lib/python3.7/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 3.7 is no longer supported by the Python core team and support for it is deprecated in cryptography. A future release of cryptography will remove support for Python 3.7.
+  from cryptography.exceptions import InvalidSignature
+/opt/vector-role/.tox/py37-ansible50/lib/python3.7/site-packages/paramiko/pkey.py:82: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  "cipher": algorithms.TripleDES,
+/opt/vector-role/.tox/py37-ansible50/lib/python3.7/site-packages/paramiko/transport.py:253: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  "class": algorithms.TripleDES,
+ok: [localhost]
+
+TASK [save path to executable as fact] *****************************************
+ok: [localhost]
+
+TASK [Log into a container registry] *******************************************
+skipping: [localhost] => (item="instance registry username: None specified") 
+
+TASK [Check presence of custom Dockerfiles] ************************************
+ok: [localhost] => (item=Dockerfile: None specified)
+
+TASK [Create Dockerfiles from image names] *************************************
+skipping: [localhost] => (item="Dockerfile: None specified; Image: docker.io/pycontribs/centos:7") 
+
+TASK [Discover local Podman images] ********************************************
+ok: [localhost] => (item=instance)
+
+TASK [Build an Ansible compatible image] ***************************************
+skipping: [localhost] => (item=docker.io/pycontribs/centos:7) 
+
+TASK [Determine the CMD directives] ********************************************
+ok: [localhost] => (item="instance command: None specified")
+
+TASK [Remove possible pre-existing containers] *********************************
+changed: [localhost]
+
+TASK [Discover local podman networks] ******************************************
+skipping: [localhost] => (item=instance: None specified) 
+
+TASK [Create podman network dedicated to this scenario] ************************
+skipping: [localhost]
+
+TASK [Create molecule instance(s)] *********************************************
+changed: [localhost] => (item=instance)
+
+TASK [Wait for instance(s) creation to complete] *******************************
+FAILED - RETRYING: Wait for instance(s) creation to complete (300 retries left).
+changed: [localhost] => (item=instance)
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=8    changed=3    unreachable=0    failed=0    skipped=5    rescued=0    ignored=0
+
+INFO     Running compatibility > converge
+[DEPRECATION WARNING]: Ansible will require Python 3.8 or newer on the 
+controller starting with Ansible 2.12. Current version: 3.7.10 (default, Jun 13
+ 2022, 19:37:24) [GCC 8.5.0 20210514 (Red Hat 8.5.0-10)]. This feature will be 
+removed from ansible-core in version 2.12. Deprecation warnings can be disabled
+ by setting deprecation_warnings=False in ansible.cfg.
+
+PLAY [Converge] ****************************************************************
+
+TASK [Include vector] **********************************************************
+/opt/vector-role/.tox/py37-ansible50/lib/python3.7/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 3.7 is no longer supported by the Python core team and support for it is deprecated in cryptography. A future release of cryptography will remove support for Python 3.7.
+  from cryptography.exceptions import InvalidSignature
+/opt/vector-role/.tox/py37-ansible50/lib/python3.7/site-packages/paramiko/pkey.py:82: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  "cipher": algorithms.TripleDES,
+/opt/vector-role/.tox/py37-ansible50/lib/python3.7/site-packages/paramiko/transport.py:253: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  "class": algorithms.TripleDES,
+
+TASK [reivol.vector : VECTOR | Create dir] *************************************
+changed: [instance]
+
+TASK [reivol.vector : VECTOR | Get vector distrib] *****************************
+changed: [instance]
+
+TASK [reivol.vector : VECTOR | Unarchive vector] *******************************
+changed: [instance]
+
+TASK [reivol.vector : VECTOR | Copy bin file vector] ***************************
+changed: [instance]
+
+TASK [reivol.vector : VECTOR | Copy systemd service vector] ********************
+changed: [instance]
+
+TASK [reivol.vector : VECTOR | Create user vector] *****************************
+changed: [instance]
+
+TASK [reivol.vector : VECTOR | Create vector catalog] **************************
+changed: [instance]
+
+TASK [reivol.vector : VECTOR | Create vector config dir] ***********************
+changed: [instance]
+
+TASK [reivol.vector : VECTOR | Config vector j2 template] **********************
+changed: [instance]
+
+PLAY RECAP *********************************************************************
+instance                   : ok=9    changed=9    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+INFO     Running compatibility > destroy
+[DEPRECATION WARNING]: Ansible will require Python 3.8 or newer on the 
+controller starting with Ansible 2.12. Current version: 3.7.10 (default, Jun 13
+ 2022, 19:37:24) [GCC 8.5.0 20210514 (Red Hat 8.5.0-10)]. This feature will be 
+removed from ansible-core in version 2.12. Deprecation warnings can be disabled
+ by setting deprecation_warnings=False in ansible.cfg.
+
+PLAY [Destroy] *****************************************************************
+
+TASK [Destroy molecule instance(s)] ********************************************
+/opt/vector-role/.tox/py37-ansible50/lib/python3.7/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 3.7 is no longer supported by the Python core team and support for it is deprecated in cryptography. A future release of cryptography will remove support for Python 3.7.
+  from cryptography.exceptions import InvalidSignature
+/opt/vector-role/.tox/py37-ansible50/lib/python3.7/site-packages/paramiko/pkey.py:82: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  "cipher": algorithms.TripleDES,
+/opt/vector-role/.tox/py37-ansible50/lib/python3.7/site-packages/paramiko/transport.py:253: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  "class": algorithms.TripleDES,
+changed: [localhost] => (item={'image': 'docker.io/pycontribs/centos:7', 'name': 'instance', 'pre_build_image': True})
+
+TASK [Wait for instance(s) deletion to complete] *******************************
+FAILED - RETRYING: Wait for instance(s) deletion to complete (300 retries left).
+FAILED - RETRYING: Wait for instance(s) deletion to complete (299 retries left).
+FAILED - RETRYING: Wait for instance(s) deletion to complete (298 retries left).
+changed: [localhost] => (item={'started': 1, 'finished': 0, 'ansible_job_id': '640748276159.17240', 'results_file': '/root/.ansible_async/640748276159.17240', 'changed': True, 'failed': False, 'item': {'image': 'docker.io/pycontribs/centos:7', 'name': 'instance', 'pre_build_image': True}, 'ansible_loop_var': 'item'})
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=2    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+INFO     Pruning extra files from scenario ephemeral directory
+py39-ansible50 installed: ansible==4.10.0,ansible-compat==2.2.7,ansible-core==2.11.12,arrow==1.3.0,attrs==25.3.0,binaryornot==0.4.4,certifi==2025.1.31,cffi==1.17.1,chardet==5.2.0,charset-normalizer==3.4.1,click==8.1.8,click-help-colors==0.9.4,cookiecutter==2.6.0,cryptography==44.0.2,distro==1.9.0,enrich==1.2.7,idna==3.10,Jinja2==3.1.6,jmespath==1.0.1,jsonschema==4.23.0,jsonschema-specifications==2024.10.1,lxml==5.3.2,markdown-it-py==3.0.0,MarkupSafe==3.0.2,mdurl==0.1.2,molecule==4.0.4,molecule-podman==2.0.3,packaging==24.2,pluggy==1.5.0,pycparser==2.22,Pygments==2.19.1,python-dateutil==2.9.0.post0,python-slugify==8.0.4,PyYAML==6.0.2,referencing==0.36.2,requests==2.32.3,resolvelib==0.5.4,rich==14.0.0,rpds-py==0.24.0,selinux==0.3.0,six==1.17.0,subprocess-tee==0.4.2,text-unidecode==1.3,types-python-dateutil==2.9.0.20241206,typing_extensions==4.13.1,urllib3==2.3.0
+py39-ansible50 run-test-pre: PYTHONHASHSEED='595986026'
+py39-ansible50 run-test: commands[0] | molecule test -s compatibility --destroy always
+INFO     compatibility scenario test matrix: destroy, create, converge, destroy
+INFO     Performing prerun with role_name_check=0...
+INFO     Set ANSIBLE_LIBRARY=/root/.cache/ansible-compat/f5bcd7/modules:/root/.ansible/plugins/modules:/usr/share/ansible/plugins/modules
+INFO     Set ANSIBLE_COLLECTIONS_PATH=/root/.cache/ansible-compat/f5bcd7/collections:/root/.ansible/collections:/usr/share/ansible/collections
+INFO     Set ANSIBLE_ROLES_PATH=/root/.cache/ansible-compat/f5bcd7/roles:/root/.ansible/roles:/usr/share/ansible/roles:/etc/ansible/roles
+INFO     Using /root/.cache/ansible-compat/f5bcd7/roles/reivol.vector symlink to current repository in order to enable Ansible to find the role using its expected full name.
+INFO     Running compatibility > destroy
+INFO     Sanity checks: 'podman'
+
+PLAY [Destroy] *****************************************************************
+
+TASK [Set async_dir for HOME env] **********************************************
+ok: [localhost]
+
+TASK [Destroy molecule instance(s)] ********************************************
+changed: [localhost] => (item={'image': 'docker.io/pycontribs/centos:7', 'name': 'instance', 'pre_build_image': True})
+
+TASK [Wait for instance(s) deletion to complete] *******************************
+changed: [localhost] => (item={'started': 1, 'finished': 0, 'ansible_job_id': '739984656960.17383', 'results_file': '/root/.ansible_async/739984656960.17383', 'changed': True, 'failed': False, 'item': {'image': 'docker.io/pycontribs/centos:7', 'name': 'instance', 'pre_build_image': True}, 'ansible_loop_var': 'item'})
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+INFO     Running compatibility > create
+
+PLAY [Create] ******************************************************************
+
+TASK [get podman executable path] **********************************************
+ok: [localhost]
+
+TASK [save path to executable as fact] *****************************************
+ok: [localhost]
+
+TASK [Set async_dir for HOME env] **********************************************
+ok: [localhost]
+
+TASK [Log into a container registry] *******************************************
+skipping: [localhost] => (item="instance registry username: None specified") 
+
+TASK [Check presence of custom Dockerfiles] ************************************
+ok: [localhost] => (item=Dockerfile: None specified)
+
+TASK [Create Dockerfiles from image names] *************************************
+skipping: [localhost] => (item="Dockerfile: None specified; Image: docker.io/pycontribs/centos:7") 
+
+TASK [Discover local Podman images] ********************************************
+ok: [localhost] => (item=instance)
+
+TASK [Build an Ansible compatible image] ***************************************
+skipping: [localhost] => (item=docker.io/pycontribs/centos:7) 
+
+TASK [Determine the CMD directives] ********************************************
+ok: [localhost] => (item="instance command: None specified")
+
+TASK [Remove possible pre-existing containers] *********************************
+changed: [localhost]
+
+TASK [Discover local podman networks] ******************************************
+skipping: [localhost] => (item=instance: None specified) 
+
+TASK [Create podman network dedicated to this scenario] ************************
+skipping: [localhost]
+
+TASK [Create molecule instance(s)] *********************************************
+changed: [localhost] => (item=instance)
+
+TASK [Wait for instance(s) creation to complete] *******************************
+FAILED - RETRYING: Wait for instance(s) creation to complete (300 retries left).
+changed: [localhost] => (item=instance)
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=9    changed=3    unreachable=0    failed=0    skipped=5    rescued=0    ignored=0
+
+INFO     Running compatibility > converge
+
+PLAY [Converge] ****************************************************************
+
+TASK [Include vector] **********************************************************
+
+TASK [reivol.vector : VECTOR | Create dir] *************************************
+changed: [instance]
+
+TASK [reivol.vector : VECTOR | Get vector distrib] *****************************
+changed: [instance]
+
+TASK [reivol.vector : VECTOR | Unarchive vector] *******************************
+changed: [instance]
+
+TASK [reivol.vector : VECTOR | Copy bin file vector] ***************************
+changed: [instance]
+
+TASK [reivol.vector : VECTOR | Copy systemd service vector] ********************
+changed: [instance]
+
+TASK [reivol.vector : VECTOR | Create user vector] *****************************
+changed: [instance]
+
+TASK [reivol.vector : VECTOR | Create vector catalog] **************************
+changed: [instance]
+
+TASK [reivol.vector : VECTOR | Create vector config dir] ***********************
+changed: [instance]
+
+TASK [reivol.vector : VECTOR | Config vector j2 template] **********************
+changed: [instance]
+
+PLAY RECAP *********************************************************************
+instance                   : ok=9    changed=9    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+INFO     Running compatibility > destroy
+
+PLAY [Destroy] *****************************************************************
+
+TASK [Set async_dir for HOME env] **********************************************
+ok: [localhost]
+
+TASK [Destroy molecule instance(s)] ********************************************
+changed: [localhost] => (item={'image': 'docker.io/pycontribs/centos:7', 'name': 'instance', 'pre_build_image': True})
+
+TASK [Wait for instance(s) deletion to complete] *******************************
+FAILED - RETRYING: Wait for instance(s) deletion to complete (300 retries left).
+FAILED - RETRYING: Wait for instance(s) deletion to complete (299 retries left).
+changed: [localhost] => (item={'started': 1, 'finished': 0, 'ansible_job_id': '440918403233.19084', 'results_file': '/root/.ansible_async/440918403233.19084', 'changed': True, 'failed': False, 'item': {'image': 'docker.io/pycontribs/centos:7', 'name': 'instance', 'pre_build_image': True}, 'ansible_loop_var': 'item'})
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+INFO     Pruning extra files from scenario ephemeral directory
+____________________________________________________________________________________________ summary ____________________________________________________________________________________________
+  py37-ansible50: commands succeeded
+  py39-ansible50: commands succeeded
+  congratulations :)
+```  
+
+</details>
+
 
 11. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
 
