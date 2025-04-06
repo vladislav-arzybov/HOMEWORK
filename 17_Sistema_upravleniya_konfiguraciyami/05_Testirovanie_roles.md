@@ -650,7 +650,173 @@ ERROR:   py39-ansible30: commands failed
 
 - molecule init scenario compatibility --driver-name podman
 
-![изображение](https://github.com/user-attachments/assets/54e9cf9d-fc95-4b20-bb2e-90f20ad34e6d)
+![изображение](https://github.com/user-attachments/assets/e7e097ff-42e7-4c38-8774-94dae033be0b)
+
+```
+driver:
+  name: podman
+platforms:
+  - name: instance
+    image: localhost/ubuntu_podman:latest
+    pre_build_image: true
+scenario:
+  test_sequence:
+    - destroy
+    - create
+    - converge
+    - destroy
+```
+
+Образ ubuntu_podman:latest заранее создан на основе Dockerfile: podman build -f Dockerfile -t ubuntu_podman .
+
+```
+FROM ubuntu:latest
+RUN apt-get update && \
+    apt-get install -y python3.12
+```
+
+<details>
+  <summary>podman</summary>
+
+  ```bash
+reivol@Zabbix:~/Ansible_v2/Les_5/vector-role$ molecule test -s compatibility
+WARNING  Driver podman does not provide a schema.
+INFO     compatibility scenario test matrix: destroy, create, converge, destroy
+INFO     Performing prerun with role_name_check=0...
+WARNING  Another version of 'ansible.posix' 1.1.1 was found installed in /usr/lib/python3/dist-packages/ansible_collections, only the first one will be used, 2.0.0 (/home/reivol/.ansible/collections/ansible_collections).
+WARNING  Another version of 'community.docker' 1.2.2 was found installed in /usr/lib/python3/dist-packages/ansible_collections, only the first one will be used, 4.5.2 (/home/reivol/.ansible/collections/ansible_collections).
+WARNING  Another version of 'containers.podman' 1.4.1 was found installed in /usr/lib/python3/dist-packages/ansible_collections, only the first one will be used, 1.16.3 (/home/reivol/.ansible/collections/ansible_collections).
+INFO     Running compatibility > destroy
+INFO     Sanity checks: 'podman'
+
+PLAY [Destroy] *****************************************************************
+
+TASK [Set async_dir for HOME env] **********************************************
+ok: [localhost]
+
+TASK [Destroy molecule instance(s)] ********************************************
+changed: [localhost] => (item={'image': 'localhost/ubuntu_podman:latest', 'name': 'instance', 'pre_build_image': True})
+
+TASK [Wait for instance(s) deletion to complete] *******************************
+changed: [localhost] => (item={'failed': 0, 'started': 1, 'finished': 0, 'ansible_job_id': 'j200601686370.26745', 'results_file': '/home/reivol/.ansible_async/j200601686370.26745', 'changed': True, 'item': {'image': 'localhost/ubuntu_podman:latest', 'name': 'instance', 'pre_build_image': True}, 'ansible_loop_var': 'item'})
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+INFO     Running compatibility > create
+
+PLAY [Create] ******************************************************************
+
+TASK [get podman executable path] **********************************************
+ok: [localhost]
+
+TASK [save path to executable as fact] *****************************************
+ok: [localhost]
+
+TASK [Set async_dir for HOME env] **********************************************
+ok: [localhost]
+
+TASK [Log into a container registry] *******************************************
+skipping: [localhost] => (item="instance registry username: None specified") 
+skipping: [localhost]
+
+TASK [Check presence of custom Dockerfiles] ************************************
+ok: [localhost] => (item=Dockerfile: None specified)
+
+TASK [Create Dockerfiles from image names] *************************************
+skipping: [localhost] => (item="Dockerfile: None specified; Image: localhost/ubuntu_podman:latest") 
+skipping: [localhost]
+
+TASK [Discover local Podman images] ********************************************
+ok: [localhost] => (item=instance)
+
+TASK [Build an Ansible compatible image] ***************************************
+skipping: [localhost] => (item=localhost/ubuntu_podman:latest) 
+skipping: [localhost]
+
+TASK [Determine the CMD directives] ********************************************
+ok: [localhost] => (item="instance command: None specified")
+
+TASK [Remove possible pre-existing containers] *********************************
+changed: [localhost]
+
+TASK [Discover local podman networks] ******************************************
+skipping: [localhost] => (item=instance: None specified) 
+skipping: [localhost]
+
+TASK [Create podman network dedicated to this scenario] ************************
+skipping: [localhost]
+
+TASK [Create molecule instance(s)] *********************************************
+changed: [localhost] => (item=instance)
+
+TASK [Wait for instance(s) creation to complete] *******************************
+FAILED - RETRYING: [localhost]: Wait for instance(s) creation to complete (300 retries left).
+changed: [localhost] => (item=instance)
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=9    changed=3    unreachable=0    failed=0    skipped=5    rescued=0    ignored=0
+
+INFO     Running compatibility > converge
+
+PLAY [Converge] ****************************************************************
+
+TASK [Include vector] **********************************************************
+included: reivol.vector for instance
+
+TASK [reivol.vector : VECTOR | Create dir] *************************************
+changed: [instance]
+
+TASK [reivol.vector : VECTOR | Get vector distrib] *****************************
+changed: [instance]
+
+TASK [reivol.vector : VECTOR | Unarchive vector] *******************************
+changed: [instance]
+
+TASK [reivol.vector : VECTOR | Copy bin file vector] ***************************
+changed: [instance]
+
+TASK [reivol.vector : VECTOR | Copy systemd service vector] ********************
+changed: [instance]
+
+TASK [reivol.vector : VECTOR | Create user vector] *****************************
+changed: [instance]
+
+TASK [reivol.vector : VECTOR | Create vector catalog] **************************
+changed: [instance]
+
+TASK [reivol.vector : VECTOR | Create vector config dir] ***********************
+changed: [instance]
+
+TASK [reivol.vector : VECTOR | Config vector j2 template] **********************
+changed: [instance]
+
+PLAY RECAP *********************************************************************
+instance                   : ok=10   changed=9    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+INFO     Running compatibility > destroy
+
+PLAY [Destroy] *****************************************************************
+
+TASK [Set async_dir for HOME env] **********************************************
+ok: [localhost]
+
+TASK [Destroy molecule instance(s)] ********************************************
+changed: [localhost] => (item={'image': 'localhost/ubuntu_podman:latest', 'name': 'instance', 'pre_build_image': True})
+
+TASK [Wait for instance(s) deletion to complete] *******************************
+FAILED - RETRYING: [localhost]: Wait for instance(s) deletion to complete (300 retries left).
+FAILED - RETRYING: [localhost]: Wait for instance(s) deletion to complete (299 retries left).
+FAILED - RETRYING: [localhost]: Wait for instance(s) deletion to complete (298 retries left).
+changed: [localhost] => (item={'failed': 0, 'started': 1, 'finished': 0, 'ansible_job_id': 'j895211325122.32295', 'results_file': '/home/reivol/.ansible_async/j895211325122.32295', 'changed': True, 'item': {'image': 'localhost/ubuntu_podman:latest', 'name': 'instance', 'pre_build_image': True}, 'ansible_loop_var': 'item'})
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+INFO     Pruning extra files from scenario ephemeral directory
+```  
+
+</details>
 
 8. Пропишите правильную команду в `tox.ini`, чтобы запускался облегчённый сценарий.
 9. Запустите команду `tox`. Убедитесь, что всё отработало успешно.
