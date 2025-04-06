@@ -590,13 +590,13 @@ INFO     Pruning extra files from scenario ephemeral directory
 
 ![изображение](https://github.com/user-attachments/assets/76e73fd2-feb3-443c-83d4-59c6c5b7829a)
 
-3. Запустите `docker run --privileged=True -v <path_to_repo>:/opt/vector-role -w /opt/vector-role -it aragast/netology:latest /bin/bash`, где path_to_repo — путь до корня репозитория с vector-role на вашей файловой системе.
+2. Запустите `docker run --privileged=True -v <path_to_repo>:/opt/vector-role -w /opt/vector-role -it aragast/netology:latest /bin/bash`, где path_to_repo — путь до корня репозитория с vector-role на вашей файловой системе.
 
 - docker run --privileged=True -v /home/reivol/Ansible_v2/Les_5/vector-role/:/opt/vector-role -w /opt/vector-role -it aragast/netology:latest /bin/bash
 
 ![изображение](https://github.com/user-attachments/assets/78da9718-5fd0-416b-907c-fe72d2f80a9a)
 
-4. Внутри контейнера выполните команду `tox`, посмотрите на вывод.
+3. Внутри контейнера выполните команду `tox`, посмотрите на вывод.
 
 <details>
   <summary>tox</summary>
@@ -646,7 +646,7 @@ ERROR:   py39-ansible30: commands failed
 
 Ошибка возникает по причине ещё не созданного сценария compatibility в папке molecule.
 
-6. Создайте облегчённый сценарий для `molecule` с драйвером `molecule_podman`. Проверьте его на исполнимость.
+4. Создайте облегчённый сценарий для `molecule` с драйвером `molecule_podman`. Проверьте его на исполнимость.
 
 - molecule init scenario compatibility --driver-name podman
 
@@ -819,16 +819,7 @@ INFO     Pruning extra files from scenario ephemeral directory
 
 </details>
 
-8. Пропишите правильную команду в `tox.ini`, чтобы запускался облегчённый сценарий.
-
-- Сценарий успешно запускается на python3.7, но падает в ошибку совместимости на python3.9
-
-![изображение](https://github.com/user-attachments/assets/e70df590-059f-4a35-8f2c-a4d09be6fe5b)
-
-- Чтобы проверить работу на python3.9 была изменена версия  ansible на ansible50: ansible<5.0
-
-![изображение](https://github.com/user-attachments/assets/ef789fa8-e15b-408c-8cae-8363edb7cbf4)
-
+5. Пропишите правильную команду в `tox.ini`, чтобы запускался облегчённый сценарий.
 
 ```
 [tox]
@@ -849,7 +840,15 @@ commands =
     {posargs:molecule test -s compatibility --destroy always}
 ```
 
-10. Запустите команду `tox`. Убедитесь, что всё отработало успешно.
+- Сценарий успешно запускается на python3.7, но падает в ошибку совместимости на python3.9
+
+![изображение](https://github.com/user-attachments/assets/e70df590-059f-4a35-8f2c-a4d09be6fe5b)
+
+- Чтобы проверить работу на python3.9 была изменена версия  ansible на ansible50: ansible<5.0
+
+![изображение](https://github.com/user-attachments/assets/ef789fa8-e15b-408c-8cae-8363edb7cbf4)
+
+6. Запустите команду `tox`. Убедитесь, что всё отработало успешно.
 
 <details>
   <summary>tox compatibility ERR</summary>
@@ -1565,7 +1564,7 @@ ________________________________________________________________________________
 </details>
 
 
-11. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
+7. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
 
 После выполнения у вас должно получится два сценария molecule и один tox.ini файл в репозитории. Не забудьте указать в ответе теги решений Tox и Molecule заданий. В качестве решения пришлите ссылку на  ваш репозиторий и скриншоты этапов выполнения задания. 
 
