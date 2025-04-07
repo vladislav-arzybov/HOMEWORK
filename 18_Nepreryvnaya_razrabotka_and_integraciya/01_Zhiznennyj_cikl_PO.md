@@ -30,7 +30,7 @@
 4. On test -> On develop, Done.
 5. Done -> Closed, Open.
 
-![изображение](https://github.com/user-attachments/assets/0318293b-96a3-4986-8a25-48b966404c15)
+![изображение](https://github.com/user-attachments/assets/dc99fdd7-7b81-4c05-8461-d5444a4f7908)
 
 
 
