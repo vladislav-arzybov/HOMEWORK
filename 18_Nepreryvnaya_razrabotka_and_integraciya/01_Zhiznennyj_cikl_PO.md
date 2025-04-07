@@ -60,7 +60,7 @@
 
 ![изображение](https://github.com/user-attachments/assets/0911fd8f-d48f-4cef-a9ff-07bbfe1c550e)
 
-![изображение](https://github.com/user-attachments/assets/11a53941-62db-492e-97d4-60c81d96bc83)
+![изображение](https://github.com/user-attachments/assets/9dc9a4ba-07d4-4072-81e0-10729a64340e)
 
 ![изображение](https://github.com/user-attachments/assets/cf9b2285-71c4-4609-a073-c54c81a54a67)
 
