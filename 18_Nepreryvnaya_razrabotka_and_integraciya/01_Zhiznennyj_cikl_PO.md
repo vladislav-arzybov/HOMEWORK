@@ -62,6 +62,8 @@
 
 ![изображение](https://github.com/user-attachments/assets/11a53941-62db-492e-97d4-60c81d96bc83)
 
+![изображение](https://github.com/user-attachments/assets/cf9b2285-71c4-4609-a073-c54c81a54a67)
+
 3. Если всё отработалось в рамках ожидания — выгрузите схемы workflow для импорта в XML. Файлы с workflow и скриншоты workflow приложите к решению задания.
 
 ---
