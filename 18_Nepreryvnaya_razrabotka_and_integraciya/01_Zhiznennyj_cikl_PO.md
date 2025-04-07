@@ -66,6 +66,10 @@
 
 3. Если всё отработалось в рамках ожидания — выгрузите схемы workflow для импорта в XML. Файлы с workflow и скриншоты workflow приложите к решению задания.
 
+[Bug_workflow.xml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/18_Nepreryvnaya_razrabotka_and_integraciya/Bug_workflow.xml)
+
+[Other_workflow.xml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/18_Nepreryvnaya_razrabotka_and_integraciya/Other_workflow.xml)
+
 ---
 
 ### Как оформить решение задания
