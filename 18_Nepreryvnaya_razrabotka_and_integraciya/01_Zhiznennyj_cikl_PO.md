@@ -30,6 +30,9 @@
 4. On test -> On develop, Done.
 5. Done -> Closed, Open.
 
+![изображение](https://github.com/user-attachments/assets/97b8432b-925c-4df0-bc15-2ee2c463936c)
+
+
 **Что нужно сделать**
 
 1. Создайте задачу с типом bug, попытайтесь провести его по всему workflow до Done. 
