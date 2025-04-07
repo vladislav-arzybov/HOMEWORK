@@ -21,8 +21,6 @@
 
 ![изображение](https://github.com/user-attachments/assets/f2ad46fd-7ba5-4095-946a-d31d2c4051eb)
 
-![изображение](https://github.com/user-attachments/assets/9bbc597e-3e71-4c0d-83f0-a9421f548832)
-
 
 Остальные задачи должны проходить по упрощённому workflow:
 
@@ -32,9 +30,13 @@
 4. On test -> On develop, Done.
 5. Done -> Closed, Open.
 
-![изображение](https://github.com/user-attachments/assets/97b8432b-925c-4df0-bc15-2ee2c463936c)
+![изображение](https://github.com/user-attachments/assets/0318293b-96a3-4986-8a25-48b966404c15)
+
+
 
 ![изображение](https://github.com/user-attachments/assets/abae5ec6-c4ba-402a-9441-e2a2d6d10f44)
+
+![изображение](https://github.com/user-attachments/assets/9bbc597e-3e71-4c0d-83f0-a9421f548832)
 
 
 **Что нужно сделать**
