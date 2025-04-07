@@ -19,7 +19,7 @@
 6. On test -> On fix, Done.
 7. Done -> Closed, Open.
 
-![изображение](https://github.com/user-attachments/assets/19837920-7b90-4f1f-b65a-85142d70cade)
+![изображение](https://github.com/user-attachments/assets/f2ad46fd-7ba5-4095-946a-d31d2c4051eb)
 
 ![изображение](https://github.com/user-attachments/assets/9bbc597e-3e71-4c0d-83f0-a9421f548832)
 
