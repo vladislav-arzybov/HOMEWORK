@@ -32,6 +32,8 @@
 
 ![изображение](https://github.com/user-attachments/assets/97b8432b-925c-4df0-bc15-2ee2c463936c)
 
+![изображение](https://github.com/user-attachments/assets/847c7bb2-295a-4ed2-a74f-fca2749ba8c2)
+
 
 **Что нужно сделать**
 
