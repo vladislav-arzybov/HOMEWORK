@@ -23,9 +23,12 @@ git@github.com:vladislav-arzybov/my_own_collection.git
 ![изображение](https://github.com/user-attachments/assets/d49ee989-1cd9-4b68-8eee-f2963833aec6)
 
 11. Установите зависимости `pip install -r requirements.txt`.
-12. Запустите настройку окружения `. hacking/env-setup`.
-13. Если все шаги прошли успешно — выйдите из виртуального окружения `deactivate`.
-14. Ваше окружение настроено. Чтобы запустить его, нужно находиться в директории `ansible` и выполнить конструкцию `. venv/bin/activate && . hacking/env-setup`.
+
+![изображение](https://github.com/user-attachments/assets/38943086-6c80-445c-aa67-400c9678fe2f)
+
+13. Запустите настройку окружения `. hacking/env-setup`.
+14. Если все шаги прошли успешно — выйдите из виртуального окружения `deactivate`.
+15. Ваше окружение настроено. Чтобы запустить его, нужно находиться в директории `ansible` и выполнить конструкцию `. venv/bin/activate && . hacking/env-setup`.
 
 ## Основная часть
 
