@@ -45,18 +45,18 @@
 
 ![изображение](https://github.com/user-attachments/assets/82343b3b-3e58-42cf-992a-5e91c080f112)
 
-1. Создайте задачу с типом epic, к ней привяжите несколько задач с типом task, проведите их по всему workflow до Done.
+2. Создайте задачу с типом epic, к ней привяжите несколько задач с типом task, проведите их по всему workflow до Done.
 
 ![изображение](https://github.com/user-attachments/assets/f4fa3c36-a979-48b1-bbfc-d535015b10a4)
 
 ![изображение](https://github.com/user-attachments/assets/a15f78d5-d4b9-4743-a0d0-23a5754b1574)
 
-1. При проведении обеих задач по статусам используйте kanban. 
-1. Верните задачи в статус Open.
+3. При проведении обеих задач по статусам используйте kanban. 
+4. Верните задачи в статус Open.
 
 ![изображение](https://github.com/user-attachments/assets/f965faa9-59ce-417f-8f53-15c6bcf7199d)
 
-1. Перейдите в Scrum, запланируйте новый спринт, состоящий из задач эпика и одного бага, стартуйте спринт, проведите задачи до состояния Closed. Закройте спринт.
+5. Перейдите в Scrum, запланируйте новый спринт, состоящий из задач эпика и одного бага, стартуйте спринт, проведите задачи до состояния Closed. Закройте спринт.
 
 ![изображение](https://github.com/user-attachments/assets/0911fd8f-d48f-4cef-a9ff-07bbfe1c550e)
 
@@ -64,7 +64,7 @@
 
 ![изображение](https://github.com/user-attachments/assets/cf9b2285-71c4-4609-a073-c54c81a54a67)
 
-3. Если всё отработалось в рамках ожидания — выгрузите схемы workflow для импорта в XML. Файлы с workflow и скриншоты workflow приложите к решению задания.
+6. Если всё отработалось в рамках ожидания — выгрузите схемы workflow для импорта в XML. Файлы с workflow и скриншоты workflow приложите к решению задания.
 
 [Bug_workflow.xml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/18_Nepreryvnaya_razrabotka_and_integraciya/Bug_workflow.xml)
 
