@@ -6,29 +6,39 @@
 
 git@github.com:vladislav-arzybov/my_own_collection.git
 
-3. Скачайте репозиторий Ansible: `git clone https://github.com/ansible/ansible.git` по любому, удобному вам пути.
+2. Скачайте репозиторий Ansible: `git clone https://github.com/ansible/ansible.git` по любому, удобному вам пути.
 
 ![изображение](https://github.com/user-attachments/assets/762d74c3-ba45-450c-a9c1-1b51c99c5222)
 
-5. Зайдите в директорию Ansible: `cd ansible`.
+3. Зайдите в директорию Ansible: `cd ansible`.
 
 ![изображение](https://github.com/user-attachments/assets/a087cb87-5466-47a0-999d-2f89a3daa2cc)
 
-7. Создайте виртуальное окружение: `python3 -m venv venv`.
+4. Создайте виртуальное окружение: `python3 -m venv venv`.
 
 ![изображение](https://github.com/user-attachments/assets/4f4121e1-64b5-4fa7-ab8d-fc340469dbc6)
 
-9. Активируйте виртуальное окружение: `. venv/bin/activate`. Дальнейшие действия производятся только в виртуальном окружении.
+5. Активируйте виртуальное окружение: `. venv/bin/activate`. Дальнейшие действия производятся только в виртуальном окружении.
 
 ![изображение](https://github.com/user-attachments/assets/d49ee989-1cd9-4b68-8eee-f2963833aec6)
 
-11. Установите зависимости `pip install -r requirements.txt`.
+6. Установите зависимости `pip install -r requirements.txt`.
 
 ![изображение](https://github.com/user-attachments/assets/38943086-6c80-445c-aa67-400c9678fe2f)
 
-13. Запустите настройку окружения `. hacking/env-setup`.
-14. Если все шаги прошли успешно — выйдите из виртуального окружения `deactivate`.
-15. Ваше окружение настроено. Чтобы запустить его, нужно находиться в директории `ansible` и выполнить конструкцию `. venv/bin/activate && . hacking/env-setup`.
+7. Запустите настройку окружения `. hacking/env-setup`.
+
+![изображение](https://github.com/user-attachments/assets/479ae1c1-4f06-40bd-9cbf-045ae95ad17f)
+
+8. Если все шаги прошли успешно — выйдите из виртуального окружения `deactivate`.
+
+![изображение](https://github.com/user-attachments/assets/cc9198ab-e30f-43f9-a5fa-9580fc78f8d8)
+
+9. Ваше окружение настроено. Чтобы запустить его, нужно находиться в директории `ansible` и выполнить конструкцию `. venv/bin/activate && . hacking/env-setup`.
+
+![изображение](https://github.com/user-attachments/assets/821ac079-6e46-4937-abb5-fd4a20391b0b)
+
+
 
 ## Основная часть
 
