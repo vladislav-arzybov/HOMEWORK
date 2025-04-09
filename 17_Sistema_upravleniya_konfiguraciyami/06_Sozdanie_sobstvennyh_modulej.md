@@ -4,7 +4,7 @@
 
 1. Создайте пустой публичный репозиторий в своём любом проекте: `my_own_collection`.
 
-git@github.com:vladislav-arzybov/my_own_collection.git
+- git@github.com:vladislav-arzybov/my_own_collection.git
 
 2. Скачайте репозиторий Ansible: `git clone https://github.com/ansible/ansible.git` по любому, удобному вам пути.
 
