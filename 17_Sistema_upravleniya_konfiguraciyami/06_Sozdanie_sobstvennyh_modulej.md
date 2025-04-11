@@ -203,6 +203,8 @@ if __name__ == '__main__':
 }
 ```
 
+Файл test_file.txt был спешно создан с содержимым ```Hello!```, при повторном запуске изменений произведено не было.
+
 ![изображение](https://github.com/user-attachments/assets/e81aad48-fb6b-41bd-ad37-203ee8d6d96e)
 
 **Шаг 5.** Напишите single task playbook и используйте module в нём.
