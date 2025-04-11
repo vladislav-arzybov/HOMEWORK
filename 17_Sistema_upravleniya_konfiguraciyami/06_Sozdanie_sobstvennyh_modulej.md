@@ -220,13 +220,15 @@ if __name__ == '__main__':
         content: "Hello!"
 ```
 
-- ansible-playbook site.yml
+- ansible-playbook site.yml -v
 
-![изображение](https://github.com/user-attachments/assets/6b37bf6b-ff65-4a85-b921-32490c2c874a)
-
-
+![изображение](https://github.com/user-attachments/assets/d3d2000b-b075-4cdd-a8af-588fea4a7c2c)
 
 **Шаг 6.** Проверьте через playbook на идемпотентность.
+
+- ansible-playbook site.yml --diff
+
+![изображение](https://github.com/user-attachments/assets/1da748cd-9072-411c-a768-0c8e20bf883d)
 
 **Шаг 7.** Выйдите из виртуального окружения.
 
