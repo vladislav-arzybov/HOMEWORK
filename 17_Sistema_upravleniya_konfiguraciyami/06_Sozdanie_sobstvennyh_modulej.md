@@ -203,7 +203,20 @@ if __name__ == '__main__':
 }
 ```
 
+![изображение](https://github.com/user-attachments/assets/e81aad48-fb6b-41bd-ad37-203ee8d6d96e)
+
 **Шаг 5.** Напишите single task playbook и используйте module в нём.
+
+```
+---
+- name: Test my_own_module
+  hosts: localhost
+  tasks:
+    - name: Call my_own_module
+      my_own_module:
+        path: "test_file.txt"
+        content: "Hello!"
+```
 
 **Шаг 6.** Проверьте через playbook на идемпотентность.
 
