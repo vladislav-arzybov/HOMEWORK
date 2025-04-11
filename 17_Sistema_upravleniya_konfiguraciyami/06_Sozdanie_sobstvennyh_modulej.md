@@ -232,6 +232,8 @@ if __name__ == '__main__':
 
 **Шаг 7.** Выйдите из виртуального окружения.
 
+![изображение](https://github.com/user-attachments/assets/f4ffa90a-0b6f-4c5c-933f-9a39a525dbc2)
+
 **Шаг 8.** Инициализируйте новую collection: `ansible-galaxy collection init my_own_namespace.yandex_cloud_elk`.
 
 **Шаг 9.** В эту collection перенесите свой module в соответствующую директорию.
