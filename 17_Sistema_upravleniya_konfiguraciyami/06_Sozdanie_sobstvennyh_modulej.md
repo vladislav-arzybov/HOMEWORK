@@ -216,9 +216,15 @@ if __name__ == '__main__':
   tasks:
     - name: Call my_own_module
       my_own_module:
-        path: "test_file.txt"
+        path: "./test_file.txt"
         content: "Hello!"
 ```
+
+- ansible-playbook site.yml
+
+![изображение](https://github.com/user-attachments/assets/6b37bf6b-ff65-4a85-b921-32490c2c874a)
+
+
 
 **Шаг 6.** Проверьте через playbook на идемпотентность.
 
