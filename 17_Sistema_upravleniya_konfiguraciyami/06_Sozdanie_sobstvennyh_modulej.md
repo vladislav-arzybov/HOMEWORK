@@ -244,7 +244,19 @@ if __name__ == '__main__':
 
 **Шаг 10.** Single task playbook преобразуйте в single task role и перенесите в collection. У role должны быть default всех параметров module.
 
+![изображение](https://github.com/user-attachments/assets/880a6d8d-a363-429a-b78c-7bbc37041c7f)
+
 **Шаг 11.** Создайте playbook для использования этой role.
+
+```
+---
+- name: Test my_own_module
+  hosts: localhost
+  roles:
+    - my_own_role
+```
+
+![изображение](https://github.com/user-attachments/assets/37ebf59a-837a-4cd0-a6f1-ffb5d5b684b5)
 
 **Шаг 12.** Заполните всю документацию по collection, выложите в свой репозиторий, поставьте тег `1.0.0` на этот коммит.
 
