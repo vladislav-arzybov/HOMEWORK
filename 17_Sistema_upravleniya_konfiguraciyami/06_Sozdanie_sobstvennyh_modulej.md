@@ -262,9 +262,15 @@ if __name__ == '__main__':
 
 **Шаг 13.** Создайте .tar.gz этой collection: `ansible-galaxy collection build` в корневой директории collection.
 
+![изображение](https://github.com/user-attachments/assets/37fe617d-a767-4a29-b1d2-a0caaefdd53c)
+
 **Шаг 14.** Создайте ещё одну директорию любого наименования, перенесите туда single task playbook и архив c collection.
 
+![изображение](https://github.com/user-attachments/assets/90bb8cff-1d30-4e07-bf67-a86044eb56b9)
+
 **Шаг 15.** Установите collection из локального архива: `ansible-galaxy collection install <archivename>.tar.gz`.
+
+![изображение](https://github.com/user-attachments/assets/5d50873a-b87b-46ca-bca8-a5b27eb4a6f1)
 
 **Шаг 16.** Запустите playbook, убедитесь, что он работает.
 
