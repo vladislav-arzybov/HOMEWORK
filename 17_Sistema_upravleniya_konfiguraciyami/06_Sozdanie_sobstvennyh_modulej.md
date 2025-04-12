@@ -258,6 +258,8 @@ if __name__ == '__main__':
 
 **Шаг 12.** Заполните всю документацию по collection, выложите в свой репозиторий, поставьте тег `1.0.0` на этот коммит.
 
+[my_own_collection](https://github.com/vladislav-arzybov/my_own_collection/tree/main/yandex_cloud_elk)
+
 **Шаг 13.** Создайте .tar.gz этой collection: `ansible-galaxy collection build` в корневой директории collection.
 
 **Шаг 14.** Создайте ещё одну директорию любого наименования, перенесите туда single task playbook и архив c collection.
