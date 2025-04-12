@@ -4,7 +4,7 @@
 
 1. Создайте пустой публичный репозиторий в своём любом проекте: `my_own_collection`.
 
-- git@github.com:vladislav-arzybov/my_own_collection.git
+- https://github.com/vladislav-arzybov/my_own_collection.git
 
 2. Скачайте репозиторий Ansible: `git clone https://github.com/ansible/ansible.git` по любому, удобному вам пути.
 
@@ -279,7 +279,7 @@ if __name__ == '__main__':
 - name: Test my_own_module
   hosts: localhost
   collections:
-  - my_own_namespace.yandex_cloud_elk
+    - my_own_namespace.yandex_cloud_elk
   roles:
     - my_own_role
 ```
