@@ -284,6 +284,16 @@ if __name__ == '__main__':
     - my_own_role
 ```
 
+или
+
+```
+---
+- name: Test my_own_module
+  hosts: localhost
+  roles:
+    - my_own_namespace.yandex_cloud_elk.my_own_role
+```
+
 ![изображение](https://github.com/user-attachments/assets/393d911c-05d3-41c4-88d6-996081433deb)
 
 **Шаг 17.** В ответ необходимо прислать ссылки на collection и tar.gz архив, а также скриншоты выполнения пунктов 4, 6, 15 и 16.
