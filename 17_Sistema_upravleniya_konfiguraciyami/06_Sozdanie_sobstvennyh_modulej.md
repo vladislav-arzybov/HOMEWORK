@@ -294,7 +294,11 @@ if __name__ == '__main__':
     - my_own_namespace.yandex_cloud_elk.my_own_role
 ```
 
-![изображение](https://github.com/user-attachments/assets/b31060ac-2e31-4654-8eec-c88e45359492)
+![изображение](https://github.com/user-attachments/assets/d4d3186a-1352-4f71-810f-c9e744a87e68)
+
+Повторный запуск для проверки идемпотентности:
+
+![изображение](https://github.com/user-attachments/assets/87c89b84-d8bc-494d-9ed4-fe3882d2f359)
 
 Проверяем что файл создан:
 
