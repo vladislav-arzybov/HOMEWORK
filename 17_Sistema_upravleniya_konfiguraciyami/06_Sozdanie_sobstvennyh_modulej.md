@@ -274,7 +274,22 @@ if __name__ == '__main__':
 
 **Шаг 16.** Запустите playbook, убедитесь, что он работает.
 
+```
+---
+- name: Test my_own_module
+  hosts: localhost
+  collections:
+  - my_own_namespace.yandex_cloud_elk
+  roles:
+    - my_own_role
+```
+
+![изображение](https://github.com/user-attachments/assets/393d911c-05d3-41c4-88d6-996081433deb)
+
 **Шаг 17.** В ответ необходимо прислать ссылки на collection и tar.gz архив, а также скриншоты выполнения пунктов 4, 6, 15 и 16.
+
+[my_own_collection](https://github.com/vladislav-arzybov/my_own_collection/tree/main/yandex_cloud_elk)
+
 
 ## Необязательная часть
 
