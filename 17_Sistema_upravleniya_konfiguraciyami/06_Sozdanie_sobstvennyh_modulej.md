@@ -290,6 +290,7 @@ if __name__ == '__main__':
 
 [my_own_collection](https://github.com/vladislav-arzybov/my_own_collection/tree/main/yandex_cloud_elk)
 
+[my_own_namespace-yandex_cloud_elk-1.0.0.tar.gz](17_Sistema_upravleniya_konfiguraciyami/my_own_namespace-yandex_cloud_elk-1.0.0.tar.gz)
 
 ## Необязательная часть
 
