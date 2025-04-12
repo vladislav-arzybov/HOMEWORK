@@ -294,7 +294,11 @@ if __name__ == '__main__':
     - my_own_namespace.yandex_cloud_elk.my_own_role
 ```
 
-![изображение](https://github.com/user-attachments/assets/393d911c-05d3-41c4-88d6-996081433deb)
+![изображение](https://github.com/user-attachments/assets/b31060ac-2e31-4654-8eec-c88e45359492)
+
+Проверяем что файл создан:
+
+![изображение](https://github.com/user-attachments/assets/33ab0e56-bc91-4c5f-aace-402d2cb71a1e)
 
 **Шаг 17.** В ответ необходимо прислать ссылки на collection и tar.gz архив, а также скриншоты выполнения пунктов 4, 6, 15 и 16.
 
