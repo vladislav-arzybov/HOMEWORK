@@ -310,6 +310,24 @@ if __name__ == '__main__':
 
 [my_own_namespace-yandex_cloud_elk-1.0.0.tar.gz](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/17_Sistema_upravleniya_konfiguraciyami/my_own_namespace-yandex_cloud_elk-1.0.0.tar.gz)
 
+###Если передать другой контент, то файл в итоге его получает?
+
+Запускаем плейбук, создается файл с содержимым указанным в content из default переменных: 
+
+![изображение](https://github.com/user-attachments/assets/7d4404ac-eddf-4886-911d-f92941c157db)
+
+Меняем значение переменной в роли на Test2:
+
+![изображение](https://github.com/user-attachments/assets/419a9887-41c6-498d-9c9c-f97133f6e96f)
+
+Повторно выполняем запуск плейбука (полный скрин окна с логом выполнения первого создания файла):
+
+![изображение](https://github.com/user-attachments/assets/9e42e1e4-3382-4370-ae61-74db3c80cc4a)
+
+Содержимое файла меняется на то что было указано в content из default переменных. Выполнен повторный запуск без внесения изменний, плейбук идемпотентен.
+
+
+
 ## Необязательная часть
 
 1. Реализуйте свой модуль для создания хостов в Yandex Cloud.
