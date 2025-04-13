@@ -310,7 +310,7 @@ if __name__ == '__main__':
 
 [my_own_namespace-yandex_cloud_elk-1.0.0.tar.gz](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/17_Sistema_upravleniya_konfiguraciyami/my_own_namespace-yandex_cloud_elk-1.0.0.tar.gz)
 
-###Если передать другой контент, то файл в итоге его получает?
+### Если передать другой контент, то файл в итоге его получает?
 
 Запускаем плейбук, создается файл с содержимым указанным в content из default переменных: 
 
