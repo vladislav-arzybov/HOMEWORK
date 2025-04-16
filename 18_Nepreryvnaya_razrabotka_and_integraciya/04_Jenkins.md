@@ -318,13 +318,44 @@ Finished: SUCCESS
 </details>
 
 3. Сделать Declarative Pipeline Job, который будет запускать `molecule test` из любого вашего репозитория с ролью.
-4. Перенести Declarative Pipeline в репозиторий в файл `Jenkinsfile`.
-5. Создать Multibranch Pipeline на запуск `Jenkinsfile` из репозитория.
-6. Создать Scripted Pipeline, наполнить его скриптом из [pipeline](https://github.com/netology-code/mnt-homeworks/blob/MNT-video/09-ci-04-jenkins/pipeline).
-7. Внести необходимые изменения, чтобы Pipeline запускал `ansible-playbook` без флагов `--check --diff`, если не установлен параметр при запуске джобы (prod_run = True). По умолчанию параметр имеет значение False и запускает прогон с флагами `--check --diff`.
-8. Проверить работоспособность, исправить ошибки, исправленный Pipeline вложить в репозиторий в файл `ScriptedJenkinsfile`.
-9. Отправить ссылку на репозиторий с ролью и Declarative Pipeline и Scripted Pipeline.
-10. Сопроводите процесс настройки скриншотами для каждого пункта задания!!
+
+```groovy
+pipeline{
+    agent {
+  label 'ansible'
+    }
+    stages {
+        stage('Clear_Start') {
+            steps {
+                deleteDir()
+            }
+        }
+        stage('Git') {
+            steps {
+                git branch: 'main', url: 'https://github.com/vladislav-arzybov/vector-role.git'
+            }
+        }
+                stage('Test') {
+            steps {
+                sh 'molecule test'
+            }
+        }
+                stage('Clear_Final') {
+            steps {
+                deleteDir()
+            }
+        }
+    }
+}
+```
+  
+5. Перенести Declarative Pipeline в репозиторий в файл `Jenkinsfile`.
+6. Создать Multibranch Pipeline на запуск `Jenkinsfile` из репозитория.
+7. Создать Scripted Pipeline, наполнить его скриптом из [pipeline](https://github.com/netology-code/mnt-homeworks/blob/MNT-video/09-ci-04-jenkins/pipeline).
+8. Внести необходимые изменения, чтобы Pipeline запускал `ansible-playbook` без флагов `--check --diff`, если не установлен параметр при запуске джобы (prod_run = True). По умолчанию параметр имеет значение False и запускает прогон с флагами `--check --diff`.
+9. Проверить работоспособность, исправить ошибки, исправленный Pipeline вложить в репозиторий в файл `ScriptedJenkinsfile`.
+10. Отправить ссылку на репозиторий с ролью и Declarative Pipeline и Scripted Pipeline.
+11. Сопроводите процесс настройки скриншотами для каждого пункта задания!!
 
 ## Необязательная часть
 
