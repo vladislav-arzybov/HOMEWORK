@@ -1027,8 +1027,35 @@ Finished: SUCCESS
 </details>
 
 9. Создать Scripted Pipeline, наполнить его скриптом из [pipeline](https://github.com/netology-code/mnt-homeworks/blob/MNT-video/09-ci-04-jenkins/pipeline).
-10. Внести необходимые изменения, чтобы Pipeline запускал `ansible-playbook` без флагов `--check --diff`, если не установлен параметр при запуске джобы (prod_run = True). По умолчанию параметр имеет значение False и запускает прогон с флагами `--check --diff`.
-11. Проверить работоспособность, исправить ошибки, исправленный Pipeline вложить в репозиторий в файл `ScriptedJenkinsfile`.
+
+```
+node("linux"){
+    stage("Git checkout"){
+        git branch: 'master', url: 'https://github.com/aragastmatb/example-playbook.git'
+    }
+    stage("Sample define secret_check"){
+        secret_check=true
+    }
+    stage("Run playbook"){
+        if (params.prod_run){
+            sh 'ansible-playbook site.yml -i inventory/prod.yml'
+        }
+        else{
+            sh 'ansible-playbook site.yml -i inventory/prod.yml --check --diff'
+        }
+        
+    }
+}
+```
+
+11. Внести необходимые изменения, чтобы Pipeline запускал `ansible-playbook` без флагов `--check --diff`, если не установлен параметр при запуске джобы (prod_run = True). По умолчанию параметр имеет значение False и запускает прогон с флагами `--check --diff`.
+
+![изображение](https://github.com/user-attachments/assets/47b36541-c09a-42bf-bd3f-52bdc2cd8339)
+
+![изображение](https://github.com/user-attachments/assets/9f6d24d2-8a00-452c-b98f-37edc2c79568)
+
+
+12. Проверить работоспособность, исправить ошибки, исправленный Pipeline вложить в репозиторий в файл `ScriptedJenkinsfile`.
 
 [ScriptedJenkinsfile](https://github.com/vladislav-arzybov/vector-role/blob/main/ScriptedJenkinsfile)
 
