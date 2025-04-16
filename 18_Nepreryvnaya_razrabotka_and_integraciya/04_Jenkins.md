@@ -348,6 +348,318 @@ pipeline{
     }
 }
 ```
+
+![изображение](https://github.com/user-attachments/assets/5b1fe6b6-80db-4030-9413-7ea47250042f)
+
+![изображение](https://github.com/user-attachments/assets/0db1d25d-e0d8-4bcf-8038-f4017a480e48)
+
+
+<details>
+  <summary>Declarative Pipeline Job build log</summary>
+
+  ```bash
+Started by user ReiVol
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on agent in /opt/jenkins_agent/workspace/Declarative_Pipeline_Job
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Clear_Start)
+[Pipeline] deleteDir
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Git)
+[Pipeline] git
+The recommended git tool is: NONE
+No credentials specified
+Cloning the remote Git repository
+Avoid second fetch
+Checking out Revision e1488f4f5562b3825e3a43d28def312b4625616b (refs/remotes/origin/main)
+Commit message: "tox"
+First time build. Skipping changelog.
+Cloning repository https://github.com/vladislav-arzybov/vector-role.git
+ > git init /opt/jenkins_agent/workspace/Declarative_Pipeline_Job # timeout=10
+Fetching upstream changes from https://github.com/vladislav-arzybov/vector-role.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.47.1'
+ > git fetch --tags --force --progress -- https://github.com/vladislav-arzybov/vector-role.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/vladislav-arzybov/vector-role.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f e1488f4f5562b3825e3a43d28def312b4625616b # timeout=10
+ > git branch -a -v --no-abbrev # timeout=10
+ > git checkout -b main e1488f4f5562b3825e3a43d28def312b4625616b # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Test)
+[Pipeline] sh
++ molecule test
+WARNING  Driver docker does not provide a schema.
+INFO     default scenario test matrix: dependency, cleanup, destroy, syntax, create, prepare, converge, idempotence, side_effect, verify, cleanup, destroy
+INFO     Performing prerun with role_name_check=0...
+WARNING  Another version of 'ansible.posix' 1.1.1 was found installed in /usr/local/lib/python3.9/site-packages/ansible_collections, only the first one will be used, 2.0.0 (/home/jenkins/.ansible/collections/ansible_collections).
+WARNING  Another version of 'community.docker' 1.2.2 was found installed in /usr/local/lib/python3.9/site-packages/ansible_collections, only the first one will be used, 4.5.2 (/home/jenkins/.ansible/collections/ansible_collections).
+INFO     Running default > dependency
+WARNING  Skipping, missing the requirements file.
+WARNING  Skipping, missing the requirements file.
+INFO     Running default > cleanup
+WARNING  Skipping, cleanup playbook not configured.
+INFO     Running default > destroy
+INFO     Sanity checks: 'docker'
+
+PLAY [Destroy] *****************************************************************
+
+TASK [Set async_dir for HOME env] **********************************************
+ok: [localhost]
+
+TASK [Destroy molecule instance(s)] ********************************************
+changed: [localhost] => (item=ubuntu)
+changed: [localhost] => (item=oraclelinux8)
+
+TASK [Wait for instance(s) deletion to complete] *******************************
+ok: [localhost] => (item=ubuntu)
+ok: [localhost] => (item=oraclelinux8)
+
+TASK [Delete docker networks(s)] ***********************************************
+skipping: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0
+
+INFO     Running default > syntax
+
+playbook: /opt/jenkins_agent/workspace/Declarative_Pipeline_Job/molecule/default/converge.yml
+INFO     Running default > create
+
+PLAY [Create] ******************************************************************
+
+TASK [Set async_dir for HOME env] **********************************************
+ok: [localhost]
+
+TASK [Log into a Docker registry] **********************************************
+skipping: [localhost] => (item=None)
+skipping: [localhost] => (item=None)
+skipping: [localhost]
+
+TASK [Check presence of custom Dockerfiles] ************************************
+ok: [localhost] => (item=ubuntu)
+ok: [localhost] => (item=oraclelinux8)
+
+TASK [Create Dockerfiles from image names] *************************************
+skipping: [localhost] => (item=ubuntu)
+skipping: [localhost] => (item=oraclelinux8)
+skipping: [localhost]
+
+TASK [Synchronization the context] *********************************************
+skipping: [localhost] => (item=ubuntu)
+skipping: [localhost] => (item=oraclelinux8)
+skipping: [localhost]
+
+TASK [Discover local Docker images] ********************************************
+ok: [localhost] => (item=unix://var/run/docker.sock)
+ok: [localhost] => (item=unix://var/run/docker.sock)
+
+TASK [Create docker network(s)] ************************************************
+skipping: [localhost]
+
+TASK [Build an Ansible compatible image (new)] *********************************
+skipping: [localhost] => (item=molecule_local/ubuntu_sistem:latest)
+skipping: [localhost] => (item=molecule_local/oraclelinux_sistem:latest)
+skipping: [localhost]
+
+TASK [Determine the CMD directives] ********************************************
+ok: [localhost] => (item=ubuntu)
+ok: [localhost] => (item=oraclelinux8)
+
+TASK [Create molecule instance(s)] *********************************************
+changed: [localhost] => (item=ubuntu)
+changed: [localhost] => (item=oraclelinux8)
+
+TASK [Wait for instance(s) creation to complete] *******************************
+FAILED - RETRYING: [localhost]: Wait for instance(s) creation to complete (300 retries left).
+changed: [localhost] => (item=ubuntu)
+changed: [localhost] => (item=oraclelinux8)
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=6    changed=2    unreachable=0    failed=0    skipped=5    rescued=0    ignored=0
+
+INFO     Running default > prepare
+WARNING  Skipping, prepare playbook not configured.
+INFO     Running default > converge
+
+PLAY [Converge] ****************************************************************
+
+TASK [Include vector] **********************************************************
+
+TASK [reivol.vector : VECTOR | Create dir] *************************************
+changed: [ubuntu]
+changed: [oraclelinux8]
+
+TASK [reivol.vector : VECTOR | Get vector distrib] *****************************
+changed: [ubuntu]
+changed: [oraclelinux8]
+
+TASK [reivol.vector : VECTOR | Unarchive vector] *******************************
+changed: [ubuntu]
+changed: [oraclelinux8]
+
+TASK [reivol.vector : VECTOR | Copy bin file vector] ***************************
+changed: [ubuntu]
+changed: [oraclelinux8]
+
+TASK [reivol.vector : VECTOR | Copy systemd service vector] ********************
+changed: [oraclelinux8]
+changed: [ubuntu]
+
+TASK [reivol.vector : VECTOR | Create user vector] *****************************
+changed: [oraclelinux8]
+changed: [ubuntu]
+
+TASK [reivol.vector : VECTOR | Create vector catalog] **************************
+changed: [oraclelinux8]
+changed: [ubuntu]
+
+TASK [reivol.vector : VECTOR | Create vector config dir] ***********************
+changed: [ubuntu]
+changed: [oraclelinux8]
+
+TASK [reivol.vector : VECTOR | Config vector j2 template] **********************
+changed: [oraclelinux8]
+changed: [ubuntu]
+
+PLAY RECAP *********************************************************************
+oraclelinux8               : ok=9    changed=9    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+ubuntu                     : ok=9    changed=9    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+INFO     Running default > idempotence
+
+PLAY [Converge] ****************************************************************
+
+TASK [Include vector] **********************************************************
+
+TASK [reivol.vector : VECTOR | Create dir] *************************************
+ok: [oraclelinux8]
+ok: [ubuntu]
+
+TASK [reivol.vector : VECTOR | Get vector distrib] *****************************
+ok: [oraclelinux8]
+ok: [ubuntu]
+
+TASK [reivol.vector : VECTOR | Unarchive vector] *******************************
+ok: [oraclelinux8]
+ok: [ubuntu]
+
+TASK [reivol.vector : VECTOR | Copy bin file vector] ***************************
+ok: [oraclelinux8]
+ok: [ubuntu]
+
+TASK [reivol.vector : VECTOR | Copy systemd service vector] ********************
+ok: [oraclelinux8]
+ok: [ubuntu]
+
+TASK [reivol.vector : VECTOR | Create user vector] *****************************
+ok: [oraclelinux8]
+ok: [ubuntu]
+
+TASK [reivol.vector : VECTOR | Create vector catalog] **************************
+ok: [oraclelinux8]
+ok: [ubuntu]
+
+TASK [reivol.vector : VECTOR | Create vector config dir] ***********************
+ok: [oraclelinux8]
+ok: [ubuntu]
+
+TASK [reivol.vector : VECTOR | Config vector j2 template] **********************
+ok: [oraclelinux8]
+ok: [ubuntu]
+
+PLAY RECAP *********************************************************************
+oraclelinux8               : ok=9    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+ubuntu                     : ok=9    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+INFO     Idempotence completed successfully.
+INFO     Running default > side_effect
+WARNING  Skipping, side effect playbook not configured.
+INFO     Running default > verify
+INFO     Running Ansible Verifier
+
+PLAY [Verify] ******************************************************************
+
+TASK [Ansible check file exists.] **********************************************
+ok: [oraclelinux8]
+ok: [ubuntu]
+
+TASK [debug] *******************************************************************
+ok: [oraclelinux8] => {
+    "msg": "File exists."
+}
+ok: [ubuntu] => {
+    "msg": "File exists."
+}
+
+TASK [debug] *******************************************************************
+skipping: [oraclelinux8]
+skipping: [ubuntu]
+
+TASK [Get Service Status] ******************************************************
+ok: [oraclelinux8]
+ok: [ubuntu]
+
+TASK [debug] *******************************************************************
+ok: [oraclelinux8] => {
+    "service_status.status.ActiveState": "inactive"
+}
+ok: [ubuntu] => {
+    "service_status.status.ActiveState": "inactive"
+}
+
+PLAY RECAP *********************************************************************
+oraclelinux8               : ok=4    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0
+ubuntu                     : ok=4    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0
+
+INFO     Verifier completed successfully.
+INFO     Running default > cleanup
+WARNING  Skipping, cleanup playbook not configured.
+INFO     Running default > destroy
+
+PLAY [Destroy] *****************************************************************
+
+TASK [Set async_dir for HOME env] **********************************************
+ok: [localhost]
+
+TASK [Destroy molecule instance(s)] ********************************************
+changed: [localhost] => (item=ubuntu)
+changed: [localhost] => (item=oraclelinux8)
+
+TASK [Wait for instance(s) deletion to complete] *******************************
+FAILED - RETRYING: [localhost]: Wait for instance(s) deletion to complete (300 retries left).
+changed: [localhost] => (item=ubuntu)
+changed: [localhost] => (item=oraclelinux8)
+
+TASK [Delete docker networks(s)] ***********************************************
+skipping: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0
+
+INFO     Pruning extra files from scenario ephemeral directory
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Clear_Final)
+[Pipeline] deleteDir
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
+```  
+
+</details>
   
 5. Перенести Declarative Pipeline в репозиторий в файл `Jenkinsfile`.
 6. Создать Multibranch Pipeline на запуск `Jenkinsfile` из репозитория.
