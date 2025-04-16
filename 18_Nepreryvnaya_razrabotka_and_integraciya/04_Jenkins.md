@@ -317,7 +317,7 @@ Finished: SUCCESS
 
 </details>
 
-3. Сделать Declarative Pipeline Job, который будет запускать `molecule test` из любого вашего репозитория с ролью.
+2. Сделать Declarative Pipeline Job, который будет запускать `molecule test` из любого вашего репозитория с ролью.
 
 ```groovy
 pipeline{
@@ -661,11 +661,11 @@ Finished: SUCCESS
 
 </details>
   
-5. Перенести Declarative Pipeline в репозиторий в файл `Jenkinsfile`.
+3. Перенести Declarative Pipeline в репозиторий в файл `Jenkinsfile`.
 
 [Jenkinsfile](https://github.com/vladislav-arzybov/vector-role/blob/main/Jenkinsfile)
 
-7. Создать Multibranch Pipeline на запуск `Jenkinsfile` из репозитория.
+4. Создать Multibranch Pipeline на запуск `Jenkinsfile` из репозитория.
 
 <details>
   <summary>Multibranch Pipeline</summary>
@@ -1026,7 +1026,7 @@ Finished: SUCCESS
 
 </details>
 
-9. Создать Scripted Pipeline, наполнить его скриптом из [pipeline](https://github.com/netology-code/mnt-homeworks/blob/MNT-video/09-ci-04-jenkins/pipeline).
+5. Создать Scripted Pipeline, наполнить его скриптом из [pipeline](https://github.com/netology-code/mnt-homeworks/blob/MNT-video/09-ci-04-jenkins/pipeline).
 
 ```
 node("linux"){
@@ -1048,7 +1048,7 @@ node("linux"){
 }
 ```
 
-11. Внести необходимые изменения, чтобы Pipeline запускал `ansible-playbook` без флагов `--check --diff`, если не установлен параметр при запуске джобы (prod_run = True). По умолчанию параметр имеет значение False и запускает прогон с флагами `--check --diff`.
+6. Внести необходимые изменения, чтобы Pipeline запускал `ansible-playbook` без флагов `--check --diff`, если не установлен параметр при запуске джобы (prod_run = True). По умолчанию параметр имеет значение False и запускает прогон с флагами `--check --diff`.
 
 ![изображение](https://github.com/user-attachments/assets/47b36541-c09a-42bf-bd3f-52bdc2cd8339)
 
@@ -1206,15 +1206,15 @@ Finished: SUCCESS
 
 
 
-12. Проверить работоспособность, исправить ошибки, исправленный Pipeline вложить в репозиторий в файл `ScriptedJenkinsfile`.
+7. Проверить работоспособность, исправить ошибки, исправленный Pipeline вложить в репозиторий в файл `ScriptedJenkinsfile`.
 
 [ScriptedJenkinsfile](https://github.com/vladislav-arzybov/vector-role/blob/main/ScriptedJenkinsfile)
 
-13. Отправить ссылку на репозиторий с ролью и Declarative Pipeline и Scripted Pipeline.
+8. Отправить ссылку на репозиторий с ролью и Declarative Pipeline и Scripted Pipeline.
 
 [vector-role](https://github.com/vladislav-arzybov/vector-role.git)
 
-15. Сопроводите процесс настройки скриншотами для каждого пункта задания!!
+9. Сопроводите процесс настройки скриншотами для каждого пункта задания!!
 
 ## Необязательная часть
 
