@@ -1029,8 +1029,14 @@ Finished: SUCCESS
 9. Создать Scripted Pipeline, наполнить его скриптом из [pipeline](https://github.com/netology-code/mnt-homeworks/blob/MNT-video/09-ci-04-jenkins/pipeline).
 10. Внести необходимые изменения, чтобы Pipeline запускал `ansible-playbook` без флагов `--check --diff`, если не установлен параметр при запуске джобы (prod_run = True). По умолчанию параметр имеет значение False и запускает прогон с флагами `--check --diff`.
 11. Проверить работоспособность, исправить ошибки, исправленный Pipeline вложить в репозиторий в файл `ScriptedJenkinsfile`.
-12. Отправить ссылку на репозиторий с ролью и Declarative Pipeline и Scripted Pipeline.
-13. Сопроводите процесс настройки скриншотами для каждого пункта задания!!
+
+[ScriptedJenkinsfile](https://github.com/vladislav-arzybov/vector-role/blob/main/ScriptedJenkinsfile)
+
+13. Отправить ссылку на репозиторий с ролью и Declarative Pipeline и Scripted Pipeline.
+
+[vector-role](https://github.com/vladislav-arzybov/vector-role.git)
+
+15. Сопроводите процесс настройки скриншотами для каждого пункта задания!!
 
 ## Необязательная часть
 
