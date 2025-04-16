@@ -668,7 +668,7 @@ Finished: SUCCESS
 7. Создать Multibranch Pipeline на запуск `Jenkinsfile` из репозитория.
 
 <details>
-  <summary>Multibranch Pipeline build log</summary>
+  <summary>Multibranch Pipeline</summary>
 
 ![изображение](https://github.com/user-attachments/assets/caafdd07-6c80-46dc-a737-800c3ed29c22)
 
