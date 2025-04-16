@@ -1054,6 +1054,155 @@ node("linux"){
 
 ![изображение](https://github.com/user-attachments/assets/9f6d24d2-8a00-452c-b98f-37edc2c79568)
 
+<details>
+  <summary>Scripted Pipeline prod_run = False </summary>
+```
+Started by user ReiVol
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on agent in /opt/jenkins_agent/workspace/Scripted_Pipeline
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Git checkout)
+[Pipeline] git
+The recommended git tool is: NONE
+No credentials specified
+Fetching changes from the remote Git repository
+ > git rev-parse --resolve-git-dir /opt/jenkins_agent/workspace/Scripted_Pipeline/.git # timeout=10
+ > git config remote.origin.url https://github.com/aragastmatb/example-playbook.git # timeout=10
+Fetching upstream changes from https://github.com/aragastmatb/example-playbook.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.47.1'
+ > git fetch --tags --force --progress -- https://github.com/aragastmatb/example-playbook.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+Checking out Revision 20bd8d945340bb742acdd9e8c1a8fb5b73cc1700 (refs/remotes/origin/master)
+Commit message: "Merge branch 'master' of https://github.com/aragastmatb/example-playbook"
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 20bd8d945340bb742acdd9e8c1a8fb5b73cc1700 # timeout=10
+ > git branch -a -v --no-abbrev # timeout=10
+ > git branch -D master # timeout=10
+ > git checkout -b master 20bd8d945340bb742acdd9e8c1a8fb5b73cc1700 # timeout=10
+ > git rev-list --no-walk 20bd8d945340bb742acdd9e8c1a8fb5b73cc1700 # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Sample define secret_check)
+Did you forget the `def` keyword? WorkflowScript seems to be setting a field named secret_check (to a value of type Boolean) which could lead to memory leaks or other issues.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Run playbook)
+[Pipeline] sh
++ ansible-playbook site.yml -i inventory/prod.yml --check --diff
+
+PLAY [Install Java] ************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [localhost]
+
+TASK [java : Upload .tar.gz file containing binaries from local storage] *******
+skipping: [localhost]
+
+TASK [java : Upload .tar.gz file conaining binaries from remote storage] *******
+ok: [localhost]
+
+TASK [java : Ensure installation dir exists] ***********************************
+ok: [localhost]
+
+TASK [java : Extract java in the installation directory] ***********************
+skipping: [localhost]
+
+TASK [java : Export environment variables] *************************************
+ok: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=4    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
+```
+</details>  
+
+<details>
+  <summary>Scripted Pipeline prod_run = True </summary>
+
+```
+Started by user ReiVol
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on agent in /opt/jenkins_agent/workspace/Scripted_Pipeline
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Git checkout)
+[Pipeline] git
+The recommended git tool is: NONE
+No credentials specified
+Fetching changes from the remote Git repository
+Checking out Revision 20bd8d945340bb742acdd9e8c1a8fb5b73cc1700 (refs/remotes/origin/master)
+Commit message: "Merge branch 'master' of https://github.com/aragastmatb/example-playbook"
+ > git rev-parse --resolve-git-dir /opt/jenkins_agent/workspace/Scripted_Pipeline/.git # timeout=10
+ > git config remote.origin.url https://github.com/aragastmatb/example-playbook.git # timeout=10
+Fetching upstream changes from https://github.com/aragastmatb/example-playbook.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.47.1'
+ > git fetch --tags --force --progress -- https://github.com/aragastmatb/example-playbook.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 20bd8d945340bb742acdd9e8c1a8fb5b73cc1700 # timeout=10
+ > git branch -a -v --no-abbrev # timeout=10
+ > git branch -D master # timeout=10
+ > git checkout -b master 20bd8d945340bb742acdd9e8c1a8fb5b73cc1700 # timeout=10
+ > git rev-list --no-walk 20bd8d945340bb742acdd9e8c1a8fb5b73cc1700 # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Sample define secret_check)
+Did you forget the `def` keyword? WorkflowScript seems to be setting a field named secret_check (to a value of type Boolean) which could lead to memory leaks or other issues.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Run playbook)
+[Pipeline] sh
++ ansible-playbook site.yml -i inventory/prod.yml
+
+PLAY [Install Java] ************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [localhost]
+
+TASK [java : Upload .tar.gz file containing binaries from local storage] *******
+skipping: [localhost]
+
+TASK [java : Upload .tar.gz file conaining binaries from remote storage] *******
+ok: [localhost]
+
+TASK [java : Ensure installation dir exists] ***********************************
+ok: [localhost]
+
+TASK [java : Extract java in the installation directory] ***********************
+skipping: [localhost]
+
+TASK [java : Export environment variables] *************************************
+ok: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=4    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
+```
+
+</details>  
+
+
 
 12. Проверить работоспособность, исправить ошибки, исправленный Pipeline вложить в репозиторий в файл `ScriptedJenkinsfile`.
 
