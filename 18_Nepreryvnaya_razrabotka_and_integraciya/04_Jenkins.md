@@ -6,12 +6,18 @@
 
 ![изображение](https://github.com/user-attachments/assets/9957ec37-7bc7-41fe-a00c-a0b91b8cb7bd)
   
-3. Установить Jenkins при помощи playbook.
+2. Установить Jenkins при помощи playbook.
 
 ![изображение](https://github.com/user-attachments/assets/8bf892df-cd79-489a-9176-e5b987761fb4)
 
-5. Запустить и проверить работоспособность.
-6. Сделать первоначальную настройку.
+3. Запустить и проверить работоспособность.
+
+![изображение](https://github.com/user-attachments/assets/51e5186c-4231-49e4-b5fd-3e289a1ae0b6)
+
+4. Сделать первоначальную настройку.
+
+![изображение](https://github.com/user-attachments/assets/b2965aea-b72f-48bc-a169-6bd34cefeade)
+
 
 ## Основная часть
 
