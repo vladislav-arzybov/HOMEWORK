@@ -662,12 +662,15 @@ Finished: SUCCESS
 </details>
   
 5. Перенести Declarative Pipeline в репозиторий в файл `Jenkinsfile`.
-6. Создать Multibranch Pipeline на запуск `Jenkinsfile` из репозитория.
-7. Создать Scripted Pipeline, наполнить его скриптом из [pipeline](https://github.com/netology-code/mnt-homeworks/blob/MNT-video/09-ci-04-jenkins/pipeline).
-8. Внести необходимые изменения, чтобы Pipeline запускал `ansible-playbook` без флагов `--check --diff`, если не установлен параметр при запуске джобы (prod_run = True). По умолчанию параметр имеет значение False и запускает прогон с флагами `--check --diff`.
-9. Проверить работоспособность, исправить ошибки, исправленный Pipeline вложить в репозиторий в файл `ScriptedJenkinsfile`.
-10. Отправить ссылку на репозиторий с ролью и Declarative Pipeline и Scripted Pipeline.
-11. Сопроводите процесс настройки скриншотами для каждого пункта задания!!
+
+[Jenkinsfile](https://github.com/vladislav-arzybov/vector-role/blob/main/Jenkinsfile)
+
+7. Создать Multibranch Pipeline на запуск `Jenkinsfile` из репозитория.
+8. Создать Scripted Pipeline, наполнить его скриптом из [pipeline](https://github.com/netology-code/mnt-homeworks/blob/MNT-video/09-ci-04-jenkins/pipeline).
+9. Внести необходимые изменения, чтобы Pipeline запускал `ansible-playbook` без флагов `--check --diff`, если не установлен параметр при запуске джобы (prod_run = True). По умолчанию параметр имеет значение False и запускает прогон с флагами `--check --diff`.
+10. Проверить работоспособность, исправить ошибки, исправленный Pipeline вложить в репозиторий в файл `ScriptedJenkinsfile`.
+11. Отправить ссылку на репозиторий с ролью и Declarative Pipeline и Scripted Pipeline.
+12. Сопроводите процесс настройки скриншотами для каждого пункта задания!!
 
 ## Необязательная часть
 
