@@ -41,7 +41,7 @@
 
 3. Сохраните необходимые шаги, запустите первую сборку master.
 
-![изображение](https://github.com/user-attachments/assets/a6e14f47-1d44-45a7-9dd8-656e5568ebf0)
+![изображение](https://github.com/user-attachments/assets/71ac7930-ae93-4741-95f1-cc47606e72af)
 
 5. Поменяйте условия сборки: если сборка по ветке `master`, то должен происходит `mvn clean deploy`, иначе `mvn clean test`.
 6. Для deploy будет необходимо загрузить [settings.xml](./teamcity/settings.xml) в набор конфигураций maven у teamcity, предварительно записав туда креды для подключения к nexus.
