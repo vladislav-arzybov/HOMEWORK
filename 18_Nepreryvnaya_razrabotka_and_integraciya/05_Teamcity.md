@@ -53,7 +53,7 @@
 
 ![изображение](https://github.com/user-attachments/assets/f4bdcb1a-7fc1-40d3-b507-8dfd978e2df5)
 
-![изображение](https://github.com/user-attachments/assets/7ddc5e3e-3468-4afd-a1f9-a090484118c5)
+![изображение](https://github.com/user-attachments/assets/80536f99-4b18-41eb-8b46-3219313e016c)
 
 5. Для deploy будет необходимо загрузить [settings.xml](./teamcity/settings.xml) в набор конфигураций maven у teamcity, предварительно записав туда креды для подключения к nexus.
 
@@ -169,7 +169,18 @@ Failed to execute goal org.apache.maven.plugins:maven-deploy-plugin:3.1.1:deploy
 
 [example-teamcity](https://github.com/vladislav-arzybov/example-teamcity.git)
 
+
+P.S 
 ---
+
+Забыл сразу изменить названия сборок на  `mvn clean deploy` и `mvn clean test`, поэтому на скринах лога они называются Maven и New build step, поменял, сборка прошла без ошибок
+
+![изображение](https://github.com/user-attachments/assets/15b3bb4b-ecfa-4d0c-af07-675c463326f4)
+
+![изображение](https://github.com/user-attachments/assets/d86f6ae5-72e3-43fe-9d00-d2ccd7c90cdb)
+
+
+
 
 ### Как оформить решение задания
 
