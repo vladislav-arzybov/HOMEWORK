@@ -88,7 +88,9 @@
 
 17. Напишите новый метод для класса Welcomer: метод должен возвращать произвольную реплику, содержащую слово `hunter`.
 
-```#Welcomer.java
+```
+#Welcomer.java
+
 	public String sayHelp(){
 		return "Can I help you hunter?";
 	}
@@ -96,7 +98,9 @@
 
 19. Дополните тест для нового метода на поиск слова `hunter` в новой реплике.
 
-```#WelcomerTest.java
+```
+#WelcomerTest.java
+
 	@Test
 	public void welcomerSaysHelp(){
 		assertThat(welcomer.sayHelp(), containsString("hunter"));
