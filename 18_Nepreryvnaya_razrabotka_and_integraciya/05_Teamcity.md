@@ -118,11 +118,23 @@
 ![изображение](https://github.com/user-attachments/assets/f2497b5b-6b42-4bf1-b829-84eb8bd2623b)
 
 24. Внесите изменения из произвольной ветки `feature/add_reply` в `master` через `Merge`.
-25. Убедитесь, что нет собранного артефакта в сборке по ветке `master`.
-26. Настройте конфигурацию так, чтобы она собирала `.jar` в артефакты сборки.
-27. Проведите повторную сборку мастера, убедитесь, что сбора прошла успешно и артефакты собраны.
-28. Проверьте, что конфигурация в репозитории содержит все настройки конфигурации из teamcity.
-29. В ответе пришлите ссылку на репозиторий.
+
+![изображение](https://github.com/user-attachments/assets/410a8f3f-9ede-490e-9f38-4c069dee816b)
+
+26. Убедитесь, что нет собранного артефакта в сборке по ветке `master`.
+
+![изображение](https://github.com/user-attachments/assets/2686d93a-4336-42da-a401-7daf6d0b5d73)
+
+![изображение](https://github.com/user-attachments/assets/ddc95967-5825-46d6-b724-ea788ada1100)
+
+```
+Failed to execute goal org.apache.maven.plugins:maven-deploy-plugin:3.1.1:deploy (default-deploy) on project plaindoll: Failed to deploy artifacts: Could not transfer artifact org.netology:plaindoll:pom:0.0.1 from/to nexus (http://51.250.44.134:8081/repository/maven-releases): status code: 400, reason phrase: Repository does not allow updating assets: maven-releases (400)
+```
+
+28. Настройте конфигурацию так, чтобы она собирала `.jar` в артефакты сборки.
+29. Проведите повторную сборку мастера, убедитесь, что сбора прошла успешно и артефакты собраны.
+30. Проверьте, что конфигурация в репозитории содержит все настройки конфигурации из teamcity.
+31. В ответе пришлите ссылку на репозиторий.
 
 ---
 
