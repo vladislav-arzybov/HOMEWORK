@@ -132,9 +132,42 @@ Failed to execute goal org.apache.maven.plugins:maven-deploy-plugin:3.1.1:deploy
 ```
 
 28. Настройте конфигурацию так, чтобы она собирала `.jar` в артефакты сборки.
-29. Проведите повторную сборку мастера, убедитесь, что сбора прошла успешно и артефакты собраны.
-30. Проверьте, что конфигурация в репозитории содержит все настройки конфигурации из teamcity.
-31. В ответе пришлите ссылку на репозиторий.
+
+![изображение](https://github.com/user-attachments/assets/f3501e27-2d79-4aec-86a8-fdfe150a767d)
+
+Также настроено версионирование сборок
+
+```
+<groupId>org.netology</groupId>
+	<artifactId>plaindoll</artifactId>
+	<packaging>jar</packaging>
+	<version>${version.long}</version>
+
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<version.short>0.0.1</version.short>
+		<version.long>${version.short}B${build.number}</version.long>
+	</properties>
+```
+
+30. Проведите повторную сборку мастера, убедитесь, что сбора прошла успешно и артефакты собраны.
+
+![изображение](https://github.com/user-attachments/assets/4a0a4153-1adb-4270-8a84-5c2ff0301605)
+
+![изображение](https://github.com/user-attachments/assets/d85bae7f-b0e5-4922-ad09-9909c25fcfe7)
+
+![изображение](https://github.com/user-attachments/assets/4fa6bb83-d5e9-4783-8baa-44f2370e9f92)
+
+![изображение](https://github.com/user-attachments/assets/ec4a3368-42d7-447a-99da-a00e7cc6460d)
+
+32. Проверьте, что конфигурация в репозитории содержит все настройки конфигурации из teamcity.
+
+![изображение](https://github.com/user-attachments/assets/277613f4-5dcc-4b9a-9836-2d8a2d0f08f7)
+
+34. В ответе пришлите ссылку на репозиторий.
+
+[example-teamcity](https://github.com/vladislav-arzybov/example-teamcity.git)
 
 ---
 
