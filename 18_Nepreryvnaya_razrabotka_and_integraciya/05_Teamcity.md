@@ -113,7 +113,7 @@
 
 22. Убедитесь, что сборка самостоятельно запустилась, тесты прошли успешно.
 
-![изображение](https://github.com/user-attachments/assets/a24b04fe-a3d2-4aa5-be29-187ba1f4c5ba)
+![изображение](https://github.com/user-attachments/assets/5658c4d6-f74b-4fac-b91f-6dfaaa6e2abe)
 
 24. Внесите изменения из произвольной ветки `feature/add_reply` в `master` через `Merge`.
 25. Убедитесь, что нет собранного артефакта в сборке по ветке `master`.
