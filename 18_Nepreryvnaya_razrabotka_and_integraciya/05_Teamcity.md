@@ -72,7 +72,7 @@
 
 11. Запустите сборку по master, убедитесь, что всё прошло успешно и артефакт появился в nexus.
 
-![изображение](https://github.com/user-attachments/assets/d4a5e82a-cd22-4647-8ab0-4c232f774620)
+![изображение](https://github.com/user-attachments/assets/109894d0-07c4-495b-99d2-ad45ccf56b2c)
 
 ![изображение](https://github.com/user-attachments/assets/25781e97-3e6e-4ee2-8d70-a2a10f812a50)
 
@@ -114,6 +114,8 @@
 22. Убедитесь, что сборка самостоятельно запустилась, тесты прошли успешно.
 
 ![изображение](https://github.com/user-attachments/assets/5658c4d6-f74b-4fac-b91f-6dfaaa6e2abe)
+
+![изображение](https://github.com/user-attachments/assets/f2497b5b-6b42-4bf1-b829-84eb8bd2623b)
 
 24. Внесите изменения из произвольной ветки `feature/add_reply` в `master` через `Merge`.
 25. Убедитесь, что нет собранного артефакта в сборке по ветке `master`.
