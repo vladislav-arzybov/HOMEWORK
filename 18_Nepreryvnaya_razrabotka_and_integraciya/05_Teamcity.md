@@ -43,11 +43,11 @@
 
 ![изображение](https://github.com/user-attachments/assets/acc6269d-d152-4cd5-9789-6635b2a59df2)
 
-4. Сохраните необходимые шаги, запустите первую сборку master.
+3. Сохраните необходимые шаги, запустите первую сборку master.
 
 ![изображение](https://github.com/user-attachments/assets/71ac7930-ae93-4741-95f1-cc47606e72af)
 
-5. Поменяйте условия сборки: если сборка по ветке `master`, то должен происходит `mvn clean deploy`, иначе `mvn clean test`.
+4. Поменяйте условия сборки: если сборка по ветке `master`, то должен происходит `mvn clean deploy`, иначе `mvn clean test`.
 
 ![изображение](https://github.com/user-attachments/assets/23035e3d-87f8-4ea3-af95-cfe5b74a9f15)
 
@@ -55,11 +55,11 @@
 
 ![изображение](https://github.com/user-attachments/assets/7ddc5e3e-3468-4afd-a1f9-a090484118c5)
 
-7. Для deploy будет необходимо загрузить [settings.xml](./teamcity/settings.xml) в набор конфигураций maven у teamcity, предварительно записав туда креды для подключения к nexus.
+5. Для deploy будет необходимо загрузить [settings.xml](./teamcity/settings.xml) в набор конфигураций maven у teamcity, предварительно записав туда креды для подключения к nexus.
 
 ![изображение](https://github.com/user-attachments/assets/328da5ce-c42d-4501-a7a0-b00d169e2dfc)
 
-9. В pom.xml необходимо поменять ссылки на репозиторий и nexus.
+6. В pom.xml необходимо поменять ссылки на репозиторий и nexus.
 
 ```
 	<distributionManagement>
@@ -70,23 +70,23 @@
 	</distributionManagement>
 ```
 
-11. Запустите сборку по master, убедитесь, что всё прошло успешно и артефакт появился в nexus.
+7. Запустите сборку по master, убедитесь, что всё прошло успешно и артефакт появился в nexus.
 
 ![изображение](https://github.com/user-attachments/assets/109894d0-07c4-495b-99d2-ad45ccf56b2c)
 
 ![изображение](https://github.com/user-attachments/assets/25781e97-3e6e-4ee2-8d70-a2a10f812a50)
 
-13. Мигрируйте `build configuration` в репозиторий.
+8. Мигрируйте `build configuration` в репозиторий.
 
 ![изображение](https://github.com/user-attachments/assets/e05c218d-85db-4e24-a5c2-574370b8b28c)
 
 ![изображение](https://github.com/user-attachments/assets/7036465c-351a-437e-ae7c-193b1afa8cb2)
 
-15. Создайте отдельную ветку `feature/add_reply` в репозитории.
+9. Создайте отдельную ветку `feature/add_reply` в репозитории.
 
 ![изображение](https://github.com/user-attachments/assets/b1b3088d-4284-4075-9f56-71e83c64ce59)
 
-17. Напишите новый метод для класса Welcomer: метод должен возвращать произвольную реплику, содержащую слово `hunter`.
+10. Напишите новый метод для класса Welcomer: метод должен возвращать произвольную реплику, содержащую слово `hunter`.
 
 ```
 #Welcomer.java
@@ -96,7 +96,7 @@
 	}
 ```
 
-19. Дополните тест для нового метода на поиск слова `hunter` в новой реплике.
+11. Дополните тест для нового метода на поиск слова `hunter` в новой реплике.
 
 ```
 #WelcomerTest.java
@@ -107,21 +107,21 @@
 	}
 ```
 
-20. Сделайте push всех изменений в новую ветку репозитория.
+12. Сделайте push всех изменений в новую ветку репозитория.
 
 ![изображение](https://github.com/user-attachments/assets/32620c2b-abdc-4816-a3c6-991e96ae809a)
 
-22. Убедитесь, что сборка самостоятельно запустилась, тесты прошли успешно.
+13. Убедитесь, что сборка самостоятельно запустилась, тесты прошли успешно.
 
 ![изображение](https://github.com/user-attachments/assets/5658c4d6-f74b-4fac-b91f-6dfaaa6e2abe)
 
 ![изображение](https://github.com/user-attachments/assets/f2497b5b-6b42-4bf1-b829-84eb8bd2623b)
 
-24. Внесите изменения из произвольной ветки `feature/add_reply` в `master` через `Merge`.
+14. Внесите изменения из произвольной ветки `feature/add_reply` в `master` через `Merge`.
 
 ![изображение](https://github.com/user-attachments/assets/410a8f3f-9ede-490e-9f38-4c069dee816b)
 
-26. Убедитесь, что нет собранного артефакта в сборке по ветке `master`.
+15. Убедитесь, что нет собранного артефакта в сборке по ветке `master`.
 
 ![изображение](https://github.com/user-attachments/assets/2686d93a-4336-42da-a401-7daf6d0b5d73)
 
@@ -131,7 +131,7 @@
 Failed to execute goal org.apache.maven.plugins:maven-deploy-plugin:3.1.1:deploy (default-deploy) on project plaindoll: Failed to deploy artifacts: Could not transfer artifact org.netology:plaindoll:pom:0.0.1 from/to nexus (http://51.250.44.134:8081/repository/maven-releases): status code: 400, reason phrase: Repository does not allow updating assets: maven-releases (400)
 ```
 
-28. Настройте конфигурацию так, чтобы она собирала `.jar` в артефакты сборки.
+16. Настройте конфигурацию так, чтобы она собирала `.jar` в артефакты сборки.
 
 ![изображение](https://github.com/user-attachments/assets/f3501e27-2d79-4aec-86a8-fdfe150a767d)
 
@@ -151,7 +151,7 @@ Failed to execute goal org.apache.maven.plugins:maven-deploy-plugin:3.1.1:deploy
 	</properties>
 ```
 
-30. Проведите повторную сборку мастера, убедитесь, что сбора прошла успешно и артефакты собраны.
+17. Проведите повторную сборку мастера, убедитесь, что сбора прошла успешно и артефакты собраны.
 
 ![изображение](https://github.com/user-attachments/assets/4a0a4153-1adb-4270-8a84-5c2ff0301605)
 
@@ -161,11 +161,11 @@ Failed to execute goal org.apache.maven.plugins:maven-deploy-plugin:3.1.1:deploy
 
 ![изображение](https://github.com/user-attachments/assets/ec4a3368-42d7-447a-99da-a00e7cc6460d)
 
-32. Проверьте, что конфигурация в репозитории содержит все настройки конфигурации из teamcity.
+18. Проверьте, что конфигурация в репозитории содержит все настройки конфигурации из teamcity.
 
 ![изображение](https://github.com/user-attachments/assets/277613f4-5dcc-4b9a-9836-2d8a2d0f08f7)
 
-34. В ответе пришлите ссылку на репозиторий.
+19. В ответе пришлите ссылку на репозиторий.
 
 [example-teamcity](https://github.com/vladislav-arzybov/example-teamcity.git)
 
