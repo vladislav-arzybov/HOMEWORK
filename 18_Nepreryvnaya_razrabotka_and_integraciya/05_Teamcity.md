@@ -51,7 +51,9 @@
 
 ![изображение](https://github.com/user-attachments/assets/23035e3d-87f8-4ea3-af95-cfe5b74a9f15)
 
-![изображение](https://github.com/user-attachments/assets/e288b3f4-3c26-410a-a3bd-e7ffbd827afa)
+![изображение](https://github.com/user-attachments/assets/f4bdcb1a-7fc1-40d3-b507-8dfd978e2df5)
+
+![изображение](https://github.com/user-attachments/assets/7ddc5e3e-3468-4afd-a1f9-a090484118c5)
 
 7. Для deploy будет необходимо загрузить [settings.xml](./teamcity/settings.xml) в набор конфигураций maven у teamcity, предварительно записав туда креды для подключения к nexus.
 
