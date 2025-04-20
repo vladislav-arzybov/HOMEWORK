@@ -3,7 +3,7 @@
 ## Подготовка к выполнению
 
 
-1. Или подготовьте к работе Managed GitLab от yandex cloud [по инструкции](https://cloud.yandex.ru/docs/managed-gitlab/operations/instance/instance-create) [Managed Service for GitLab](https://console.yandex.cloud/folders/b1g51e5v9mh6c4gtt2he/managed-gitlab/instances).
+1. Или подготовьте к работе Managed GitLab от yandex cloud [по инструкции](https://cloud.yandex.ru/docs/managed-gitlab/operations/instance/instance-create) , [Managed Service for GitLab](https://console.yandex.cloud/folders/b1g51e5v9mh6c4gtt2he/managed-gitlab/instances).
 Или создайте виртуальную машину из публичного образа [по инструкции](https://cloud.yandex.ru/marketplace/products/yc/gitlab ) .
 - 
 - 
