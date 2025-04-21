@@ -12,6 +12,8 @@
 
 ![изображение](https://github.com/user-attachments/assets/32d36e11-675e-4d45-8d6c-8b5942c53cc5)
 
+![изображение](https://github.com/user-attachments/assets/2ef123b6-3c4b-471f-91ef-c402dd76ef32)
+
 3. (* Необязательное задание повышенной сложности. )  Если вы уже знакомы с k8s попробуйте выполнить задание, запустив gitlab server и gitlab runner в k8s  [по инструкции](https://cloud.yandex.ru/docs/tutorials/infrastructure-management/gitlab-containers). 
 
 5. Создайте свой новый проект.
