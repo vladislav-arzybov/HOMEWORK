@@ -16,12 +16,18 @@
 
 3. (* Необязательное задание повышенной сложности. )  Если вы уже знакомы с k8s попробуйте выполнить задание, запустив gitlab server и gitlab runner в k8s  [по инструкции](https://cloud.yandex.ru/docs/tutorials/infrastructure-management/gitlab-containers). 
 
-5. Создайте свой новый проект.
+4. Создайте свой новый проект.
 
 ![изображение](https://github.com/user-attachments/assets/58464650-ba38-4df5-b65c-8609ea046d47)
 
-7. Создайте новый репозиторий в GitLab, наполните его [файлами](https://github.com/netology-code/mnt-homeworks/tree/MNT-video/09-ci-06-gitlab/repository).
-8. Проект должен быть публичным, остальные настройки по желанию.
+5. Создайте новый репозиторий в GitLab, наполните его [файлами](https://github.com/netology-code/mnt-homeworks/tree/MNT-video/09-ci-06-gitlab/repository).
+
+![изображение](https://github.com/user-attachments/assets/f6aadfd4-fe0f-40f3-942e-1986aa62f54d)
+
+6. Проект должен быть публичным, остальные настройки по желанию.
+
+![изображение](https://github.com/user-attachments/assets/5d6db3eb-7d57-4f38-95bc-fbd5c584da2f)
+
 
 ## Основная часть
 
