@@ -86,6 +86,11 @@ SLI = (summ_2xx_requests + summ_3xx_requests) / (summ_all_requests)
 
 P.S.: если при запуске некоторые контейнеры будут падать с ошибкой - проставьте им режим `Z`, например
 `./data:/var/lib:Z`
+
+![изображение](https://github.com/user-attachments/assets/207492ac-a9df-45bf-a7ec-a4acd9e0dcfa)
+
+![изображение](https://github.com/user-attachments/assets/4057e117-aa2b-45e5-b4af-200454ea5ddb)
+
 #
 8. Перейдите в веб-интерфейс Chronograf (http://localhost:8888) и откройте вкладку Data explorer.
         
