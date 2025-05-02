@@ -24,9 +24,21 @@
 ### Задание 1
 
 1. Используя директорию [help](./help) внутри этого домашнего задания, запустите связку prometheus-grafana.
-1. Зайдите в веб-интерфейс grafana, используя авторизационные данные, указанные в манифесте docker-compose.
-1. Подключите поднятый вами prometheus, как источник данных.
-1. Решение домашнего задания — скриншот веб-интерфейса grafana со списком подключенных Datasource.
+
+![изображение](https://github.com/user-attachments/assets/47e9d0a0-e421-4a44-9b9f-c13358652a3f)
+
+2. Зайдите в веб-интерфейс grafana, используя авторизационные данные, указанные в манифесте docker-compose.
+
+![изображение](https://github.com/user-attachments/assets/15e550ae-7dc6-43b0-9025-d6bcef372ca4)
+
+3. Подключите поднятый вами prometheus, как источник данных.
+
+![изображение](https://github.com/user-attachments/assets/84b1c98d-56f0-48f0-a8b7-55bdaa926b1d)
+
+4. Решение домашнего задания — скриншот веб-интерфейса grafana со списком подключенных Datasource.
+
+![изображение](https://github.com/user-attachments/assets/3f2b6d69-5813-4b1d-b10b-eeb54dbd46f8)
+
 
 ## Задание 2
 
