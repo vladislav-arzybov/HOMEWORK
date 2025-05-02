@@ -65,6 +65,11 @@
 ```
 
 - количество свободной оперативной памяти;
+
+```
+node_memory_MemFree_bytes{instance="nodeexporter:9100",job="nodeexporter"} + node_memory_MemAvailable_bytes{instance="nodeexporter:9100",job="nodeexporter"}
+```
+
 - количество места на файловой системе.
 
 Для решения этого задания приведите promql-запросы для выдачи этих метрик, а также скриншот получившейся Dashboard.
