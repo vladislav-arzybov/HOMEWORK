@@ -72,7 +72,14 @@ node_memory_MemFree_bytes{instance="nodeexporter:9100",job="nodeexporter"} + nod
 
 - количество места на файловой системе.
 
+```
+node_filesystem_avail_bytes{fstype=~"ext4|xfs",instance="nodeexporter:9100",job="nodeexporter"}
+```
+
 Для решения этого задания приведите promql-запросы для выдачи этих метрик, а также скриншот получившейся Dashboard.
+
+![изображение](https://github.com/user-attachments/assets/6e30d486-da82-4cce-b4eb-b2254bca28b4)
+
 
 ## Задание 3
 
