@@ -84,6 +84,9 @@ node_filesystem_avail_bytes{fstype=~"ext4|xfs",instance="nodeexporter:9100",job=
 ## Задание 3
 
 1. Создайте для каждой Dashboard подходящее правило alert — можно обратиться к первой лекции в блоке «Мониторинг».
+
+![изображение](https://github.com/user-attachments/assets/28a54379-d586-4c98-957d-899f44a50176)
+
 1. В качестве решения задания приведите скриншот вашей итоговой Dashboard.
 
 ## Задание 4
