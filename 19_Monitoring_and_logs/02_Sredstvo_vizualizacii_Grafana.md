@@ -89,6 +89,19 @@ node_filesystem_avail_bytes{fstype=~"ext4|xfs",instance="nodeexporter:9100",job=
 
 2. В качестве решения задания приведите скриншот вашей итоговой Dashboard.
 
+![изображение](https://github.com/user-attachments/assets/d46a9c78-fff5-4c22-aa76-37d20ac04b51)
+
+![изображение](https://github.com/user-attachments/assets/809f1501-e086-40cb-84df-d884b62ee875)
+
+Тестирование мониторингов при нагрузке системы:
+
+![изображение](https://github.com/user-attachments/assets/b554d9b1-445c-4d7a-9241-3771b24f0628)
+
+![изображение](https://github.com/user-attachments/assets/78a2a082-1750-49e7-9c08-479fb4602a2c)
+
+
+
+
 ## Задание 4
 
 1. Сохраните ваш Dashboard.Для этого перейдите в настройки Dashboard, выберите в боковом меню «JSON MODEL». Далее скопируйте отображаемое json-содержимое в отдельный файл и сохраните его.
