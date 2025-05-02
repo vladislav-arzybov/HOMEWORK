@@ -99,6 +99,13 @@ node_filesystem_avail_bytes{fstype=~"ext4|xfs",instance="nodeexporter:9100",job=
 
 ![изображение](https://github.com/user-attachments/assets/78a2a082-1750-49e7-9c08-479fb4602a2c)
 
+Получение уведомлений
+
+![изображение](https://github.com/user-attachments/assets/18b9cfb6-af05-4e0b-b054-dd1478a9eb22)
+
+![изображение](https://github.com/user-attachments/assets/0adf6969-9541-4fe1-88b2-f7252349e654)
+
+![изображение](https://github.com/user-attachments/assets/e09371d8-76d5-4a5d-b94a-dd3d9fbce6ec)
 
 
 
