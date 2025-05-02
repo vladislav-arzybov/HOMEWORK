@@ -114,6 +114,8 @@ node_filesystem_avail_bytes{fstype=~"ext4|xfs",instance="nodeexporter:9100",job=
 1. Сохраните ваш Dashboard.Для этого перейдите в настройки Dashboard, выберите в боковом меню «JSON MODEL». Далее скопируйте отображаемое json-содержимое в отдельный файл и сохраните его.
 1. В качестве решения задания приведите листинг этого файла.
 
+[dashboard.json](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/19_Monitoring_and_logs/dashboard.json)
+
 ---
 
 ### Как оформить решение задания
