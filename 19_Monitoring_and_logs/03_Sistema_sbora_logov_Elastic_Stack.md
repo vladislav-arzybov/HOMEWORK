@@ -56,6 +56,11 @@ Filebeat следует сконфигурировать для отправки
 
 ![изображение](https://github.com/user-attachments/assets/4bbfeef2-c336-4df7-84bb-563db18f549d)
 
+![изображение](https://github.com/user-attachments/assets/80829c1b-3848-4745-8540-67325a39a857)
+
+![изображение](https://github.com/user-attachments/assets/6c823d15-5f81-4ee6-b2d2-3254fbcf205e)
+
+
 Перейдите в меню просмотра логов в kibana (Discover) и самостоятельно изучите, как отображаются логи и как производить поиск по логам.
 
 В манифесте директории help также приведенно dummy-приложение, которое генерирует рандомные события в stdout-контейнера.
