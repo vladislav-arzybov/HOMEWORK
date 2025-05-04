@@ -54,8 +54,6 @@ Filebeat следует сконфигурировать для отправки
 
 Перейдите в меню [создания index-patterns  в kibana](http://localhost:5601/app/management/kibana/indexPatterns/create) и создайте несколько index-patterns из имеющихся.
 
-![изображение](https://github.com/user-attachments/assets/4bbfeef2-c336-4df7-84bb-563db18f549d)
-
 ![изображение](https://github.com/user-attachments/assets/80829c1b-3848-4745-8540-67325a39a857)
 
 ![изображение](https://github.com/user-attachments/assets/6c823d15-5f81-4ee6-b2d2-3254fbcf205e)
