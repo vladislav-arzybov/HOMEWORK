@@ -19,6 +19,9 @@ Free Cloud account имеет ограничения:
 
 В качестве решения задания пришлите скриншот меню Projects.
 
+![изображение](https://github.com/user-attachments/assets/f6f3bf02-7b6a-4b81-a27a-3d31f2328ebf)
+
+
 ## Задание 2
 
 1. Создайте python-проект и нажмите `Generate sample event` для генерации тестового события.
