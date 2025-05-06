@@ -25,9 +25,42 @@ Free Cloud account имеет ограничения:
 ## Задание 2
 
 1. Создайте python-проект и нажмите `Generate sample event` для генерации тестового события.
+
+- python3 -m venv venv
+- . venv/bin/activate
+- pip install --upgrade sentry-sdk
+
+```
+import sentry_sdk
+
+sentry_sdk.init(
+    dsn="https://7fe2a2419a****.ingest.de.sentry.io/450927***",
+    send_default_pii=True,
+    environment="development",
+    release="1.0,"
+
+)
+
+if __name__ == "__main__":
+    division_zero = 1 / 0
+```
+
+![изображение](https://github.com/user-attachments/assets/942e4e96-b936-4660-8cb6-81eb06de12d1)
+
 1. Изучите информацию, представленную в событии.
+
+![изображение](https://github.com/user-attachments/assets/b0a6d72c-9afa-4a88-a222-75ad300d53f1)
+
 1. Перейдите в список событий проекта, выберите созданное вами и нажмите `Resolved`.
+
+![изображение](https://github.com/user-attachments/assets/541b5759-1430-4266-9098-a3762000f3b9)
+
 1. В качестве решения задание предоставьте скриншот `Stack trace` из этого события и список событий проекта после нажатия `Resolved`.
+
+![изображение](https://github.com/user-attachments/assets/a2648d19-9f09-4f89-8bd3-f632ffe3bff4)
+
+![изображение](https://github.com/user-attachments/assets/4d7703e4-f73a-406c-8a82-efeade3ebeb9)
+
 
 ## Задание 3
 
