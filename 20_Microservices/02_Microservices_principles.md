@@ -19,7 +19,7 @@
 |--|--|--|--|
 |Amazon API Gateway|+|+|+|
 |Apigee API Gateway|+|+|+|
-|Azure API Management|+|+|+|
+|Azure API Gateway|+|+|+|
 |Yandex API Gateway|+|+|+|
 |Kong API Gateway|+|+|+|
 |Nginx API Gateway|+|+|+|
