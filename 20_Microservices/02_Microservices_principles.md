@@ -17,8 +17,27 @@
 
 |Название|Маршрутизация|Аутентификация|HTTPS|
 |--|--|--|--|
-|||||
-|||||
+|Kong Gateway|+|+|+|
+|Tyk|+|+|+|
+|KrakenD|+|+|+|
+|Gravitee.io|+|+|+|
+|Gloo Edge|+|+|+|
+|Apache APISIX|+|+|+|
+|WSO2 API Microgateway|+|+|+|
+|Fusio|+|+|+|
+|Apiman|+|+|+|
+|API Umbrella|+|+|+|
+|Ocelot|+|+|+|
+|Goku|+|+|+|
+|Express Gateway|+|+|+|
+|Gloo|+|+|+|
+|WSO2|+|+|+|
+|Apigee|+|+|+|
+|Amazon API Gateway|+|+|+|
+|Azure|+|+|+|
+|MuleSoft|+|+|+|
+|Boomi|+|+|+|
+
 
 ## Задача 2: Брокер сообщений
 
