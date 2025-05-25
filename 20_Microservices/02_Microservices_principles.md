@@ -18,11 +18,10 @@
 |Название|Маршрутизация|Аутентификация|HTTPS|
 |--|--|--|--|
 |Amazon API Gateway|+|+|+|
-|Apigee|+|+|+|
+|Apigee API Gateway|+|+|+|
 |Azure API Management|+|+|+|
 |Yandex API Gateway|+|+|+|
-|Kong|+|+|+|
-|Tyk|+|+|+|
+|Kong API Gateway|+|+|+|
 |Nginx API Gateway|+|+|+|
 
 
