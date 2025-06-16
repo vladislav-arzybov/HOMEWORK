@@ -78,7 +78,7 @@
 
 2. Установить dashboard.
 
-#### microk8s enable dashboard
+    - microk8s enable dashboard
 
 ![изображение](https://github.com/user-attachments/assets/1198d4c8-04d7-4f88-b40a-a30c514b1ff9)
 
