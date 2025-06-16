@@ -120,8 +120,8 @@
 
 ![изображение](https://github.com/user-attachments/assets/cb0c34fe-f1cd-4592-adaa-9306b4ad8795)
 
-    - cd ~/.kube/
-    - nano sa-dash.yml
+- cd ~/.kube/
+- nano sa-dash.yml
 
 ```
 apiVersion: v1
@@ -144,8 +144,8 @@ subjects:
   namespace: kube-system
 ```
 
-    - kubectl apply -f sa-dash.yml
-    - kubectl -n kube-system create token admin-user
+- kubectl apply -f sa-dash.yml
+- kubectl -n kube-system create token admin-user
     
 ![изображение](https://github.com/user-attachments/assets/4f510603-ef6a-44e4-9dd4-9942fbf7505f)
 
