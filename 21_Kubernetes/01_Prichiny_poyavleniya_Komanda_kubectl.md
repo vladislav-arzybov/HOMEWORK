@@ -118,6 +118,13 @@
 
 3. Подключиться к дашборду с помощью port-forward.
 
+![изображение](https://github.com/user-attachments/assets/cb0c34fe-f1cd-4592-adaa-9306b4ad8795)
+
+https://localhost:10443/#/login
+
+
+
+
 ------
 
 ### Правила приёма работы
