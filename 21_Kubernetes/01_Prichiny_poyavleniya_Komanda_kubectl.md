@@ -71,13 +71,19 @@
     - chmod 0700 ~/.kube
     - sudo chown -f -R $USER ~/.kube
 
-microk8s status --wait-ready
+# microk8s status --wait-ready
   
 ![изображение](https://github.com/user-attachments/assets/0546f3d6-d7a7-499c-b46b-add22f2f60ed)
 
 
-3. Установить dashboard.
-4. Сгенерировать сертификат для подключения к внешнему ip-адресу.
+2. Установить dashboard.
+
+# microk8s enable dashboard
+
+![изображение](https://github.com/user-attachments/assets/1198d4c8-04d7-4f88-b40a-a30c514b1ff9)
+
+
+3. Сгенерировать сертификат для подключения к внешнему ip-адресу.
 
 ------
 
