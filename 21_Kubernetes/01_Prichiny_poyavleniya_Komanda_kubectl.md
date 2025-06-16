@@ -120,9 +120,38 @@
 
 ![изображение](https://github.com/user-attachments/assets/cb0c34fe-f1cd-4592-adaa-9306b4ad8795)
 
+    - cd ~/.kube/
+    - nano sa-dash.yml
+
+```
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: admin-user
+  namespace: kube-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: admin-user
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: admin-user
+  namespace: kube-system
+```
+
+    - kubectl apply -f sa-dash.yml
+    - kubectl -n kube-system create token admin-user
+    
+![изображение](https://github.com/user-attachments/assets/4f510603-ef6a-44e4-9dd4-9942fbf7505f)
+
 https://localhost:10443/#/login
 
-
+![изображение](https://github.com/user-attachments/assets/054c9697-279a-4f0a-a54a-bf38bd73f9d5)
 
 
 ------
