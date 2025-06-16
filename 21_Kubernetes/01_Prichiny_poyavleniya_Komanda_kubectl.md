@@ -94,8 +94,17 @@
 
 ### Задание 2. Установка и настройка локального kubectl
 1. Установить на локальную машину kubectl.
-2. Настроить локально подключение к кластеру.
-3. Подключиться к дашборду с помощью port-forward.
+
+    - curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+    - chmod +x ./kubectl
+    - sudo mv ./kubectl /usr/local/bin/kubectl
+
+#### kubectl version
+
+![изображение](https://github.com/user-attachments/assets/d20bf590-85f4-4a05-9f9a-dbe176e60639)
+
+3. Настроить локально подключение к кластеру.
+4. Подключиться к дашборду с помощью port-forward.
 
 ------
 
