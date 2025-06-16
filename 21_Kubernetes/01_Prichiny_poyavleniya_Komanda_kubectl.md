@@ -82,8 +82,13 @@
 
 ![изображение](https://github.com/user-attachments/assets/1198d4c8-04d7-4f88-b40a-a30c514b1ff9)
 
-
 3. Сгенерировать сертификат для подключения к внешнему ip-адресу.
+
+    - nano /var/snap/microk8s/current/certs/csr.conf.template
+    - sudo microk8s refresh-certs --cert front-proxy-client.crt
+
+![изображение](https://github.com/user-attachments/assets/6460cd62-c157-4b86-90f1-c39b0354f6e4)
+
 
 ------
 
