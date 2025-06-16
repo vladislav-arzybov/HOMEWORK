@@ -104,7 +104,14 @@
 ![изображение](https://github.com/user-attachments/assets/d20bf590-85f4-4a05-9f9a-dbe176e60639)
 
 3. Настроить локально подключение к кластеру.
-4. Подключиться к дашборду с помощью port-forward.
+
+    - microk8s config > ~/.kube/config
+    - kubectl version
+
+![изображение](https://github.com/user-attachments/assets/bc34085f-ba34-4197-8328-7273ce8bfd69)
+
+
+5. Подключиться к дашборду с помощью port-forward.
 
 ------
 
