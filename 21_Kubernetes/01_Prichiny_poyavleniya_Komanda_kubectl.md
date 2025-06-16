@@ -62,8 +62,22 @@
 ### Задание 1. Установка MicroK8S
 
 1. Установить MicroK8S на локальную машину или на удалённую виртуальную машину.
-2. Установить dashboard.
-3. Сгенерировать сертификат для подключения к внешнему ip-адресу.
+
+    - sudo apt update,
+    - sudo apt install snapd,
+    - sudo snap install microk8s --classic,
+    - sudo usermod -a -G microk8s $USER
+    - mkdir -p ~/.kube
+    - chmod 0700 ~/.kube
+    - sudo chown -f -R $USER ~/.kube
+
+microk8s status --wait-ready
+  
+![изображение](https://github.com/user-attachments/assets/0546f3d6-d7a7-499c-b46b-add22f2f60ed)
+
+
+3. Установить dashboard.
+4. Сгенерировать сертификат для подключения к внешнему ip-адресу.
 
 ------
 
