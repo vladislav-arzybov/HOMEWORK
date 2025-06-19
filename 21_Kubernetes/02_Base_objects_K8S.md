@@ -90,6 +90,8 @@ spec:
       targetPort: 8080
 ```
 
+![изображение](https://github.com/user-attachments/assets/e21c5a33-7f8e-4101-920b-2968258e370d)
+
 6. Подключиться локально к Service с помощью `kubectl port-forward` и вывести значение (curl или в браузере).
 
 ------
