@@ -25,6 +25,8 @@
 
 1. Создать манифест (yaml-конфигурацию) Pod.
 
+[hello-world.yml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/02_Base_objects_K8S/hello-world.yml)
+
 ```
 apiVersion: v1
 kind: Pod
@@ -56,6 +58,8 @@ spec:
 
 1. Создать Pod с именем netology-web.
 
+[netology-web.yml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/02_Base_objects_K8S/netology-web.yml)
+
 ```
 apiVersion: v1
 kind: Pod
@@ -74,6 +78,8 @@ spec:
 ![изображение](https://github.com/user-attachments/assets/9815d568-9979-499d-b111-8f52d8171120)
 
 3. Создать Service с именем netology-svc и подключить к netology-web.
+
+[netology-svc](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/02_Base_objects_K8S/netology-svc.yml)
 
 ```
 apiVersion: v1
