@@ -94,6 +94,12 @@ spec:
 
 6. Подключиться локально к Service с помощью `kubectl port-forward` и вывести значение (curl или в браузере).
 
+#### kubectl port-forward svc/netology-svc 8088:80
+
+![изображение](https://github.com/user-attachments/assets/3568a9de-c616-41d4-8f6f-428c6aa0cdc4)
+
+![изображение](https://github.com/user-attachments/assets/c3442eed-97af-422a-9721-77a42ce6e6fd)
+
 ------
 
 ### Правила приёма работы
