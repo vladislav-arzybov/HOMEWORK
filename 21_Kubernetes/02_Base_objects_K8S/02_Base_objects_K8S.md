@@ -79,7 +79,7 @@ spec:
 
 3. Создать Service с именем netology-svc и подключить к netology-web.
 
-[netology-svc](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/02_Base_objects_K8S/netology-svc.yml)
+[netology-svc.yml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/02_Base_objects_K8S/netology-svc.yml)
 
 ```
 apiVersion: v1
