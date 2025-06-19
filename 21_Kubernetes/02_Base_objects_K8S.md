@@ -73,7 +73,7 @@ spec:
 
 ![изображение](https://github.com/user-attachments/assets/9815d568-9979-499d-b111-8f52d8171120)
 
-4. Создать Service с именем netology-svc и подключить к netology-web.
+3. Создать Service с именем netology-svc и подключить к netology-web.
 
 ```
 apiVersion: v1
@@ -92,7 +92,7 @@ spec:
 
 ![изображение](https://github.com/user-attachments/assets/e21c5a33-7f8e-4101-920b-2968258e370d)
 
-6. Подключиться локально к Service с помощью `kubectl port-forward` и вывести значение (curl или в браузере).
+4. Подключиться локально к Service с помощью `kubectl port-forward` и вывести значение (curl или в браузере).
 
 #### kubectl port-forward svc/netology-svc 8088:80
 
