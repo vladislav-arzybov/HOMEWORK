@@ -44,6 +44,12 @@ spec:
 
 4. Подключиться локально к Pod с помощью `kubectl port-forward` и вывести значение (curl или в браузере).
 
+#### kubectl port-forward pod/hello-world 8087:8080
+
+![изображение](https://github.com/user-attachments/assets/bd89eab3-fd10-4356-b2e9-a785835dc4d7)
+
+![изображение](https://github.com/user-attachments/assets/4f7015e2-38b7-4514-8ec9-fd5cb0e78f83)
+
 ------
 
 ### Задание 2. Создать Service и подключить его к Pod
