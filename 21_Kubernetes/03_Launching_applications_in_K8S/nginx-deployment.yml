@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-init
+  labels:
+    app: nginx
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+      initContainers:
+      - name: delay
+        image: busybox
+        command: ['sh', '-c', 'until nslookup nginx-init-svc.default.svc.cluster.local; do echo waiting for nginx-init-svc; sleep 5; done;']
