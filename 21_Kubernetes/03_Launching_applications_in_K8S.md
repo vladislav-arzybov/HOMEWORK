@@ -43,6 +43,35 @@
 
 ![изображение](https://github.com/user-attachments/assets/acf139f3-7554-49db-a257-e7faa330ad24)
 
+Через переменные окружения изменим http порт для контейнера с multitool
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx-multitool
+spec:
+  selector:
+    matchLabels:
+      app: nginx-multitool
+  template:
+    metadata:
+      labels:
+        app: nginx-multitool
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+      - name: multitool
+        image: wbitt/network-multitool:latest
+        env:
+        - name: HTTP_PORT
+          value: '1180'
+```
+
+![изображение](https://github.com/user-attachments/assets/fa6177c1-a1cb-4048-a14f-ccf1d7f9370d)
 
 3. После запуска увеличить количество реплик работающего приложения до 2.
 4. Продемонстрировать количество подов до и после масштабирования.
