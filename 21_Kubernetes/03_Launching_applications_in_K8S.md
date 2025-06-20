@@ -129,9 +129,9 @@ spec:
       image: wbitt/network-multitool:latest
 ```
 
-#### kubectl exec multitool -it -- /bin/sh
-
 ![изображение](https://github.com/user-attachments/assets/6b516850-7bc2-4edc-8aac-f37005211fbe)
+
+#### kubectl exec multitool -it -- /bin/sh
 
 ![изображение](https://github.com/user-attachments/assets/beac84d7-dac9-42bd-b6d5-e6610c76d61d)
 
@@ -149,9 +149,41 @@ spec:
 ### Задание 2. Создать Deployment и обеспечить старт основного контейнера при выполнении условий
 
 1. Создать Deployment приложения nginx и обеспечить старт контейнера только после того, как будет запущен сервис этого приложения.
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-init
+  labels:
+    app: nginx
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+      initContainers:
+      - name: delay
+        image: busybox
+        command: ['sh', '-c', 'until nslookup nginx-init-svc.default.svc.cluster.local; do echo waiting for nginx-init-svc; sleep 5; done;']
+```
+
 2. Убедиться, что nginx не стартует. В качестве Init-контейнера взять busybox.
+
+![изображение](https://github.com/user-attachments/assets/73ea558d-72af-4789-a168-176fdcba077b)
+
 3. Создать и запустить Service. Убедиться, что Init запустился.
-4. Продемонстрировать состояние пода до и после запуска сервиса.
+
+
+
+5. Продемонстрировать состояние пода до и после запуска сервиса.
 
 ------
 
