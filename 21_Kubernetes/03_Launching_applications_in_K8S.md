@@ -73,18 +73,18 @@ spec:
 
 ![изображение](https://github.com/user-attachments/assets/fa6177c1-a1cb-4048-a14f-ccf1d7f9370d)
 
-3. После запуска увеличить количество реплик работающего приложения до 2.
+2. После запуска увеличить количество реплик работающего приложения до 2.
 
 ```
 spec:
   replicas: 2
 ```
 
-5. Продемонстрировать количество подов до и после масштабирования.
+3. Продемонстрировать количество подов до и после масштабирования.
 
 ![изображение](https://github.com/user-attachments/assets/ad6d5c0d-7c3b-4970-9547-2e3bf22b2e3b)
 
-6. Создать Service, который обеспечит доступ до реплик приложений из п.1.
+4. Создать Service, который обеспечит доступ до реплик приложений из п.1.
 
 ```
 apiVersion: v1
@@ -114,7 +114,35 @@ spec:
 ![изображение](https://github.com/user-attachments/assets/e0e37808-4657-4055-ac5b-88c852c8b0eb)
 
 
-8. Создать отдельный Pod с приложением multitool и убедиться с помощью `curl`, что из пода есть доступ до приложений из п.1.
+5. Создать отдельный Pod с приложением multitool и убедиться с помощью `curl`, что из пода есть доступ до приложений из п.1.
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: multitool
+  labels:
+    app: multitool
+spec:
+  containers:
+    - name: multitool-pod
+      image: wbitt/network-multitool:latest
+```
+
+#### kubectl exec multitool -it -- /bin/sh
+
+![изображение](https://github.com/user-attachments/assets/6b516850-7bc2-4edc-8aac-f37005211fbe)
+
+![изображение](https://github.com/user-attachments/assets/beac84d7-dac9-42bd-b6d5-e6610c76d61d)
+
+![изображение](https://github.com/user-attachments/assets/030c2ff1-8b69-46bb-8279-e0e4aa1f96da)
+
+![изображение](https://github.com/user-attachments/assets/06300600-a3d9-45bf-ba9b-39a253c9a3dd)
+
+Аналогично если обращаться напрямую к pod по ip
+
+![изображение](https://github.com/user-attachments/assets/2b921448-6227-43ac-ba45-7195a39579ba)
+
 
 ------
 
