@@ -181,9 +181,25 @@ spec:
 
 3. Создать и запустить Service. Убедиться, что Init запустился.
 
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-init-svc
+spec:
+  selector:
+    app: nginx
+  ports:
+    - name: nginx
+      protocol: TCP
+      port: 80
+      targetPort: 80
+```
 
+4. Продемонстрировать состояние пода до и после запуска сервиса.
 
-5. Продемонстрировать состояние пода до и после запуска сервиса.
+![изображение](https://github.com/user-attachments/assets/a7ebc5ff-7368-48c4-9018-bfece8f3046a)
+
 
 ------
 
