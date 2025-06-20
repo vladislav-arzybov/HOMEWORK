@@ -196,6 +196,8 @@ spec:
       targetPort: 80
 ```
 
+![изображение](https://github.com/user-attachments/assets/cc57e0f9-f9f6-4030-9f97-4b3e0444c409)
+
 4. Продемонстрировать состояние пода до и после запуска сервиса.
 
 ![изображение](https://github.com/user-attachments/assets/a7ebc5ff-7368-48c4-9018-bfece8f3046a)
