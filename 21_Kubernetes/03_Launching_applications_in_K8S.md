@@ -85,7 +85,36 @@ spec:
 ![изображение](https://github.com/user-attachments/assets/ad6d5c0d-7c3b-4970-9547-2e3bf22b2e3b)
 
 6. Создать Service, который обеспечит доступ до реплик приложений из п.1.
-7. Создать отдельный Pod с приложением multitool и убедиться с помощью `curl`, что из пода есть доступ до приложений из п.1.
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-svc
+spec:
+  selector:
+    app: nginx-multitool
+  ports:
+    - name: nginx-port
+      protocol: TCP
+      port: 80
+      targetPort: 80
+    - name: multitool-https-port
+      protocol: TCP
+      port: 443
+      targetPort: 443
+    - name: multitool-http-port
+      protocol: TCP
+      port: 1180
+      targetPort: 1180
+```
+
+#### kubectl get svc -o wide
+
+![изображение](https://github.com/user-attachments/assets/e0e37808-4657-4055-ac5b-88c852c8b0eb)
+
+
+8. Создать отдельный Pod с приложением multitool и убедиться с помощью `curl`, что из пода есть доступ до приложений из п.1.
 
 ------
 
