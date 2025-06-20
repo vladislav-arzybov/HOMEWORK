@@ -45,6 +45,8 @@
 
 Через переменные окружения изменим http порт для контейнера с multitool
 
+[deployment.yml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/03_Launching_applications_in_K8S/deployment.yml)
+
 ```
 apiVersion: apps/v1
 kind: Deployment
@@ -86,6 +88,8 @@ spec:
 
 4. Создать Service, который обеспечит доступ до реплик приложений из п.1.
 
+[nginx-svc.yml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/03_Launching_applications_in_K8S/nginx-svc.yml)
+
 ```
 apiVersion: v1
 kind: Service
@@ -115,6 +119,8 @@ spec:
 
 
 5. Создать отдельный Pod с приложением multitool и убедиться с помощью `curl`, что из пода есть доступ до приложений из п.1.
+
+[multitool-pod.yml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/03_Launching_applications_in_K8S/multitool-pod.yml)
 
 ```
 apiVersion: v1
@@ -150,6 +156,8 @@ spec:
 
 1. Создать Deployment приложения nginx и обеспечить старт контейнера только после того, как будет запущен сервис этого приложения.
 
+[nginx-deployment.yml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/03_Launching_applications_in_K8S/nginx-deployment.yml)
+
 ```
 apiVersion: apps/v1
 kind: Deployment
@@ -180,6 +188,8 @@ spec:
 ![изображение](https://github.com/user-attachments/assets/73ea558d-72af-4789-a168-176fdcba077b)
 
 3. Создать и запустить Service. Убедиться, что Init запустился.
+
+[nginx-init-svc.yml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/03_Launching_applications_in_K8S/nginx-init-svc.yml)
 
 ```
 apiVersion: v1
