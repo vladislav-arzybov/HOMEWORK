@@ -56,7 +56,30 @@ spec:
 ![изображение](https://github.com/user-attachments/assets/c8161b4e-bf6d-4559-ab7e-64fbcdd82b58)
 
 3. Создать Service, который обеспечит доступ внутри кластера до контейнеров приложения из п.1 по порту 9001 — nginx 80, по 9002 — multitool 8080.
-4. Создать отдельный Pod с приложением multitool и убедиться с помощью `curl`, что из пода есть доступ до приложения из п.1 по разным портам в разные контейнеры.
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc
+spec:
+  selector:
+    app: nginx-multitool
+  ports:
+    - name: nginx-port
+      protocol: TCP
+      port: 9001
+      targetPort: 80
+    - name: multitool-port
+      protocol: TCP
+      port: 9002
+      targetPort: 8080
+```
+
+![изображение](https://github.com/user-attachments/assets/1c52e823-f500-44a8-85cd-c76a3f406001)
+
+
+5. Создать отдельный Pod с приложением multitool и убедиться с помощью `curl`, что из пода есть доступ до приложения из п.1 по разным портам в разные контейнеры.
 
 ```
 apiVersion: v1
@@ -72,6 +95,10 @@ spec:
 ```
 
 ![изображение](https://github.com/user-attachments/assets/30393177-0a2c-40a1-9eea-59549a6ea6a8)
+
+#### kubectl exec -it multitool -- bash
+
+![изображение](https://github.com/user-attachments/assets/38d3f0ac-352c-45d3-bde8-b6d982d136f0)
 
 6. Продемонстрировать доступ с помощью `curl` по доменному имени сервиса.
 7. Предоставить манифесты Deployment и Service в решении, а также скриншоты или вывод команды п.4.
