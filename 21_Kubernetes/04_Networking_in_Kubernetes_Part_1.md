@@ -114,7 +114,33 @@ spec:
 ### Задание 2. Создать Service и обеспечить доступ к приложениям снаружи кластера
 
 1. Создать отдельный Service приложения из Задания 1 с возможностью доступа снаружи кластера к nginx, используя тип NodePort.
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-np
+spec:
+  selector:
+    app: nginx-multitool
+  type: NodePort
+  ports:
+    - name: nginx-np
+      protocol: TCP
+      port: 9001
+      targetPort: 80
+    - name: multitool-np
+      protocol: TCP
+      port: 9002
+      targetPort: 8080
+```
+
+![изображение](https://github.com/user-attachments/assets/0353352a-5702-4a57-b6e1-26f9a474422a)
+
 2. Продемонстрировать доступ с помощью браузера или `curl` с локального компьютера.
+
+![изображение](https://github.com/user-attachments/assets/368541fd-9ae0-4a74-8705-162a607b791d)
+
 3. Предоставить манифест и Service в решении, а также скриншоты или вывод команды п.2.
 
 ------
