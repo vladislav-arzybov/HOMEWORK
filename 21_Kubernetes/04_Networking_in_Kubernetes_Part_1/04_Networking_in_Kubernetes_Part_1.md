@@ -26,6 +26,8 @@
 
 1. Создать Deployment приложения, состоящего из двух контейнеров (nginx и multitool), с количеством реплик 3 шт.
 
+[deployment.yml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/04_Networking_in_Kubernetes_Part_1/deployment.yml)
+
 ```
 apiVersion: apps/v1
 kind: Deployment
@@ -57,6 +59,8 @@ spec:
 
 2. Создать Service, который обеспечит доступ внутри кластера до контейнеров приложения из п.1 по порту 9001 — nginx 80, по 9002 — multitool 8080.
 
+[svc.yml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/04_Networking_in_Kubernetes_Part_1/svc.yml)
+
 ```
 apiVersion: v1
 kind: Service
@@ -80,6 +84,8 @@ spec:
 
 
 3. Создать отдельный Pod с приложением multitool и убедиться с помощью `curl`, что из пода есть доступ до приложения из п.1 по разным портам в разные контейнеры.
+
+[multitool-pod.yml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/04_Networking_in_Kubernetes_Part_1/multitool-pod.yml)
 
 ```
 apiVersion: v1
@@ -114,6 +120,8 @@ spec:
 ### Задание 2. Создать Service и обеспечить доступ к приложениям снаружи кластера
 
 1. Создать отдельный Service приложения из Задания 1 с возможностью доступа снаружи кластера к nginx, используя тип NodePort.
+
+[svc-np.yml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/04_Networking_in_Kubernetes_Part_1/svc-np.yml)
 
 ```
 apiVersion: v1
