@@ -77,9 +77,41 @@ spec:
 
 ![изображение](https://github.com/user-attachments/assets/cef636df-2c16-4d13-939b-573ea3f131bd)
 
-4. Добавить Service, которые обеспечат доступ к обоим приложениям внутри кластера. 
-5. Продемонстрировать, что приложения видят друг друга с помощью Service.
-6. Предоставить манифесты Deployment и Service в решении, а также скриншоты или вывод команды п.4.
+4. Добавить Service, которые обеспечат доступ к обоим приложениям внутри кластера.
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: ng-service
+spec:
+  selector:
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: ClusterIP
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mt-service
+spec:
+  selector:
+    app: multitool
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: ClusterIP
+```
+
+
+
+6. Продемонстрировать, что приложения видят друг друга с помощью Service.
+7. Предоставить манифесты Deployment и Service в решении, а также скриншоты или вывод команды п.4.
 
 ------
 
