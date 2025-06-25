@@ -27,6 +27,8 @@
 
 1. Создать Deployment приложения _frontend_ из образа nginx с количеством реплик 3 шт.
 
+[ng-deployment.yml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/05_Networking_in_Kubernetes_Part_2/ng-deployment.yml)
+
 ```
 apiVersion: apps/v1
 kind: Deployment
@@ -52,6 +54,8 @@ spec:
 ![изображение](https://github.com/user-attachments/assets/c1044321-7bd7-40ba-b12b-12363def8cc4)
 
 2. Создать Deployment приложения _backend_ из образа multitool. 
+
+[mt-deployment.yml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/05_Networking_in_Kubernetes_Part_2/mt-deployment.yml)
 
 ```
 apiVersion: apps/v1
@@ -79,6 +83,8 @@ spec:
 
 3. Добавить Service, которые обеспечат доступ к обоим приложениям внутри кластера.
 
+[ng-svc.yml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/05_Networking_in_Kubernetes_Part_2/ng-svc.yml)
+
 ```
 apiVersion: v1
 kind: Service
@@ -92,8 +98,11 @@ spec:
       port: 80
       targetPort: 80
   type: ClusterIP
+```
 
----
+[mt-svc.yml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/05_Networking_in_Kubernetes_Part_2/mt-svc.yml)
+
+```
 apiVersion: v1
 kind: Service
 metadata:
@@ -135,6 +144,8 @@ spec:
 ![изображение](https://github.com/user-attachments/assets/d17d7e53-9ea8-4bd7-ab86-b3edc30bc179)
 
 2. Создать Ingress, обеспечивающий доступ снаружи по IP-адресу кластера MicroK8S так, чтобы при запросе только по адресу открывался _frontend_ а при добавлении /api - _backend_.
+
+[ingress.yml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/05_Networking_in_Kubernetes_Part_2/ingress.yml)
 
 ```
 apiVersion: networking.k8s.io/v1
