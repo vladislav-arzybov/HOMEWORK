@@ -113,6 +113,15 @@ spec:
 ![изображение](https://github.com/user-attachments/assets/f7479911-529c-4b32-a968-b34f5be1b99c)
 
 4. Продемонстрировать, что приложения видят друг друга с помощью Service.
+
+#### kubectl exec -ti backend-7477875577-sx2w9 -- bash
+
+![изображение](https://github.com/user-attachments/assets/a2098ec4-90cf-4b6f-a2e3-bf70be2b05fc)
+
+#### kubectl exec -ti frontend-6f479fff4d-46kpv -- bash
+
+![изображение](https://github.com/user-attachments/assets/2a345448-b78a-4875-a0b0-5735815f4716)
+
 5. Предоставить манифесты Deployment и Service в решении, а также скриншоты или вывод команды п.4.
 
 ------
