@@ -51,7 +51,7 @@ spec:
 
 ![изображение](https://github.com/user-attachments/assets/c1044321-7bd7-40ba-b12b-12363def8cc4)
 
-3. Создать Deployment приложения _backend_ из образа multitool. 
+2. Создать Deployment приложения _backend_ из образа multitool. 
 
 ```
 apiVersion: apps/v1
@@ -77,7 +77,7 @@ spec:
 
 ![изображение](https://github.com/user-attachments/assets/cef636df-2c16-4d13-939b-573ea3f131bd)
 
-4. Добавить Service, которые обеспечат доступ к обоим приложениям внутри кластера.
+3. Добавить Service, которые обеспечат доступ к обоим приложениям внутри кластера.
 
 ```
 apiVersion: v1
@@ -108,10 +108,12 @@ spec:
   type: ClusterIP
 ```
 
+#### kubectl get svc -o wide
 
+![изображение](https://github.com/user-attachments/assets/f7479911-529c-4b32-a968-b34f5be1b99c)
 
-6. Продемонстрировать, что приложения видят друг друга с помощью Service.
-7. Предоставить манифесты Deployment и Service в решении, а также скриншоты или вывод команды п.4.
+4. Продемонстрировать, что приложения видят друг друга с помощью Service.
+5. Предоставить манифесты Deployment и Service в решении, а также скриншоты или вывод команды п.4.
 
 ------
 
