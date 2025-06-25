@@ -31,16 +31,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ng-deployment
+  name: frontend
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: frontend
+      app: nginx
   template:
     metadata:
       labels:
-        app: frontend
+        app: nginx
     spec:
       containers:
       - name: ng-container
@@ -49,7 +49,7 @@ spec:
         - containerPort: 80
 ```
 
-
+![изображение](https://github.com/user-attachments/assets/c1044321-7bd7-40ba-b12b-12363def8cc4)
 
 3. Создать Deployment приложения _backend_ из образа multitool. 
 
@@ -57,16 +57,16 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mt-deployment
+  name: backend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: backend
+      app: multitool
   template:
     metadata:
       labels:
-        app: backend
+        app: multitool
     spec:
       containers:
       - name: mt-container
@@ -74,6 +74,8 @@ spec:
         ports:
         - containerPort: 80
 ```
+
+![изображение](https://github.com/user-attachments/assets/cef636df-2c16-4d13-939b-573ea3f131bd)
 
 4. Добавить Service, которые обеспечат доступ к обоим приложениям внутри кластера. 
 5. Продемонстрировать, что приложения видят друг друга с помощью Service.
