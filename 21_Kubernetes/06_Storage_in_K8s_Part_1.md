@@ -95,8 +95,45 @@ spec:
 Создать DaemonSet приложения, которое может прочитать логи ноды.
 
 1. Создать DaemonSet приложения, состоящего из multitool.
+
+```
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: vol-daemonset
+  labels:
+    app: vol-multitool
+spec:
+  selector:
+    matchLabels:
+      app: vol-multitool
+  template:
+    metadata:
+      labels:
+        app: vol-multitool
+    spec:
+      containers:
+      - name: multitool
+        image: wbitt/network-multitool:latest
+        volumeMounts:
+        - name: daemon-vol
+          mountPath: /data/log
+      volumes:
+      - name: daemon-vol
+        hostPath:
+          path: /var/log
+```
+
 2. Обеспечить возможность чтения файла `/var/log/syslog` кластера MicroK8S.
+
+![изображение](https://github.com/user-attachments/assets/c2d30f9e-7411-427c-a9bf-c61a48231644)
+
 3. Продемонстрировать возможность чтения файла изнутри пода.
+
+#### kubectl exec -it vol-daemonset-tbzrw -- sh
+
+![изображение](https://github.com/user-attachments/assets/d2c5afe7-fdf9-4903-af3d-796bcc8f0c0a)
+
 4. Предоставить манифесты Deployment, а также скриншоты или вывод команды из п. 2.
 
 ------
