@@ -29,9 +29,62 @@
 Создать Deployment приложения, состоящего из двух контейнеров и обменивающихся данными.
 
 1. Создать Deployment приложения, состоящего из контейнеров busybox и multitool.
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vol-deployment
+  labels:
+    app: vol
+spec:
+  selector:
+    matchLabels:
+      app: vol
+  template:
+    metadata:
+      labels:
+        app: vol
+    spec:
+      containers:
+      - name: busybox
+        image: busybox:latest
+        command: ['sh', '-c', 'while true; do echo "$(date)">>/etc/out/test.txt;sleep 5;done']
+        volumeMounts:
+        - name: test-vol
+          mountPath: /etc/out
+      - name: multitool
+        image: wbitt/network-multitool:latest
+        env:
+        command: ['sh', '-c', 'while true; do cat /etc/in/test.txt;sleep 5;done']
+        volumeMounts:
+        - name: test-vol
+          mountPath: /etc/in
+      volumes:
+      - name: test-vol
+        emptyDir: {}
+```
+
+![изображение](https://github.com/user-attachments/assets/f4d5acbe-f379-478b-bd09-6d77e801a1b7)
+
 2. Сделать так, чтобы busybox писал каждые пять секунд в некий файл в общей директории.
+
+#### kubectl exec -it vol-deployment-5bcdf8854b-d4h4n -c busybox -- sh
+
+![изображение](https://github.com/user-attachments/assets/ebace295-7e8a-4b19-842e-cd2d6198894c)
+
 3. Обеспечить возможность чтения файла контейнером multitool.
+
+#### kubectl logs deployments/vol-deployment multitool
+
+![изображение](https://github.com/user-attachments/assets/ba844eb1-98bb-4e90-a734-3f661cb6b1ca)
+
 4. Продемонстрировать, что multitool может читать файл, который периодоически обновляется.
+
+#### kubectl exec -it vol-deployment-5bcdf8854b-d4h4n -c multitool -- sh
+
+![изображение](https://github.com/user-attachments/assets/1c3182f4-846d-4608-ab04-0d0d09f8ceed)
+
 5. Предоставить манифесты Deployment в решении, а также скриншоты или вывод команды из п. 4.
 
 ------
