@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vol-deployment
+  labels:
+    app: vol
+spec:
+  selector:
+    matchLabels:
+      app: vol
+  template:
+    metadata:
+      labels:
+        app: vol
+    spec:
+      containers:
+      - name: busybox
+        image: busybox:latest
+        command: ['sh', '-c', 'while true; do echo "$(date)">>/etc/out/test.txt;sleep 5;done']
+        volumeMounts:
+        - name: test-vol
+          mountPath: /etc/out
+      - name: multitool
+        image: wbitt/network-multitool:latest
+        command: ['sh', '-c', 'while true; do cat /etc/in/test.txt;sleep 5;done']
+        volumeMounts:
+        - name: test-vol
+          mountPath: /etc/in
+      volumes:
+      - name: test-vol
+        emptyDir: {}
