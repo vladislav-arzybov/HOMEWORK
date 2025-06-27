@@ -30,6 +30,8 @@
 
 1. Создать Deployment приложения, состоящего из контейнеров busybox и multitool.
 
+[vol-deployment.yml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/06_Storage_in_K8s_Part_1/vol-deployment.yml)
+
 ```
 apiVersion: apps/v1
 kind: Deployment
@@ -95,6 +97,8 @@ spec:
 Создать DaemonSet приложения, которое может прочитать логи ноды.
 
 1. Создать DaemonSet приложения, состоящего из multitool.
+
+[vol-daemonset.yml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/06_Storage_in_K8s_Part_1/vol-daemonset.yml)
 
 ```
 apiVersion: apps/v1
