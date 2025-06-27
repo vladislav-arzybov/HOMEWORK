@@ -55,7 +55,6 @@ spec:
           mountPath: /etc/out
       - name: multitool
         image: wbitt/network-multitool:latest
-        env:
         command: ['sh', '-c', 'while true; do cat /etc/in/test.txt;sleep 5;done']
         volumeMounts:
         - name: test-vol
