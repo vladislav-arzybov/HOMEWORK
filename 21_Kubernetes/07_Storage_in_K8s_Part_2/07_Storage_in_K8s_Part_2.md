@@ -194,7 +194,7 @@ spec:
 
 ![изображение](https://github.com/user-attachments/assets/fd0326c8-c6cc-4637-835b-57e41ef5af8c)
 
-Также можно проверить наличие файла внутри созданного хранилища, которое в этот раз будет удалено вместе с PV
+Также можно проверить наличие файла внутри созданного хранилища, которое в этот раз будет удалено вместе с PVC
 
 #### cat /var/snap/microk8s/common/default-storage/default-example-pvc-pvc-41007020-c7d7-4238-aa01-8589d636fdfe/test.txt
 
