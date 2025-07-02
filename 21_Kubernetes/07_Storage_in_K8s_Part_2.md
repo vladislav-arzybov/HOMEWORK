@@ -141,8 +141,49 @@ spec:
 ![изображение](https://github.com/user-attachments/assets/618604d3-060b-4fca-9de8-d8b7860c89cd)
 
 3. Создать Deployment приложения состоящего из multitool, и подключить к нему PV, созданный автоматически на сервере NFS.
-4. Продемонстрировать возможность чтения и записи файла изнутри пода. 
-5. Предоставить манифесты, а также скриншоты или вывод необходимых команд.
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nfs-deployment
+  labels:
+    app: vol
+spec:
+  selector:
+    matchLabels:
+      app: vol
+  template:
+    metadata:
+      labels:
+        app: vol
+    spec:
+      containers:
+      - name: multitool
+        image: wbitt/network-multitool:latest
+        volumeMounts:
+        - name: example-volume
+          mountPath: /etc/in
+      volumes:
+      - name: example-volume
+        persistentVolumeClaim:
+          claimName: example-pvc
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: example-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: "microk8s-hostpath"
+  resources:
+    requests:
+      storage: 1Gi
+```
+
+5. Продемонстрировать возможность чтения и записи файла изнутри пода. 
+6. Предоставить манифесты, а также скриншоты или вывод необходимых команд.
 
 ------
 
