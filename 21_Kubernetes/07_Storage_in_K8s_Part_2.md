@@ -182,8 +182,23 @@ spec:
       storage: 1Gi
 ```
 
-5. Продемонстрировать возможность чтения и записи файла изнутри пода. 
-6. Предоставить манифесты, а также скриншоты или вывод необходимых команд.
+![изображение](https://github.com/user-attachments/assets/ff40fd9b-c75c-4ee1-ab80-4e6840427542)
+
+![изображение](https://github.com/user-attachments/assets/60d6425d-78c9-4ac7-86fb-8c883253a7dc)
+
+5. Продемонстрировать возможность чтения и записи файла изнутри пода.
+
+#### kubectl exec -it nfs-deployment-5c55ccfc49-zkrc8 -- sh
+
+![изображение](https://github.com/user-attachments/assets/fd0326c8-c6cc-4637-835b-57e41ef5af8c)
+
+Также можно проверить наличие файла внутри созданного хранилища, которое в этот раз будет удалено вместе с PV
+
+#### cat /var/snap/microk8s/common/default-storage/default-example-pvc-pvc-41007020-c7d7-4238-aa01-8589d636fdfe/test.txt
+
+![изображение](https://github.com/user-attachments/assets/23e651ff-fb9b-4917-a3e4-cf1d1d306654)
+
+7. Предоставить манифесты, а также скриншоты или вывод необходимых команд.
 
 ------
 
