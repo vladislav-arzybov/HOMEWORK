@@ -126,6 +126,8 @@ spec:
 
 6. Предоставить манифесты, а также скриншоты или вывод необходимых команд.
 
+[vol-deployment.yml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/07_Storage_in_K8s_Part_2/vol-deployment.yml)
+
 ------
 
 ### Задание 2
@@ -140,7 +142,7 @@ spec:
 
 ![изображение](https://github.com/user-attachments/assets/618604d3-060b-4fca-9de8-d8b7860c89cd)
 
-3. Создать Deployment приложения состоящего из multitool, и подключить к нему PV, созданный автоматически на сервере NFS.
+2. Создать Deployment приложения состоящего из multitool, и подключить к нему PV, созданный автоматически на сервере NFS.
 
 ```
 apiVersion: apps/v1
@@ -186,7 +188,7 @@ spec:
 
 ![изображение](https://github.com/user-attachments/assets/60d6425d-78c9-4ac7-86fb-8c883253a7dc)
 
-5. Продемонстрировать возможность чтения и записи файла изнутри пода.
+3. Продемонстрировать возможность чтения и записи файла изнутри пода.
 
 #### kubectl exec -it nfs-deployment-5c55ccfc49-zkrc8 -- sh
 
@@ -198,7 +200,9 @@ spec:
 
 ![изображение](https://github.com/user-attachments/assets/23e651ff-fb9b-4917-a3e4-cf1d1d306654)
 
-7. Предоставить манифесты, а также скриншоты или вывод необходимых команд.
+4. Предоставить манифесты, а также скриншоты или вывод необходимых команд.
+
+[nfs-deployment.yml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/07_Storage_in_K8s_Part_2/nfs-deployment.yml)
 
 ------
 
