@@ -30,10 +30,75 @@
 Создать Deployment приложения, использующего локальный PV, созданный вручную.
 
 1. Создать Deployment приложения, состоящего из контейнеров busybox и multitool.
-2. Создать PV и PVC для подключения папки на локальной ноде, которая будет использована в поде.
-3. Продемонстрировать, что multitool может читать файл, в который busybox пишет каждые пять секунд в общей директории. 
-4. Удалить Deployment и PVC. Продемонстрировать, что после этого произошло с PV. Пояснить, почему.
-5. Продемонстрировать, что файл сохранился на локальном диске ноды. Удалить PV.  Продемонстрировать что произошло с файлом после удаления PV. Пояснить, почему.
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vol-deployment
+  labels:
+    app: vol
+spec:
+  selector:
+    matchLabels:
+      app: vol
+  template:
+    metadata:
+      labels:
+        app: vol
+    spec:
+      containers:
+      - name: busybox
+        image: busybox:latest
+        command: ['sh', '-c', 'while true; do echo "$(date)">>/etc/out/test.txt;sleep 5;done']
+        volumeMounts:
+        - name: example-volume
+          mountPath: /etc/out
+      - name: multitool
+        image: wbitt/network-multitool:latest
+        volumeMounts:
+        - name: example-volume
+          mountPath: /etc/in
+      volumes:
+      - name: example-volume
+        persistentVolumeClaim:
+          claimName: example-pvc
+```
+
+3. Создать PV и PVC для подключения папки на локальной ноде, которая будет использована в поде.
+
+```
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: example-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: ""
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: example-pv
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: ""
+  hostPath:
+    path: "/mnt/data"
+```
+
+5. Продемонстрировать, что multitool может читать файл, в который busybox пишет каждые пять секунд в общей директории. 
+6. Удалить Deployment и PVC. Продемонстрировать, что после этого произошло с PV. Пояснить, почему.
+7. Продемонстрировать, что файл сохранился на локальном диске ноды. Удалить PV.  Продемонстрировать что произошло с файлом после удаления PV. Пояснить, почему.
 5. Предоставить манифесты, а также скриншоты или вывод необходимых команд.
 
 ------
