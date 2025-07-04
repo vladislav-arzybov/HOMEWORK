@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-ng-mt
+spec:
+  selector:
+    app: nginx-multitool
+  type: NodePort
+  ports:
+    - name: nginx-np
+      protocol: TCP
+      port: 80
+      targetPort: 80
+    - name: multitool-np
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
