@@ -134,7 +134,7 @@ spec:
         - containerPort: 80
 ```
 
-3. Создать собственную веб-страницу и подключить её как ConfigMap к приложению.
+2. Создать собственную веб-страницу и подключить её как ConfigMap к приложению.
 
 ```
         volumeMounts:
@@ -159,7 +159,7 @@ data:
     </html>
 ```
 
-5. Выпустить самоподписной сертификат SSL. Создать Secret для использования сертификата.
+3. Выпустить самоподписной сертификат SSL. Создать Secret для использования сертификата.
 
 #### openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout tls.key -out tls.crt -subj "/CN=localhost/O=localhost"
 
@@ -169,7 +169,7 @@ data:
 
 ![изображение](https://github.com/user-attachments/assets/3e591b79-87b8-405f-b771-81d4dfc36e9a)
 
-7. Создать Ingress и необходимый Service, подключить к нему SSL в вид. Продемонстировать доступ к приложению по HTTPS.
+4. Создать Ingress и необходимый Service, подключить к нему SSL в вид. Продемонстировать доступ к приложению по HTTPS.
 
 ```
 apiVersion: networking.k8s.io/v1
@@ -192,7 +192,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: ng-svc
+            name: ng-service
             port:
               number: 80
 ```
@@ -212,7 +212,15 @@ spec:
   type: ClusterIP
 ```
 
-4. Предоставить манифесты, а также скриншоты или вывод необходимых команд.
+![изображение](https://github.com/user-attachments/assets/fe9e8db1-cc7e-4a6c-ba73-639e74a97e48)
+
+#### curl https://localhost -k
+
+![изображение](https://github.com/user-attachments/assets/3427d3af-dd27-4252-8d47-6abac923bfc8)
+
+
+
+5. Предоставить манифесты, а также скриншоты или вывод необходимых команд.
 
 ------
 
