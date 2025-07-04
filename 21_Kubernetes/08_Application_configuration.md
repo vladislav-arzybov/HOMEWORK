@@ -111,9 +111,56 @@ data:
 ### Задание 2. Создать приложение с вашей веб-страницей, доступной по HTTPS 
 
 1. Создать Deployment приложения, состоящего из Nginx.
-2. Создать собственную веб-страницу и подключить её как ConfigMap к приложению.
-3. Выпустить самоподписной сертификат SSL. Создать Secret для использования сертификата.
-4. Создать Ingress и необходимый Service, подключить к нему SSL в вид. Продемонстировать доступ к приложению по HTTPS. 
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ng-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: ng-container
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+```
+
+3. Создать собственную веб-страницу и подключить её как ConfigMap к приложению.
+
+```
+        volumeMounts:
+        - name: web-html
+          mountPath: /usr/share/nginx/html
+      volumes:
+      - name: web-html
+        configMap:
+          name: ng-config
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ng-config
+data:
+  index.html: |
+    <html>
+    <body>
+      <h1>test</h1>
+    </body>
+    </html>
+```
+
+5. Выпустить самоподписной сертификат SSL. Создать Secret для использования сертификата.
+6. Создать Ingress и необходимый Service, подключить к нему SSL в вид. Продемонстировать доступ к приложению по HTTPS. 
 4. Предоставить манифесты, а также скриншоты или вывод необходимых команд.
 
 ------
