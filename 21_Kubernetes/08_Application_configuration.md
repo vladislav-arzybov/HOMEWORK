@@ -160,7 +160,16 @@ data:
 ```
 
 5. Выпустить самоподписной сертификат SSL. Создать Secret для использования сертификата.
-6. Создать Ingress и необходимый Service, подключить к нему SSL в вид. Продемонстировать доступ к приложению по HTTPS.
+
+#### openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout tls.key -out tls.crt -subj "/CN=localhost/O=localhost"
+
+![изображение](https://github.com/user-attachments/assets/0e7b5836-7a50-4476-837a-d41a8c35b27c)
+
+#### kubectl create secret tls web-tls --cert=tls.crt --key=tls.key
+
+![изображение](https://github.com/user-attachments/assets/3e591b79-87b8-405f-b771-81d4dfc36e9a)
+
+7. Создать Ingress и необходимый Service, подключить к нему SSL в вид. Продемонстировать доступ к приложению по HTTPS.
 
 ```
 apiVersion: networking.k8s.io/v1
