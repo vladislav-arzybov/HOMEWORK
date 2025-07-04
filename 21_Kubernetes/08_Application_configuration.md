@@ -25,10 +25,54 @@
 ### Задание 1. Создать Deployment приложения и решить возникшую проблему с помощью ConfigMap. Добавить веб-страницу
 
 1. Создать Deployment приложения, состоящего из контейнеров nginx и multitool.
-2. Решить возникшую проблему с помощью ConfigMap.
-3. Продемонстрировать, что pod стартовал и оба конейнера работают.
-4. Сделать простую веб-страницу и подключить её к Nginx с помощью ConfigMap. Подключить Service и показать вывод curl или в браузере.
-5. Предоставить манифесты, а также скриншоты или вывод необходимых команд.
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx-multitool
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-multitool
+  template:
+    metadata:
+      labels:
+        app: nginx-multitool
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+      - name: multitool
+        image: wbitt/network-multitool:latest
+        env:
+        - name: HTTP_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: env-config
+              key: HTTP_PORT
+```
+
+3. Решить возникшую проблему с помощью ConfigMap.
+
+```
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-config
+data:
+  HTTP_PORT: "8080"
+```
+
+4. Продемонстрировать, что pod стартовал и оба конейнера работают.
+
+![изображение](https://github.com/user-attachments/assets/6e032bb6-4a11-496e-a768-e614ca9b1ec6)
+
+6. Сделать простую веб-страницу и подключить её к Nginx с помощью ConfigMap. Подключить Service и показать вывод curl или в браузере.
+7. Предоставить манифесты, а также скриншоты или вывод необходимых команд.
 
 ------
 
