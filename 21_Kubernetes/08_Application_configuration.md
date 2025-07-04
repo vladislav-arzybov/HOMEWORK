@@ -160,7 +160,45 @@ data:
 ```
 
 5. Выпустить самоподписной сертификат SSL. Создать Secret для использования сертификата.
-6. Создать Ingress и необходимый Service, подключить к нему SSL в вид. Продемонстировать доступ к приложению по HTTPS. 
+6. Создать Ingress и необходимый Service, подключить к нему SSL в вид. Продемонстировать доступ к приложению по HTTPS.
+
+```
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ng-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: localhost
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: ng-svc
+            port:
+              number: 80
+```
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: ng-service
+spec:
+  selector:
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: ClusterIP
+```
+
 4. Предоставить манифесты, а также скриншоты или вывод необходимых команд.
 
 ------
