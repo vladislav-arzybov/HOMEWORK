@@ -26,6 +26,8 @@
 
 1. Создать Deployment приложения, состоящего из контейнеров nginx и multitool.
 
+[deployment.yml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/08_Application_configuration/deployment.yml)
+
 ```
 apiVersion: apps/v1
 kind: Deployment
@@ -57,6 +59,8 @@ spec:
 ```
 
 2. Решить возникшую проблему с помощью ConfigMap.
+
+[configmap-env.yml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/08_Application_configuration/configmap-env.yml)
 
 ```
 apiVersion: v1
@@ -98,6 +102,28 @@ data:
     </html>
 ```
 
+[service.yml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/08_Application_configuration/service.yml)
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-ng-mt
+spec:
+  selector:
+    app: nginx-multitool
+  type: NodePort
+  ports:
+    - name: nginx-np
+      protocol: TCP
+      port: 80
+      targetPort: 80
+    - name: multitool-np
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+```
+
 ![изображение](https://github.com/user-attachments/assets/ebdf0c5a-0336-4fc0-abc5-a6544caf617f)
 
 #### kubectl get svc -o wide
@@ -111,6 +137,8 @@ data:
 ### Задание 2. Создать приложение с вашей веб-страницей, доступной по HTTPS 
 
 1. Создать Deployment приложения, состоящего из Nginx.
+
+[ng-deployment.yml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/08_Application_configuration/ng-deployment.yml)
 
 ```
 apiVersion: apps/v1
@@ -171,6 +199,8 @@ data:
 
 4. Создать Ingress и необходимый Service, подключить к нему SSL в вид. Продемонстировать доступ к приложению по HTTPS.
 
+[ng-ingress.yml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/08_Application_configuration/ng-ingress.yml)
+
 ```
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -196,6 +226,8 @@ spec:
             port:
               number: 80
 ```
+
+[ng-svc.yml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/08_Application_configuration/ng-svc.yml)
 
 ```
 apiVersion: v1
