@@ -100,6 +100,10 @@ data:
 
 ![изображение](https://github.com/user-attachments/assets/ebdf0c5a-0336-4fc0-abc5-a6544caf617f)
 
+#### kubectl get svc -o wide
+
+![изображение](https://github.com/user-attachments/assets/70e8a5be-b4bb-4660-a876-7b382615f1ad)
+
 8. Предоставить манифесты, а также скриншоты или вывод необходимых команд.
 
 ------
