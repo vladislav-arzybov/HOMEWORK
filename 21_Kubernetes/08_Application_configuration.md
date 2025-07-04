@@ -180,6 +180,10 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
+  tls:
+    - hosts:
+      - localhost
+      secretName: web-tls
   rules:
   - host: localhost
     http:
