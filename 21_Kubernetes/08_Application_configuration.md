@@ -72,7 +72,33 @@ data:
 ![изображение](https://github.com/user-attachments/assets/6e032bb6-4a11-496e-a768-e614ca9b1ec6)
 
 6. Сделать простую веб-страницу и подключить её к Nginx с помощью ConfigMap. Подключить Service и показать вывод curl или в браузере.
-7. Предоставить манифесты, а также скриншоты или вывод необходимых команд.
+
+```
+        volumeMounts:
+        - name: web-html
+          mountPath: /usr/share/nginx/html
+      volumes:
+      - name: web-html
+        configMap:
+          name: env-config
+```
+
+```
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-config
+data:
+  HTTP_PORT: "8080"
+  index.html: |
+    <html>
+    <body>
+      <h1>test</h1>
+    </body>
+    </html>
+```
+
+8. Предоставить манифесты, а также скриншоты или вывод необходимых команд.
 
 ------
 
