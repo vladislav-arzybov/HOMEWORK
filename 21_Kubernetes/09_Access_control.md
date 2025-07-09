@@ -25,10 +25,24 @@
 ### Задание 1. Создайте конфигурацию для подключения пользователя
 
 1. Создайте и подпишите SSL-сертификат для подключения к кластеру.
-2. Настройте конфигурационный файл kubectl для подключения.
-3. Создайте роли и все необходимые настройки для пользователя.
-4. Предусмотрите права пользователя. Пользователь может просматривать логи подов и их конфигурацию (`kubectl logs pod <pod_id>`, `kubectl describe pod <pod_id>`).
-5. Предоставьте манифесты и скриншоты и/или вывод необходимых команд.
+
+#### Для удобства создаем новый каталог и копируем в него сертификаты k8s
+- cp /var/snap/microk8s/current/certs/ca.crt .
+- cp /var/snap/microk8s/current/certs/ca.key .
+
+![изображение](https://github.com/user-attachments/assets/d0594922-acec-4f03-a56b-ef1072bb2da0)
+
+#### Создаем и подписываем ключ для нового пользователя с использованием ранее скопированных сертификатов
+- openssl genrsa -out arzybov_vs.key 2048
+- openssl req -new -key arzybov_vs.key -out arzybov_vs.csr -subj "/CN=arzybov_vs/O=ops"
+- openssl x509 -req -in arzybov_vs.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out arzybov_vs.crt -days 500
+
+![изображение](https://github.com/user-attachments/assets/c712b06b-63ab-4c18-9809-f027ea6c345f)
+
+3. Настройте конфигурационный файл kubectl для подключения.
+4. Создайте роли и все необходимые настройки для пользователя.
+5. Предусмотрите права пользователя. Пользователь может просматривать логи подов и их конфигурацию (`kubectl logs pod <pod_id>`, `kubectl describe pod <pod_id>`).
+6. Предоставьте манифесты и скриншоты и/или вывод необходимых команд.
 
 ------
 
