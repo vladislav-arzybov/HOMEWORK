@@ -65,7 +65,50 @@
 ![изображение](https://github.com/user-attachments/assets/e74391c3-79b2-43ba-a3de-df90ffa21a3a)
 
 3. Создайте роли и все необходимые настройки для пользователя.
+
+[]()
+
+```
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: default
+  name: arzybov-role
+rules:
+- apiGroups: [""]
+  resources: ["pods", "pods/log"]
+  verbs: ["get", "watch", "list"]
+```
+
+[]()
+
+```
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: arzybov_role_binding
+subjects:
+- kind: User
+  name: arzybov_vs
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: arzybov-role
+  apiGroup: rbac.authorization.k8s.io
+```
+
+![изображение](https://github.com/user-attachments/assets/47c84fc6-2b34-4837-87c4-2cf8a5140bbd)
+
 4. Предусмотрите права пользователя. Пользователь может просматривать логи подов и их конфигурацию (`kubectl logs pod <pod_id>`, `kubectl describe pod <pod_id>`).
+
+#### Проверяем доступы после применения ролей
+
+![изображение](https://github.com/user-attachments/assets/5c4e7e5f-3388-40e6-982c-615e1c954460)
+
+Лишние доступы отсутствуют
+
+![изображение](https://github.com/user-attachments/assets/438eebc5-1d61-4b6d-8c23-61b2b3f59b2b)
+
 5. Предоставьте манифесты и скриншоты и/или вывод необходимых команд.
 
 ------
