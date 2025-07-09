@@ -66,7 +66,7 @@
 
 3. Создайте роли и все необходимые настройки для пользователя.
 
-[]()
+[role.yml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/09_Access_control/role.yml)
 
 ```
 apiVersion: rbac.authorization.k8s.io/v1
@@ -80,7 +80,7 @@ rules:
   verbs: ["get", "watch", "list"]
 ```
 
-[]()
+[role-binding.yml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/09_Access_control/role-binding.yml)
 
 ```
 apiVersion: rbac.authorization.k8s.io/v1
