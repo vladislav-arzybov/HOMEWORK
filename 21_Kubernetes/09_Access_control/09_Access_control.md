@@ -52,8 +52,9 @@
 ![изображение](https://github.com/user-attachments/assets/fdf2a1e6-5d4a-4d07-9d12-ee3e7590499a)
 
 #### Проверяем изменения в конфиге ~/.kube/config
+- kubectl config view
 
-![изображение](https://github.com/user-attachments/assets/fdee25a5-fa62-4997-bc39-b70e08557208)
+![изображение](https://github.com/user-attachments/assets/2c85b269-8a04-4015-a367-74068955f361)
 
 #### Включаем rbac в microk8s
 - microk8s enable rbac
