@@ -49,6 +49,8 @@
 #### Создаем контекст для новго пользователя
 - kubectl config set-context arzybov_vs --cluster=microk8s-cluster --user=arzybov_vs
 
+![изображение](https://github.com/user-attachments/assets/fdf2a1e6-5d4a-4d07-9d12-ee3e7590499a)
+
 #### Проверяем изменения в конфиге ~/.kube/config
 
 ![изображение](https://github.com/user-attachments/assets/fdee25a5-fa62-4997-bc39-b70e08557208)
