@@ -39,10 +39,23 @@
 
 ![изображение](https://github.com/user-attachments/assets/c712b06b-63ab-4c18-9809-f027ea6c345f)
 
-3. Настройте конфигурационный файл kubectl для подключения.
-4. Создайте роли и все необходимые настройки для пользователя.
-5. Предусмотрите права пользователя. Пользователь может просматривать логи подов и их конфигурацию (`kubectl logs pod <pod_id>`, `kubectl describe pod <pod_id>`).
-6. Предоставьте манифесты и скриншоты и/или вывод необходимых команд.
+2. Настройте конфигурационный файл kubectl для подключения.
+
+#### Создаем пользователя arzybov_vs, присваиваем сертификат и ключ:
+- kubectl config set-credentials arzybov_vs --client-certificate=arzybov_vs.crt --client-key=arzybov_vs.key --embed-certs=true
+
+![изображение](https://github.com/user-attachments/assets/2176d42a-1f89-4218-a69f-8e8c50d44f49)
+
+#### Создаем контекст для новго пользователя
+- kubectl config set-context arzybov_vs --cluster=microk8s-cluster --user=arzybov_vs
+
+#### Проверяем изменения в конфиге ~/.kube/config
+
+![изображение](https://github.com/user-attachments/assets/fdee25a5-fa62-4997-bc39-b70e08557208)
+
+5. Создайте роли и все необходимые настройки для пользователя.
+6. Предусмотрите права пользователя. Пользователь может просматривать логи подов и их конфигурацию (`kubectl logs pod <pod_id>`, `kubectl describe pod <pod_id>`).
+7. Предоставьте манифесты и скриншоты и/или вывод необходимых команд.
 
 ------
 
