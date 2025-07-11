@@ -23,9 +23,171 @@
 
 ### Задание 1. Подготовить Helm-чарт для приложения
 
-1. Необходимо упаковать приложение в чарт для деплоя в разные окружения. 
+1. Необходимо упаковать приложение в чарт для деплоя в разные окружения.
+
+<img width="385" height="37" alt="изображение" src="https://github.com/user-attachments/assets/79ce2feb-033d-4d6e-ad6d-88f07590bf39" />
+
 2. Каждый компонент приложения деплоится отдельным deployment’ом или statefulset’ом.
+
+[]()
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ .Release.Name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}
+    spec:
+      containers:
+      - name: nginx
+        image: {{ .Values.image.name }}:{{ .Values.image.tag | default .Chart.AppVersion }}
+        volumeMounts:
+        - name: web-html
+          mountPath: /usr/share/nginx/html
+      volumes:
+      - name: web-html
+        configMap:
+          name: configmap-{{ .Release.Name }}
+```
+
+[]()
+
+```
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-{{ .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+data:
+  index.html: |
+    <html>
+    <body>
+      <h1>Welcome to {{ .Release.Namespace }}-{{ .Release.Name }}</h1>
+    </body>
+    </html>
+```
+
+[]()
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  selector:
+    app: {{ .Release.Name }}
+  type: NodePort
+  ports:
+    - name: nginx-np
+      protocol: TCP
+      port: 80
+      targetPort: 80
+```
+
 3. В переменных чарта измените образ приложения для изменения версии.
+
+Версию приложения можно изменить как через ```appVersion``` в ```Chart.yaml```
+
+[]()
+
+```
+apiVersion: v2
+name: my-chart
+description: A Helm chart for Kubernetes
+type: application
+version: 0.1.0
+appVersion: "1.16.0"
+```
+
+<details>
+  <summary>helm template nginx1 . -n app1</summary>
+
+
+  ```bash
+---
+# Source: my-chart/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-nginx1
+  namespace: app1
+data:
+  index.html: |
+    <html>
+    <body>
+      <h1>Welcome to app1-nginx1</h1>
+    </body>
+    </html>
+---
+# Source: my-chart/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx1
+  namespace: app1
+spec:
+  selector:
+    app: nginx1
+  type: NodePort
+  ports:
+    - name: nginx-np
+      protocol: TCP
+      port: 80
+      targetPort: 80
+---
+# Source: my-chart/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx1
+  namespace: app1
+  labels:
+    app: nginx1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx1
+  template:
+    metadata:
+      labels:
+        app: nginx1
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.16.0
+        volumeMounts:
+        - name: web-html
+          mountPath: /usr/share/nginx/html
+      volumes:
+      - name: web-html
+        configMap:
+          name: configmap-nginx1
+```  
+
+</details>
+
+[]()
+
+```
+image:
+  name: nginx
+  tag: latest
+```
+
 
 ------
 ### Задание 2. Запустить две версии в разных неймспейсах
