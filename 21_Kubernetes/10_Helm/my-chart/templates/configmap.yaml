@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-{{ .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+data:
+  index.html: |
+    <html>
+    <body>
+      <h1>Welcome to {{ .Release.Namespace }}-{{ .Release.Name }}</h1>
+    </body>
+    </html>
