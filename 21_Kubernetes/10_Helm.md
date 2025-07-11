@@ -261,15 +261,45 @@ spec:
 ------
 ### Задание 2. Запустить две версии в разных неймспейсах
 
+1. Подготовив чарт, необходимо его проверить. Запуститe несколько копий приложения.
+
 Предварительно создадим два новых namespace app1 и app2
 - kubectl create namespace app1
 - kubectl create namespace app2
 
 <img width="524" height="137" alt="изображение" src="https://github.com/user-attachments/assets/06ed3771-a001-4730-b250-d53a7a8739e9" />
 
-1. Подготовив чарт, необходимо его проверить. Запуститe несколько копий приложения.
 2. Одну версию в namespace=app1, вторую версию в том же неймспейсе, третью версию в namespace=app2.
+
+- helm upgrade -i nginx-1 . -n app1
+- helm upgrade -i nginx-2 . -n app1
+- helm upgrade -i nginx-3 . -n app2
+
+<img width="580" height="411" alt="изображение" src="https://github.com/user-attachments/assets/619c0dfb-4dc4-4685-97b1-3796638547ef" />
+
+- helm list -A
+
+<img width="1019" height="90" alt="изображение" src="https://github.com/user-attachments/assets/c9727b90-f3c4-465c-9c25-56bb69349552" />
+
 3. Продемонстрируйте результат.
+
+Проверяем наличие всех подов и сервисов:
+
+<img width="796" height="82" alt="изображение" src="https://github.com/user-attachments/assets/51f3cba3-f090-4bcc-a876-308b1a145bc4" />
+
+<img width="668" height="83" alt="изображение" src="https://github.com/user-attachments/assets/c3f781ee-9bcf-4d8d-8e22-d22c5d3735be" />
+
+<img width="704" height="118" alt="изображение" src="https://github.com/user-attachments/assets/0bcbc8e2-a69f-4608-828e-e08dcf584e36" />
+
+<img width="1055" height="84" alt="изображение" src="https://github.com/user-attachments/assets/ffdbb31d-d08e-4620-a4f3-daaf265e98e1" />
+
+Проверяем доступность каждого приложения:
+- curl 127.0.0.1:31899
+- curl 127.0.0.1:30455
+- curl 127.0.0.1:31130 
+
+<img width="449" height="306" alt="изображение" src="https://github.com/user-attachments/assets/acd25844-e04d-4fc5-82d6-fc9c4ba659f8" />
+
 
 ### Правила приёма работы
 
