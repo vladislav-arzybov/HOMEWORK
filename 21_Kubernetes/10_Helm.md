@@ -180,6 +180,8 @@ spec:
 
 </details>
 
+Также версию можно изменить через поле ```tag``` в ```values.yaml```
+
 []()
 
 ```
@@ -188,6 +190,73 @@ image:
   tag: latest
 ```
 
+<details>
+  <summary>helm template nginx1 . -n app1</summary>
+
+
+  ```bash
+---
+# Source: my-chart/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-nginx1
+  namespace: app1
+data:
+  index.html: |
+    <html>
+    <body>
+      <h1>Welcome to app1-nginx1</h1>
+    </body>
+    </html>
+---
+# Source: my-chart/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx1
+  namespace: app1
+spec:
+  selector:
+    app: nginx1
+  type: NodePort
+  ports:
+    - name: nginx-np
+      protocol: TCP
+      port: 80
+      targetPort: 80
+---
+# Source: my-chart/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx1
+  namespace: app1
+  labels:
+    app: nginx1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx1
+  template:
+    metadata:
+      labels:
+        app: nginx1
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        volumeMounts:
+        - name: web-html
+          mountPath: /usr/share/nginx/html
+      volumes:
+      - name: web-html
+        configMap:
+          name: configmap-nginx1
+```  
+
+</details>
 
 ------
 ### Задание 2. Запустить две версии в разных неймспейсах
