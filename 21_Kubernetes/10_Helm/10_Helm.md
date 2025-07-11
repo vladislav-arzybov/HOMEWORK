@@ -29,7 +29,7 @@
 
 2. Каждый компонент приложения деплоится отдельным deployment’ом или statefulset’ом.
 
-[]()
+[deployment.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/10_Helm/my-chart/templates/deployment.yaml)
 
 ```
 apiVersion: apps/v1
@@ -61,7 +61,7 @@ spec:
           name: configmap-{{ .Release.Name }}
 ```
 
-[]()
+[configmap.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/10_Helm/my-chart/templates/configmap.yaml)
 
 ```
 apiVersion: v1
@@ -78,7 +78,7 @@ data:
     </html>
 ```
 
-[]()
+[service.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/10_Helm/my-chart/templates/service.yaml)
 
 ```
 apiVersion: v1
@@ -101,7 +101,7 @@ spec:
 
 Версию приложения можно изменить как через ```appVersion``` в ```Chart.yaml```
 
-[]()
+[Chart.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/10_Helm/my-chart/Chart.yaml)
 
 ```
 apiVersion: v2
@@ -182,7 +182,7 @@ spec:
 
 Также версию можно изменить через поле ```tag``` в ```values.yaml```
 
-[]()
+[values.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/10_Helm/my-chart/values.yaml)
 
 ```
 image:
