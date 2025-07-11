@@ -30,6 +30,12 @@
 ------
 ### Задание 2. Запустить две версии в разных неймспейсах
 
+Предварительно создадим два новых namespace app1 и app2
+- kubectl create namespace app1
+- kubectl create namespace app2
+
+<img width="524" height="137" alt="изображение" src="https://github.com/user-attachments/assets/06ed3771-a001-4730-b250-d53a7a8739e9" />
+
 1. Подготовив чарт, необходимо его проверить. Запуститe несколько копий приложения.
 2. Одну версию в namespace=app1, вторую версию в том же неймспейсе, третью версию в namespace=app2.
 3. Продемонстрируйте результат.
