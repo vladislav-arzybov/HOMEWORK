@@ -114,11 +114,44 @@
 
 ### Решение
 
-0. Подготовим 6 ВМ, 3 master ноды и 3 worker ноды
+Подготовим 6 ВМ, 3 master ноды и 3 worker ноды, саму установку будем проводить с локальной ВМ по усправление OS Linux Ubuntu
 
 <img width="1499" height="476" alt="изображение" src="https://github.com/user-attachments/assets/66fa74e2-7ba9-44bb-bf0d-0aa1c1f3e184" />
 
-1. 
+1. Cкачиваем репозиторий в домашний каталог:
+- git clone https://github.com/kubernetes-sigs/kubespray.git
+
+<img width="780" height="146" alt="изображение" src="https://github.com/user-attachments/assets/e14af03f-075b-4068-8c97-70b16701854d" />
+
+2. Проверяем текущую версию python3, устанавливаем модуль для создания окружений
+- python3 --version
+- sudo apt update
+- sudo apt install python3.10-venv
+
+<img width="396" height="37" alt="изображение" src="https://github.com/user-attachments/assets/c1c24d28-caf3-4680-b464-f8b55b7e836e" />
+
+3. Создаем окружение, активируем окружение, переходим в каталог kubespray
+- python3 -m venv venv
+- source venv/bin/activate
+- cd kubespray
+
+<img width="410" height="56" alt="изображение" src="https://github.com/user-attachments/assets/f1bf304b-1d83-4ce3-a87c-7a8434603489" />
+
+4. Устанавливаем зависимости
+- pip install -r requirements.txt
+
+<img width="1755" height="239" alt="изображение" src="https://github.com/user-attachments/assets/59f6e208-fcf2-4d83-95c0-135a694cc01e" />
+
+5. Копируем шаблоны в новый каталог
+- cp -rfp inventory/sample/ inventory/mycluster
+
+<img width="587" height="125" alt="изображение" src="https://github.com/user-attachments/assets/795fbe38-e37a-4b42-a511-7596a354d86b" />
+
+6. Редактируем inventory.ini, указываем количество нод, название и их ip адреса
+- nano inventory/mycluster/inventory.ini
+
+<img width="782" height="227" alt="изображение" src="https://github.com/user-attachments/assets/28d991e1-c2f2-4dc4-a4e6-10b06e6d07ba" />
+
 
 ### Правила приёма работы
 
