@@ -157,6 +157,33 @@
 
 <img width="1838" height="546" alt="изображение" src="https://github.com/user-attachments/assets/667ab848-6c63-435a-9db4-6ccce9c193ea" />
 
+8. Подключаемся на первую мастер ноду, копируем конфи для работы kubectl
+- mkdir -p $HOME/.kube
+- sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+- sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+<img width="745" height="61" alt="изображение" src="https://github.com/user-attachments/assets/4477c3e8-77e8-412b-8d4b-9b18692048ee" />
+
+9. Проверяем работу кластера
+- kubectl get nodes
+- kubectl get pods -n kube-system -o wide
+
+<img width="532" height="145" alt="изображение" src="https://github.com/user-attachments/assets/d90b65a3-3a01-41a0-8b15-01a603b49ad0" />
+
+<img width="1354" height="653" alt="изображение" src="https://github.com/user-attachments/assets/30f9b94c-0ac8-4d63-9fc6-7dd709f62276" />
+
+10. Проверяем наличие CRI — containerd, должны быть записи k8s.io
+- ctr --namespace=k8s.io containers ls
+
+<img width="1294" height="349" alt="изображение" src="https://github.com/user-attachments/assets/9c1cec1f-1fb9-4a07-b2f4-51c0a711bebb" />
+
+11. Проверяем установку и статус etcd на мастер нодах
+- etcd --version
+- systemctl status etcd.service
+
+<img width="862" height="274" alt="изображение" src="https://github.com/user-attachments/assets/ccefaa4e-a88a-49d5-8ba9-cd46e7dfe20f" />
+
+
 
 ### Правила приёма работы
 
