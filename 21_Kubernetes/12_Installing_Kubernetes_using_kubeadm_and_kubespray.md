@@ -152,6 +152,11 @@
 
 <img width="782" height="227" alt="изображение" src="https://github.com/user-attachments/assets/28d991e1-c2f2-4dc4-a4e6-10b06e6d07ba" />
 
+7. Запускаем установку
+- ansible-playbook -i inventory/mycluster/inventory.ini cluster.yml -b -v
+
+<img width="1838" height="546" alt="изображение" src="https://github.com/user-attachments/assets/667ab848-6c63-435a-9db4-6ccce9c193ea" />
+
 
 ### Правила приёма работы
 
