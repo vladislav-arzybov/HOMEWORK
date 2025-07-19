@@ -183,6 +183,16 @@
 
 <img width="862" height="274" alt="изображение" src="https://github.com/user-attachments/assets/ccefaa4e-a88a-49d5-8ba9-cd46e7dfe20f" />
 
+12. Настраиваем kubectl для подсключения с локальной ВМ
+- curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+- chmod +x ./kubectl
+- sudo mv ./kubectl /usr/local/bin/kubectl
+- source <(kubectl completion bash)
+
+13. Создаем папку для конфига k8s
+- mkdir -p $HOME/.kube
+- scp reivol@51.250.43.54:$HOME/.kube/config $HOME/.kube/config
+- sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 
 ### Правила приёма работы
