@@ -63,12 +63,15 @@
 
 <img width="718" height="59" alt="изображение" src="https://github.com/user-attachments/assets/eaaad34a-ef9c-4fd3-b8c2-0e2480959f8b" />
 
+- kubectl -n app exec frontend-6897db7dcc-k492p -ti -- bash
 
 <img width="422" height="38" alt="изображение" src="https://github.com/user-attachments/assets/b03172c1-6d01-4616-af6b-76c0be9a2f87" />
 
+- kubectl -n app exec backend-bb6d7b88c-9s2hl -ti -- bash
 
 <img width="407" height="36" alt="изображение" src="https://github.com/user-attachments/assets/6bfe98b0-994c-4955-a6ef-edf07a93c774" />
 
+- kubectl -n app exec cache-ff79687df-5fg74 -ti -- bash
 
 <img width="397" height="34" alt="изображение" src="https://github.com/user-attachments/assets/c0a06ba4-4a90-48a6-95b2-122f41889c8d" />
 
@@ -76,11 +79,17 @@
 
 #### Включаем политики для доступа по схеме frontend -> backend -> cache, проверяем доступы:
 
+<img width="718" height="91" alt="изображение" src="https://github.com/user-attachments/assets/a9be395b-3525-4f65-825f-a91fc54c3284" />
+
+- kubectl -n app exec frontend-6897db7dcc-k492p -ti -- bash
+
 <img width="414" height="148" alt="изображение" src="https://github.com/user-attachments/assets/d88a6753-e73c-4413-b5b4-a0c0bb160ae9" />
 
+- kubectl -n app exec backend-bb6d7b88c-9s2hl -ti -- bash
 
 <img width="408" height="147" alt="изображение" src="https://github.com/user-attachments/assets/4f8d6ca3-4cda-41ff-ab41-57263985d684" />
 
+- kubectl -n app exec cache-ff79687df-5fg74 -ti -- bash
 
 <img width="401" height="71" alt="изображение" src="https://github.com/user-attachments/assets/2c4de436-7619-458f-8433-b571a4acbc8d" />
 
