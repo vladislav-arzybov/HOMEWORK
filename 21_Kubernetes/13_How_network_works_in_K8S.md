@@ -59,8 +59,6 @@
 
 #### Включаем политику запрещающую любые сетевые подключения - deny-network-policy, проверяем доступы:
 
-- kubectl get networkpolicies.networking.k8s.io -n app
-
 <img width="718" height="59" alt="изображение" src="https://github.com/user-attachments/assets/eaaad34a-ef9c-4fd3-b8c2-0e2480959f8b" />
 
 - kubectl -n app exec frontend-6897db7dcc-k492p -ti -- bash
