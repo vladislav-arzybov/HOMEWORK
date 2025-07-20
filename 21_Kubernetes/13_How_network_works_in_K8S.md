@@ -33,6 +33,8 @@
 - kubectl get pod -n app
 - kubectl get svc -n app -o wide
 
+<img width="490" height="37" alt="изображение" src="https://github.com/user-attachments/assets/a69fbc6d-738a-4cb2-abd4-d9afc59e5c61" />
+
 <img width="784" height="184" alt="изображение" src="https://github.com/user-attachments/assets/556b600c-4a2c-4886-8515-25d30c1a7d83" />
 
 4. Создать политики, чтобы обеспечить доступ frontend -> backend -> cache. Другие виды подключений должны быть запрещены.
