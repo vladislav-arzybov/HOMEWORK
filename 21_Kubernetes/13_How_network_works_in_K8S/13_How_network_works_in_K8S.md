@@ -24,7 +24,9 @@
 
 1. Создать deployment'ы приложений frontend, backend и cache и соответсвующие сервисы.
 
-
+- [frontend.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/13_How_network_works_in_K8S/frontend.yaml)
+- [backend.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/13_How_network_works_in_K8S/backend.yaml)
+- [cache.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/13_How_network_works_in_K8S/cache.yaml)
 
 2. В качестве образа использовать network-multitool.
 3. Разместить поды в namespace App.
@@ -39,7 +41,9 @@
 
 4. Создать политики, чтобы обеспечить доступ frontend -> backend -> cache. Другие виды подключений должны быть запрещены.
 
-
+- [deny-np.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/13_How_network_works_in_K8S/deny-np.yaml)
+- [frontend-backend-np.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/13_How_network_works_in_K8S/frontend-backend-np.yaml)
+- [backend-cache-np.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/13_How_network_works_in_K8S/backend-cache-np.yaml)
 
 5. Продемонстрировать, что трафик разрешён и запрещён.
 
