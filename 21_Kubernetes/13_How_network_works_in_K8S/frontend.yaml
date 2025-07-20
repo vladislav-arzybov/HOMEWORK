@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: app
+  name: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: frontend
+        image: wbitt/network-multitool:latest
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: web-html
+          mountPath: /usr/share/nginx/html
+      volumes:
+      - name: web-html
+        configMap:
+          name: frontend-cm
+
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: app
+  name: frontend-cm
+data:
+  index.html: |
+    <html>
+    <body>
+      <h1>Welcome to Frontend!</h1>
+    </body>
+    </html>
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: app
+  name: frontend-svc
+spec:
+  selector:
+    app: frontend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: ClusterIP
