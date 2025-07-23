@@ -31,7 +31,59 @@
 ### Задание 2. Обновить приложение
 
 1. Создать deployment приложения с контейнерами nginx и multitool. Версию nginx взять 1.19. Количество реплик — 5.
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-multitool-deployment
+  annotations:
+    kubernetes.io/change-cause: "Update to 1.19"
+  namespace: default
+  labels:
+    app: nginx-multitool
+spec:
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  replicas: 5
+  selector:
+    matchLabels:
+      app: nginx-multitool
+  template:
+    metadata:
+      labels:
+        app: nginx-multitool
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.19
+      - name: multitool
+        image: wbitt/network-multitool:latest
+        env:
+        - name: HTTP_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: env-config
+              key: HTTP_PORT
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-config
+data:
+  HTTP_PORT: "8080"
+```
+
+
+
+
 2. Обновить версию nginx в приложении до версии 1.20, сократив время обновления до минимума. Приложение должно быть доступно.
+
+
+
 3. Попытаться обновить nginx до версии 1.28, приложение должно оставаться доступным.
 4. Откатиться после неудачного обновления.
 
