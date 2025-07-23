@@ -123,6 +123,7 @@ data:
 1. Создать два deployment'а приложения nginx.
 
 [ng-deployment-prod.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/14_Updating_applications/ng-deployment-prod.yaml)
+
 [ng-deployment-test.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/14_Updating_applications/ng-deployment-test.yaml)
 
 2. При помощи разных ConfigMap сделать две версии приложения — веб-страницы.
@@ -150,6 +151,7 @@ data:
 3. С помощью ingress создать канареечный деплоймент, чтобы можно было часть трафика перебросить на разные версии приложения.
 
 [ingress-prod.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/14_Updating_applications/ingress-prod.yaml)
+
 [ingress-canary.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/21_Kubernetes/14_Updating_applications/ingress-canary.yaml)
 
 ```
