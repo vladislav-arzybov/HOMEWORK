@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-prod
+  labels:
+    app: nginx-prod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-prod
+  template:
+    metadata:
+      labels:
+        app: nginx-prod
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.27
+        volumeMounts:
+        - name: web-html
+          mountPath: /usr/share/nginx/html
+      volumes:
+      - name: web-html
+        configMap:
+          name: env-config-prod
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-config-prod
+data:
+  index.html: |
+    <html>
+    <body>
+      <h1>Welcome to nginx prod v1.27</h1>
+    </body>
+    </html>
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-prod
+spec:
+  selector:
+    app: nginx-prod
+  type: NodePort
+  ports:
+    - name: nginx-port
+      protocol: TCP
+      port: 80
+      targetPort: 80
