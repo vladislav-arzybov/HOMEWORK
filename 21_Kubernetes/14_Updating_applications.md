@@ -96,7 +96,21 @@ data:
 <img width="1695" height="223" alt="изображение" src="https://github.com/user-attachments/assets/fc6e8d44-df80-4f50-a29c-2b1be64c7aba" />
 
 3. Попытаться обновить nginx до версии 1.28, приложение должно оставаться доступным.
+
+<img width="1667" height="534" alt="изображение" src="https://github.com/user-attachments/assets/3a732a10-2ea8-49ab-98c0-960f9a49ebbb" />
+
 4. Откатиться после неудачного обновления.
+- kubectl rollout undo deployment nginx-multitool-deployment --to-revision=2
+
+<img width="905" height="451" alt="изображение" src="https://github.com/user-attachments/assets/8313fe5d-29e4-4083-9c44-54e3d503a77e" />
+
+- kubectl rollout history deployment
+- kubectl get rs -o wide
+- kubectl get deployments.apps -o wide --show-labels
+
+<img width="1688" height="273" alt="изображение" src="https://github.com/user-attachments/assets/7d9c7e88-20d2-40d3-95c7-fa5ac07142bf" />
+
+
 
 ## Дополнительные задания — со звёздочкой*
 
