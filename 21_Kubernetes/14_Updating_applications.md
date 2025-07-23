@@ -157,6 +157,13 @@ data:
 
 #### Проверяем:
 
+<img width="1573" height="310" alt="изображение" src="https://github.com/user-attachments/assets/6da66e5e-7be8-4584-8b94-4354e4ac4b17" />
+
+<img width="818" height="75" alt="изображение" src="https://github.com/user-attachments/assets/f2be58b2-b4e7-43e3-a69f-dcd81dc4d228" />
+
+<img width="396" height="432" alt="изображение" src="https://github.com/user-attachments/assets/159c75dd-1701-4b93-a6b2-f1d1a29ad63d" />
+
+
 
 ### Правила приёма работы
 
