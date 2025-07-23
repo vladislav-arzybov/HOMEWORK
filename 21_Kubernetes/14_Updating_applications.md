@@ -119,8 +119,44 @@ data:
 ### Задание 3*. Создать Canary deployment
 
 1. Создать два deployment'а приложения nginx.
+
+[]()
+[]()
+
 2. При помощи разных ConfigMap сделать две версии приложения — веб-страницы.
+
+```
+data:
+  index.html: |
+    <html>
+    <body>
+      <h1>Welcome to nginx prod v1.27</h1>
+    </body>
+    </html>
+```
+
+```
+data:
+  index.html: |
+    <html>
+    <body>
+      <h1>Welcome to nginx test v1.28</h1>
+    </body>
+    </html>
+```
+
 3. С помощью ingress создать канареечный деплоймент, чтобы можно было часть трафика перебросить на разные версии приложения.
+
+[]()
+[]()
+
+```
+    nginx.ingress.kubernetes.io/canary: "true"
+    nginx.ingress.kubernetes.io/canary-weight: "10"
+```
+
+#### Проверяем:
+
 
 ### Правила приёма работы
 
