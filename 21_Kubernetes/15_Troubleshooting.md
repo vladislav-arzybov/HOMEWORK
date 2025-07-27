@@ -1,4 +1,4 @@
-# Домашнее задание к занятию Troubleshooting
+# Домашнее задание к занятию Troubleshooting - `Арзыбов Владислав`
 
 ### Цель задания
 
@@ -58,9 +58,70 @@ kubectl apply -f https://raw.githubusercontent.com/netology-code/kuber-homeworks
 
 Необходимо заменить команду ```do curl auth-db``` на ```do curl auth-db.data.svc.cluster.local```, проверяем, ошибки подключения в логах отсутствуют
 
+<details>
+  <summary>task.yaml</summary>
 
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-consumer
+  namespace: web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web-consumer
+  template:
+    metadata:
+      labels:
+        app: web-consumer
+    spec:
+      containers:
+      - command:
+        - sh
+        - -c
+        - while true; do curl auth-db; sleep 5; done
+        image: radial/busyboxplus:curl
+        name: busybox
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-db
+  namespace: data
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: auth-db
+  template:
+    metadata:
+      labels:
+        app: auth-db
+    spec:
+      containers:
+      - image: nginx:1.19.1
+        name: nginx
+        ports:
+        - containerPort: 80
+          protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: auth-db
+  namespace: data
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: auth-db
+```
 
-
+</details>
 
 ### Правила приёма работы
 
