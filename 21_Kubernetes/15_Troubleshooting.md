@@ -57,6 +57,9 @@ kubectl apply -f https://raw.githubusercontent.com/netology-code/kuber-homeworks
 4. Продемонстрировать, что проблема решена.
 
 Необходимо заменить команду ```do curl auth-db``` на ```do curl auth-db.data.svc.cluster.local```, проверяем, ошибки подключения в логах отсутствуют
+- kubectl edit deployments.apps web-consumer -n web
+
+<img width="801" height="525" alt="изображение" src="https://github.com/user-attachments/assets/10ec8a43-9400-4bdf-9210-10ee33068cd4" />
 
 <details>
   <summary>task.yaml</summary>
@@ -122,6 +125,9 @@ spec:
 ```
 
 </details>
+
+
+
 
 ### Правила приёма работы
 
