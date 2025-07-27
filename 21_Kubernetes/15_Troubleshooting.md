@@ -61,6 +61,7 @@ kubectl apply -f https://raw.githubusercontent.com/netology-code/kuber-homeworks
 
 <img width="867" height="556" alt="изображение" src="https://github.com/user-attachments/assets/c64af436-52ed-4ffe-b529-86b688b75609" />
 
+
 <details>
   <summary>task.yaml</summary>
 
