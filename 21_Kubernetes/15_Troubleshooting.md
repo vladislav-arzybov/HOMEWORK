@@ -47,12 +47,11 @@ kubectl apply -f https://raw.githubusercontent.com/netology-code/kuber-homeworks
 
 <img width="986" height="556" alt="изображение" src="https://github.com/user-attachments/assets/49b73227-610c-4d7e-8f44-05dd2309b487" />
 
-Повторно проверяем доступность сервиса auth-db дополнительно указав полное dns имя с учетом другого namespace ```data```, подключение работает.
+Проблема возникает т.к приложения находятся в разных namespaces, поэтому недостаточно указать лишь имя сервиса для подключения к приложению auth-db. Повторно проверяем доступность сервиса auth-db дополнительно указав полное dns имя с учетом другого namespace ```data```, подключение работает.
 - curl auth-db.data.svc.cluster.local
 
 <img width="734" height="468" alt="изображение" src="https://github.com/user-attachments/assets/039983ed-83d1-44e3-959f-e2d63a70c9fa" />
 
-Проблема возникает т.к приложения находятся в разных namespaces, поэтому недостаточно указать лишь имя сервиса для подключения к приложению auth-db.
 
 4. Продемонстрировать, что проблема решена.
 
