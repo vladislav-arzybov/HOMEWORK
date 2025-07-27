@@ -81,7 +81,7 @@ spec:
       - command:
         - sh
         - -c
-        - while true; do curl auth-db; sleep 5; done
+        - while true; do curl auth-db.data.svc.cluster.local; sleep 5; done
         image: radial/busyboxplus:curl
         name: busybox
 ---
