@@ -33,9 +33,9 @@ kubectl apply -f https://raw.githubusercontent.com/netology-code/kuber-homeworks
 
 <img width="757" height="60" alt="изображение" src="https://github.com/user-attachments/assets/7ba2d3c6-8f2c-48a6-b743-2407e73e0126" />
 
-Проверяем доступность приложения через сервис с хост-машины, приложение доступно
+Проверяем доступность приложения из контейнера
 
-<img width="741" height="468" alt="изображение" src="https://github.com/user-attachments/assets/7993b302-6dc8-4015-8854-3a21fcd2bb55" />
+<img width="696" height="485" alt="изображение" src="https://github.com/user-attachments/assets/4da980e2-d108-4123-8713-8ee4a4877e73" />
 
 Проверяем логи приложения web-consumer, видим ошибку подключения к сервису auth-db
 
