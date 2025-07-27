@@ -14,8 +14,19 @@
 ```shell
 kubectl apply -f https://raw.githubusercontent.com/netology-code/kuber-homeworks/main/3.5/files/task.yaml
 ```
+
+<img width="1533" height="75" alt="изображение" src="https://github.com/user-attachments/assets/26faf03c-bad6-4b05-9259-6578fd6f0a14" />
+
+Приложения создаются в разных namespaces которые предварительно отсутствуют в кластере.
+
+<img width="422" height="72" alt="изображение" src="https://github.com/user-attachments/assets/955e4a59-99fc-46f3-af45-2af564198fcb" />
+
+<img width="1140" height="74" alt="изображение" src="https://github.com/user-attachments/assets/669eb5f3-cd9c-419e-895c-08914e1fee9e" />
+
 2. Выявить проблему и описать.
+
 3. Исправить проблему, описать, что сделано.
+
 4. Продемонстрировать, что проблема решена.
 
 
