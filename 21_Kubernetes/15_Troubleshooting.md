@@ -25,6 +25,14 @@ kubectl apply -f https://raw.githubusercontent.com/netology-code/kuber-homeworks
 
 2. Выявить проблему и описать.
 
+Проверяем что поды запущены и с ними всё хорошо
+
+<img width="615" height="128" alt="изображение" src="https://github.com/user-attachments/assets/480e6039-ad50-4c4f-838a-5c0808574f44" />
+
+Проверяем привязку сервиса
+
+<img width="757" height="60" alt="изображение" src="https://github.com/user-attachments/assets/7ba2d3c6-8f2c-48a6-b743-2407e73e0126" />
+
 3. Исправить проблему, описать, что сделано.
 
 4. Продемонстрировать, что проблема решена.
