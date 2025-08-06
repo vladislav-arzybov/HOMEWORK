@@ -27,6 +27,8 @@
 
 #### Решение:
 
+[Terraform код](https://github.com/vladislav-arzybov/HOMEWORK/tree/main/22_Project_organization_using_cloud_providers/01_Organizaciya_seti/01_terraform)
+
 <img width="1804" height="483" alt="изображение" src="https://github.com/user-attachments/assets/b4f06dd4-0bd8-4167-8518-faac2a575b3c" />
 
 <img width="1692" height="332" alt="изображение" src="https://github.com/user-attachments/assets/7bb8003f-daee-46de-ab42-39c2b6ada731" />
