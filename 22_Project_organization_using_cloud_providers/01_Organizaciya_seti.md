@@ -27,9 +27,9 @@
 
 #### Решение:
 
-<img width="1678" height="211" alt="изображение" src="https://github.com/user-attachments/assets/3e272303-1da5-4533-8fb2-67b63e0c6bf0" />
-
 <img width="1804" height="483" alt="изображение" src="https://github.com/user-attachments/assets/b4f06dd4-0bd8-4167-8518-faac2a575b3c" />
+
+<img width="1678" height="211" alt="изображение" src="https://github.com/user-attachments/assets/3e272303-1da5-4533-8fb2-67b63e0c6bf0" />
 
 <img width="628" height="214" alt="изображение" src="https://github.com/user-attachments/assets/282a131b-d39d-4501-9b23-ec74e8800e76" />
 
