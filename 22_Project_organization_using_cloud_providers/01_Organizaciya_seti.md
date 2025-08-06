@@ -31,8 +31,6 @@
 
 <img width="1692" height="332" alt="изображение" src="https://github.com/user-attachments/assets/7bb8003f-daee-46de-ab42-39c2b6ada731" />
 
-<img width="1678" height="211" alt="изображение" src="https://github.com/user-attachments/assets/3e272303-1da5-4533-8fb2-67b63e0c6bf0" />
-
 <img width="628" height="214" alt="изображение" src="https://github.com/user-attachments/assets/282a131b-d39d-4501-9b23-ec74e8800e76" />
 
 Подключаемся к ВМ с публичным IP, проверяем доступ в интернет
