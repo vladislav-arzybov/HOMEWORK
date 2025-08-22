@@ -96,6 +96,28 @@ runcmd:
 <img width="814" height="162" alt="изображение" src="https://github.com/user-attachments/assets/565f1087-7da6-4e25-899a-b671cc7a012e" />
  
  - Проверить работоспособность, удалив одну или несколько ВМ.
+
+Для проверки остановим ВМ 192.168.10.14, видно срабатывают проверки и меняется целевая группа.
+
+<img width="1003" height="184" alt="изображение" src="https://github.com/user-attachments/assets/71d3de81-0798-429e-819b-38117dcf4b35" />
+
+<img width="1253" height="204" alt="изображение" src="https://github.com/user-attachments/assets/d3494d04-b79c-4692-ac24-30b0224f5327" />
+
+<img width="1240" height="110" alt="изображение" src="https://github.com/user-attachments/assets/332aa6ac-3a8f-4b12-8978-ea3804960423" />
+
+<img width="669" height="426" alt="изображение" src="https://github.com/user-attachments/assets/913d4e85-8cbe-4e63-9534-3e5c2699a9a7" />
+
+При проверки веб-страницы картинка доступна, а трафик перераспределяется на оставшиеся две ВМ
+
+<img width="1803" height="1007" alt="изображение" src="https://github.com/user-attachments/assets/99587ba5-5731-4ad1-bc0f-f798d6f6f0ae" />
+
+<img width="833" height="327" alt="изображение" src="https://github.com/user-attachments/assets/eb6d946c-6221-4aef-92e7-b8fe2ae691fc" />
+
+Также, дополнительно можно убедиться в корректности проверки состояния ВМ которая автоматически запустит её после падения.
+
+
+
+
 4. (дополнительно)* Создать Application Load Balancer с использованием Instance group и проверкой состояния.
 
 Полезные документы:
