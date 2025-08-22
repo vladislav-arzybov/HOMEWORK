@@ -28,7 +28,7 @@
  
  - Для создания стартовой веб-страницы рекомендуется использовать раздел `user_data` в [meta_data](https://cloud.yandex.ru/docs/compute/concepts/vm-metadata).
 
-Для удобства, в metadata использовал cloud-init, заранее указав новые переменные через template_file
+В metadata использовал cloud-init, заранее указав новые переменные через template_file
 
 ```
     metadata = {
@@ -50,9 +50,18 @@ data "template_file" "cloudinit" {
 
  - Разместить в стартовой веб-странице шаблонной ВМ ссылку на картинку из бакета.
 
-Для удобства, помимо вывода картинки добавил имя и адрес хоста 
+Для удобства отслеживания поключения к конкретной ВМ в cloud-config помимо вывода картинки добавил имя и адрес хоста. 
 ```
+#cloud-config
+users:
+  - name: ${username}
+    groups: sudo
+    shell: /bin/bash
+    sudo: ["ALL=(ALL) NOPASSWD:ALL"]
+    ssh_authorized_keys:
+      - ${ssh_public_key}
 runcmd:
+#  - 'export PUBLIC_IPV4=$(curl ifconfig.me)' #Получение локального IP через внешний сайт
   - 'export PUBLIC_IPV4=$(hostname -I)' #Получение локального IP вручную
   - 'echo Instance name: $(hostname), IP address: $PUBLIC_IPV4 > /var/www/html/index.html'
   - echo '<html><img src="http://${bucket_name}/${image_name}"/></html>' >> /var/www/html/index.html
