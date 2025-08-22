@@ -99,9 +99,9 @@ runcmd:
 
 Для проверки остановим ВМ 192.168.10.14, видно как срабатывают проверки и меняется целевая группа.
 
-<img width="1003" height="184" alt="изображение" src="https://github.com/user-attachments/assets/71d3de81-0798-429e-819b-38117dcf4b35" />
-
 <img width="1253" height="204" alt="изображение" src="https://github.com/user-attachments/assets/d3494d04-b79c-4692-ac24-30b0224f5327" />
+
+<img width="1003" height="184" alt="изображение" src="https://github.com/user-attachments/assets/71d3de81-0798-429e-819b-38117dcf4b35" />
 
 <img width="1240" height="110" alt="изображение" src="https://github.com/user-attachments/assets/332aa6ac-3a8f-4b12-8978-ea3804960423" />
 
