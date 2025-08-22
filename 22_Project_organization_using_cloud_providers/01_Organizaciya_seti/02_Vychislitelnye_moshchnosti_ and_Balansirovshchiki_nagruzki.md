@@ -78,6 +78,21 @@ runcmd:
 3. Подключить группу к сетевому балансировщику:
 
  - Создать сетевой балансировщик.
+
+<img width="1102" height="82" alt="изображение" src="https://github.com/user-attachments/assets/16c7bd17-1a04-4c3b-9e7b-c1c373ed39bf" />
+
+<img width="1249" height="128" alt="изображение" src="https://github.com/user-attachments/assets/db7503fd-920b-4833-af05-5056ac74a50e" />
+
+<img width="679" height="548" alt="изображение" src="https://github.com/user-attachments/assets/41059434-c77f-4d70-a457-daabfcac6e77" />
+
+Проверяем доступность веб-страницы по адресу балансировщика, 158.160.140.76. Видимо что нас подключило на ВМ: Instance name: cl13g2e13nuo90fcnktu-iton, IP address: 192.168.10.14. 
+
+<img width="1805" height="1009" alt="изображение" src="https://github.com/user-attachments/assets/7b9e9f78-6a5f-4788-9b8b-651fc2140df3" />
+
+Также для удобства проверки выполним команду curl с рабочего ПК на адрес балансировщика 158.160.140.76. Видно что обращение идёт ко всем ВМ из целевой группы:
+
+<img width="814" height="162" alt="изображение" src="https://github.com/user-attachments/assets/565f1087-7da6-4e25-899a-b671cc7a012e" />
+ 
  - Проверить работоспособность, удалив одну или несколько ВМ.
 4. (дополнительно)* Создать Application Load Balancer с использованием Instance group и проверкой состояния.
 
