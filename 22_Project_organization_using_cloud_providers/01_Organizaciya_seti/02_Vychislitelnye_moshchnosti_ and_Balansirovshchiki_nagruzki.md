@@ -18,13 +18,62 @@
  - Положить в бакет файл с картинкой.
  - Сделать файл доступным из интернета.
 
+<img width="1088" height="245" alt="изображение" src="https://github.com/user-attachments/assets/1ac53a34-6cd8-461f-be2c-c755c2ca2e73" />
  
 2. Создать группу ВМ в public подсети фиксированного размера с шаблоном LAMP и веб-страницей, содержащей ссылку на картинку из бакета:
 
  - Создать Instance Group с тремя ВМ и шаблоном LAMP. Для LAMP рекомендуется использовать `image_id = fd827b91d99psvq5fjit`.
+
+<img width="1364" height="213" alt="изображение" src="https://github.com/user-attachments/assets/95914741-f7a0-485b-aa29-115dc0ac0cf1" />
+ 
  - Для создания стартовой веб-страницы рекомендуется использовать раздел `user_data` в [meta_data](https://cloud.yandex.ru/docs/compute/concepts/vm-metadata).
+
+Для удобства, в metadata использовал cloud-init, заранее указав новые переменные через template_file
+
+```
+    metadata = {
+      serial-port-enable = var.serial-port
+      user-data          = data.template_file.cloudinit.rendered #Подключение через cloud-config
+    }
+```
+```
+data "template_file" "cloudinit" {
+  template = file("./cloud-init.yml")
+    vars = {
+    username           = var.username
+    ssh_public_key     = file("~/.ssh/id_rsa.pub")
+    bucket_name        = yandex_storage_bucket.my-bucket.bucket_domain_name
+    image_name         = yandex_storage_object.cat-picture.key
+  }
+}
+```
+
  - Разместить в стартовой веб-странице шаблонной ВМ ссылку на картинку из бакета.
+
+Для удобства, помимо вывода картинки добавил имя и адрес хоста 
+```
+runcmd:
+  - 'export PUBLIC_IPV4=$(hostname -I)' #Получение локального IP вручную
+  - 'echo Instance name: $(hostname), IP address: $PUBLIC_IPV4 > /var/www/html/index.html'
+  - echo '<html><img src="http://${bucket_name}/${image_name}"/></html>' >> /var/www/html/index.html
+```
+
  - Настроить проверку состояния ВМ.
+
+```
+  health_check {
+    interval = 2
+    timeout  = 1
+    http_options {
+      path = "/"
+      port = 80
+    }
+  }
+```
+
+<img width="1022" height="183" alt="изображение" src="https://github.com/user-attachments/assets/fe73a057-cce1-4ce0-b197-ed213d5ae663" />
+
+<img width="1011" height="183" alt="изображение" src="https://github.com/user-attachments/assets/78cc99d3-7e1d-4d47-a79e-c6e4ff6ed26c" />
  
 3. Подключить группу к сетевому балансировщику:
 
