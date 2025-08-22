@@ -14,6 +14,8 @@
 
 1. Создать бакет Object Storage и разместить в нём файл с картинкой:
 
+[код Terraform](https://github.com/vladislav-arzybov/HOMEWORK/tree/main/22_Project_organization_using_cloud_providers/02_Vychislitelnye_moshchnosti_and_Balansirovshchiki_nagruzki/02_terraform)
+
  - Создать бакет в Object Storage с произвольным именем (например, _имя_студента_дата_).
  - Положить в бакет файл с картинкой.
  - Сделать файл доступным из интернета.
