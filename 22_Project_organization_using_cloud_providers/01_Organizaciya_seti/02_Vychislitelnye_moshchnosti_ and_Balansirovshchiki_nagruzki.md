@@ -113,9 +113,15 @@ runcmd:
 
 <img width="833" height="327" alt="изображение" src="https://github.com/user-attachments/assets/eb6d946c-6221-4aef-92e7-b8fe2ae691fc" />
 
-Также, дополнительно можно убедиться в корректности проверки состояния ВМ которая автоматически запустит её после падения.
+Также, дополнительно можно убедиться в корректности проверки состояния ВМ которая автоматически запустит её после падения и вернет в целевую группу.
 
+<img width="1013" height="187" alt="изображение" src="https://github.com/user-attachments/assets/5ef7079b-1604-48e4-b532-c8d63f151e64" />
 
+<img width="1329" height="186" alt="изображение" src="https://github.com/user-attachments/assets/fc1a566d-97dc-44c4-b4e6-bf26a98466a2" />
+
+<img width="1234" height="153" alt="изображение" src="https://github.com/user-attachments/assets/23f76be4-cd4f-4526-b251-36ae7128968f" />
+
+<img width="813" height="164" alt="изображение" src="https://github.com/user-attachments/assets/c5dba426-7620-4725-bd16-9bd65bd92175" />
 
 
 4. (дополнительно)* Создать Application Load Balancer с использованием Instance group и проверкой состояния.
