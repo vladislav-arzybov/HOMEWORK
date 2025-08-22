@@ -14,7 +14,7 @@
 
 1. Создать бакет Object Storage и разместить в нём файл с картинкой:
 
-[код Terraform](https://github.com/vladislav-arzybov/HOMEWORK/tree/main/22_Project_organization_using_cloud_providers/02_Vychislitelnye_moshchnosti_and_Balansirovshchiki_nagruzki/02_terraform)
+[bucket.tf](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/22_Project_organization_using_cloud_providers/02_Vychislitelnye_moshchnosti_and_Balansirovshchiki_nagruzki/02_terraform/bucket.tf)
 
  - Создать бакет в Object Storage с произвольным именем (например, _имя_студента_дата_).
  - Положить в бакет файл с картинкой.
@@ -23,6 +23,8 @@
 <img width="1088" height="245" alt="изображение" src="https://github.com/user-attachments/assets/1ac53a34-6cd8-461f-be2c-c755c2ca2e73" />
  
 2. Создать группу ВМ в public подсети фиксированного размера с шаблоном LAMP и веб-страницей, содержащей ссылку на картинку из бакета:
+
+[код Terraform](https://github.com/vladislav-arzybov/HOMEWORK/tree/main/22_Project_organization_using_cloud_providers/02_Vychislitelnye_moshchnosti_and_Balansirovshchiki_nagruzki/02_terraform)
 
  - Создать Instance Group с тремя ВМ и шаблоном LAMP. Для LAMP рекомендуется использовать `image_id = fd827b91d99psvq5fjit`.
 
