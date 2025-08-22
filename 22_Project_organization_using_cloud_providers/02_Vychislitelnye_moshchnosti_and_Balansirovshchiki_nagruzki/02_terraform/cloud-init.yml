@@ -1,0 +1,13 @@
+#cloud-config
+users:
+  - name: ${username}
+    groups: sudo
+    shell: /bin/bash
+    sudo: ["ALL=(ALL) NOPASSWD:ALL"]
+    ssh_authorized_keys:
+      - ${ssh_public_key}
+runcmd:
+#  - 'export PUBLIC_IPV4=$(curl ifconfig.me)' #Получение локального IP через внешний сайт
+  - 'export PUBLIC_IPV4=$(hostname -I)' #Получение локального IP вручную
+  - 'echo Instance name: $(hostname), IP address: $PUBLIC_IPV4 > /var/www/html/index.html'
+  - echo '<html><img src="http://${bucket_name}/${image_name}"/></html>' >> /var/www/html/index.html
