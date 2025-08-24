@@ -22,13 +22,22 @@ resource "yandex_resourcemanager_folder_iam_member" "load-balancer-editor" {
   depends_on = [ yandex_iam_service_account.ig-sa ] # зависимость для корректной выдачи прав
 }
 
+#Роль для L7 балансировщика, Application Load Balancer
+resource "yandex_resourcemanager_folder_iam_member" "alb-editor" {
+  folder_id = var.folder_id
+  role      = "alb.editor"
+  member    = "serviceAccount:${yandex_iam_service_account.ig-sa.id}"
+
+  depends_on = [ yandex_iam_service_account.ig-sa ] # зависимость для корректной выдачи прав  
+}
+
 #Создаем группу ВМ
 resource "yandex_compute_instance_group" "ig-1" {
   name                = "fixed-ig-with-balancer"
   folder_id           = var.folder_id
   service_account_id  = yandex_iam_service_account.ig-sa.id
   deletion_protection = false
-  depends_on = [ yandex_resourcemanager_folder_iam_member.compute-editor, yandex_resourcemanager_folder_iam_member.load-balancer-editor ] # зависимость для корректного создания и удаления ВМ
+  depends_on = [ yandex_resourcemanager_folder_iam_member.compute-editor, yandex_resourcemanager_folder_iam_member.load-balancer-editor, yandex_resourcemanager_folder_iam_member.alb-editor ] # зависимость для корректного создания и удаления ВМ
   instance_template {
     platform_id = "standard-v3"
     resources {
@@ -82,7 +91,7 @@ resource "yandex_compute_instance_group" "ig-1" {
   }
 
 
-#Добавляем ВМ в балансировщик
+#Добавляем ВМ в nlb-load_balancer
   load_balancer {
     target_group_name        = "target-group"
     target_group_description = "Целевая группа Network Load Balancer"

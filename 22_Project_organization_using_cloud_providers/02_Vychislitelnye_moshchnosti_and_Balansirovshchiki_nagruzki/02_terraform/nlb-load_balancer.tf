@@ -1,4 +1,5 @@
 #Создаем сетевой балансировщик
+
 resource "yandex_lb_network_load_balancer" "lb-1" {
   name = "network-load-balancer-1"
 
