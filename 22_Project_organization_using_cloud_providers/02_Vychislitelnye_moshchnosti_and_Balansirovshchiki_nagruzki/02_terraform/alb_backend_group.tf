@@ -21,7 +21,7 @@ resource "yandex_alb_backend_group" "backend-group" {
       interval             = "1s"
       healthy_threshold    = 2
       unhealthy_threshold  = 2
-      healthcheck_port     = 80     #Альтернативный порт для проверки http
+      healthcheck_port     = 80     #(опционально) Альтернативный порт для проверки http
       http_healthcheck {
         path               = "/"
       }
