@@ -140,10 +140,10 @@ runcmd:
 
 4. (дополнительно)* Создать Application Load Balancer с использованием Instance group и проверкой состояния.
 
-[alb_target_group.tf](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/22_Project_organization_using_cloud_providers/02_Vychislitelnye_moshchnosti_and_Balansirovshchiki_nagruzki/02_terraform/alb_target_group.tf)
-[alb_backend_group.tf](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/22_Project_organization_using_cloud_providers/02_Vychislitelnye_moshchnosti_and_Balansirovshchiki_nagruzki/02_terraform/alb_backend_group.tf)
-[alb_http_router.tf](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/22_Project_organization_using_cloud_providers/02_Vychislitelnye_moshchnosti_and_Balansirovshchiki_nagruzki/02_terraform/alb_http_router.tf)
-[alb_load_balancer.tf](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/22_Project_organization_using_cloud_providers/02_Vychislitelnye_moshchnosti_and_Balansirovshchiki_nagruzki/02_terraform/alb_load_balancer.tf)
+- [alb_target_group.tf](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/22_Project_organization_using_cloud_providers/02_Vychislitelnye_moshchnosti_and_Balansirovshchiki_nagruzki/02_terraform/alb_target_group.tf)
+- [alb_backend_group.tf](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/22_Project_organization_using_cloud_providers/02_Vychislitelnye_moshchnosti_and_Balansirovshchiki_nagruzki/02_terraform/alb_backend_group.tf)
+- [alb_http_router.tf](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/22_Project_organization_using_cloud_providers/02_Vychislitelnye_moshchnosti_and_Balansirovshchiki_nagruzki/02_terraform/alb_http_router.tf)
+- [alb_load_balancer.tf](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/22_Project_organization_using_cloud_providers/02_Vychislitelnye_moshchnosti_and_Balansirovshchiki_nagruzki/02_terraform/alb_load_balancer.tf)
 
 Полезные документы:
 
