@@ -140,10 +140,57 @@ runcmd:
 
 4. (дополнительно)* Создать Application Load Balancer с использованием Instance group и проверкой состояния.
 
+<img width="1213" height="194" alt="изображение" src="https://github.com/user-attachments/assets/26632b2c-876d-4a5e-a452-1f10ec664b37" />
+
+> Создаем новую целевую группу для Application Load Balancer из ранее созданных ВМ
 - [alb_target_group.tf](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/22_Project_organization_using_cloud_providers/02_Vychislitelnye_moshchnosti_and_Balansirovshchiki_nagruzki/02_terraform/alb_target_group.tf)
+
+<img width="1331" height="129" alt="изображение" src="https://github.com/user-attachments/assets/013d845e-ae11-44e7-9a55-88022a535f0e" />
+
+> Создаем группу бэкендов с проверкой состояния
 - [alb_backend_group.tf](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/22_Project_organization_using_cloud_providers/02_Vychislitelnye_moshchnosti_and_Balansirovshchiki_nagruzki/02_terraform/alb_backend_group.tf)
+
+<img width="949" height="84" alt="изображение" src="https://github.com/user-attachments/assets/138c8431-42f7-4459-93b7-8505082ad376" />
+
+```
+    healthcheck {
+      timeout              = "1s"
+      interval             = "1s"
+      healthy_threshold    = 2
+      unhealthy_threshold  = 2
+      healthcheck_port     = 80
+      http_healthcheck {
+        path               = "/"
+      }
+    }
+```
+
+<img width="659" height="308" alt="изображение" src="https://github.com/user-attachments/assets/acf9f137-eaed-4240-ad0c-74688210c4a6" />
+
+> Настраиваем HTTP-роутер и добавляем маршрут, указываем ранее соданную группу бэкендов.
 - [alb_http_router.tf](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/22_Project_organization_using_cloud_providers/02_Vychislitelnye_moshchnosti_and_Balansirovshchiki_nagruzki/02_terraform/alb_http_router.tf)
+
+<img width="1074" height="77" alt="изображение" src="https://github.com/user-attachments/assets/54884790-881c-4749-ab40-1fc00d22801d" />
+
+> Настраиваем L7 Application Load Balancer
 - [alb_load_balancer.tf](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/22_Project_organization_using_cloud_providers/02_Vychislitelnye_moshchnosti_and_Balansirovshchiki_nagruzki/02_terraform/alb_load_balancer.tf)
+
+<img width="1339" height="88" alt="изображение" src="https://github.com/user-attachments/assets/0ac3b62b-e2f6-460d-8042-dfd5bcee2a06" />
+
+> Проверяем доступность портала
+
+<img width="1803" height="1003" alt="изображение" src="https://github.com/user-attachments/assets/4e237e39-14b3-4484-8330-7f1b7db8406e" />
+
+<img width="834" height="167" alt="изображение" src="https://github.com/user-attachments/assets/a62a68dc-7a7c-4c46-815a-14513e28e962" />
+
+> Аналогичная проверка маршрутизации при отключении одной из ВМ
+
+<img width="1373" height="189" alt="изображение" src="https://github.com/user-attachments/assets/d1447cec-fab9-41e6-8725-e70768c5441f" />
+
+<img width="900" height="369" alt="изображение" src="https://github.com/user-attachments/assets/9876f32d-7418-406b-9c95-fcf532c97c6a" />
+
+<img width="826" height="327" alt="изображение" src="https://github.com/user-attachments/assets/7d1500fd-400c-4095-8051-dfe759c730c9" />
+
 
 Полезные документы:
 
