@@ -19,11 +19,11 @@
 
 <img width="1031" height="403" alt="изображение" src="https://github.com/user-attachments/assets/5c905961-68c2-4ab2-ad77-c94b5baeea7b" />
 
-Проверяем доступность изображения по ссылке, доступ запрещен: https://vladislav-arzybov-bucket.storage.yandexcloud.net/cat.jpg
+> Проверяем доступность изображения по ссылке, доступ запрещен: https://vladislav-arzybov-bucket.storage.yandexcloud.net/cat.jpg
 
 <img width="776" height="210" alt="изображение" src="https://github.com/user-attachments/assets/a6d5a2fd-24a3-439f-a2b4-5b3cce08411e" />
 
-А через UI можно получить ссылку лишь на определенное время
+> Через UI можно получить ссылку лишь на определенное время
 
 <img width="564" height="144" alt="изображение" src="https://github.com/user-attachments/assets/1e614bd0-0224-4dfa-a7c1-86edb6dd22bf" />
 
