@@ -7,7 +7,7 @@
 
 1. С помощью ключа в KMS необходимо зашифровать содержимое бакета:
 
-[код Terraform]()
+[код Terraform](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/22_Project_organization_using_cloud_providers/03_Security_in_cloud_providers/03_terraform/bucket.tf)
 
  - создать ключ в KMS;
 
