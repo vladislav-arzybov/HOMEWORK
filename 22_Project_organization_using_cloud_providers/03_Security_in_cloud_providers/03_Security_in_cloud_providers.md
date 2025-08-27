@@ -25,7 +25,7 @@
 
 <img width="776" height="210" alt="изображение" src="https://github.com/user-attachments/assets/a6d5a2fd-24a3-439f-a2b4-5b3cce08411e" />
 
-> Также через UI можно получить ссылку на файл, но лишь на определенное время.
+> Также можно получить ссылку на файл, но лишь на определенное время.
 
 <img width="564" height="144" alt="изображение" src="https://github.com/user-attachments/assets/1e614bd0-0224-4dfa-a7c1-86edb6dd22bf" />
 
