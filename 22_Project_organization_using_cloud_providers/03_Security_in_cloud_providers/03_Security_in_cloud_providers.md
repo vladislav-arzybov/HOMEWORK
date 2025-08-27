@@ -17,6 +17,8 @@
 
 > Т.к. данные шифруются лишь в процессе загрузки повторно создадим бакет и загрузим в него картинку, как видно ключ шифрования на месте:
 
+<img width="955" height="356" alt="изображение" src="https://github.com/user-attachments/assets/e1dbb978-4a61-420f-a7d6-ffb1334da374" />
+
 <img width="1031" height="403" alt="изображение" src="https://github.com/user-attachments/assets/5c905961-68c2-4ab2-ad77-c94b5baeea7b" />
 
 > Проверяем доступность изображения по ссылке, доступ запрещен: https://vladislav-arzybov-bucket.storage.yandexcloud.net/cat.jpg
