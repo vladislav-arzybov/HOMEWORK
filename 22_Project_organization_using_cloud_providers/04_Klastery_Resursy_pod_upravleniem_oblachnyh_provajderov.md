@@ -59,7 +59,7 @@ resource "yandex_vpc_subnet" "private-b" {
   }
 ```
 
-<img width="1359" height="119" alt="изображение" src="https://github.com/user-attachments/assets/1e3a369f-507b-40f6-9f9b-9863379d9cae" />
+<img width="572" height="151" alt="изображение" src="https://github.com/user-attachments/assets/b48584a8-e508-4024-8a46-58f89dc9a76e" />
  
  - Необходимо предусмотреть репликацию с произвольным временем технического обслуживания.
 
@@ -79,6 +79,8 @@ resource "yandex_mdb_mysql_cluster" "mysql_cluster" {
   version             = "8.0"
   security_group_ids  = [ yandex_vpc_security_group.mysql-sg.id ] #security_group опционально
 ```
+
+<img width="1359" height="119" alt="изображение" src="https://github.com/user-attachments/assets/1e3a369f-507b-40f6-9f9b-9863379d9cae" />
 
  - Задать время начала резервного копирования — 23:59.
 
@@ -115,6 +117,22 @@ resource "yandex_mdb_mysql_user" "user1" {
   }
 }
 ```
+
+#### Проверяем подключение к БД и репликацию данных
+
+> Подключаемся на MASTER и выбираем ранее созданную БД netology_db
+
+<img width="239" height="217" alt="изображение" src="https://github.com/user-attachments/assets/7a74e21d-c6b6-4986-984d-9593b9eb3781" />
+
+> Создаем таблицу users, которая будет содержать цифровое ID пользователя (генерируется автоматически) и имя пользователя до 64 символов. 
+
+<img width="1132" height="244" alt="изображение" src="https://github.com/user-attachments/assets/97c43562-61fb-4311-b9d2-18ca20769415" />
+
+> Проверяем наличие данных на сервере REPLICA
+
+<img width="285" height="174" alt="изображение" src="https://github.com/user-attachments/assets/6cf8e76b-50d1-41d4-960e-7572757c0dcc" />
+
+ 
 
 2. Настроить с помощью Terraform кластер Kubernetes.
 
