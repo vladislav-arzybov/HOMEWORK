@@ -203,6 +203,7 @@ resource "yandex_kms_symmetric_key" "kms-key" {
  - Подключиться к кластеру с помощью `kubectl`.
 
 > Добавляем параметры для подключения в конфиг ~/.kube/config
+
 > Проверяем доступность кластера и созданных нод с запущенными подами: kubectl get pods -ALL -o wide
 
 <img width="1647" height="455" alt="изображение" src="https://github.com/user-attachments/assets/6d182c60-42c1-4eac-acd3-6c17165883f8" />
