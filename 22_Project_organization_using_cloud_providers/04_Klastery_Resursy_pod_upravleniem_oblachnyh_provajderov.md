@@ -137,10 +137,69 @@ resource "yandex_mdb_mysql_user" "user1" {
 2. Настроить с помощью Terraform кластер Kubernetes.
 
  - Используя настройки VPC из предыдущих домашних заданий, добавить дополнительно две подсети public в разных зонах, чтобы обеспечить отказоустойчивость.
- - Создать отдельный сервис-аккаунт с необходимыми правами. 
+
+```
+#Новые подсети для кластера K8S
+resource "yandex_vpc_subnet" "public-a" {
+  name           = "public-a"
+  zone           = "ru-central1-a"
+  network_id     = yandex_vpc_network.prod-vpc.id
+  v4_cidr_blocks = ["192.168.11.0/24"]
+}
+resource "yandex_vpc_subnet" "public-b" {
+  name           = "public-b"
+  zone           = "ru-central1-b"
+  network_id     = yandex_vpc_network.prod-vpc.id
+  v4_cidr_blocks = ["192.168.12.0/24"]
+}
+resource "yandex_vpc_subnet" "public-d" {
+  name           = "public-d"
+  zone           = "ru-central1-d"
+  network_id     = yandex_vpc_network.prod-vpc.id
+  v4_cidr_blocks = ["192.168.13.0/24"]
+}
+```
+ 
+ - Создать отдельный сервис-аккаунт с необходимыми правами.
+
+<img width="396" height="95" alt="изображение" src="https://github.com/user-attachments/assets/17524b55-0549-4bac-88a5-93213d698933" />
+
  - Создать региональный мастер Kubernetes с размещением нод в трёх разных подсетях.
+
+<img width="456" height="387" alt="изображение" src="https://github.com/user-attachments/assets/273540a5-fd0e-4eb4-87d6-a8861d390622" />
+
  - Добавить возможность шифрования ключом из KMS, созданным в предыдущем домашнем задании.
+
+```
+  kms_provider {
+    key_id = yandex_kms_symmetric_key.kms-key.id
+  }
+.
+.
+.
+resource "yandex_kms_symmetric_key" "kms-key" {
+  name              = "kms-key"
+  description       = "key for k8s"
+  default_algorithm = "AES_128"
+  rotation_period   = "8760h" # 1 год.
+}
+```
+
  - Создать группу узлов, состояющую из трёх машин с автомасштабированием до шести.
+
+```
+  scale_policy {
+    auto_scale {
+      initial = 3
+      min = 3
+      max = 6
+    }
+  }
+```
+
+<img width="1427" height="166" alt="изображение" src="https://github.com/user-attachments/assets/f6f5b537-e424-4ff4-a73a-f3b08734da28" />
+
+
  - Подключиться к кластеру с помощью `kubectl`.
  - *Запустить микросервис phpmyadmin и подключиться к ранее созданной БД.
  - *Создать сервис-типы Load Balancer и подключиться к phpmyadmin. Предоставить скриншот с публичным адресом и подключением к БД.
