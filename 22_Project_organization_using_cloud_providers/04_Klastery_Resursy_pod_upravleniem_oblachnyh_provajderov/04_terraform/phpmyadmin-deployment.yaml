@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: phpmyadmin
+  labels:
+    app: phpmyadmin
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: phpmyadmin
+  template:
+    metadata:
+      labels:
+        app: phpmyadmin
+    spec:
+      containers:
+      - name: phpmyadmin
+        image: phpmyadmin:latest
+        env:
+        - name: PMA_HOST #Адрес MASTER сервера
+          value: "rc1a-9eqcsmk75tov84i4.mdb.yandexcloud.net" 
+        - name: PMA_PORT #порт
+          value: "3306" 
+        - name: PMA_ARBITRARY #разрешено подключение к произвольному серверу
+          value: "1"
+        - name: PMA_USER #логин
+          value: "reivol"
+        - name: PMA_PASSWORD #пароль
+          value: "1qaz@WSX"
+        - name: PMA_PMADB #имя БД
+          value: "netology_db"
+
