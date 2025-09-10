@@ -77,7 +77,7 @@ resource "yandex_mdb_mysql_cluster" "mysql_cluster" {
   environment         = "PRESTABLE"
   network_id          = yandex_vpc_network.prod-vpc.id
   version             = "8.0"
-  security_group_ids  = [ yandex_vpc_security_group.mysql-sg.id ] #security_group опционально
+  security_group_ids  = [ yandex_vpc_security_group.mysql-sg.id ] 
 ```
 
 <img width="1359" height="119" alt="изображение" src="https://github.com/user-attachments/assets/1e3a369f-507b-40f6-9f9b-9863379d9cae" />
