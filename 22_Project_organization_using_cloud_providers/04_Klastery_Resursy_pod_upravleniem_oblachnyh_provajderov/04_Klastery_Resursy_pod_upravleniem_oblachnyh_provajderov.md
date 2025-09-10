@@ -71,6 +71,8 @@ resource "yandex_vpc_subnet" "private-b" {
  
  - Использовать окружение Prestable, платформу Intel Broadwell с производительностью 50% CPU и размером диска 20 Гб.
 
+[sql_cluster.tf](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/22_Project_organization_using_cloud_providers/04_Klastery_Resursy_pod_upravleniem_oblachnyh_provajderov/04_terraform/sql_cluster.tf)
+
 ```
 resource "yandex_mdb_mysql_cluster" "mysql_cluster" {
   name                = "MySQL-cluster"
