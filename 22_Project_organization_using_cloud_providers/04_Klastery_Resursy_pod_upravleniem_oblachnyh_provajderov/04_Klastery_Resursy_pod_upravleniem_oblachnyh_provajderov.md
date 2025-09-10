@@ -162,9 +162,15 @@ resource "yandex_vpc_subnet" "public-d" {
  
  - Создать отдельный сервис-аккаунт с необходимыми правами.
 
+> + учесть права для создания Load Balancer в задании со *
+
+[service_account.tf](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/22_Project_organization_using_cloud_providers/04_Klastery_Resursy_pod_upravleniem_oblachnyh_provajderov/04_terraform/service_account.tf)
+
 <img width="396" height="95" alt="изображение" src="https://github.com/user-attachments/assets/17524b55-0549-4bac-88a5-93213d698933" />
 
  - Создать региональный мастер Kubernetes с размещением нод в трёх разных подсетях.
+
+[k8s_HA_cluster.tf](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/22_Project_organization_using_cloud_providers/04_Klastery_Resursy_pod_upravleniem_oblachnyh_provajderov/04_terraform/k8s_HA_cluster.tf)
 
 <img width="456" height="387" alt="изображение" src="https://github.com/user-attachments/assets/273540a5-fd0e-4eb4-87d6-a8861d390622" />
 
@@ -186,6 +192,8 @@ resource "yandex_kms_symmetric_key" "kms-key" {
 ```
 
  - Создать группу узлов, состояющую из трёх машин с автомасштабированием до шести.
+
+[k8s_node_group.tf](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/22_Project_organization_using_cloud_providers/04_Klastery_Resursy_pod_upravleniem_oblachnyh_provajderov/04_terraform/k8s_node_group.tf)
 
 ```
   scale_policy {
@@ -210,26 +218,25 @@ resource "yandex_kms_symmetric_key" "kms-key" {
 
  - *Запустить микросервис phpmyadmin и подключиться к ранее созданной БД.
 
-> yaml
+[phpmyadmin-deployment.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/22_Project_organization_using_cloud_providers/04_Klastery_Resursy_pod_upravleniem_oblachnyh_provajderov/04_terraform/phpmyadmin-deployment.yaml)
 
 <img width="531" height="90" alt="изображение" src="https://github.com/user-attachments/assets/ae2a6376-0b9f-41d7-b703-ec143a797d4b" />
-
  
  - *Создать сервис-типы Load Balancer и подключиться к phpmyadmin. Предоставить скриншот с публичным адресом и подключением к БД.
 
-> yaml
+[phpmyadmin-svc.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/22_Project_organization_using_cloud_providers/04_Klastery_Resursy_pod_upravleniem_oblachnyh_provajderov/04_terraform/phpmyadmin-svc.yaml)
 
 <img width="681" height="70" alt="изображение" src="https://github.com/user-attachments/assets/9647eee6-aaed-4476-a148-a89afc20d9ef" />
 
-> Проверяем создание сервиса LoadBalancer (EXT) в кластере
+> Проверяем успешное создание сервиса LoadBalancer (EXT) в кластере, с адресом 158.160.134.232
 
 <img width="1390" height="113" alt="изображение" src="https://github.com/user-attachments/assets/58089c0b-00e1-48d9-83ee-c7243cdb16ff" />
 
-> И автоматическое создание Network Load Balancer в облаке, с адресом 158.160.134.232
+> Дополнительно проверяем информацию в каталоге сервисов Network Load Balancer в облаке.
 
 <img width="740" height="592" alt="изображение" src="https://github.com/user-attachments/assets/ce2a64b1-4892-42a1-9e9a-69b97ecf3b3d" />
 
-> В браузере на ПК выполняем опдключение на 158.160.134.232:80, проверяем доступность БД и наличие тестовой записи с пользователем.
+> В браузере на ПК выполняем опдключение на внешний ip адрес NLB балансировщика 158.160.134.232:80, проверяем доступность БД и наличие записи с тестовым пользоватлем.
 
 <img width="1126" height="475" alt="изображение" src="https://github.com/user-attachments/assets/5efbc223-ae92-4db0-859f-6adbd31d93fa" />
 
