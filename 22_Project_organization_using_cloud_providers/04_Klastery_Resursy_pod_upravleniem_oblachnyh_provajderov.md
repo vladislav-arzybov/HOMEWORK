@@ -209,8 +209,27 @@ resource "yandex_kms_symmetric_key" "kms-key" {
 <img width="1647" height="455" alt="изображение" src="https://github.com/user-attachments/assets/6d182c60-42c1-4eac-acd3-6c17165883f8" />
 
  - *Запустить микросервис phpmyadmin и подключиться к ранее созданной БД.
+
+> yaml
+
+<img width="531" height="90" alt="изображение" src="https://github.com/user-attachments/assets/ae2a6376-0b9f-41d7-b703-ec143a797d4b" />
+
+ 
  - *Создать сервис-типы Load Balancer и подключиться к phpmyadmin. Предоставить скриншот с публичным адресом и подключением к БД.
 
+> yaml
+
+<img width="681" height="70" alt="изображение" src="https://github.com/user-attachments/assets/9647eee6-aaed-4476-a148-a89afc20d9ef" />
+
+> Проверяем создание сервиса LoadBalancer (EXT) в кластере
+
+<img width="1390" height="113" alt="изображение" src="https://github.com/user-attachments/assets/58089c0b-00e1-48d9-83ee-c7243cdb16ff" />
+
+> И автоматическое создание Network Load Balancer в облаке, с адресом 158.160.134.232
+
+<img width="740" height="592" alt="изображение" src="https://github.com/user-attachments/assets/ce2a64b1-4892-42a1-9e9a-69b97ecf3b3d" />
+
+> В браузере на ПК выполняем опдключение на 158.160.134.232:80, проверяем доступность БД и наличие тестовой записи с пользователем.
 
 <img width="1126" height="475" alt="изображение" src="https://github.com/user-attachments/assets/5efbc223-ae92-4db0-859f-6adbd31d93fa" />
 
