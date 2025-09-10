@@ -233,6 +233,7 @@ resource "yandex_kms_symmetric_key" "kms-key" {
 
 <img width="1126" height="475" alt="изображение" src="https://github.com/user-attachments/assets/5efbc223-ae92-4db0-859f-6adbd31d93fa" />
 
+[Код Terraform](https://github.com/vladislav-arzybov/HOMEWORK/tree/main/22_Project_organization_using_cloud_providers/04_Klastery_Resursy_pod_upravleniem_oblachnyh_provajderov/04_terraform)
 
 Полезные документы:
 
