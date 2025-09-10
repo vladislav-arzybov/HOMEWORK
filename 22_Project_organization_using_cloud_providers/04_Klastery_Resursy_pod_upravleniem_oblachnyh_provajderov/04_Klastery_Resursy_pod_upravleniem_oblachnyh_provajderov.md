@@ -236,7 +236,7 @@ resource "yandex_kms_symmetric_key" "kms-key" {
 
 <img width="740" height="592" alt="изображение" src="https://github.com/user-attachments/assets/ce2a64b1-4892-42a1-9e9a-69b97ecf3b3d" />
 
-> В браузере на ПК выполняем опдключение на внешний ip адрес NLB балансировщика 158.160.134.232:80, проверяем доступность БД и наличие записи с тестовым пользоватлем.
+> В браузере на ПК выполняем опдключение на внешний ip адрес NLB балансировщика 158.160.134.232:80, проверяем доступность БД и наличие записи с тестовым пользоватлем Elena Ivanova.
 
 <img width="1126" height="475" alt="изображение" src="https://github.com/user-attachments/assets/5efbc223-ae92-4db0-859f-6adbd31d93fa" />
 
