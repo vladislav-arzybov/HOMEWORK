@@ -20,3 +20,12 @@ EOT
   filename = "${path.module}/backend_access_keys.env"
 }
 ```
+
+Выпоняем terraform init, plan, apply
+
+Также для проверки корректности содержимое backend_access_keys.env можно сверить с выводом команд:
+- terraform output access_key
+- terraform output secret_key
+
+2) Копируем backend_access_keys.env в каталог из которго будет разворачиваться инфраструктура проекта
+
