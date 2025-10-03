@@ -60,7 +60,42 @@ EOT
 
 <img width="822" height="250" alt="изображение" src="https://github.com/user-attachments/assets/46be7422-899b-4e7d-b4fc-2de4d574a1b3" />
 
-5. Создайте конфигурацию Terrafrom, используя созданный бакет ранее как бекенд для хранения стейт файла. Конфигурации Terraform для создания сервисного аккаунта и бакета и основной инфраструктуры следует сохранить в разных папках.
+3. Создайте конфигурацию Terrafrom, используя созданный бакет ранее как бекенд для хранения стейт файла. Конфигурации Terraform для создания сервисного аккаунта и бакета и основной инфраструктуры следует сохранить в разных папках.
+
+> Файл ```secret.backend.tfvars``` копируем в каталог из которго будет разворачиваться инфраструктура проекта.
+
+> Чтобы добавить данные из файла ```secret.backend.tfvars``` при инициации инфраструктуры нужно выполнить команду: 
+- terraform init -backend-config=secret.backend.tfvars
+
+<img width="832" height="120" alt="изображение" src="https://github.com/user-attachments/assets/ccca2f40-ee76-48b0-951c-71e77ee2688e" />
+
+> Таким образом можно сохранить в безопасности секретные данные и не указывать их в конфиге ```backend.tf```
+
+```
+terraform {
+  backend "s3" {
+    endpoints = {
+      s3 =       "https://storage.yandexcloud.net"
+    }
+    bucket           = "vladislav-arzybov-bucket"       # имя бакета
+    key              = "terraform/state.tfstate"  # путь в бакете
+    region           = "ru-central1" 
+    use_path_style = true #Для корректного обращения к S3 хранилищу, https://storage.yandexcloud.net/....
+    skip_region_validation      = true #отключает проверку AWS-региона
+    skip_credentials_validation = true #отключает проверку ключей через AWS STS
+    skip_requesting_account_id  = true #не пытаться получить AWS account ID
+  }
+}
+```
+
+> Проверяем наличие файла в бакете
+
+<img width="924" height="417" alt="изображение" src="https://github.com/user-attachments/assets/cc8c642a-19c9-4fc8-87c5-2ab4a49d03c6" />
+
+> Проверяем что локальном в файле .terraform/terraform.tfstate присутствует только информация об удаленном хранилище:
+
+<img width="474" height="61" alt="изображение" src="https://github.com/user-attachments/assets/d2b1ce61-1d3a-442c-9739-d5206b55dbb9" />
+
 6. Создайте VPC с подсетями в разных зонах доступности.
 7. Убедитесь, что теперь вы можете выполнить команды `terraform destroy` и `terraform apply` без дополнительных ручных действий.
 8. В случае использования [Terraform Cloud](https://app.terraform.io/) в качестве [backend](https://developer.hashicorp.com/terraform/language/backend) убедитесь, что применение изменений успешно проходит, используя web-интерфейс Terraform cloud.
@@ -81,19 +116,4 @@ EOT
 
 
 
-2) Копируем secret.backend.tfvars в каталог из которго будет разворачиваться инфраструктура проекта
 
-Выполняем команду: terraform init -backend-config=secret.backend.tfvars
-
-<img width="832" height="120" alt="изображение" src="https://github.com/user-attachments/assets/ccca2f40-ee76-48b0-951c-71e77ee2688e" />
-
-
-
-После запуска проверяем наличие файла в бакете
-
-<img width="924" height="417" alt="изображение" src="https://github.com/user-attachments/assets/cc8c642a-19c9-4fc8-87c5-2ab4a49d03c6" />
-
-
-Проверяем что локально в файле .terraform/terraform.tfstate присутствует только информация об удаленном хранилище:
-
-<img width="474" height="61" alt="изображение" src="https://github.com/user-attachments/assets/d2b1ce61-1d3a-442c-9739-d5206b55dbb9" />
