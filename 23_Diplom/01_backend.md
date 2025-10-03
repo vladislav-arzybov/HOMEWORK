@@ -43,6 +43,6 @@ EOT
 <img width="924" height="417" alt="изображение" src="https://github.com/user-attachments/assets/cc8c642a-19c9-4fc8-87c5-2ab4a49d03c6" />
 
 
-Локально на ПК файла быть не должно, вместо этого в каталоге .terraform/terraform.tfstate должны быть записи:
+Проверяем что локально в файле .terraform/terraform.tfstate присутствует только информация об удаленном хранилище:
 
 <img width="474" height="61" alt="изображение" src="https://github.com/user-attachments/assets/d2b1ce61-1d3a-442c-9739-d5206b55dbb9" />
