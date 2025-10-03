@@ -96,7 +96,7 @@ terraform {
 
 <img width="474" height="61" alt="изображение" src="https://github.com/user-attachments/assets/d2b1ce61-1d3a-442c-9739-d5206b55dbb9" />
 
-6. Создайте VPC с подсетями в разных зонах доступности.
+4. Создайте VPC с подсетями в разных зонах доступности.
 
 ```
 resource "yandex_vpc_network" "prod-vpc" {
@@ -125,11 +125,11 @@ resource "yandex_vpc_subnet" "subnet-d" {
 }
 ```
 
-8. Убедитесь, что теперь вы можете выполнить команды `terraform destroy` и `terraform apply` без дополнительных ручных действий.
+5. Убедитесь, что теперь вы можете выполнить команды `terraform destroy` и `terraform apply` без дополнительных ручных действий.
 
 <img width="647" height="282" alt="изображение" src="https://github.com/user-attachments/assets/b218f805-6238-4d86-bf20-404680908071" />
 
-10. В случае использования [Terraform Cloud](https://app.terraform.io/) в качестве [backend](https://developer.hashicorp.com/terraform/language/backend) убедитесь, что применение изменений успешно проходит, используя web-интерфейс Terraform cloud.
+6. В случае использования [Terraform Cloud](https://app.terraform.io/) в качестве [backend](https://developer.hashicorp.com/terraform/language/backend) убедитесь, что применение изменений успешно проходит, используя web-интерфейс Terraform cloud.
 
 Ожидаемые результаты:
 
