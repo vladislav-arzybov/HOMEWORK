@@ -127,7 +127,7 @@ resource "yandex_vpc_subnet" "subnet-d" {
 
 8. Убедитесь, что теперь вы можете выполнить команды `terraform destroy` и `terraform apply` без дополнительных ручных действий.
 
-<img width="661" height="252" alt="изображение" src="https://github.com/user-attachments/assets/f13eddae-62d5-487e-9ef0-cb3008465aa2" />
+<img width="647" height="282" alt="изображение" src="https://github.com/user-attachments/assets/b218f805-6238-4d86-bf20-404680908071" />
 
 10. В случае использования [Terraform Cloud](https://app.terraform.io/) в качестве [backend](https://developer.hashicorp.com/terraform/language/backend) убедитесь, что применение изменений успешно проходит, используя web-интерфейс Terraform cloud.
 
@@ -135,16 +135,4 @@ resource "yandex_vpc_subnet" "subnet-d" {
 
 1. Terraform сконфигурирован и создание инфраструктуры посредством Terraform возможно без дополнительных ручных действий, стейт основной конфигурации сохраняется в бакете или Terraform Cloud
 2. Полученная конфигурация инфраструктуры является предварительной, поэтому в ходе дальнейшего выполнения задания возможны изменения.
-
-
-
-
-
-
-
-
-
-
-
-
 
