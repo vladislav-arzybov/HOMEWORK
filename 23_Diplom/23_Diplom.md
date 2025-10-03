@@ -52,7 +52,7 @@
 
 > Ссылки на конфигурационные файлы Terraform созданные для выполнения данного блока:
 - [bucket](https://github.com/vladislav-arzybov/HOMEWORK/tree/main/23_Diplom/01_backend/01_bucket)
-- [backend](https://github.com/vladislav-arzybov/HOMEWORK/tree/main/23_Diplom/01_backend/02_network)
+- [backend + network](https://github.com/vladislav-arzybov/HOMEWORK/tree/main/23_Diplom/01_backend/02_network)
 
 ---
 ### Создание Kubernetes кластера
