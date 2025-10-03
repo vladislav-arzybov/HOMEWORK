@@ -27,6 +27,9 @@ EOT
 - terraform output access_key
 - terraform output secret_key
 
+<img width="822" height="250" alt="изображение" src="https://github.com/user-attachments/assets/46be7422-899b-4e7d-b4fc-2de4d574a1b3" />
+
+
 2) Копируем backend_access_keys.env в каталог из которго будет разворачиваться инфраструктура проекта
 
 Проверить содержимое переменных:
