@@ -32,3 +32,8 @@ EOT
 Проверить содержимое переменных:
 - echo $AWS_ACCESS_KEY_ID
 - echo $AWS_SECRET_ACCESS_KEY
+
+
+После запуска проверяем наличие файла в бакете, локально на ПК файла быть не должно, вместо этого в каталоге .terraform/terraform.tfstate должны быть записи:
+
+<img width="474" height="61" alt="изображение" src="https://github.com/user-attachments/assets/d2b1ce61-1d3a-442c-9739-d5206b55dbb9" />
