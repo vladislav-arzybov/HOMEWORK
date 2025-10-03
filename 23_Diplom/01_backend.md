@@ -14,7 +14,7 @@
 > Через CLI создаем файл ключа ```authorized_key.json``` сервисного аккаунта ```testssh``` который в лальнейшем будет использоваться для работы с terraform
 - yc iam key create --output authorized_key.json --service-account-name testssh
 
-> Добавляем информацию в блок настроек провайдера, чтобы в дальнейшем не вводить каждый раз ```OAuth-token``` для выполнения команд.
+> Добавляем информацию в блоке настроек провайдера, чтобы в дальнейшем не вводить каждый раз ```OAuth-token``` для выполнения команд.
 
 ```
 provider "yandex" {
@@ -22,13 +22,46 @@ provider "yandex" {
 }
 ```
 
-3. Подготовьте [backend](https://developer.hashicorp.com/terraform/language/backend) для Terraform:  
+2. Подготовьте [backend](https://developer.hashicorp.com/terraform/language/backend) для Terraform:  
    а. Рекомендуемый вариант: [S3 bucket](https://ru.hexlet.io/courses/terraform-basics/lessons/remote-state/theory_unit) в созданном ЯО аккаунте(создание бакета через TF)
    б. Альтернативный вариант:  [Terraform Cloud](https://app.terraform.io/)
-4. Создайте конфигурацию Terrafrom, используя созданный бакет ранее как бекенд для хранения стейт файла. Конфигурации Terraform для создания сервисного аккаунта и бакета и основной инфраструктуры следует сохранить в разных папках.
-5. Создайте VPC с подсетями в разных зонах доступности.
-6. Убедитесь, что теперь вы можете выполнить команды `terraform destroy` и `terraform apply` без дополнительных ручных действий.
-7. В случае использования [Terraform Cloud](https://app.terraform.io/) в качестве [backend](https://developer.hashicorp.com/terraform/language/backend) убедитесь, что применение изменений успешно проходит, используя web-интерфейс Terraform cloud.
+
+> Выполним предварительную настройку для создания Object Storage в YC, где в дальнейшем будет храниться текущее состояние проекта, файл .tfstate
+
+> Чтобы обеспечить конфиденциальность access_key и secret_key для удобства сохраним их в файл ```secret.backend.tfvars```, т.к. проект который создает bucket выполняется отдельно от проекта использующего S3 хранилище   
+> Для этого используем ресурс local_file, добавляем в блок провайдеров провайдера hashicorp/local
+
+```
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.4"
+    }
+```
+
+> Cохраняем ключи в файл ```secret.backend.tfvars```
+
+```
+resource "local_file" "backend_keys" {
+  content  = <<EOT
+access_key = "${yandex_iam_service_account_static_access_key.sa-static-key.access_key}"
+secret_key = "${yandex_iam_service_account_static_access_key.sa-static-key.secret_key}"
+EOT
+  filename = "${path.module}/secret.backend.tfvars"
+}
+```
+
+> Выпоняем terraform init, plan, apply
+
+> Для проверки корректности автозаполнения файла ```secret.backend.tfvars``` его содержимое можно сверить с выводом команд:
+- terraform output access_key
+- terraform output secret_key
+
+<img width="822" height="250" alt="изображение" src="https://github.com/user-attachments/assets/46be7422-899b-4e7d-b4fc-2de4d574a1b3" />
+
+5. Создайте конфигурацию Terrafrom, используя созданный бакет ранее как бекенд для хранения стейт файла. Конфигурации Terraform для создания сервисного аккаунта и бакета и основной инфраструктуры следует сохранить в разных папках.
+6. Создайте VPC с подсетями в разных зонах доступности.
+7. Убедитесь, что теперь вы можете выполнить команды `terraform destroy` и `terraform apply` без дополнительных ручных действий.
+8. В случае использования [Terraform Cloud](https://app.terraform.io/) в качестве [backend](https://developer.hashicorp.com/terraform/language/backend) убедитесь, что применение изменений успешно проходит, используя web-интерфейс Terraform cloud.
 
 Ожидаемые результаты:
 
@@ -43,36 +76,7 @@ provider "yandex" {
 
 
 
-Выполним предварительную настройку для создания Object Storage в yc где в дальнейшем будет храниться текущее состояние проекта, файл .tfstate
 
-1) Т.к. создание бакета и запуск проекта нужно выплнять из разных каталогов, то необходимо заранее сохранить ключи access_key и secret_key в .env файл
-Для этого используем ресурс local_file, добавляем в блок провайдеров провайдера hashicorp/local
-
-```
-    local = {
-      source  = "hashicorp/local"
-      version = "~> 2.4"
-    }
-```
-
-И сохраняем ключи в файл backend_access_keys.env
-```
-resource "local_file" "backend_keys" {
-  content  = <<EOT
-AWS_ACCESS_KEY_ID=${yandex_iam_service_account_static_access_key.sa-static-key.access_key}
-AWS_SECRET_ACCESS_KEY=${yandex_iam_service_account_static_access_key.sa-static-key.secret_key}
-EOT
-  filename = "${path.module}/backend_access_keys.env"
-}
-```
-
-Выпоняем terraform init, plan, apply
-
-Также для проверки корректности содержимое backend_access_keys.env можно сверить с выводом команд:
-- terraform output access_key
-- terraform output secret_key
-
-<img width="822" height="250" alt="изображение" src="https://github.com/user-attachments/assets/46be7422-899b-4e7d-b4fc-2de4d574a1b3" />
 
 
 2) Копируем secret.backend.tfvars в каталог из которго будет разворачиваться инфраструктура проекта
