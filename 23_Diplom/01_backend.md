@@ -29,3 +29,6 @@ EOT
 
 2) Копируем backend_access_keys.env в каталог из которго будет разворачиваться инфраструктура проекта
 
+Проверить содержимое переменных:
+echo $AWS_ACCESS_KEY_ID
+echo $AWS_SECRET_ACCESS_KEY
