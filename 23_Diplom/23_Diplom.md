@@ -25,7 +25,7 @@
 ## Этапы выполнения:
 
 
-### Создание облачной инфраструктуры
+### [Создание облачной инфраструктуры](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/23_Diplom/01_backend/01_backend.md)
 
 Для начала необходимо подготовить облачную инфраструктуру в ЯО при помощи [Terraform](https://www.terraform.io/).
 
