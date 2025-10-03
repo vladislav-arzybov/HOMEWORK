@@ -92,13 +92,44 @@ terraform {
 
 <img width="924" height="417" alt="изображение" src="https://github.com/user-attachments/assets/cc8c642a-19c9-4fc8-87c5-2ab4a49d03c6" />
 
-> Проверяем что локальном в файле .terraform/terraform.tfstate присутствует только информация об удаленном хранилище:
+> Проверяем что локальном в файле .terraform/terraform.tfstate присутствует лишь информация об удаленном хранилище:
 
 <img width="474" height="61" alt="изображение" src="https://github.com/user-attachments/assets/d2b1ce61-1d3a-442c-9739-d5206b55dbb9" />
 
 6. Создайте VPC с подсетями в разных зонах доступности.
-7. Убедитесь, что теперь вы можете выполнить команды `terraform destroy` и `terraform apply` без дополнительных ручных действий.
-8. В случае использования [Terraform Cloud](https://app.terraform.io/) в качестве [backend](https://developer.hashicorp.com/terraform/language/backend) убедитесь, что применение изменений успешно проходит, используя web-интерфейс Terraform cloud.
+
+```
+resource "yandex_vpc_network" "prod-vpc" {
+  name = var.vpc_name
+}
+
+resource "yandex_vpc_subnet" "subnet-a" {
+  name           = var.subnet-a_name
+  zone           = var.zone-a
+  network_id     = yandex_vpc_network.prod-vpc.id
+  v4_cidr_blocks = var.subnet-a_cidr
+
+}
+resource "yandex_vpc_subnet" "subnet-b" {
+  name           = var.subnet-b_name
+  zone           = var.zone-b
+  network_id     = yandex_vpc_network.prod-vpc.id
+  v4_cidr_blocks = var.subnet-b_cidr
+}
+
+resource "yandex_vpc_subnet" "subnet-d" {
+  name           = var.subnet-d_name
+  zone           = var.zone-d
+  network_id     = yandex_vpc_network.prod-vpc.id
+  v4_cidr_blocks = var.subnet-d_cidr
+}
+```
+
+8. Убедитесь, что теперь вы можете выполнить команды `terraform destroy` и `terraform apply` без дополнительных ручных действий.
+
+<img width="661" height="252" alt="изображение" src="https://github.com/user-attachments/assets/f13eddae-62d5-487e-9ef0-cb3008465aa2" />
+
+10. В случае использования [Terraform Cloud](https://app.terraform.io/) в качестве [backend](https://developer.hashicorp.com/terraform/language/backend) убедитесь, что применение изменений успешно проходит, используя web-интерфейс Terraform cloud.
 
 Ожидаемые результаты:
 
