@@ -158,9 +158,12 @@
 <img width="1838" height="546" alt="изображение" src="https://github.com/user-attachments/assets/667ab848-6c63-435a-9db4-6ccce9c193ea" />
 
 8. Подключаемся на первую мастер ноду, копируем конфи для работы kubectl
-- mkdir -p $HOME/.kube
-- sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-- sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+```bash
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
 
 <img width="745" height="61" alt="изображение" src="https://github.com/user-attachments/assets/4477c3e8-77e8-412b-8d4b-9b18692048ee" />
 
