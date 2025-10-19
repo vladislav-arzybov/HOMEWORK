@@ -192,7 +192,7 @@
 13. Создаем папку для конфига k8s
 - mkdir -p $HOME/.kube
 - scp reivol@51.250.43.54:$HOME/.kube/config $HOME/.kube/config
-- sudo chown $(id -u):$(id -g) $HOME/.kube/config
+- ```sudo chown $(id -u):$(id -g) $HOME/.kube/config```
 
 
 ### Правила приёма работы
