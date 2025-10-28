@@ -55,7 +55,7 @@
 - [backend + network](https://github.com/vladislav-arzybov/HOMEWORK/tree/main/23_Diplom/01_backend/02_network)
 
 ---
-### Создание Kubernetes кластера
+### [Создание Kubernetes кластера](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/23_Diplom/02_k8s/02_k8s.md)
 
 На этом этапе необходимо создать [Kubernetes](https://kubernetes.io/ru/docs/concepts/overview/what-is-kubernetes/) кластер на базе предварительно созданной инфраструктуры.   Требуется обеспечить доступ к ресурсам из Интернета.
 
