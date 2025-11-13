@@ -11,7 +11,7 @@
 
 <img width="762" height="122" alt="изображение" src="https://github.com/user-attachments/assets/7a01a71a-44d7-4808-8f92-adaf67f1163c" />
 
-> Копируем созданные репозиторий в локальный каталог
+> Копируем созданный репозиторий в локальный каталог
 
 <img width="1023" height="112" alt="изображение" src="https://github.com/user-attachments/assets/40c22f87-3276-4ef8-848d-43bacca10508" />
 
