@@ -42,6 +42,11 @@ COPY index.html /usr/share/nginx/html
 # Порт который будет слушать контейнер
 EXPOSE 80
 ```
+
+> Собираем образ: ##### docker build -t arzybov/test-app-nginx:1.0.0 .
+
+<img width="1006" height="468" alt="изображение" src="https://github.com/user-attachments/assets/092142c7-8360-4c6b-a9a7-2e04944b5f45" />
+
    
 3. Альтернативный вариант:  
    а. Используйте любой другой код, главное, чтобы был самостоятельно создан Dockerfile.
