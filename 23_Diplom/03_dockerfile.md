@@ -17,7 +17,31 @@
 
    б. Подготовьте Dockerfile для создания образа приложения.
 
+> Подготовим index.html страницу для nginx:
 
+```
+<html>
+<head>
+DevOps-Netology-diplom
+</head>
+<body>
+<h1>Hello! Welcome to my test app page.</h1>
+</body>
+</html>
+```
+
+> 
+
+```
+# Последний стабильный образ с nginx
+FROM nginx:1.27.2
+
+# Копируем ранее созданный шаблон index.html заменяя стандартную страницу nginx
+COPY index.html /usr/share/nginx/html
+
+# Порт который будет слушать контейнер
+EXPOSE 80
+```
    
 3. Альтернативный вариант:  
    а. Используйте любой другой код, главное, чтобы был самостоятельно создан Dockerfile.
