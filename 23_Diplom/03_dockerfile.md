@@ -43,9 +43,14 @@ COPY index.html /usr/share/nginx/html
 EXPOSE 80
 ```
 
-> Собираем образ: ##### docker build -t arzybov/test-app-nginx:1.0.0 .
+> Собираем образ: ```docker build -t arzybov/test-app-nginx:1.0.0 .```
 
 <img width="1006" height="468" alt="изображение" src="https://github.com/user-attachments/assets/092142c7-8360-4c6b-a9a7-2e04944b5f45" />
+
+> Проверяем создание образа ```docker images```
+
+<img width="1082" height="56" alt="изображение" src="https://github.com/user-attachments/assets/10eae2ab-344e-43b8-96cc-9a17722541f8" />
+
 
    
 3. Альтернативный вариант:  
