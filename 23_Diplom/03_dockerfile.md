@@ -84,8 +84,20 @@ EXPOSE 80
 
 <img width="981" height="199" alt="изображение" src="https://github.com/user-attachments/assets/519023d8-2bcd-4408-840f-e2258305ccaa" />
 
-> Проверяем на образ на портале: https://hub.docker.com/repository/docker/arzybov/test-app-nginx/general
+> Проверяем образ на портале: https://hub.docker.com/repository/docker/arzybov/test-app-nginx/general
 
 <img width="934" height="507" alt="изображение" src="https://github.com/user-attachments/assets/3d85a3ad-bf7f-48e7-b7b0-e6e2f580c950" />
+
+> Дополнительно можно ещё раз проверить загрузку и запуск образа, предварительно остановив и удалив ранее запущенный тестовый контейнер и созданный образ.
+
+- docker pull arzybov/test-app-nginx:1.0.0
+
+<img width="1104" height="287" alt="изображение" src="https://github.com/user-attachments/assets/fa8bb214-90fd-479f-abc8-df7bb903dbb5" />
+
+- docker run -d -p 8080:80 arzybov/test-app-nginx:1.0.0
+- docker ps
+- curl localhost:8080
+
+<img width="1476" height="256" alt="изображение" src="https://github.com/user-attachments/assets/755e84ce-83e5-4e62-bb78-a05f7013e690" />
 
 
