@@ -11,7 +11,7 @@
 
 <img width="762" height="122" alt="изображение" src="https://github.com/user-attachments/assets/7a01a71a-44d7-4808-8f92-adaf67f1163c" />
 
-> Копируем созданный репозиторий в локальный каталог
+> Копируем созданный репозиторий в локальный каталог: ```git clone git@github.com:vladislav-arzybov/my_nginx_test_app_diplom.git```
 
 <img width="1023" height="112" alt="изображение" src="https://github.com/user-attachments/assets/40c22f87-3276-4ef8-848d-43bacca10508" />
 
@@ -65,6 +65,19 @@ EXPOSE 80
 Ожидаемый результат:
 
 1. Git репозиторий с тестовым приложением и Dockerfile.
+
+> Добавляем ранее созданные index.html и Dockerfile в репозиторий: https://github.com/vladislav-arzybov/my_nginx_test_app_diplom
+- git add .
+- git commit -m 'app01'
+- git push origin main
+
+<img width="805" height="272" alt="изображение" src="https://github.com/user-attachments/assets/12653f68-f875-4f4d-8969-ad5148ade074" />
+
+> Проверяем изменения, все файлы успешно отправлены в удаленный репозиторий на github.com
+
+<img width="906" height="311" alt="изображение" src="https://github.com/user-attachments/assets/3147b9ad-dc49-44df-bc79-125a281172b9" />
+
+
 2. Регистри с собранным docker image. В качестве регистри может быть DockerHub или [Yandex Container Registry](https://cloud.yandex.ru/services/container-registry), созданный также с помощью terraform.
 
 > В качестве регистри выбрал DockerHub т.к. ранее уже создавал и пушил в него образы. Подключаемся к регистри: ```docker login``` и выполняем команду: ```docker push arzybov/test-app-nginx:1.0.0```
