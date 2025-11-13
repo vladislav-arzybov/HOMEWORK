@@ -51,7 +51,13 @@ EXPOSE 80
 
 <img width="1082" height="56" alt="изображение" src="https://github.com/user-attachments/assets/10eae2ab-344e-43b8-96cc-9a17722541f8" />
 
+> Проверяем работоспособность контейнера: ```docker run -d -p 8080:80 arzybov/test-app-nginx:1.0.0```
 
+<img width="1461" height="93" alt="изображение" src="https://github.com/user-attachments/assets/d3f5e72a-4309-4bac-a05b-ba18352647c8" />
+
+> Выполняем curl на порт 8080, успех.
+
+<img width="768" height="165" alt="изображение" src="https://github.com/user-attachments/assets/3d025f6d-ae34-4882-89cd-64dee7d49d14" />
    
 3. Альтернативный вариант:  
    а. Используйте любой другой код, главное, чтобы был самостоятельно создан Dockerfile.
