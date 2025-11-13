@@ -66,3 +66,13 @@ EXPOSE 80
 
 1. Git репозиторий с тестовым приложением и Dockerfile.
 2. Регистри с собранным docker image. В качестве регистри может быть DockerHub или [Yandex Container Registry](https://cloud.yandex.ru/services/container-registry), созданный также с помощью terraform.
+
+> В качестве регистри выбрал DockerHub т.к. ранее уже создавал и пушил в него образы. Подключаемся к регистри: ```docker login``` и выполняем команду: ```docker push arzybov/test-app-nginx:1.0.0```
+
+<img width="981" height="199" alt="изображение" src="https://github.com/user-attachments/assets/519023d8-2bcd-4408-840f-e2258305ccaa" />
+
+> Проверяем на образ на портале: https://hub.docker.com/repository/docker/arzybov/test-app-nginx/general
+
+<img width="934" height="507" alt="изображение" src="https://github.com/user-attachments/assets/3d85a3ad-bf7f-48e7-b7b0-e6e2f580c950" />
+
+
