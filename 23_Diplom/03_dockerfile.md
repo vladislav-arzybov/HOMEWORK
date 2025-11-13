@@ -30,7 +30,7 @@ DevOps-Netology-diplom
 </html>
 ```
 
-> 
+> Создаем Dockerfile
 
 ```
 # Последний стабильный образ с nginx
