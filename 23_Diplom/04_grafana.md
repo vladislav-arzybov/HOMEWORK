@@ -31,6 +31,17 @@ kubectl apply -f manifests/
 
 <img width="1099" height="885" alt="изображение" src="https://github.com/user-attachments/assets/1a870683-6926-4192-847c-702fbab9c7a7" />
 
+> Проверяем что Prometheus видит таргеты, выполняем проброс портов и открываем страницу в браузере, 
+- kubectl port-forward -n monitoring svc/prometheus-k8s 9090:9090
+- http://localhost:9090/targets
+
+<img width="1805" height="571" alt="изображение" src="https://github.com/user-attachments/assets/91167555-33f4-4d92-b9f0-239a5532297a" />
+
+> Проверяем работу графаны, заходим под admin'ом
+- kubectl port-forward -n monitoring svc/grafana 3000:3000
+- http://localhost:3000
+
+<img width="1803" height="949" alt="изображение" src="https://github.com/user-attachments/assets/05b22f1b-596a-49c8-ab7f-f724282fe634" />
 
 
 2. Задеплоить тестовое приложение, например, [nginx](https://www.nginx.com/) сервер отдающий статическую страницу.
