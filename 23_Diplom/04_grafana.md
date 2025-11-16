@@ -49,22 +49,3 @@ kubectl apply -f manifests/
 Способ выполнения:
 1. Воспользоваться пакетом [kube-prometheus](https://github.com/prometheus-operator/kube-prometheus), который уже включает в себя [Kubernetes оператор](https://operatorhub.io/) для [grafana](https://grafana.com/), [prometheus](https://prometheus.io/), [alertmanager](https://github.com/prometheus/alertmanager) и [node_exporter](https://github.com/prometheus/node_exporter). Альтернативный вариант - использовать набор helm чартов от [bitnami](https://github.com/bitnami/charts/tree/main/bitnami).
 
-> Установка
-
-```
-git clone https://github.com/prometheus-operator/kube-prometheus.git
-cd kube-prometheus
-
-
-kubectl apply --server-side -f manifests/setup
-
-kubectl wait \
-    --for condition=Established \
-    --all CustomResourceDefinition \
-    --namespace=monitoring
-
-kubectl apply -f manifests/
-```
-
-> Проверка статуса пода, ошибки
-- kubectl describe pod alertmanager-main-1 -n monitoring
