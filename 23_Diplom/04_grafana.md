@@ -26,6 +26,13 @@ kubectl wait --for condition=Established --all CustomResourceDefinition --namesp
 kubectl apply -f manifests/
 ```
 
+> После завершения установки проверяем статус подов и сервисов в namespase = monitoring, ошибок нет.
+- kubectl get all -n monitoring
+
+<img width="1099" height="885" alt="изображение" src="https://github.com/user-attachments/assets/1a870683-6926-4192-847c-702fbab9c7a7" />
+
+
+
 2. Задеплоить тестовое приложение, например, [nginx](https://www.nginx.com/) сервер отдающий статическую страницу.
 
 Способ выполнения:
