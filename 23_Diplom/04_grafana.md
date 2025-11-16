@@ -14,7 +14,7 @@
 
 ```
 git clone https://github.com/prometheus-operator/kube-prometheus.git
-cd kube-prometheus/
+cd kube-prometheus
 
 
 kubectl apply --server-side -f manifests/setup
