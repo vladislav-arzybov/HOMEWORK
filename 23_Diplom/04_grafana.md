@@ -17,7 +17,7 @@
 
 ```
 # Установка CRD и базовых объектов Prometheus Operator
-kubectl apply --server-side -f manifests/setup
+kubectl apply --server-side -f manifests/setup/
 
 # Проверяем факт установки всех CRD(CustomResourceDefinition), наличия состояния = Established
 kubectl wait --for condition=Established --all CustomResourceDefinition --namespace=monitoring
