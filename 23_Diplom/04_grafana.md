@@ -43,6 +43,19 @@ kubectl apply -f manifests/
 
 <img width="1803" height="949" alt="изображение" src="https://github.com/user-attachments/assets/05b22f1b-596a-49c8-ab7f-f724282fe634" />
 
+> Также можно посмотреть нагрузку на master-node и worker-node's
+
+<details>
+  <summary>Dashboard</summary>
+
+<img width="1807" height="949" alt="изображение" src="https://github.com/user-attachments/assets/fbce25f7-0ed9-401e-a30d-0d5ef4e168cd" />
+
+<img width="1801" height="953" alt="изображение" src="https://github.com/user-attachments/assets/f5e6d53d-bf7c-4511-ab51-6a8144f4409b" />
+
+<img width="1801" height="951" alt="изображение" src="https://github.com/user-attachments/assets/16ca7504-9c10-4620-823f-3bdba61332d8" />
+
+
+</details>
 
 2. Задеплоить тестовое приложение, например, [nginx](https://www.nginx.com/) сервер отдающий статическую страницу.
 
