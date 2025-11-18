@@ -52,3 +52,8 @@ kubectl apply -f manifests/
 
 <img width="1349" height="193" alt="изображение" src="https://github.com/user-attachments/assets/ca429f53-6fcb-4cf2-87ed-fd315fd4b839" />
 
+
+
+Править?
+
+/home/reivol/Terraform2/05_diplom/kube-prometheus/manifests/grafana-service.yaml
