@@ -72,7 +72,7 @@ variable "bucket" {
 }
 
 
-#####VM vars
+###VM vars
 variable "vm_data_family" {
   type        = string
   default     = "ubuntu-2204-lts"
@@ -102,4 +102,60 @@ variable "user" {
 }
 locals {
   ssh-key = file("~/.ssh/id_rsa.pub")
+}
+
+
+###VM resourse
+
+locals {
+  subnets = {
+    "subnet-a" = yandex_vpc_subnet.subnet-a.id
+    "subnet-b" = yandex_vpc_subnet.subnet-b.id
+    "subnet-d" = yandex_vpc_subnet.subnet-d.id
+  }
+}
+
+variable "each_vm" {
+  type = map(object({
+    name     = string
+    hostname = string
+    cpu         = number
+    ram         = number
+    disk_volume = number
+    fraction    = number
+    subnet      = string
+    zone        = string
+  }))
+  default = {
+    master-node-1 = {
+      name     = "master-node-1"
+      hostname = "master-node-1"
+      cpu         = 4
+      ram         = 4
+      disk_volume = 40
+      fraction    = 20
+      subnet      = "subnet-a"
+      zone        = "ru-central1-a"
+    },
+    worker-node-1 = {
+      name     = "worker-node-1"
+      hostname = "worker-node-1"
+      cpu         = 4
+      ram         = 4
+      disk_volume = 40
+      fraction    = 20
+      subnet      = "subnet-b"
+      zone        = "ru-central1-b"
+    },
+    worker-node-2 = {
+      name     = "worker-node-2"
+      hostname = "worker-node-2"
+      cpu         = 4
+      ram         = 4
+      disk_volume = 40
+      fraction    = 20
+      subnet      = "subnet-d"
+      zone        = "ru-central1-d"
+    }
+  }
 }
