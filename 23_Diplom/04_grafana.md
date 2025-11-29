@@ -93,7 +93,7 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: allow-grafana-external
+  name: grafana-external
   namespace: monitoring
 spec:
   podSelector:
