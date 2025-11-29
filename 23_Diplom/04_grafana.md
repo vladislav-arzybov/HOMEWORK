@@ -62,6 +62,58 @@ kubectl apply -f manifests/
 
 </details>
 
+> Дополнительно, чтобы графана была доступна не только с локальной машины, но из из внешеней сети настраиваем новый сервис NodePort и правило NetworkPolicy
+
+[grafana-nodeport.yaml]()
+```
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/component: grafana
+    app.kubernetes.io/name: grafana
+    app.kubernetes.io/part-of: kube-prometheus
+    app.kubernetes.io/version: 12.2.1
+  name: grafana-nodeport
+  namespace: monitoring
+spec:
+  type: NodePort
+  selector:
+    app.kubernetes.io/component: grafana
+    app.kubernetes.io/name: grafana
+    app.kubernetes.io/part-of: kube-prometheus
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
+      nodePort: 30001
+```
+[grafana-network.yaml]()
+```
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-grafana-external
+  namespace: monitoring
+spec:
+  podSelector:
+    matchLabels:
+      app.kubernetes.io/name: grafana
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - ipBlock:
+        cidr: 0.0.0.0/0
+    ports:
+    - protocol: TCP
+      port: 3000
+```
+
+> Проверяем доступ
+
+
+
 2. Задеплоить тестовое приложение, например, [nginx](https://www.nginx.com/) сервер отдающий статическую страницу.
 
 > Создаем новый namespace для приожения: kubectl create namespace app
@@ -70,7 +122,7 @@ kubectl apply -f manifests/
 
 > Для развертывания приложения создадим app-deployment.yaml и app-svc.yaml
 
-app-deployment.yaml
+[app-deployment.yaml]()
 ```
 apiVersion: apps/v1
 kind: Deployment
@@ -96,7 +148,7 @@ spec:
         - containerPort: 80
 ```
 
-app-svc.yaml
+[app-svc.yaml]()
 ```
 apiVersion: v1
 kind: Service
