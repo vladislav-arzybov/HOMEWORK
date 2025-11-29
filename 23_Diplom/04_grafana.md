@@ -68,6 +68,10 @@ kubectl apply -f manifests/
 <img width="1349" height="193" alt="изображение" src="https://github.com/user-attachments/assets/ca429f53-6fcb-4cf2-87ed-fd315fd4b839" />
 
 
+> Создаем новый namespace для приожения: kubectl create namespace app
+
+<img width="619" height="46" alt="изображение" src="https://github.com/user-attachments/assets/78fe8a76-739a-4406-a952-78b627ee8ba7" />
+
 
 Править?
 
