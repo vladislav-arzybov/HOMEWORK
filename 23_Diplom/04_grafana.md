@@ -43,7 +43,7 @@ kubectl apply -f manifests/
 
 <img width="1803" height="949" alt="изображение" src="https://github.com/user-attachments/assets/05b22f1b-596a-49c8-ab7f-f724282fe634" />
 
-<img width="1803" height="955" alt="изображение" src="https://github.com/user-attachments/assets/16ab6eb4-db5e-4e75-acc0-902e16e6fcf9" />
+<img width="1799" height="965" alt="изображение" src="https://github.com/user-attachments/assets/495e7318-84f7-40e7-91ec-1fb8a98e505c" />
 
 > Также можно посмотреть нагрузку на master-node и worker-node's
 
