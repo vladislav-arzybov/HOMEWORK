@@ -115,6 +115,7 @@ spec:
 - kubectl apply -f grafana-network.yaml
 - kubectl get all -n monitoring
 
+<img width="1917" height="1009" alt="изображение" src="https://github.com/user-attachments/assets/a319309c-f9d9-4e46-aa23-d3b6e7bde853" />
 
 
 2. Задеплоить тестовое приложение, например, [nginx](https://www.nginx.com/) сервер отдающий статическую страницу.
