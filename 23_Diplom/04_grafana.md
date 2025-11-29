@@ -61,18 +61,18 @@ kubectl apply -f manifests/
 
 2. Задеплоить тестовое приложение, например, [nginx](https://www.nginx.com/) сервер отдающий статическую страницу.
 
-Способ выполнения:
-1. Воспользоваться пакетом [kube-prometheus](https://github.com/prometheus-operator/kube-prometheus), который уже включает в себя [Kubernetes оператор](https://operatorhub.io/) для [grafana](https://grafana.com/), [prometheus](https://prometheus.io/), [alertmanager](https://github.com/prometheus/alertmanager) и [node_exporter](https://github.com/prometheus/node_exporter). Альтернативный вариант - использовать набор helm чартов от [bitnami](https://github.com/bitnami/charts/tree/main/bitnami).
-
-
-<img width="1349" height="193" alt="изображение" src="https://github.com/user-attachments/assets/ca429f53-6fcb-4cf2-87ed-fd315fd4b839" />
-
-
 > Создаем новый namespace для приожения: kubectl create namespace app
 
 <img width="619" height="46" alt="изображение" src="https://github.com/user-attachments/assets/78fe8a76-739a-4406-a952-78b627ee8ba7" />
 
+Способ выполнения:
+1. Воспользоваться пакетом [kube-prometheus](https://github.com/prometheus-operator/kube-prometheus), который уже включает в себя [Kubernetes оператор](https://operatorhub.io/) для [grafana](https://grafana.com/), [prometheus](https://prometheus.io/), [alertmanager](https://github.com/prometheus/alertmanager) и [node_exporter](https://github.com/prometheus/node_exporter). Альтернативный вариант - использовать набор helm чартов от [bitnami](https://github.com/bitnami/charts/tree/main/bitnami).
 
-Править?
+
+
+
+
+
+#### Править?
 
 /home/reivol/Terraform2/05_diplom/kube-prometheus/manifests/grafana-service.yaml
