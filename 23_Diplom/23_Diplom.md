@@ -76,7 +76,7 @@
 3. Команда `kubectl get pods --all-namespaces` отрабатывает без ошибок.
 
 ---
-### [Создание тестового приложения](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/23_Diplom/03_dockerfile.md)
+### [Создание тестового приложения](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/23_Diplom/03_dockerfile/03_dockerfile.md)
 
 Для перехода к следующему этапу необходимо подготовить тестовое приложение, эмулирующее основное приложение разрабатываемое вашей компанией.
 
@@ -94,7 +94,7 @@
 2. Регистри с собранным docker image. В качестве регистри может быть DockerHub или [Yandex Container Registry](https://cloud.yandex.ru/services/container-registry), созданный также с помощью terraform.
 
 ---
-### Подготовка cистемы мониторинга и деплой приложения
+### [Подготовка cистемы мониторинга и деплой приложения](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/23_Diplom/04_grafana/04_grafana.md)
 
 Уже должны быть готовы конфигурации для автоматического создания облачной инфраструктуры и поднятия Kubernetes кластера.  
 Теперь необходимо подготовить конфигурационные файлы для настройки нашего Kubernetes кластера.
