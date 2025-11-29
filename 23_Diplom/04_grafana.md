@@ -110,7 +110,7 @@ spec:
       port: 3000
 ```
 
-> Запускаем установку, проверяем доступ:
+> Запускаем установку, проверяем доступ c мастера http://158.160.122.175:30001:
 - kubectl apply -f grafana-nodeport.yaml
 - kubectl apply -f grafana-network.yaml
 - kubectl get all -n monitoring
