@@ -187,7 +187,3 @@ spec:
 
 <img width="876" height="200" alt="изображение" src="https://github.com/user-attachments/assets/ff8773f0-d822-49d3-8e12-eeb637e092b0" />
 
-
-#### Править?
-
-/home/reivol/Terraform2/05_diplom/kube-prometheus/manifests/grafana-service.yaml
