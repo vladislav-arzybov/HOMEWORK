@@ -64,7 +64,7 @@ kubectl apply -f manifests/
 
 > Дополнительно, чтобы графана была доступна не только с локальной машины, но из из внешеней сети настраиваем новый сервис NodePort и правило NetworkPolicy
 
-[grafana-nodeport.yaml]()
+[grafana-nodeport.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/23_Diplom/04_grafana/grafana-nodeport.yaml)
 ```
 apiVersion: v1
 kind: Service
@@ -88,7 +88,7 @@ spec:
       targetPort: 3000
       nodePort: 30001
 ```
-[grafana-network.yaml]()
+[grafana-network.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/23_Diplom/04_grafana/grafana-network.yaml)
 ```
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
@@ -130,7 +130,7 @@ spec:
 
 > Для развертывания приложения создадим app-deployment.yaml и app-svc.yaml
 
-[app-deployment.yaml]()
+[app-deployment.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/23_Diplom/04_grafana/app-deployment.yaml)
 ```
 apiVersion: apps/v1
 kind: Deployment
@@ -156,7 +156,7 @@ spec:
         - containerPort: 80
 ```
 
-[app-svc.yaml]()
+[app-svc.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/23_Diplom/04_grafana/app-svc.yaml)
 ```
 apiVersion: v1
 kind: Service
