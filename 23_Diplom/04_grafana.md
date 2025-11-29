@@ -119,7 +119,7 @@ spec:
 
 > Проверяем доступ c мастера http://158.160.122.175:30001:
 
-<img width="1917" height="1009" alt="изображение" src="https://github.com/user-attachments/assets/a319309c-f9d9-4e46-aa23-d3b6e7bde853" />
+<img width="1913" height="995" alt="изображение" src="https://github.com/user-attachments/assets/56b81633-be91-423f-a459-4c70d39c1dc3" />
 
 
 2. Задеплоить тестовое приложение, например, [nginx](https://www.nginx.com/) сервер отдающий статическую страницу.
