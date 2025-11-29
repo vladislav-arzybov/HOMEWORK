@@ -6,6 +6,9 @@
 Цель:
 1. Задеплоить в кластер [prometheus](https://prometheus.io/), [grafana](https://grafana.com/), [alertmanager](https://github.com/prometheus/alertmanager), [экспортер](https://github.com/prometheus/node_exporter) основных метрик Kubernetes.
 
+Способ выполнения:
+1. Воспользоваться пакетом [kube-prometheus](https://github.com/prometheus-operator/kube-prometheus), который уже включает в себя [Kubernetes оператор](https://operatorhub.io/) для [grafana](https://grafana.com/), [prometheus](https://prometheus.io/), [alertmanager](https://github.com/prometheus/alertmanager) и [node_exporter](https://github.com/prometheus/node_exporter). Альтернативный вариант - использовать набор helm чартов от [bitnami](https://github.com/bitnami/charts/tree/main/bitnami).
+
 > Для развертывания системы мониторинга воспользуемся пакетом [kube-prometheus](https://github.com/prometheus-operator/kube-prometheus) который уже включает в себя всё вышеперечисленное.
 
 - git clone https://github.com/prometheus-operator/kube-prometheus.git
@@ -65,12 +68,64 @@ kubectl apply -f manifests/
 
 <img width="619" height="46" alt="изображение" src="https://github.com/user-attachments/assets/78fe8a76-739a-4406-a952-78b627ee8ba7" />
 
-Способ выполнения:
-1. Воспользоваться пакетом [kube-prometheus](https://github.com/prometheus-operator/kube-prometheus), который уже включает в себя [Kubernetes оператор](https://operatorhub.io/) для [grafana](https://grafana.com/), [prometheus](https://prometheus.io/), [alertmanager](https://github.com/prometheus/alertmanager) и [node_exporter](https://github.com/prometheus/node_exporter). Альтернативный вариант - использовать набор helm чартов от [bitnami](https://github.com/bitnami/charts/tree/main/bitnami).
+> Для развертывания приложения создадим app-deployment.yaml и app-svc.yaml
 
+app-deployment.yaml
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-app-deployment
+  namespace: app
+  labels:
+    app: test-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: test-app
+  template:
+    metadata:
+      labels:
+        app: test-app
+    spec:
+      containers:
+      - name: nginx-docker
+        image: arzybov/test-app-nginx:1.0.0
+        ports:
+        - containerPort: 80
+```
 
+app-svc.yaml
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-app-svc
+  namespace: app
+spec:
+  type: NodePort
+  selector:
+    app: test-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30002
+```
 
+> Запускаем установку, проверяем создания подов и сервиса:
+- kubectl apply -f app-deployment.yaml
+- kubectl apply -f app-svc.yaml
+- kubectl get all -n app
 
+<img width="816" height="313" alt="изображение" src="https://github.com/user-attachments/assets/c765ef79-7658-442d-bdc8-7628089fe34d" />
+
+> Проверяем доступность портала с адреса мастера: http://158.160.122.175:30002
+
+<img width="1337" height="192" alt="изображение" src="https://github.com/user-attachments/assets/aaf39974-d304-4781-9fe2-e79d09df7e4f" />
+
+<img width="876" height="200" alt="изображение" src="https://github.com/user-attachments/assets/ff8773f0-d822-49d3-8e12-eeb637e092b0" />
 
 
 #### Править?
