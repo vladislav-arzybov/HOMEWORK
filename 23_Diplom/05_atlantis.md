@@ -13,6 +13,8 @@
 
 # Решение
 
+https://www.youtube.com/watch?v=sV9IBczE3IA
+
 - kubectl create namespace atlantis
 
 ```
