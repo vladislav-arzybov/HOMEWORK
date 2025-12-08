@@ -15,25 +15,20 @@
 
 https://www.youtube.com/watch?v=sV9IBczE3IA
 
+> Создаем отдельный namespace для atlantis
 - kubectl create namespace atlantis
 
-```
-kubectl create secret generic atlantis-github \
-  -n atlantis \
-  --from-literal=token=GITHUB_TOKEN
-```
+> Получаем GITHUB_TOKEN: Profile → Settings → Developer settings → Personal access tokens
+> Получаем YC_TOKEN: yc iam create-token
 
-- yc iam create-token
-
-- kubectl get secrets -ALL
-- kubectl delete -n atlantis secrets atlantis-github
-- kubectl delete -n atlantis secrets yc-credentials
+> По аналогии с ранее созданным secret.backend.tfvars для передачи access_key и secret_key через файл не содержащийся в репозитории, токены GitHub и Yandex Cloud передаются в Kubernetes в виде переменных окружения из фала ```.env``` и используются при создании Secret без хранения значений в коде. Пример содержимого:
 
 ```
-.env
 GITHUB_TOKEN=ghp_xxxxx
 YC_TOKEN=t1.xxxxx
 ```
+
+> Добавляем переменные окружения
 
 ```
 set -a
@@ -41,8 +36,36 @@ source .env
 set +a
 ```
 
+> Создаем secrets и проверяем: kubectl get secrets -n atlantis
+
 ```
 kubectl create secret generic atlantis-github \
   -n atlantis \
   --from-literal=token="$GITHUB_TOKEN"
 ```
+
+```
+kubectl create secret generic yc-credentials \
+  -n atlantis \
+  --from-literal=YC_TOKEN="$YC_TOKEN"
+```
+
+<img width="657" height="76" alt="изображение" src="https://github.com/user-attachments/assets/b4c79909-01b3-4a93-bab1-1ae1ad4d5d8e" />
+
+> Также можно проверить что переменные сохранились корректно через команды:
+- echo $GITHUB_TOKEN
+- echo $YC_TOKEN
+
+Альтернативный вариант: source .env
+
+```
+.env
+export GITHUB_TOKEN=ghp_xxxxx
+export YC_TOKEN=t1.xxxxx
+```
+
+- kubectl delete -n atlantis secrets atlantis-github
+- kubectl delete -n atlantis secrets yc-credentials
+
+
+
