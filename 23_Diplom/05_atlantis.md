@@ -47,7 +47,8 @@ kubectl create secret generic atlantis-env \
 - echo $AWS_ACCESS_KEY_ID
 - echo $AWS_SECRET_ACCESS_KEY
 
-
+> Дальше создаем yaml и запускаем поды, сервисы, и т.д (переменные хранятся в secret)
+- kubectl get all -n atlantis
 
 Удаление!
 - kubectl delete -n atlantis secrets atlantis-github
