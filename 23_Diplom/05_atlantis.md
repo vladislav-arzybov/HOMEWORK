@@ -56,3 +56,20 @@ kubectl create secret generic atlantis-env \
 
 Копирование!
 -scp -r /home/reivol/Terraform2/05_diplom/atlantis reivol@46.21.246.134:/home/reivol/
+
+
+#### Отладка
+
+- kubectl get pods -n atlantis
+- kubectl describe pod -n atlantis atlantis-666c5577c-rptpb
+- kubectl logs -n atlantis atlantis-666c5577c-rptpb --previous
+
+> Удаление
+- kubectl -n atlantis delete deployments.apps atlantis 
+- kubectl -n atlantis delete configmaps atlantis-config
+- kubectl -n atlantis delete svc atlantis
+
+> Установка
+- kubectl apply -f atlantis-cm.yaml
+- kubectl apply -f atlantis-deployment.yaml
+- kubectl apply -f atlantis-svc.yaml
