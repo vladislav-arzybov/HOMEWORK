@@ -54,4 +54,5 @@ kubectl create secret generic atlantis-env \
 - kubectl delete -n atlantis secrets yc-credentials
 - kubectl delete -n atlantis secrets atlantis-env
 
-
+Копирование!
+-scp -r /home/reivol/Terraform2/05_diplom/atlantis reivol@46.21.246.134:/home/reivol/
