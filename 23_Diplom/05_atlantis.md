@@ -100,3 +100,34 @@ kubectl create secret generic atlantis-env \
 > Снова возвращаемся в настройки и проверяем что ping проходит
 
 <img width="796" height="182" alt="изображение" src="https://github.com/user-attachments/assets/0d9f1f16-7077-4e17-b397-fd408f002896" />
+
+
+### Тестирование
+
+> Копируем репозиторий: git@github.com:vladislav-arzybov/Diplom_vladislav_arzybov.git
+
+<img width="889" height="147" alt="изображение" src="https://github.com/user-attachments/assets/4f0da461-e07c-44e3-96f3-5872bb388233" />
+
+> Добавляем в него network_load_balancer.tf для работы балансировщика по 80 порту для приложения и графаны
+- git add .
+- git commit -m 'test-b'
+- git checkout -b test-atlantis
+- git push origin test-atlantis
+
+<img width="958" height="383" alt="изображение" src="https://github.com/user-attachments/assets/32fa4266-fcdc-4d11-a07f-5fd4590d6370" />
+
+> Проверяем что изменения передались в git, новая ветка с новым network_load_balancer.tf
+
+<img width="917" height="501" alt="изображение" src="https://github.com/user-attachments/assets/cecb204b-f20e-40a2-88ef-bd703a1a16a8" />
+
+> Переходим в Pull requests - нажимаем New pull request
+
+<img width="1393" height="292" alt="изображение" src="https://github.com/user-attachments/assets/ddfbaf30-eb39-4235-8d63-1abf2d6d0ceb" />
+
+> Выбираем процесс слияния из test-atlantis в main, нажимаем Create pull request
+
+<img width="1243" height="235" alt="изображение" src="https://github.com/user-attachments/assets/0d17b200-ed12-4007-8cbc-2f6abc8f306d" />
+
+> При необходимости можно указать заголовок и описание, затем нажать Create pull request
+
+<img width="910" height="516" alt="изображение" src="https://github.com/user-attachments/assets/4624ab36-c74a-4134-94b4-dd567193468d" />
