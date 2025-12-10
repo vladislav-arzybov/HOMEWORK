@@ -75,3 +75,28 @@ kubectl create secret generic atlantis-env \
 - kubectl apply -f atlantis-cm.yaml
 - kubectl apply -f atlantis-deployment.yaml
 - kubectl apply -f atlantis-svc.yaml
+
+
+### Проверка работы atlantis
+
+> Проверяем что сервис запустился, http://89.169.151.178:32001/
+
+<img width="1214" height="652" alt="изображение" src="https://github.com/user-attachments/assets/19be5f85-c781-49e4-b9a5-1a351367ffde" />
+
+> Настраиваем Webhook, в настройках репозитория https://github.com/vladislav-arzybov/Diplom_vladislav_arzybov заходим в Настройки - Settings - Webhooks - Add webhook
+
+<img width="772" height="98" alt="изображение" src="https://github.com/user-attachments/assets/7805a311-4961-476f-b881-149c800577cc" />
+
+- В ```Payload URL``` указываем ip мастера и порт atlantis'a http://89.169.151.178:32001/events
+- В ```Content type``` - application/json
+- В блоке ```Which events would you like to trigger this webhook?``` выбираем ```Let me select individual events.```, а затем выбираем: Issue comments, Pull requests, Pull request reviews, Pushes
+
+<img width="781" height="659" alt="изображение" src="https://github.com/user-attachments/assets/e1f49615-764e-4e1e-8697-cd30ede3933f" />
+
+> Нажимаем Add webhook
+
+<img width="780" height="192" alt="изображение" src="https://github.com/user-attachments/assets/68daa725-1b93-4236-99b8-c10b96724249" />
+
+> Снова возвращаемся в настройки и проверяем что ping проходит
+
+<img width="796" height="182" alt="изображение" src="https://github.com/user-attachments/assets/0d9f1f16-7077-4e17-b397-fd408f002896" />
