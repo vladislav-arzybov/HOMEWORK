@@ -64,7 +64,7 @@ kubectl apply -f manifests/
 
 > Дополнительно, чтобы графана была доступна не только с локальной машины, но из из внешеней сети настраиваем новый сервис NodePort и правило NetworkPolicy
 
-[grafana-nodeport.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/23_Diplom/04_grafana/grafana-nodeport.yaml)
+[grafana-nodeport.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/23_Diplom/04_grafana/grafana/01_grafana-nodeport.yaml)
 ```
 apiVersion: v1
 kind: Service
@@ -88,7 +88,7 @@ spec:
       targetPort: 3000
       nodePort: 30001
 ```
-[grafana-network.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/23_Diplom/04_grafana/grafana-network.yaml)
+[grafana-network.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/23_Diplom/04_grafana/grafana/02_grafana-network.yaml)
 ```
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
@@ -125,7 +125,7 @@ spec:
 
 > Создаем новый namespace для приожения app-namespace.yaml
 
-[app-namespace.yaml]()
+[app-namespace.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/23_Diplom/04_grafana/app/01_app-namespace.yaml)
 ```
 apiVersion: v1
 kind: Namespace
@@ -137,7 +137,7 @@ metadata:
 
 > Для развертывания приложения создадим app-deployment.yaml и app-svc.yaml
 
-[app-deployment.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/23_Diplom/04_grafana/app-deployment.yaml)
+[app-deployment.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/23_Diplom/04_grafana/app/02_app-deployment.yaml)
 ```
 apiVersion: apps/v1
 kind: Deployment
@@ -163,7 +163,7 @@ spec:
         - containerPort: 80
 ```
 
-[app-svc.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/23_Diplom/04_grafana/app-svc.yaml)
+[app-svc.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/23_Diplom/04_grafana/app/03_app-svc.yaml)
 ```
 apiVersion: v1
 kind: Service
