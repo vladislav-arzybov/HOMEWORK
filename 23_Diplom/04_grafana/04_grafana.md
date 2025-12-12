@@ -123,9 +123,17 @@ spec:
 
 2. Задеплоить тестовое приложение, например, [nginx](https://www.nginx.com/) сервер отдающий статическую страницу.
 
-> Создаем новый namespace для приожения: kubectl create namespace app
+> Создаем новый namespace для приожения app-namespace.yaml
 
-<img width="619" height="46" alt="изображение" src="https://github.com/user-attachments/assets/78fe8a76-739a-4406-a952-78b627ee8ba7" />
+[app-namespace.yaml]()
+```
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: app
+  labels:
+    name: app
+```
 
 > Для развертывания приложения создадим app-deployment.yaml и app-svc.yaml
 
@@ -180,8 +188,6 @@ spec:
 <img width="763" height="309" alt="изображение" src="https://github.com/user-attachments/assets/f7dd08cd-7599-4635-bd9c-90169b56ac66" />
 
 > Проверяем доступность портала с адреса мастера: http://158.160.122.175:30002
-
-<img width="1337" height="192" alt="изображение" src="https://github.com/user-attachments/assets/aaf39974-d304-4781-9fe2-e79d09df7e4f" />
 
 <img width="876" height="200" alt="изображение" src="https://github.com/user-attachments/assets/ff8773f0-d822-49d3-8e12-eeb637e092b0" />
 
