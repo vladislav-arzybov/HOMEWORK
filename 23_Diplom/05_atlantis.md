@@ -37,12 +37,12 @@ export AWS_SECRET_ACCESS_KEY=xxxxx
 - echo $AWS_ACCESS_KEY_ID
 - echo $AWS_SECRET_ACCESS_KEY
 
-> Создаем отдельный namespace для atlantis
+> Создаем новый namespace - atlantis:
 - kubectl create namespace atlantis
 
+<img width="656" height="38" alt="изображение" src="https://github.com/user-attachments/assets/d33f6ec7-f207-4d2b-b790-998eb53f6541" />
 
-
-> Создаем secrets и проверяем: kubectl get secrets -n atlantis
+> Создаем secrets вручную, командой: 
 
 ```
 kubectl create secret generic atlantis-env \
@@ -52,9 +52,12 @@ kubectl create secret generic atlantis-env \
   --from-literal=GITHUB_TOKEN="$GITHUB_TOKEN"
 ```
 
-<img width="642" height="59" alt="изображение" src="https://github.com/user-attachments/assets/42ccf279-692d-4c6d-9312-050ed13ce9aa" />
+<img width="784" height="109" alt="изображение" src="https://github.com/user-attachments/assets/6864d74b-3638-4788-992d-1393859ce37a" />
 
+> Проверяем что всё ок командой:
+- kubectl get secrets -n atlantis
 
+<img width="647" height="56" alt="изображение" src="https://github.com/user-attachments/assets/7d08a2e6-c55b-45ee-bdda-96887ead5a70" />
 
 > Дальше создаем yaml и запускаем поды, сервисы, и т.д (переменные хранятся в secret)
 - kubectl get all -n atlantis
