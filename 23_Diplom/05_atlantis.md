@@ -20,12 +20,12 @@ https://www.youtube.com/watch?v=sV9IBczE3IA
 > Создаем отдельный namespace для atlantis
 - kubectl create namespace atlantis
 
-> Для настройки atlantis потребуются GITHUB_TOKEN, а также AWS_ACCESS_KEY_ID и AWS_SECRET_ACCESS_KEY т.к. в работе используется s3 backend
-> Получаем GITHUB_TOKEN в настройках профиля github: Profile → Settings → Developer settings → Personal access tokens
-> AWS_ACCESS_KEY_ID и AWS_SECRET_ACCESS_KEY получаем из ранее созданного файла для настройки s3 backend - secret.backend.tfvars (access_key и secret_key)
-> Для передачи секретов используется файл .env, содержащий переменные окружения (GITHUB_TOKEN, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY).
-> Файл подключается в shell-сессию командой ```source .env```, после чего значения используются при создании Kubernetes Secret.
-> Файл .env добавлен в .gitignore и не хранится в репозитории, пример содержимого:
+> - Для настройки atlantis потребуются GITHUB_TOKEN, а также AWS_ACCESS_KEY_ID и AWS_SECRET_ACCESS_KEY т.к. в работе используется s3 backend
+> - Получаем GITHUB_TOKEN в настройках профиля github: Profile → Settings → Developer settings → Personal access tokens
+> - AWS_ACCESS_KEY_ID и AWS_SECRET_ACCESS_KEY получаем из ранее созданного файла для настройки s3 backend - secret.backend.tfvars (access_key и secret_key)
+> - Для передачи секретов используется файл .env, содержащий переменные окружения (GITHUB_TOKEN, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY).
+> - Файл подключается в shell-сессию командой ```source .env```, после чего значения используются при создании Kubernetes Secret.
+> - Файл .env добавлен в .gitignore и не хранится в репозитории, пример содержимого:
 
 ```
 export GITHUB_TOKEN=xxxxx
