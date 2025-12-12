@@ -111,11 +111,10 @@ spec:
 ```
 
 > Запускаем установку
-- kubectl apply -f grafana-nodeport.yaml
-- kubectl apply -f grafana-network.yaml
+- kubectl apply -f 04_grafana/grafana/
 - kubectl get svc -n monitoring
 
-<img width="923" height="234" alt="изображение" src="https://github.com/user-attachments/assets/a5122dfc-d510-4a8a-8ff4-643ff9b257aa" />
+<img width="900" height="294" alt="изображение" src="https://github.com/user-attachments/assets/46a91659-d3e2-4efe-8a7f-04d112e79183" />
 
 > Проверяем доступ c мастера http://158.160.122.175:30001:
 
