@@ -17,9 +17,6 @@
 
 https://www.youtube.com/watch?v=sV9IBczE3IA
 
-> Создаем отдельный namespace для atlantis
-- kubectl create namespace atlantis
-
 > - Для настройки atlantis потребуются GITHUB_TOKEN, а также AWS_ACCESS_KEY_ID и AWS_SECRET_ACCESS_KEY т.к. в работе используется s3 backend
 > - Получаем GITHUB_TOKEN в настройках профиля github: Profile → Settings → Developer settings → Personal access tokens
 > - AWS_ACCESS_KEY_ID и AWS_SECRET_ACCESS_KEY получаем из ранее созданного файла для настройки s3 backend - secret.backend.tfvars (access_key и secret_key)
@@ -33,12 +30,17 @@ export AWS_ACCESS_KEY_ID=xxxxx
 export AWS_SECRET_ACCESS_KEY=xxxxx
 ```
 
-> Добавляем переменные окружения командой: source .env
+> Добавляем переменные окружения командой: #### source .env
 
-> Также можно проверить что переменные сохранились корректно через команды:
+> Дополнительно можно проверить, что переменные сохранились корректно, выполнив команды:
 - echo $GITHUB_TOKEN
 - echo $AWS_ACCESS_KEY_ID
 - echo $AWS_SECRET_ACCESS_KEY
+
+> Создаем отдельный namespace для atlantis
+- kubectl create namespace atlantis
+
+
 
 > Создаем secrets и проверяем: kubectl get secrets -n atlantis
 
