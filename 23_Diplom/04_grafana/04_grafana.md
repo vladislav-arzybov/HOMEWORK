@@ -174,11 +174,10 @@ spec:
 ```
 
 > Запускаем установку, проверяем создания подов и сервиса:
-- kubectl apply -f app-deployment.yaml
-- kubectl apply -f app-svc.yaml
+- kubectl apply -f 04_grafana/app/
 - kubectl get all -n app
 
-<img width="816" height="313" alt="изображение" src="https://github.com/user-attachments/assets/c765ef79-7658-442d-bdc8-7628089fe34d" />
+<img width="763" height="309" alt="изображение" src="https://github.com/user-attachments/assets/f7dd08cd-7599-4635-bd9c-90169b56ac66" />
 
 > Проверяем доступность портала с адреса мастера: http://158.160.122.175:30002
 
