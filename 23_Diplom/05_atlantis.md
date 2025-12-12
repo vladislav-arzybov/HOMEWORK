@@ -20,9 +20,12 @@ https://www.youtube.com/watch?v=sV9IBczE3IA
 > Создаем отдельный namespace для atlantis
 - kubectl create namespace atlantis
 
-> Получаем GITHUB_TOKEN: Profile → Settings → Developer settings → Personal access tokens
-
-> По аналогии с ранее созданным secret.backend.tfvars для передачи access_key и secret_key через файл не содержащийся в репозитории, токены GitHub и Yandex Cloud передаются в Kubernetes в виде переменных окружения из фала ```.env``` и используются при создании Secret без хранения значений в коде. Пример содержимого:
+> Для настройки atlantis потребуются GITHUB_TOKEN, а также AWS_ACCESS_KEY_ID и AWS_SECRET_ACCESS_KEY т.к. в работе используется s3 backend
+> Получаем GITHUB_TOKEN в настройках профиля github: Profile → Settings → Developer settings → Personal access tokens
+> AWS_ACCESS_KEY_ID и AWS_SECRET_ACCESS_KEY получаем из ранее созданного файла для настройки s3 backend - secret.backend.tfvars (access_key и secret_key)
+> Для передачи секретов используется файл .env, содержащий переменные окружения (GITHUB_TOKEN, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY).
+> Файл подключается в shell-сессию командой ```source .env```, после чего значения используются при создании Kubernetes Secret.
+> Файл .env добавлен в .gitignore и не хранится в репозитории, пример содержимого:
 
 ```
 export GITHUB_TOKEN=xxxxx
@@ -30,7 +33,12 @@ export AWS_ACCESS_KEY_ID=xxxxx
 export AWS_SECRET_ACCESS_KEY=xxxxx
 ```
 
-> Добавляем переменные окружения: source .env
+> Добавляем переменные окружения командой: source .env
+
+> Также можно проверить что переменные сохранились корректно через команды:
+- echo $GITHUB_TOKEN
+- echo $AWS_ACCESS_KEY_ID
+- echo $AWS_SECRET_ACCESS_KEY
 
 > Создаем secrets и проверяем: kubectl get secrets -n atlantis
 
@@ -44,10 +52,7 @@ kubectl create secret generic atlantis-env \
 
 <img width="642" height="59" alt="изображение" src="https://github.com/user-attachments/assets/42ccf279-692d-4c6d-9312-050ed13ce9aa" />
 
-> Также можно проверить что переменные сохранились корректно через команды:
-- echo $GITHUB_TOKEN
-- echo $AWS_ACCESS_KEY_ID
-- echo $AWS_SECRET_ACCESS_KEY
+
 
 > Дальше создаем yaml и запускаем поды, сервисы, и т.д (переменные хранятся в secret)
 - kubectl get all -n atlantis
