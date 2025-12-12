@@ -30,7 +30,8 @@ export AWS_ACCESS_KEY_ID=xxxxx
 export AWS_SECRET_ACCESS_KEY=xxxxx
 ```
 
-> Добавляем переменные окружения командой: #### source .env
+> Добавляем переменные окружения командой: 
+- source .env
 
 > Дополнительно можно проверить, что переменные сохранились корректно, выполнив команды:
 - echo $GITHUB_TOKEN
