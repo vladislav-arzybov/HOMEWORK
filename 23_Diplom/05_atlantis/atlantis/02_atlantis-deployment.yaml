@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: atlantis
+  namespace: atlantis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: atlantis
+  template:
+    metadata:
+      labels:
+        app: atlantis
+    spec:
+      containers:
+        - name: atlantis
+          image: ghcr.io/runatlantis/atlantis:v0.34.0
+          imagePullPolicy: IfNotPresent
+
+          args:
+            - server
+            - --port=4141
+            - --config=/etc/atlantis/repos.yaml
+            - --repo-config=/etc/atlantis/atlantis.yaml
+            - --gh-user=vladislav-arzybov
+            - --repo-allowlist=github.com/vladislav-arzybov/*
+            - --gh-token=$(GITHUB_TOKEN)
+
+          envFrom:
+            - secretRef:
+                name: atlantis-env
+
+          ports:
+            - name: http
+              containerPort: 4141
+
+          volumeMounts:
+            - name: atlantis-config
+              mountPath: /etc/atlantis/atlantis.yaml
+              subPath: atlantis.yaml
+              readOnly: true
+            - name: atlantis-config
+              mountPath: /etc/atlantis/repos.yaml
+              subPath: repos.yaml
+              readOnly: true
+
+      volumes:
+        - name: atlantis-config
+          configMap:
+            name: atlantis-config
