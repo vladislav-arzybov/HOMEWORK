@@ -1,4 +1,4 @@
-Необходимо удалить отдельный репозиторий с дипломом, удалить вебхук, обновить терраформ до 1.11.3, и по новой добавить lb с новой веткой, также сделать статичный ip и убрать внешние адреса у воркер нод
+<img width="777" height="646" alt="изображение" src="https://github.com/user-attachments/assets/e5e5d641-0ca4-40c5-a79b-d22d1de0b872" />Необходимо удалить отдельный репозиторий с дипломом, удалить вебхук, обновить терраформ до 1.11.3, и по новой добавить lb с новой веткой, также сделать статичный ip и убрать внешние адреса у воркер нод
 
 ### Деплой инфраструктуры в terraform pipeline
 
@@ -180,21 +180,25 @@ spec:
 
 > Настраиваем Webhook, в настройках репозитория https://github.com/vladislav-arzybov/Diplom_vladislav_arzybov заходим в Настройки - Settings - Webhooks - Add webhook
 
-<img width="772" height="98" alt="изображение" src="https://github.com/user-attachments/assets/7805a311-4961-476f-b881-149c800577cc" />
+<img width="806" height="110" alt="изображение" src="https://github.com/user-attachments/assets/7d00ca61-a21c-4cae-8fd6-ae99967c9824" />
 
-- В ```Payload URL``` указываем ip мастера и порт atlantis'a http://89.169.151.178:32001/events
+- В ```Payload URL``` указываем ip мастера и порт atlantis'a http://89.169.144.92:30003/events
 - В ```Content type``` - application/json
-- В блоке ```Which events would you like to trigger this webhook?``` выбираем ```Let me select individual events.```, а затем выбираем: Issue comments, Pull requests, Pull request reviews, Pushes
+- В блоке ```Which events would you like to trigger this webhook?``` выбираем ```Let me select individual events.```, а затем выбираем:
+> - Issue comments
+> - Pull requests
+> - Pull request reviews
+> - Pushes
 
-<img width="781" height="659" alt="изображение" src="https://github.com/user-attachments/assets/e1f49615-764e-4e1e-8697-cd30ede3933f" />
+<img width="777" height="646" alt="изображение" src="https://github.com/user-attachments/assets/6bda4de9-94da-4c51-a9c8-59d446d1a974" />
 
 > Нажимаем Add webhook
 
-<img width="780" height="192" alt="изображение" src="https://github.com/user-attachments/assets/68daa725-1b93-4236-99b8-c10b96724249" />
+<img width="789" height="203" alt="изображение" src="https://github.com/user-attachments/assets/5365bded-2afa-4d20-b572-58d9e94cce0b" />
 
 > Снова возвращаемся в настройки и проверяем что ping проходит
 
-<img width="796" height="182" alt="изображение" src="https://github.com/user-attachments/assets/0d9f1f16-7077-4e17-b397-fd408f002896" />
+<img width="813" height="172" alt="изображение" src="https://github.com/user-attachments/assets/9e8e997d-85c0-4c0a-9739-9ff7b779ede8" />
 
 
 ### Тестирование
