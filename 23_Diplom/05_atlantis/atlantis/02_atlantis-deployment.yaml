@@ -27,6 +27,10 @@ spec:
             - --repo-allowlist=github.com/vladislav-arzybov/*
             - --gh-token=$(GITHUB_TOKEN)
 
+          env:
+            - name: TF_CLI_CONFIG_FILE
+              value: /etc/terraform.d/terraform.rc
+
           envFrom:
             - secretRef:
                 name: atlantis-env
@@ -45,7 +49,16 @@ spec:
               subPath: repos.yaml
               readOnly: true
 
+            - name: terraform-cli-config
+              mountPath: /etc/terraform.d/terraform.rc
+              subPath: terraform.rc
+              readOnly: true
+
       volumes:
         - name: atlantis-config
           configMap:
             name: atlantis-config
+
+        - name: terraform-cli-config
+          configMap:
+            name: terraform-cli-config
