@@ -100,9 +100,12 @@ variable "user" {
   default     = "reivol"
   description = "ssh autorization"
 }
+
+/*
 locals {
   ssh-key = file("~/.ssh/id_rsa.pub")
 }
+*/
 
 
 ###VM resourse
