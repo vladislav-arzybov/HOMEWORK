@@ -8,7 +8,7 @@ terraform {
       version = "~> 2.4"
     }
   }
-  required_version = "~>1.8.4"
+  required_version = "~>1.11.3"
 }
 
 provider "yandex" {
@@ -17,4 +17,3 @@ provider "yandex" {
   zone      = var.zone-a
   service_account_key_file = file("~/.authorized_key.json")
 }
-
