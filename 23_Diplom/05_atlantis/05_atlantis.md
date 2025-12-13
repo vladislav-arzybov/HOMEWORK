@@ -164,12 +164,13 @@ spec:
 > Запускаем установку:
 - kubectl apply -f 05_atlantis/atlantis/
 
-<img width="717" height="76" alt="изображение" src="https://github.com/user-attachments/assets/55fdc0da-04b5-4cd2-b21d-b4ccecc9f305" />
+<img width="786" height="92" alt="изображение" src="https://github.com/user-attachments/assets/0365c361-258d-4143-acc7-c71fdb2e1439" />
 
 > Проверяем что всё работает и сервис доступен http://89.169.151.178:30003/
 - kubectl get all -n atlantis
+- kubectl get cm -n atlantis
 
-<img width="735" height="221" alt="изображение" src="https://github.com/user-attachments/assets/16897af9-52a2-4d35-a3b7-f43b417f723b" />
+<img width="725" height="310" alt="изображение" src="https://github.com/user-attachments/assets/608e4114-d53f-4191-875a-5e8923dd6ae8" />
 
 <img width="1452" height="625" alt="изображение" src="https://github.com/user-attachments/assets/9d96ddcf-cb2e-4e6e-be4f-1a6557f70853" />
 
