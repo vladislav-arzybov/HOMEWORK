@@ -207,13 +207,85 @@ spec:
 
 <img width="889" height="147" alt="изображение" src="https://github.com/user-attachments/assets/4f0da461-e07c-44e3-96f3-5872bb388233" />
 
-> Добавляем в него network_load_balancer.tf для работы балансировщика по 80 порту для приложения и графаны
+> Создаем новую ветку:
+- git checkout -b test-atlantis
+
+<img width="722" height="39" alt="изображение" src="https://github.com/user-attachments/assets/eb6cc1ca-0d1d-4b9f-9dd6-29fb8055495d" />
+
+> Для теста добавляем network_load_balancer, чтобы обращения к приложению и графане могли осуществляться по 80 порту, по разным адресам.
+
+[network_load_balancer.tf]()
+```
+# Создаем группу для балансировщика с включением всех нод
+resource "yandex_lb_target_group" "k8s-nlb" {
+  name       = "k8s-balancer-group"
+  depends_on = [yandex_compute_instance.k8s]
+
+  dynamic "target" {
+    for_each = values(yandex_compute_instance.k8s)
+
+    content {
+      subnet_id = target.value.network_interface[0].subnet_id
+      address   = target.value.network_interface[0].ip_address
+    }
+  }
+}
+
+# Настраиваем балансировщик для grafana
+resource "yandex_lb_network_load_balancer" "grafana" {
+  name = "grafana"
+
+  listener {
+    name        = "grafana-listener"
+    port        = 80
+    target_port = 30001
+    external_address_spec {
+      ip_version = "ipv4"
+    }
+  }
+  attached_target_group {
+    target_group_id = yandex_lb_target_group.k8s-nlb.id
+    healthcheck {
+      name = "healthcheck"
+      tcp_options {
+        port = 30001
+      }
+    }
+  }
+
+  depends_on = [yandex_lb_target_group.k8s-nlb]
+}
+
+# Настраиваем балансировщик для nginx
+resource "yandex_lb_network_load_balancer" "nginx" {
+  name = "nginx"
+  listener {
+    name        = "nginx-listener"
+    port        = 80
+    target_port = 30002
+    external_address_spec {
+      ip_version = "ipv4"
+    }
+  }
+  attached_target_group {
+    target_group_id = yandex_lb_target_group.k8s-nlb.id
+    healthcheck {
+      name = "healthcheck"
+      tcp_options {
+        port = 30002
+      }
+    }
+  }
+  depends_on = [yandex_lb_network_load_balancer.grafana]
+}
+```
+
+> Пушим изменнеия в новую ветку:
 - git add .
 - git commit -m 'test-b'
-- git checkout -b test-atlantis
 - git push origin test-atlantis
 
-<img width="958" height="383" alt="изображение" src="https://github.com/user-attachments/assets/32fa4266-fcdc-4d11-a07f-5fd4590d6370" />
+<img width="897" height="342" alt="изображение" src="https://github.com/user-attachments/assets/30bfca49-8e61-4c4e-8410-ac6e39dc6137" />
 
 > Проверяем что изменения передались в git, новая ветка с новым network_load_balancer.tf
 
