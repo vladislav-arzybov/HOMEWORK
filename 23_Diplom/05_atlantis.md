@@ -60,8 +60,121 @@ kubectl create secret generic atlantis-env \
 
 <img width="647" height="56" alt="изображение" src="https://github.com/user-attachments/assets/7d08a2e6-c55b-45ee-bdda-96887ead5a70" />
 
-> Дальше создаем yaml и запускаем поды, сервисы, и т.д (переменные хранятся в secret)
+> Подготавливаем yaml манифесты для деплоя atlantis
+
+[atlantis-cm.yaml]()
+```
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: atlantis-config
+  namespace: atlantis
+data:
+  repos.yaml: |
+    repos:
+      - id: /.*/
+        branch: /.*/
+        allowed_overrides: [apply_requirements]
+        apply_requirements: [approved]
+        workflow: default
+
+  atlantis.yaml: |
+    workflows:
+      default:
+        plan:
+          steps:
+            - init
+            - plan
+        apply:
+          steps:
+            - apply
+```
+
+[atlantis-deployment.yaml]()
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: atlantis
+  namespace: atlantis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: atlantis
+  template:
+    metadata:
+      labels:
+        app: atlantis
+    spec:
+      containers:
+        - name: atlantis
+          image: ghcr.io/runatlantis/atlantis:v0.34.0
+          imagePullPolicy: IfNotPresent
+
+          args:
+            - server
+            - --port=4141
+            - --config=/etc/atlantis/repos.yaml
+            - --repo-config=/etc/atlantis/atlantis.yaml
+            - --gh-user=vladislav-arzybov
+            - --repo-allowlist=github.com/vladislav-arzybov/*
+            - --gh-token=$(GITHUB_TOKEN)
+
+          envFrom:
+            - secretRef:
+                name: atlantis-env
+
+          ports:
+            - name: http
+              containerPort: 4141
+
+          volumeMounts:
+            - name: atlantis-config
+              mountPath: /etc/atlantis/atlantis.yaml
+              subPath: atlantis.yaml
+              readOnly: true
+            - name: atlantis-config
+              mountPath: /etc/atlantis/repos.yaml
+              subPath: repos.yaml
+              readOnly: true
+
+      volumes:
+        - name: atlantis-config
+          configMap:
+            name: atlantis-config
+```
+
+[atlantis-svc.yaml]()
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: atlantis
+  namespace: atlantis
+spec:
+  type: NodePort
+  selector:
+    app: atlantis
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 4141
+    nodePort: 30003
+```
+
+> Запускаем установку:
+- kubectl apply -f 05_atlantis/atlantis/
+
+<img width="717" height="76" alt="изображение" src="https://github.com/user-attachments/assets/55fdc0da-04b5-4cd2-b21d-b4ccecc9f305" />
+
+> Проверяем что всё работает и сервис доступен
 - kubectl get all -n atlantis
+
+<img width="735" height="221" alt="изображение" src="https://github.com/user-attachments/assets/16897af9-52a2-4d35-a3b7-f43b417f723b" />
+
+<img width="1452" height="625" alt="изображение" src="https://github.com/user-attachments/assets/9d96ddcf-cb2e-4e6e-be4f-1a6557f70853" />
+
 
 Удаление!
 - kubectl delete -n atlantis secrets atlantis-github
