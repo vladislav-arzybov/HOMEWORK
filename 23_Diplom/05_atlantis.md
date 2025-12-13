@@ -168,7 +168,7 @@ spec:
 
 <img width="717" height="76" alt="изображение" src="https://github.com/user-attachments/assets/55fdc0da-04b5-4cd2-b21d-b4ccecc9f305" />
 
-> Проверяем что всё работает и сервис доступен
+> Проверяем что всё работает и сервис доступен http://89.169.151.178:30003/
 - kubectl get all -n atlantis
 
 <img width="735" height="221" alt="изображение" src="https://github.com/user-attachments/assets/16897af9-52a2-4d35-a3b7-f43b417f723b" />
@@ -176,38 +176,7 @@ spec:
 <img width="1452" height="625" alt="изображение" src="https://github.com/user-attachments/assets/9d96ddcf-cb2e-4e6e-be4f-1a6557f70853" />
 
 
-Удаление!
-- kubectl delete -n atlantis secrets atlantis-github
-- kubectl delete -n atlantis secrets yc-credentials
-- kubectl delete -n atlantis secrets atlantis-env
-
-Копирование!
-- scp -r /home/reivol/Terraform2/05_diplom/atlantis reivol@46.21.246.134:/home/reivol/
-- scp -r  reivol@46.21.246.134:/home/reivol/atlantis /home/reivol/Terraform2/05_diplom/atlantis/
-
-
-#### Отладка
-
-- kubectl get pods -n atlantis
-- kubectl describe pod -n atlantis atlantis-666c5577c-rptpb
-- kubectl logs -n atlantis atlantis-666c5577c-rptpb --previous
-
-> Удаление
-- kubectl -n atlantis delete deployments.apps atlantis 
-- kubectl -n atlantis delete configmaps atlantis-config
-- kubectl -n atlantis delete svc atlantis
-
-> Установка
-- kubectl apply -f atlantis-cm.yaml
-- kubectl apply -f atlantis-deployment.yaml
-- kubectl apply -f atlantis-svc.yaml
-
-
-### Проверка работы atlantis
-
-> Проверяем что сервис запустился, http://89.169.151.178:32001/
-
-<img width="1214" height="652" alt="изображение" src="https://github.com/user-attachments/assets/19be5f85-c781-49e4-b9a5-1a351367ffde" />
+### Дальнейшая настройка atlantis для работы
 
 > Настраиваем Webhook, в настройках репозитория https://github.com/vladislav-arzybov/Diplom_vladislav_arzybov заходим в Настройки - Settings - Webhooks - Add webhook
 
