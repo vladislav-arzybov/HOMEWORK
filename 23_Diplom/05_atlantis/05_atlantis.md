@@ -364,4 +364,5 @@ resource "yandex_lb_network_load_balancer" "nginx" {
 
 <img width="910" height="427" alt="изображение" src="https://github.com/user-attachments/assets/191e8d8b-c76e-48d9-8bfb-54ebd7282772" />
 
+<img width="1475" height="641" alt="изображение" src="https://github.com/user-attachments/assets/74aeba39-2117-4352-896f-df88d93d2394" />
 
