@@ -63,10 +63,20 @@ kubectl create secret generic atlantis-yc-sa \
 
 <img width="792" height="76" alt="изображение" src="https://github.com/user-attachments/assets/f312f2fa-fce9-463b-a227-a484d4d59824" />
 
+> Ткже потребуется передать ssh public-key, чтобы не возникло ошибок при запуске Terraform внутри Atlantis
+
+```
+kubectl create secret generic ssh-public-key \
+  -n atlantis \
+  --from-file=ssh_public_key=$HOME/.ssh/id_rsa.pub
+```
+
+<img width="778" height="74" alt="изображение" src="https://github.com/user-attachments/assets/fb828519-0293-4dae-83b5-e1b6cde1c0d6" />
+
 > Проверяем что всё ок командой:
 - kubectl get secrets -n atlantis
 
-<img width="643" height="74" alt="изображение" src="https://github.com/user-attachments/assets/d9bddc48-dec6-4751-a9d5-9debc94e7d5b" />
+<img width="632" height="94" alt="изображение" src="https://github.com/user-attachments/assets/b88f8187-2232-47ae-8e34-abe61a3359e4" />
 
 > Подготавливаем yaml манифесты для деплоя atlantis
 
