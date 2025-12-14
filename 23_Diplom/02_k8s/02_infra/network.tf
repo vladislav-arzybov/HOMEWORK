@@ -24,3 +24,13 @@ resource "yandex_vpc_subnet" "subnet-d" {
   network_id     = yandex_vpc_network.prod-vpc.id
   v4_cidr_blocks = var.subnet-d_cidr
 }
+
+
+#Настраиваем статический ip для master-ноды
+resource "yandex_vpc_address" "master_ip" {
+  name = "master-ip"
+
+  external_ipv4_address {
+    zone_id = var.zone-a
+  }
+}

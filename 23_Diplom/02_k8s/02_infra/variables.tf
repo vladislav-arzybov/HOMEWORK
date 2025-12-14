@@ -107,6 +107,11 @@ locals {
 }
 */
 
+#ssh key for VM + atlantis
+variable "ssh_public_key" {
+  type        = string
+  description = "SSH public key"
+}
 
 ###VM resourse
 

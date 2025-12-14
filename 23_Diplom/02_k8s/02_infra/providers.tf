@@ -22,3 +22,4 @@ provider "yandex" {
   zone      = var.zone-a
   #service_account_key_file = file("~/.authorized_key.json")
 }
+

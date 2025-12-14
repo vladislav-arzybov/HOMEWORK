@@ -24,6 +24,8 @@ resource "yandex_compute_instance" "k8s" {
   network_interface {
     subnet_id = local.subnets[each.value.subnet]
     nat       = "true"
+        #Назначаем master-node статический ip
+    nat_ip_address = startswith(each.key, "master-node") ? yandex_vpc_address.master_ip.external_ipv4_address[0].address : null
   }
 
   metadata = {
