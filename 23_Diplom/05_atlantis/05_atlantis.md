@@ -9,11 +9,7 @@
 4. Http доступ на 80 порту к тестовому приложению.
 5. Atlantis или terraform cloud или ci/cd-terraform
 
-```
-kubectl create secret generic atlantis-yc-sa \
-  -n atlantis \
-  --from-file=key.json=$HOME/.authorized_key.json
-```
+
 
 # Решение
 
