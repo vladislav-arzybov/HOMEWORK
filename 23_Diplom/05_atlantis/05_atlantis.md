@@ -2,18 +2,7 @@
 
 1. Если на первом этапе вы не воспользовались [Terraform Cloud](https://app.terraform.io/), то задеплойте и настройте в кластере [atlantis](https://www.runatlantis.io/) для отслеживания изменений инфраструктуры. Альтернативный вариант 3 задания: вместо Terraform Cloud или atlantis настройте на автоматический запуск и применение конфигурации terraform из вашего git-репозитория в выбранной вами CI-CD системе при любом комите в main ветку. Предоставьте скриншоты работы пайплайна из CI/CD системы.
 
-Ожидаемый результат:
-1. Git репозиторий с конфигурационными файлами для настройки Kubernetes.
-2. Http доступ на 80 порту к web интерфейсу grafana.
-3. Дашборды в grafana отображающие состояние Kubernetes кластера.
-4. Http доступ на 80 порту к тестовому приложению.
-5. Atlantis или terraform cloud или ci/cd-terraform
-
-
-
-# Решение
-
-https://www.youtube.com/watch?v=sV9IBczE3IA
+#### Решение
 
 > - Для настройки atlantis потребуются GITHUB_TOKEN, а также AWS_ACCESS_KEY_ID и AWS_SECRET_ACCESS_KEY т.к. в работе используется s3 backend
 > - Получаем GITHUB_TOKEN в настройках профиля github: Profile → Settings → Developer settings → Personal access tokens
@@ -80,7 +69,8 @@ kubectl create secret generic ssh-public-key \
 
 > Подготавливаем yaml манифесты для деплоя atlantis
 
-[atlantis-cm-terraform.yaml]()
+[atlantis-cm-terraform.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/23_Diplom/05_atlantis/atlantis/01_atlantis-cm-terraform.yaml)
+> Необходим для корректной работы atlantis с yandex cloud
 ```
 apiVersion: v1
 kind: ConfigMap
@@ -100,7 +90,7 @@ data:
     }
 ```
 
-[atlantis-cm.yaml]()
+[atlantis-cm.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/23_Diplom/05_atlantis/atlantis/01_atlantis-cm.yaml)
 ```
 apiVersion: v1
 kind: ConfigMap
@@ -128,7 +118,7 @@ data:
             - apply
 ```
 
-[atlantis-deployment.yaml]()
+[atlantis-deployment.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/23_Diplom/05_atlantis/atlantis/02_atlantis-deployment.yaml)
 ```
 apiVersion: apps/v1
 kind: Deployment
@@ -159,6 +149,19 @@ spec:
             - --repo-allowlist=github.com/vladislav-arzybov/*
             - --gh-token=$(GITHUB_TOKEN)
 
+          env:
+            - name: TF_CLI_CONFIG_FILE
+              value: /etc/terraform.d/terraform.rc
+
+            - name: YC_SERVICE_ACCOUNT_KEY_FILE
+              value: /home/atlantis/authorized_key.json
+
+            - name: TF_VAR_ssh_public_key
+              valueFrom:
+                secretKeyRef:
+                  name: ssh-public-key
+                  key: ssh_public_key
+
           envFrom:
             - secretRef:
                 name: atlantis-env
@@ -177,13 +180,31 @@ spec:
               subPath: repos.yaml
               readOnly: true
 
+            - name: terraform-cli-config
+              mountPath: /etc/terraform.d/terraform.rc
+              subPath: terraform.rc
+              readOnly: true
+
+            - name: yc-sa-key
+              mountPath: /home/atlantis/authorized_key.json
+              subPath: authorized_key.json
+              readOnly: true
+
       volumes:
         - name: atlantis-config
           configMap:
             name: atlantis-config
+
+        - name: terraform-cli-config
+          configMap:
+            name: terraform-cli-config
+
+        - name: yc-sa-key
+          secret:
+            secretName: atlantis-yc-sa
 ```
 
-[atlantis-svc.yaml]()
+[atlantis-svc.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/23_Diplom/05_atlantis/atlantis/03_atlantis-svc.yaml)
 ```
 apiVersion: v1
 kind: Service
@@ -366,3 +387,11 @@ resource "yandex_lb_network_load_balancer" "nginx" {
 
 <img width="1475" height="641" alt="изображение" src="https://github.com/user-attachments/assets/74aeba39-2117-4352-896f-df88d93d2394" />
 
+
+
+Ожидаемый результат:
+1. Git репозиторий с конфигурационными файлами для настройки Kubernetes.
+2. Http доступ на 80 порту к web интерфейсу grafana.
+3. Дашборды в grafana отображающие состояние Kubernetes кластера.
+4. Http доступ на 80 порту к тестовому приложению.
+5. Atlantis или terraform cloud или ci/cd-terraform
