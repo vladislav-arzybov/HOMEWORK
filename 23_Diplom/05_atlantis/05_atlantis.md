@@ -341,3 +341,11 @@ resource "yandex_lb_network_load_balancer" "nginx" {
 > При необходимости можно указать заголовок и описание, затем нажать Create pull request
 
 <img width="910" height="516" alt="изображение" src="https://github.com/user-attachments/assets/4624ab36-c74a-4134-94b4-dd567193468d" />
+
+> После выполнения проверки откроется окно с инструкциями
+
+<img width="851" height="653" alt="изображение" src="https://github.com/user-attachments/assets/4c30bb05-ff9e-4c26-9ba9-559023c2dd66" />
+
+> Чтобы выполнить terrafform apply необходимо в поле ```Add a comment``` указать ```atlantis apply -d 02_k8s/02_infra``` и нажать Comment
+
+<img width="854" height="636" alt="изображение" src="https://github.com/user-attachments/assets/b5168ebb-6672-4674-b3b0-51216fead092" />
