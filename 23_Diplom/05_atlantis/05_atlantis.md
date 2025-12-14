@@ -389,8 +389,11 @@ resource "yandex_lb_network_load_balancer" "nginx" {
 
 Ожидаемый результат:
 1. Git репозиторий с конфигурационными файлами для настройки Kubernetes.
-[Ссылка] (https://github.com/vladislav-arzybov/HOMEWORK/tree/main/23_Diplom/02_k8s/02_infra)
+
+> [Создание Kubernetes кластера](https://github.com/vladislav-arzybov/HOMEWORK/tree/main/23_Diplom/02_k8s/02_infra)
+
 2. Http доступ на 80 порту к web интерфейсу grafana.
+
 > http://158.160.209.209:80
 > Логин: admin
 > Пароль: admin
