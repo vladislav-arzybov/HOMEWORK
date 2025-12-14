@@ -258,16 +258,9 @@ spec:
 
 <img width="789" height="203" alt="изображение" src="https://github.com/user-attachments/assets/5365bded-2afa-4d20-b572-58d9e94cce0b" />
 
-> Снова возвращаемся в настройки и проверяем что ping проходит
-
-<img width="813" height="172" alt="изображение" src="https://github.com/user-attachments/assets/9e8e997d-85c0-4c0a-9739-9ff7b779ede8" />
 
 
-### Тестирование
-
-> Копируем репозиторий: git@github.com:vladislav-arzybov/Diplom_vladislav_arzybov.git
-
-<img width="889" height="147" alt="изображение" src="https://github.com/user-attachments/assets/4f0da461-e07c-44e3-96f3-5872bb388233" />
+#### Проверяем работу atlantis, вносим изменения в текущую инфраструктуру
 
 > Создаем новую ветку:
 - git checkout -b test-atlantis
@@ -292,6 +285,7 @@ resource "yandex_lb_target_group" "k8s-nlb" {
     }
   }
 }
+
 
 # Настраиваем балансировщик для grafana
 resource "yandex_lb_network_load_balancer" "grafana" {
@@ -340,7 +334,9 @@ resource "yandex_lb_network_load_balancer" "nginx" {
   }
   depends_on = [yandex_lb_network_load_balancer.grafana]
 }
+
 ```
+
 
 > Пушим изменнеия в новую ветку:
 - git add .
