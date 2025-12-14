@@ -358,3 +358,10 @@ resource "yandex_lb_network_load_balancer" "nginx" {
 
 <img width="1074" height="129" alt="изображение" src="https://github.com/user-attachments/assets/6e3f2f2a-793a-4fb6-9dc2-e1008964ef27" />
 
+> Для внесения изменений в main ветку, необходимо нажать ```Merge pull request```
+
+<img width="877" height="312" alt="изображение" src="https://github.com/user-attachments/assets/e9511a0c-6c4b-420c-8cd0-7676d3983676" />
+
+<img width="910" height="427" alt="изображение" src="https://github.com/user-attachments/assets/191e8d8b-c76e-48d9-8bfb-54ebd7282772" />
+
+
