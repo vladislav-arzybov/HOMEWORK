@@ -58,7 +58,7 @@ kubectl create secret generic atlantis-env \
 ```
 kubectl create secret generic atlantis-yc-sa \
   -n atlantis \
-  --from-file=key.json=$HOME/.authorized_key.json
+  --from-file=authorized_key.json=$HOME/.authorized_key.json
 ```
 
 <img width="792" height="76" alt="изображение" src="https://github.com/user-attachments/assets/f312f2fa-fce9-463b-a227-a484d4d59824" />
