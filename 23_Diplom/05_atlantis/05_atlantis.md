@@ -72,6 +72,26 @@ kubectl create secret generic atlantis-yc-sa \
 
 > Подготавливаем yaml манифесты для деплоя atlantis
 
+[atlantis-cm-terraform.yaml]()
+```
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: terraform-cli-config
+  namespace: atlantis
+data:
+  terraform.rc: |
+    provider_installation {
+      network_mirror {
+        url     = "https://terraform-mirror.yandexcloud.net/"
+        include = ["registry.terraform.io/*/*"]
+      }
+      direct {
+        exclude = ["registry.terraform.io/*/*"]
+      }
+    }
+```
+
 [atlantis-cm.yaml]()
 ```
 apiVersion: v1
