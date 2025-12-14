@@ -57,6 +57,14 @@ kubectl create secret generic atlantis-env \
 
 <img width="784" height="109" alt="изображение" src="https://github.com/user-attachments/assets/6864d74b-3638-4788-992d-1393859ce37a" />
 
+> Для автоматизации процесса деплоя необходимо также передать информацию о ```.authorized_key.json``` хранящимся локально, создаем секрет:
+
+```
+kubectl create secret generic atlantis-yc-sa \
+  -n atlantis \
+  --from-file=key.json=$HOME/.authorized_key.json
+```
+
 > Проверяем что всё ок командой:
 - kubectl get secrets -n atlantis
 
