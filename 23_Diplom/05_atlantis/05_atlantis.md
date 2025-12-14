@@ -227,11 +227,13 @@ spec:
 
 <img width="786" height="92" alt="изображение" src="https://github.com/user-attachments/assets/0365c361-258d-4143-acc7-c71fdb2e1439" />
 
-> Проверяем что всё работает и сервис доступен http://89.169.151.178:30003/
+> Проверяем что всё работает
 - kubectl get cm -n atlantis
 - kubectl get all -n atlantis
 
 <img width="739" height="310" alt="изображение" src="https://github.com/user-attachments/assets/b107d754-e08a-475c-b6f3-61d067190c7b" />
+
+> Проверяем что сервис доступен из вне: http://89.169.151.178:30003/
 
 <img width="1452" height="625" alt="изображение" src="https://github.com/user-attachments/assets/9d96ddcf-cb2e-4e6e-be4f-1a6557f70853" />
 
