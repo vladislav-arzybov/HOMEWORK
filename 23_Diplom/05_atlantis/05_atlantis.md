@@ -385,11 +385,28 @@ resource "yandex_lb_network_load_balancer" "nginx" {
 
 <img width="1475" height="641" alt="изображение" src="https://github.com/user-attachments/assets/74aeba39-2117-4352-896f-df88d93d2394" />
 
-
+#### Итого
 
 Ожидаемый результат:
 1. Git репозиторий с конфигурационными файлами для настройки Kubernetes.
+[Ссылка] (https://github.com/vladislav-arzybov/HOMEWORK/tree/main/23_Diplom/02_k8s/02_infra)
 2. Http доступ на 80 порту к web интерфейсу grafana.
+http://158.160.209.209:80
+Логин: admin
+Пароль: admin
+
 3. Дашборды в grafana отображающие состояние Kubernetes кластера.
+   
+<img width="1913" height="991" alt="изображение" src="https://github.com/user-attachments/assets/506a3035-6142-4d99-95d8-27993179ca8a" />
+
 4. Http доступ на 80 порту к тестовому приложению.
+
+http://158.160.217.80/
+
+<img width="793" height="141" alt="изображение" src="https://github.com/user-attachments/assets/2b656c92-2d80-434a-bef2-d2c31bc53a3f" />
+
 5. Atlantis или terraform cloud или ci/cd-terraform
+
+http://158.160.49.136:30003/
+
+<img width="1309" height="651" alt="изображение" src="https://github.com/user-attachments/assets/4153ac5d-e33d-48bf-a8c8-4aba55617d9a" />
