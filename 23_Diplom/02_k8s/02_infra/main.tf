@@ -11,7 +11,7 @@ data "template_file" "cloudinit" {
     vars = {
     username           = var.user
     #ssh_public_key     = file("~/.ssh/id_rsa.pub")
-    ssh_public_key     = var.ssh_public_key
+    ssh_public_key     = chomp(var.ssh_public_key) #chomp необходим для удаления пустой строки в конце, особенность atlantis (Kubernetes secret)
   }
 
 }
