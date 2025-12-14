@@ -30,6 +30,13 @@ provider "yandex" {
 
 <img width="1130" height="75" alt="изображение" src="https://github.com/user-attachments/assets/b25a668b-effe-4356-a7ab-ae5c3057746d" />
 
+> Также заранее добавим в переменную ```TF_VAR_ssh_public_key``` значение ssh public_key который в дальнейшем будет использоваться для подключения к ВМ
+- echo 'export TF_VAR_ssh_public_key="$(cat ~/.ssh/id_rsa.pub)"' >> ~/.bashrc
+- source ~/.bashrc
+- echo $TF_VAR_ssh_public_key
+
+<img width="1030" height="36" alt="изображение" src="https://github.com/user-attachments/assets/6ee42ec7-aa47-4249-a761-dba041b61d32" />
+
 2. Подготовьте [backend](https://developer.hashicorp.com/terraform/language/backend) для Terraform:  
    а. Рекомендуемый вариант: [S3 bucket](https://ru.hexlet.io/courses/terraform-basics/lessons/remote-state/theory_unit) в созданном ЯО аккаунте(создание бакета через TF)
    б. Альтернативный вариант:  [Terraform Cloud](https://app.terraform.io/)
