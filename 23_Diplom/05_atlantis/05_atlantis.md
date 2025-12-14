@@ -238,7 +238,7 @@ spec:
 <img width="1452" height="625" alt="изображение" src="https://github.com/user-attachments/assets/9d96ddcf-cb2e-4e6e-be4f-1a6557f70853" />
 
 
-### Дальнейшая настройка atlantis для работы
+#### Настройка atlantis для работы с репозиторием
 
 > Настраиваем Webhook, в настройках репозитория https://github.com/vladislav-arzybov/Diplom_vladislav_arzybov заходим в Настройки - Settings - Webhooks - Add webhook
 
