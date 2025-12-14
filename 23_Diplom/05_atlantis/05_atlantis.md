@@ -349,3 +349,12 @@ resource "yandex_lb_network_load_balancer" "nginx" {
 > Чтобы выполнить terrafform apply необходимо в поле ```Add a comment``` указать ```atlantis apply -d 02_k8s/02_infra``` и нажать Comment
 
 <img width="854" height="636" alt="изображение" src="https://github.com/user-attachments/assets/b5168ebb-6672-4674-b3b0-51216fead092" />
+
+> Изменения внесены успешно
+
+<img width="874" height="612" alt="изображение" src="https://github.com/user-attachments/assets/d73d71e0-8235-4825-8399-7c2d6a0fdf5e" />
+
+<img width="1481" height="671" alt="изображение" src="https://github.com/user-attachments/assets/c373ea5a-423b-445d-bfd5-74bb0875418b" />
+
+<img width="1074" height="129" alt="изображение" src="https://github.com/user-attachments/assets/6e3f2f2a-793a-4fb6-9dc2-e1008964ef27" />
+
