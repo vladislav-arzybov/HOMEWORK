@@ -61,10 +61,12 @@ kubectl create secret generic atlantis-yc-sa \
   --from-file=key.json=$HOME/.authorized_key.json
 ```
 
+<img width="792" height="76" alt="изображение" src="https://github.com/user-attachments/assets/f312f2fa-fce9-463b-a227-a484d4d59824" />
+
 > Проверяем что всё ок командой:
 - kubectl get secrets -n atlantis
 
-<img width="647" height="56" alt="изображение" src="https://github.com/user-attachments/assets/7d08a2e6-c55b-45ee-bdda-96887ead5a70" />
+<img width="643" height="74" alt="изображение" src="https://github.com/user-attachments/assets/d9bddc48-dec6-4751-a9d5-9debc94e7d5b" />
 
 > Подготавливаем yaml манифесты для деплоя atlantis
 
