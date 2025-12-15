@@ -12,21 +12,6 @@
 Ожидаемый результат:
 
 1. Интерфейс ci/cd сервиса доступен по http.
-2. При любом коммите в репозиторие с тестовым приложением происходит сборка и отправка в регистр Docker образа.
-3. При создании тега (например, v1.0.0) происходит сборка и отправка с соответствующим label в регистри, а также деплой соответствующего Docker образа в кластер Kubernetes.
-
----
-
-https://www.youtube.com/watch?v=zn5T7FkpaTA
-
-https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax
-
-https://github.com/marketplace/actions/setup-node-js-environment
-
-Self-hosted runners - собирать у себя
-
-
-#### РЕШЕНИЕ
 
 > Для выполнения данного блока воспользуюсь GitHub Actions, т.к. раньше не использовал его в работе как и Atlantis.
 
@@ -54,11 +39,8 @@ YXBpxxxxxxxxx
 
 <img width="791" height="264" alt="изображение" src="https://github.com/user-attachments/assets/ccd8dc5f-bfda-4cac-bccd-12a19a615d2a" />
 
-
 > Создадим необходиму структуру каталогов в ранее созданном репозитории [my_nginx_test_app_diplom](https://github.com/vladislav-arzybov/my_nginx_test_app_diplom)
 - mkdir -p .github/workflows
-
-> Для выполнения задания потребуются 2 workflow:
 
 2. При любом коммите в репозиторие с тестовым приложением происходит сборка и отправка в регистр Docker образа.
 
@@ -109,3 +91,89 @@ jobs:
 > Проверяем наличие образа в [DockerHub](https://hub.docker.com/repository/docker/arzybov/test-app-nginx/tags)
 
 <img width="1575" height="310" alt="изображение" src="https://github.com/user-attachments/assets/a32b85d1-981a-4d2a-96fd-d6ebd781bf76" />
+
+
+3. При создании тега (например, v1.0.0) происходит сборка и отправка с соответствующим label в регистри, а также деплой соответствующего Docker образа в кластер Kubernetes.
+
+> Создадим workflow build-push-deploy.yaml:
+
+[build-push-deploy.yaml]()
+
+```
+name: build and deploy
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  docker-deploy:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Extract tag
+        run: echo "IMAGE_TAG=${GITHUB_REF_NAME}" >> $GITHUB_ENV
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: arzybov/test-app-nginx:${{ env.IMAGE_TAG }}
+
+      - name: Install kubectl
+        uses: azure/setup-kubectl@v4
+        with:
+          version: v1.29.0
+
+      - name: Configure kubeconfig
+        run: |
+          mkdir -p ~/.kube
+          echo "${{ secrets.KUBE_CONFIG }}" | base64 -d > ~/.kube/config
+
+      - name: Deploy to Kubernetes
+        run: |
+          kubectl -n app set image deployment/test-app-deployment \
+            nginx-docker=arzybov/test-app-nginx:${{ env.IMAGE_TAG }}
+```
+
+> Заранее вносим правки в index.html, чтобы визуально увидеть изменения страницы.
+
+```
+<html>
+<head>
+DevOps-Netology-diplom
+</head>
+<body>
+<h1>Hello! Welcome to my test app page. (v4.0.0)</h1>
+</body>
+</html>
+```
+
+> Пушим в git
+- git add .
+- git commit -m 'build-push-deploy-4'
+- git push origin main
+
+<img width="892" height="291" alt="изображение" src="https://github.com/user-attachments/assets/56275d2b-20f3-4b71-9bb7-10fb934cb471" />
+
+> Добавляем тэг, v4.0.0, пушим в git
+- git tag v4.0.0
+- git push origin v4.0.0
+
+<img width="666" height="93" alt="изображение" src="https://github.com/user-attachments/assets/3e1f8745-593e-492d-af6e-6a5a3820bc9f" />
+
+> Проверяем сборку
+
+<img width="1656" height="402" alt="изображение" src="https://github.com/user-attachments/assets/60d255b1-9b01-47b8-8472-4cc1f9b84c8b" />
+
