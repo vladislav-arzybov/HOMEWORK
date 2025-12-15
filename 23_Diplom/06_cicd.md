@@ -56,6 +56,7 @@ dckr_xxxxxxxx
 2. При любом коммите в репозиторие с тестовым приложением происходит сборка и отправка в регистр Docker образа.
 
 > Создадим workflow build-push.yaml:
+- nano .github/workflows/build-push.yaml
 
 [build-push.yaml]()
 
@@ -87,6 +88,19 @@ jobs:
           context: .
           push: true
           tags: |
-            arzybov/test-app-nginx:latest
+            #arzybov/test-app-nginx:latest
             arzybov/test-app-nginx:1.0.${{ github.run_number }}
 ```
+
+> Пушим в git
+- git add .
+- git commit -m 'build-push'
+- git push origin main
+
+<img width="796" height="271" alt="изображение" src="https://github.com/user-attachments/assets/54909fa3-a2d8-4701-a620-8f75b52132b0" />
+
+<img width="1304" height="239" alt="изображение" src="https://github.com/user-attachments/assets/41f69923-f27f-4594-a701-42459dd9e4af" />
+
+> Проверяем наличие образа в [DockerHub](https://hub.docker.com/repository/docker/arzybov/test-app-nginx/tags)
+
+<img width="1575" height="310" alt="изображение" src="https://github.com/user-attachments/assets/a32b85d1-981a-4d2a-96fd-d6ebd781bf76" />
