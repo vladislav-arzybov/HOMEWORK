@@ -19,5 +19,7 @@
 
 https://www.youtube.com/watch?v=zn5T7FkpaTA
 
+https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax
+
 #### РЕШЕНИЕ
 
