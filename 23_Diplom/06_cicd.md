@@ -30,12 +30,15 @@ Self-hosted runners - собирать у себя
 
 > Для выполнения данного блока воспользуюсь GitHub Actions, т.к. раньше не использовал его в работе как и Atlantis.
 
-> Для начала создадим новый токен в DockerHub ```github-actions```:
+> Для начала создадим новый токен в DockerHub, в дальнейшем его значения будут использоваться в секрете DOCKERHUB_TOKEN:
 - DockerHub - Account Settings - Personal access tokens - Generate new token
 
 <img width="1600" height="254" alt="изображение" src="https://github.com/user-attachments/assets/f88d1795-c087-425f-8c62-5f763f115085" />
 
-> Cоздадим в репозитории GitHub Secrets для доступа к DockerHub
+> Для выполнения второго задания, автоматического деплоя нового docker образа, необходимо получить заранее получить KUBE_CONFIG:
+- cat ~/.kube/config | base64 -w0
+
+> Полученную информацию необходимо добавить в репозиторий GitHub [my_nginx_test_app_diplom](https://github.com/vladislav-arzybov/my_nginx_test_app_diplom) в виде Secrets, это нужно для доступа к DockerHub и кластеру:
 - Settings - Secrets and variables - Actions - New repository secret
 
 ```
@@ -44,9 +47,13 @@ arzybov
 
 DOCKERHUB_TOKEN
 dckr_xxxxxxxx
+
+KUBE_CONFIG
+YXBpxxxxxxxxx
 ```
 
-<img width="791" height="204" alt="изображение" src="https://github.com/user-attachments/assets/52533df4-37e5-4f74-b787-a15dba971fae" />
+<img width="791" height="264" alt="изображение" src="https://github.com/user-attachments/assets/ccd8dc5f-bfda-4cac-bccd-12a19a615d2a" />
+
 
 > Создадим необходиму структуру каталогов в ранее созданном репозитории [my_nginx_test_app_diplom](https://github.com/vladislav-arzybov/my_nginx_test_app_diplom)
 - mkdir -p .github/workflows
