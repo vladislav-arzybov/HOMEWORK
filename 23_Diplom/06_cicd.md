@@ -34,4 +34,6 @@ Self-hosted runners - собирать у себя
 - mkdir -p .github/workflows
 
 > Создадим токен в DockerHub ```github-actions```:
-- DockerHub - Account Settings - Security - New Access Token
+- DockerHub - Account Settings - Personal access tokens - Generate new token
+
+<img width="1600" height="254" alt="изображение" src="https://github.com/user-attachments/assets/f88d1795-c087-425f-8c62-5f763f115085" />
