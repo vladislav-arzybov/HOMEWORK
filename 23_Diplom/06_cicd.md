@@ -30,10 +30,7 @@ Self-hosted runners - собирать у себя
 
 > Для выполнения данного блока воспользуюсь GitHub Actions, т.к. раньше не использовал его в работе как и Atlantis.
 
-> Для начала создадим необходиму структуру каталогов в ранее созданном репозитории [my_nginx_test_app_diplom](https://github.com/vladislav-arzybov/my_nginx_test_app_diplom)
-- mkdir -p .github/workflows
-
-> Создадим токен в DockerHub ```github-actions```:
+> Для начала создадим новый токен в DockerHub ```github-actions```:
 - DockerHub - Account Settings - Personal access tokens - Generate new token
 
 <img width="1600" height="254" alt="изображение" src="https://github.com/user-attachments/assets/f88d1795-c087-425f-8c62-5f763f115085" />
@@ -50,3 +47,18 @@ dckr_xxxxxxxx
 ```
 
 <img width="791" height="204" alt="изображение" src="https://github.com/user-attachments/assets/52533df4-37e5-4f74-b787-a15dba971fae" />
+
+> Создадим необходиму структуру каталогов в ранее созданном репозитории [my_nginx_test_app_diplom](https://github.com/vladislav-arzybov/my_nginx_test_app_diplom)
+- mkdir -p .github/workflows
+
+> Для выполнения задания потребуются 2 workflow:
+
+2. При любом коммите в репозиторие с тестовым приложением происходит сборка и отправка в регистр Docker образа.
+
+> Создадим workflow build-push.yaml:
+
+[build-push.yaml]()
+
+```
+
+```
