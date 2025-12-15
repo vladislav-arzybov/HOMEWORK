@@ -17,3 +17,7 @@
 
 ---
 
+https://www.youtube.com/watch?v=zn5T7FkpaTA
+
+#### РЕШЕНИЕ
+
