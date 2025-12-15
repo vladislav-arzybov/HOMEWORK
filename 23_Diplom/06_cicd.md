@@ -37,3 +37,16 @@ Self-hosted runners - собирать у себя
 - DockerHub - Account Settings - Personal access tokens - Generate new token
 
 <img width="1600" height="254" alt="изображение" src="https://github.com/user-attachments/assets/f88d1795-c087-425f-8c62-5f763f115085" />
+
+> Cоздадим в репозитории GitHub Secrets для доступа к DockerHub
+- Settings - Secrets and variables - Actions - New repository secret
+
+```
+DOCKERHUB_USERNAME
+arzybov
+
+DOCKERHUB_TOKEN
+dckr_xxxxxxxx
+```
+
+<img width="791" height="204" alt="изображение" src="https://github.com/user-attachments/assets/52533df4-37e5-4f74-b787-a15dba971fae" />
