@@ -23,3 +23,4 @@ https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-synt
 
 #### РЕШЕНИЕ
 
+Была интересна связка GitHub Actions - Docker Hub т.к. раньше с ним не работал
