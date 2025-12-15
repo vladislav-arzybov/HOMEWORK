@@ -23,8 +23,15 @@ https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-synt
 
 https://github.com/marketplace/actions/setup-node-js-environment
 
+Self-hosted runners - собирать у себя
+
+
 #### РЕШЕНИЕ
 
-Была интересна связка GitHub Actions - Docker Hub т.к. раньше в работе его не использовал как и Atlantis
+> Для выполнения данного блока воспользуюсь GitHub Actions, т.к. раньше не использовал его в работе как и Atlantis.
 
-Self-hosted runners - собирать у себя
+> Для начала создадим необходиму структуру каталогов в ранее созданном репозитории [my_nginx_test_app_diplom](https://github.com/vladislav-arzybov/my_nginx_test_app_diplom)
+- mkdir -p .github/workflows
+
+> Создадим токен в DockerHub ```github-actions```:
+- DockerHub - Account Settings - Security - New Access Token
