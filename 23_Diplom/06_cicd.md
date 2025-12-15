@@ -26,3 +26,5 @@ https://github.com/marketplace/actions/setup-node-js-environment
 #### РЕШЕНИЕ
 
 Была интересна связка GitHub Actions - Docker Hub т.к. раньше в работе его не использовал как и Atlantis
+
+Self-hosted runners - собирать у себя
