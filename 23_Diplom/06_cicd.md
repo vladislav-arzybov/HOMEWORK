@@ -21,6 +21,8 @@ https://www.youtube.com/watch?v=zn5T7FkpaTA
 
 https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax
 
+https://github.com/marketplace/actions/setup-node-js-environment
+
 #### РЕШЕНИЕ
 
 Была интересна связка GitHub Actions - Docker Hub т.к. раньше в работе его не использовал как и Atlantis
