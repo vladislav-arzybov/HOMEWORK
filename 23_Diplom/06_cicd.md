@@ -94,9 +94,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: |
-            #arzybov/test-app-nginx:latest
-            arzybov/test-app-nginx:1.0.${{ github.run_number }}
+          tags: arzybov/test-app-nginx:1.0.${{ github.run_number }}
 ```
 
 > Пушим в git
