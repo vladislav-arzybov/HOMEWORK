@@ -364,6 +364,160 @@ resource "yandex_lb_network_load_balancer" "nginx" {
 
 > После выполнения проверки откроется окно с инструкциями
 
+<details>
+  <summary>Plan</summary>
+
+```
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
++ create
+
+Terraform will perform the following actions:
+
+  # local_file.inventory_kubespray will be created
++ resource "local_file" "inventory_kubespray" {
+      + content              = <<-EOT
+            [all]
+            master-node-1 ansible_host=84.201.132.33 ip=10.0.1.4
+            worker-node-1 ansible_host=158.160.0.253 ip=10.0.2.27
+            worker-node-2 ansible_host=158.160.219.173 ip=10.0.3.10
+            
+            [kube_control_plane]
+            master-node-1
+            
+            [etcd]
+            master-node-1
+            
+            [kube_node]
+            worker-node-1
+            worker-node-2
+            
+            [k8s_cluster:children]
+            kube_control_plane
+            kube_node
+        EOT
+      + content_base64sha256 = (known after apply)
+      + content_base64sha512 = (known after apply)
+      + content_md5          = (known after apply)
+      + content_sha1         = (known after apply)
+      + content_sha256       = (known after apply)
+      + content_sha512       = (known after apply)
+      + directory_permission = "0777"
+      + file_permission      = "0777"
+      + filename             = "ansible/inventory/inventory.ini"
+      + id                   = (known after apply)
+    }
+
+  # yandex_lb_network_load_balancer.grafana will be created
++ resource "yandex_lb_network_load_balancer" "grafana" {
+      + allow_zonal_shift   = (known after apply)
+      + created_at          = (known after apply)
+      + deletion_protection = (known after apply)
+      + folder_id           = (known after apply)
+      + id                  = (known after apply)
+      + name                = "grafana"
+      + region_id           = (known after apply)
+      + type                = "external"
+
+      + attached_target_group {
+          + target_group_id = (known after apply)
+
+          + healthcheck {
+              + healthy_threshold   = 2
+              + interval            = 2
+              + name                = "healthcheck"
+              + timeout             = 1
+              + unhealthy_threshold = 2
+
+              + tcp_options {
+                  + port = 30001
+                }
+            }
+        }
+
+      + listener {
+          + name        = "grafana-listener"
+          + port        = 80
+          + protocol    = (known after apply)
+          + target_port = 30001
+
+          + external_address_spec {
+              + address    = (known after apply)
+              + ip_version = "ipv4"
+            }
+        }
+    }
+
+  # yandex_lb_network_load_balancer.nginx will be created
++ resource "yandex_lb_network_load_balancer" "nginx" {
+      + allow_zonal_shift   = (known after apply)
+      + created_at          = (known after apply)
+      + deletion_protection = (known after apply)
+      + folder_id           = (known after apply)
+      + id                  = (known after apply)
+      + name                = "nginx"
+      + region_id           = (known after apply)
+      + type                = "external"
+
+      + attached_target_group {
+          + target_group_id = (known after apply)
+
+          + healthcheck {
+              + healthy_threshold   = 2
+              + interval            = 2
+              + name                = "healthcheck"
+              + timeout             = 1
+              + unhealthy_threshold = 2
+
+              + tcp_options {
+                  + port = 30002
+                }
+            }
+        }
+
+      + listener {
+          + name        = "nginx-listener"
+          + port        = 80
+          + protocol    = (known after apply)
+          + target_port = 30002
+
+          + external_address_spec {
+              + address    = (known after apply)
+              + ip_version = "ipv4"
+            }
+        }
+    }
+
+  # yandex_lb_target_group.k8s-nlb will be created
++ resource "yandex_lb_target_group" "k8s-nlb" {
+      + created_at      = (known after apply)
+      + description     = (known after apply)
+      + folder_id       = (known after apply)
+      + id              = (known after apply)
+      + labels          = (known after apply)
+      + name            = "k8s-balancer-group"
+      + region_id       = (known after apply)
+      + target_group_id = (known after apply)
+
+      + target {
+          + address   = "10.0.1.4"
+          + subnet_id = "e9bsoiol2c04lp3ddfnd"
+        }
+      + target {
+          + address   = "10.0.2.27"
+          + subnet_id = "e2lljuk1vt6rjao1p4vt"
+        }
+      + target {
+          + address   = "10.0.3.10"
+          + subnet_id = "fl837lr2ou8f54g1k60i"
+        }
+    }
+
+Plan: 4 to add, 0 to change, 0 to destroy.
+```
+
+</details>
+
 <img width="851" height="653" alt="изображение" src="https://github.com/user-attachments/assets/4c30bb05-ff9e-4c26-9ba9-559023c2dd66" />
 
 > Чтобы выполнить terrafform apply необходимо в поле ```Add a comment``` указать ```atlantis apply -d 02_k8s/02_infra``` и нажать Comment
@@ -371,6 +525,24 @@ resource "yandex_lb_network_load_balancer" "nginx" {
 <img width="854" height="636" alt="изображение" src="https://github.com/user-attachments/assets/b5168ebb-6672-4674-b3b0-51216fead092" />
 
 > Изменения внесены успешно
+
+<details>
+  <summary>Dashboard</summary>
+
+```
+local_file.inventory_kubespray: Creating...
+yandex_lb_target_group.k8s-nlb: Creating...
+local_file.inventory_kubespray: Creation complete after 0s [id=27d3f23e99db174f4bfccac282c65a898be437de]
+yandex_lb_target_group.k8s-nlb: Creation complete after 2s [id=enpv1dchalo5nf6emo0i]
+yandex_lb_network_load_balancer.grafana: Creating...
+yandex_lb_network_load_balancer.grafana: Creation complete after 2s [id=enp1a5i8nj8s110kbsh3]
+yandex_lb_network_load_balancer.nginx: Creating...
+yandex_lb_network_load_balancer.nginx: Creation complete after 4s [id=enplsmnitb68orfoanl1]
+
+Apply complete! Resources: 4 added, 0 changed, 0 destroyed.
+```
+
+</details>
 
 <img width="874" height="612" alt="изображение" src="https://github.com/user-attachments/assets/d73d71e0-8235-4825-8399-7c2d6a0fdf5e" />
 
