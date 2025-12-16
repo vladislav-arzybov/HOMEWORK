@@ -148,9 +148,13 @@ resource "yandex_vpc_subnet" "subnet-d" {
 }
 ```
 
+---
+
 5. Убедитесь, что теперь вы можете выполнить команды `terraform destroy` и `terraform apply` без дополнительных ручных действий.
 
 <img width="647" height="282" alt="изображение" src="https://github.com/user-attachments/assets/b218f805-6238-4d86-bf20-404680908071" />
+
+---
 
 6. В случае использования [Terraform Cloud](https://app.terraform.io/) в качестве [backend](https://developer.hashicorp.com/terraform/language/backend) убедитесь, что применение изменений успешно проходит, используя web-интерфейс Terraform cloud.
 
