@@ -231,7 +231,7 @@ spec:
 - kubectl get cm -n atlantis
 - kubectl get all -n atlantis
 
-<img width="739" height="310" alt="изображение" src="https://github.com/user-attachments/assets/b107d754-e08a-475c-b6f3-61d067190c7b" />
+<img width="773" height="309" alt="изображение" src="https://github.com/user-attachments/assets/0d4ba367-3a46-4740-a4a4-96ca4584f1bf" />
 
 > Проверяем что сервис доступен из вне: http://158.160.49.136:30003/
 
