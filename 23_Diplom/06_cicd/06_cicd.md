@@ -159,7 +159,7 @@ jobs:
 DevOps-Netology-diplom
 </head>
 <body>
-<h1>Hello! Welcome to my test app page. (v4.0.0)</h1>
+<h1>Hello! Welcome to my test app page. (v2.0.0)</h1>
 </body>
 </html>
 ```
@@ -171,15 +171,15 @@ DevOps-Netology-diplom
 
 <img width="892" height="291" alt="изображение" src="https://github.com/user-attachments/assets/56275d2b-20f3-4b71-9bb7-10fb934cb471" />
 
-> Добавляем тэг, v4.0.0, пушим в git
-- git tag v4.0.0
-- git push origin v4.0.0
+> Добавляем тэг, v2.0.0, пушим в git
+- git tag v2.0.0
+- git push origin v2.0.0
 
-<img width="666" height="93" alt="изображение" src="https://github.com/user-attachments/assets/3e1f8745-593e-492d-af6e-6a5a3820bc9f" />
+<img width="690" height="92" alt="изображение" src="https://github.com/user-attachments/assets/ffce4e6c-01c0-46f6-af60-3b7df8ad86ce" />
 
 > Проверяем сборку
 
-<img width="1656" height="402" alt="изображение" src="https://github.com/user-attachments/assets/60d255b1-9b01-47b8-8472-4cc1f9b84c8b" />
+<img width="1302" height="235" alt="изображение" src="https://github.com/user-attachments/assets/b8249935-9d71-4b4b-a9e8-a7b2ee78c46b" />
 
 > Образ создан
 
@@ -188,8 +188,9 @@ DevOps-Netology-diplom
 > Деплой выполнен автоматически
 - kubectl get all -n app -o wide
 
-<img width="1563" height="274" alt="изображение" src="https://github.com/user-attachments/assets/e370b111-7ec1-4e6e-a9ab-e7da9f0c36b8" />
+<img width="1554" height="253" alt="изображение" src="https://github.com/user-attachments/assets/6d5136c7-e09d-49f6-a535-a7d2ebaa393e" />
 
-> Изменения на странице актуальны
+> Изменения на странице приложения актуальны
 
-<img width="788" height="167" alt="изображение" src="https://github.com/user-attachments/assets/98eba521-2991-408d-85a9-1a5b60ed4f14" />
+<img width="884" height="231" alt="изображение" src="https://github.com/user-attachments/assets/b0dca274-801d-4b60-83db-9068334a3394" />
+
