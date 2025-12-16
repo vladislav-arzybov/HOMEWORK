@@ -20,7 +20,7 @@
 
 <img width="1600" height="254" alt="изображение" src="https://github.com/user-attachments/assets/f88d1795-c087-425f-8c62-5f763f115085" />
 
-> Для выполнения второго задания, автоматического деплоя нового docker образа, необходимо получить заранее получить KUBE_CONFIG:
+> Для выполнения второго задания, автоматического деплоя нового docker образа, необходимо заранее получить KUBE_CONFIG:
 - cat ~/.kube/config | base64 -w0
 
 > Полученную информацию необходимо добавить в репозиторий GitHub [my_nginx_test_app_diplom](https://github.com/vladislav-arzybov/my_nginx_test_app_diplom) в виде Secrets, это нужно для доступа к DockerHub и кластеру:
