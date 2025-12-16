@@ -245,7 +245,7 @@ spec:
 
 <img width="806" height="110" alt="изображение" src="https://github.com/user-attachments/assets/7d00ca61-a21c-4cae-8fd6-ae99967c9824" />
 
-- В ```Payload URL``` указываем ip мастера и порт atlantis'a http://158.160.49.136:30003/events
+- В ```Payload URL``` указываем ip мастера и порт atlantis'a http://158.160.0.253:30003/events
 - В ```Content type``` - application/json
 - В блоке ```Which events would you like to trigger this webhook?``` выбираем ```Let me select individual events.```, а затем выбираем:
 > - Issue comments
@@ -253,11 +253,11 @@ spec:
 > - Pull request reviews
 > - Pushes
 
-<img width="776" height="644" alt="изображение" src="https://github.com/user-attachments/assets/7241828c-c18f-445c-9b43-5d6271e212fa" />
+<img width="780" height="654" alt="изображение" src="https://github.com/user-attachments/assets/8428ce58-505f-4eb4-add8-5a9b78315387" />
 
 > Нажимаем Add webhook
 
-<img width="781" height="193" alt="изображение" src="https://github.com/user-attachments/assets/ae9cbb48-0758-4cee-a83a-3b5c817a9128" />
+<img width="783" height="195" alt="изображение" src="https://github.com/user-attachments/assets/af08f8a6-e453-4849-a27b-e02c38688d1d" />
 
 ---
 
