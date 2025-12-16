@@ -100,6 +100,7 @@ jobs:
 
 > Создадим workflow build-push-deploy.yaml:
 - nano .github/workflows/build-push-deploy.yaml
+
 [build-push-deploy.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/23_Diplom/06_cicd/workflows/build-push-deploy.yaml)
 
 ```
