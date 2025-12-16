@@ -5,7 +5,12 @@
 Способ подготовки:
 
 1. Рекомендуемый вариант:  
-   а. Создайте отдельный git репозиторий с простым nginx конфигом, который будет отдавать статические данные.
+   а. Создайте отдельный git репозиторий с простым nginx конфигом, который будет отдавать статические данные.  
+   б. Подготовьте Dockerfile для создания образа приложения.  
+2. Альтернативный вариант:  
+   а. Используйте любой другой код, главное, чтобы был самостоятельно создан Dockerfile.
+
+### РЕШЕНИЕ
 
 > Создаем новый репозиторий ```my_nginx_test_app_diplom``` на https://github.com
 
@@ -14,8 +19,6 @@
 > Копируем созданный репозиторий в локальный каталог: ```git clone git@github.com:vladislav-arzybov/my_nginx_test_app_diplom.git```
 
 <img width="1023" height="112" alt="изображение" src="https://github.com/user-attachments/assets/40c22f87-3276-4ef8-848d-43bacca10508" />
-
-   б. Подготовьте Dockerfile для создания образа приложения.
 
 > Подготовим index.html страницу для nginx:
 
@@ -59,8 +62,7 @@ EXPOSE 80
 
 <img width="768" height="165" alt="изображение" src="https://github.com/user-attachments/assets/3d025f6d-ae34-4882-89cd-64dee7d49d14" />
    
-2. Альтернативный вариант:  
-   а. Используйте любой другой код, главное, чтобы был самостоятельно создан Dockerfile.
+---
 
 Ожидаемый результат:
 
@@ -77,6 +79,7 @@ EXPOSE 80
 
 <img width="906" height="311" alt="изображение" src="https://github.com/user-attachments/assets/3147b9ad-dc49-44df-bc79-125a281172b9" />
 
+---
 
 2. Регистри с собранным docker image. В качестве регистри может быть DockerHub или [Yandex Container Registry](https://cloud.yandex.ru/services/container-registry), созданный также с помощью terraform.
 
