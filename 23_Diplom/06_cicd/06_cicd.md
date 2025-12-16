@@ -183,7 +183,11 @@ DevOps-Netology-diplom
 
 > Образ создан
 
-<img width="1590" height="326" alt="изображение" src="https://github.com/user-attachments/assets/29e6d237-694c-4da9-b2ff-1dbbeb4d8d16" />
+<img width="1592" height="325" alt="изображение" src="https://github.com/user-attachments/assets/7062bf7d-779d-43d2-b571-86e00fc8e9f3" />
+
+> История сборок
+
+<img width="918" height="412" alt="изображение" src="https://github.com/user-attachments/assets/1cb487a3-0219-422f-b4a7-59b8e22c482b" />
 
 > Деплой выполнен автоматически
 - kubectl get all -n app -o wide
