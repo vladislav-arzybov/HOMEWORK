@@ -75,6 +75,11 @@
 2. В файле `~/.kube/config` находятся данные для доступа к кластеру.
 3. Команда `kubectl get pods --all-namespaces` отрабатывает без ошибок.
 
+> Ссылки на конфигурационные файлы Terraform и ansible для выполнения данного блока:
+
+- [Terraform](https://github.com/vladislav-arzybov/HOMEWORK/tree/main/23_Diplom/02_k8s/02_infra)
+- [Ansible](https://github.com/vladislav-arzybov/HOMEWORK/tree/main/23_Diplom/02_k8s/02_infra/ansible)
+
 ---
 ### [Создание тестового приложения](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/23_Diplom/03_dockerfile/03_dockerfile.md)
 
