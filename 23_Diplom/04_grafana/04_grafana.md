@@ -115,10 +115,12 @@ spec:
 
 <img width="900" height="294" alt="изображение" src="https://github.com/user-attachments/assets/46a91659-d3e2-4efe-8a7f-04d112e79183" />
 
-> Проверяем доступ c мастера http://158.160.122.175:30001:
+> Проверяем доступ c мастера http://158.160.49.136:30001:
 
-<img width="1913" height="995" alt="изображение" src="https://github.com/user-attachments/assets/56b81633-be91-423f-a459-4c70d39c1dc3" />
+<img width="1803" height="955" alt="изображение" src="https://github.com/user-attachments/assets/8b961d17-91ac-4056-8522-5a268ce10c88" />
 
+---
+---
 
 2. Задеплоить тестовое приложение, например, [nginx](https://www.nginx.com/) сервер отдающий статическую страницу.
 
@@ -186,7 +188,8 @@ spec:
 
 <img width="763" height="309" alt="изображение" src="https://github.com/user-attachments/assets/f7dd08cd-7599-4635-bd9c-90169b56ac66" />
 
-> Проверяем доступность портала с адреса мастера: http://158.160.122.175:30002
+> Проверяем доступность портала с адреса мастера: http://158.160.49.136:30002
 
-<img width="876" height="200" alt="изображение" src="https://github.com/user-attachments/assets/ff8773f0-d822-49d3-8e12-eeb637e092b0" />
+<img width="687" height="210" alt="изображение" src="https://github.com/user-attachments/assets/4cf49875-f5cc-4c35-a10b-e8c5aeb7f935" />
+
 
