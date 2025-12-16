@@ -42,6 +42,8 @@ YXBpxxxxxxxxx
 > Создадим необходиму структуру каталогов в ранее созданном репозитории [my_nginx_test_app_diplom](https://github.com/vladislav-arzybov/my_nginx_test_app_diplom)
 - mkdir -p .github/workflows
 
+---
+
 2. При любом коммите в репозиторие с тестовым приложением происходит сборка и отправка в регистр Docker образа.
 
 > Создадим workflow build-push.yaml:
@@ -92,6 +94,7 @@ jobs:
 
 <img width="1575" height="310" alt="изображение" src="https://github.com/user-attachments/assets/a32b85d1-981a-4d2a-96fd-d6ebd781bf76" />
 
+---
 
 3. При создании тега (например, v1.0.0) происходит сборка и отправка с соответствующим label в регистри, а также деплой соответствующего Docker образа в кластер Kubernetes.
 
