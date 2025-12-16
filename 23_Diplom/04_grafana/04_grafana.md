@@ -119,7 +119,7 @@ spec:
 - логин: admin
 - пароль: admin
 
-<img width="1803" height="955" alt="изображение" src="https://github.com/user-attachments/assets/8b961d17-91ac-4056-8522-5a268ce10c88" />
+<img width="1805" height="955" alt="изображение" src="https://github.com/user-attachments/assets/ded4c908-b7ee-43ae-94a5-1c49218fbcf9" />
 
 ---
 ---
