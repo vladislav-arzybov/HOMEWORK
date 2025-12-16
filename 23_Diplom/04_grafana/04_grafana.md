@@ -31,7 +31,7 @@ kubectl apply -f kube-prometheus/manifests/
 > После завершения установки проверяем статус подов и сервисов в namespase = monitoring, ошибок нет.
 - kubectl get all -n monitoring
 
-<img width="1099" height="885" alt="изображение" src="https://github.com/user-attachments/assets/1a870683-6926-4192-847c-702fbab9c7a7" />
+<img width="1099" height="885" alt="изображение" src="https://github.com/user-attachments/assets/cfb0cbe2-be76-4c81-965f-e46d57aab0a4" />
 
 > Проверяем что Prometheus видит таргеты, выполняем проброс портов и открываем страницу в браузере, 
 - kubectl port-forward -n monitoring svc/prometheus-k8s 9090:9090
