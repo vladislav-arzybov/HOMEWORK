@@ -380,13 +380,14 @@ resource "yandex_lb_network_load_balancer" "nginx" {
 
 <img width="1074" height="129" alt="изображение" src="https://github.com/user-attachments/assets/6e3f2f2a-793a-4fb6-9dc2-e1008964ef27" />
 
-> Для внесения изменений в main ветку, необходимо нажать ```Merge pull request```
+> Допполнительно для внесения изменений в main ветку и снятия блокировки в atlantis, необходимо нажать ```Merge pull request```
 
 <img width="877" height="312" alt="изображение" src="https://github.com/user-attachments/assets/e9511a0c-6c4b-420c-8cd0-7676d3983676" />
 
 <img width="910" height="427" alt="изображение" src="https://github.com/user-attachments/assets/191e8d8b-c76e-48d9-8bfb-54ebd7282772" />
 
-<img width="1475" height="641" alt="изображение" src="https://github.com/user-attachments/assets/74aeba39-2117-4352-896f-df88d93d2394" />
+<img width="1244" height="587" alt="изображение" src="https://github.com/user-attachments/assets/875bf4eb-e7d9-4958-b46a-761071e68525" />
+
 
 ---
 
