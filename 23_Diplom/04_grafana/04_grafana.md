@@ -113,9 +113,11 @@ spec:
 - kubectl apply -f 04_grafana/grafana/
 - kubectl get svc -n monitoring
 
-<img width="900" height="294" alt="изображение" src="https://github.com/user-attachments/assets/46a91659-d3e2-4efe-8a7f-04d112e79183" />
+<img width="964" height="293" alt="изображение" src="https://github.com/user-attachments/assets/4d7b1570-6d71-44d7-a900-53e034a30f84" />
 
-> Проверяем доступ c мастера http://158.160.49.136:30001:
+> Проверяем доступ c внешнего ip мастера http://158.160.0.253:30001/
+- логин: admin
+- пароль: admin
 
 <img width="1803" height="955" alt="изображение" src="https://github.com/user-attachments/assets/8b961d17-91ac-4056-8522-5a268ce10c88" />
 
@@ -186,11 +188,11 @@ spec:
 - kubectl apply -f 04_grafana/app/
 - kubectl get all -n app
 
-<img width="763" height="309" alt="изображение" src="https://github.com/user-attachments/assets/f7dd08cd-7599-4635-bd9c-90169b56ac66" />
+<img width="839" height="308" alt="изображение" src="https://github.com/user-attachments/assets/5c48dd77-9abe-44ca-89d2-b15ae1cea9d7" />
 
-> Проверяем доступность портала с адреса мастера: http://158.160.49.136:30002
+> Проверяем доступность портала с адреса мастера: http://158.160.0.253:30002/
 
-<img width="687" height="210" alt="изображение" src="https://github.com/user-attachments/assets/4cf49875-f5cc-4c35-a10b-e8c5aeb7f935" />
+<img width="741" height="206" alt="изображение" src="https://github.com/user-attachments/assets/52b4b403-a986-45c4-aec9-c86d74b9ab8b" />
 
 ---
 
