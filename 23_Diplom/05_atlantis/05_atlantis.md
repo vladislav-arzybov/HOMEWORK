@@ -1,4 +1,4 @@
-<img width="1614" height="648" alt="изображение" src="https://github.com/user-attachments/assets/7c7787f7-ee4e-445c-a908-ea416f4c79a8" />### Деплой инфраструктуры в terraform pipeline
+### Деплой инфраструктуры в terraform pipeline
 
 1. Если на первом этапе вы не воспользовались [Terraform Cloud](https://app.terraform.io/), то задеплойте и настройте в кластере [atlantis](https://www.runatlantis.io/) для отслеживания изменений инфраструктуры. Альтернативный вариант 3 задания: вместо Terraform Cloud или atlantis настройте на автоматический запуск и применение конфигурации terraform из вашего git-репозитория в выбранной вами CI-CD системе при любом комите в main ветку. Предоставьте скриншоты работы пайплайна из CI/CD системы.
 
