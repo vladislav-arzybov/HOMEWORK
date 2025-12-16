@@ -233,9 +233,9 @@ spec:
 
 <img width="773" height="309" alt="изображение" src="https://github.com/user-attachments/assets/0d4ba367-3a46-4740-a4a4-96ca4584f1bf" />
 
-> Проверяем что сервис доступен из вне: http://158.160.49.136:30003/
+> Проверяем что сервис доступен из вне: http://158.160.0.253:30003/
 
-<img width="1614" height="648" alt="изображение" src="https://github.com/user-attachments/assets/04229585-e431-4fde-9df5-f28e9cb0678b" />
+<img width="1345" height="629" alt="изображение" src="https://github.com/user-attachments/assets/cedc8bf8-5284-48df-b8be-fa3c81c0f7ca" />
 
 ---
 
