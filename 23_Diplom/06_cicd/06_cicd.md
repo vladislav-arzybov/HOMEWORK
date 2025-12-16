@@ -99,7 +99,7 @@ jobs:
 3. При создании тега (например, v1.0.0) происходит сборка и отправка с соответствующим label в регистри, а также деплой соответствующего Docker образа в кластер Kubernetes.
 
 > Создадим workflow build-push-deploy.yaml:
-- nano build-push-deploy.yaml
+- nano .github/workflows/build-push-deploy.yaml
 [build-push-deploy.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/23_Diplom/06_cicd/workflows/build-push-deploy.yaml)
 
 ```
