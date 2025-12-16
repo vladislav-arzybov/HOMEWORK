@@ -49,7 +49,7 @@ YXBpxxxxxxxxx
 > Создадим workflow build-push.yaml:
 - nano .github/workflows/build-push.yaml
 
-[build-push.yaml]()
+[build-push.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/23_Diplom/06_cicd/workflows/build-push.yaml)
 
 ```
 name: Build and Push
@@ -100,7 +100,7 @@ jobs:
 
 > Создадим workflow build-push-deploy.yaml:
 
-[build-push-deploy.yaml]()
+[build-push-deploy.yaml](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/23_Diplom/06_cicd/workflows/build-push-deploy.yaml)
 
 ```
 name: build and deploy
