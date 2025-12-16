@@ -527,7 +527,7 @@ Plan: 4 to add, 0 to change, 0 to destroy.
 > Изменения внесены успешно
 
 <details>
-  <summary>Dashboard</summary>
+  <summary>Apply</summary>
 
 ```
 local_file.inventory_kubespray: Creating...
@@ -550,7 +550,7 @@ Apply complete! Resources: 4 added, 0 changed, 0 destroyed.
 
 > Проверяем наличие созданных балансировщиков:
 
-<img width="1074" height="129" alt="изображение" src="https://github.com/user-attachments/assets/6e3f2f2a-793a-4fb6-9dc2-e1008964ef27" />
+<img width="1069" height="160" alt="изображение" src="https://github.com/user-attachments/assets/1803d701-7800-4f2b-a7ea-555b2d9de3bb" />
 
 > Допполнительно для внесения изменений в main ветку и снятия блокировки в atlantis, необходимо нажать ```Merge pull request```
 
@@ -572,22 +572,23 @@ Apply complete! Resources: 4 added, 0 changed, 0 destroyed.
 
 2. Http доступ на 80 порту к web интерфейсу grafana.
 
-> http://158.160.209.209:80
+> http://130.193.35.57:80
 > Логин: admin
 > Пароль: admin
 
 3. Дашборды в grafana отображающие состояние Kubernetes кластера.
    
-<img width="1913" height="991" alt="изображение" src="https://github.com/user-attachments/assets/506a3035-6142-4d99-95d8-27993179ca8a" />
+<img width="1801" height="957" alt="изображение" src="https://github.com/user-attachments/assets/9481e03b-7b12-464a-85ed-36b72a150307" />
 
 4. Http доступ на 80 порту к тестовому приложению.
 
-> http://158.160.217.80/
+> http://158.160.201.83:80
 
-<img width="793" height="141" alt="изображение" src="https://github.com/user-attachments/assets/2b656c92-2d80-434a-bef2-d2c31bc53a3f" />
+<img width="682" height="174" alt="изображение" src="https://github.com/user-attachments/assets/df230efb-5081-4f1d-acf3-029535420764" />
 
 5. Atlantis или terraform cloud или ci/cd-terraform
 
-> http://158.160.49.136:30003/
+> http://84.201.132.33:30003/
 
-<img width="1309" height="651" alt="изображение" src="https://github.com/user-attachments/assets/4153ac5d-e33d-48bf-a8c8-4aba55617d9a" />
+<img width="1575" height="731" alt="изображение" src="https://github.com/user-attachments/assets/f9989086-288f-415e-9589-ce92d2a3dd5e" />
+
