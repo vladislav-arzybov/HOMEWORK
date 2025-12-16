@@ -22,6 +22,8 @@ provider "yandex" {
 }
 ```
 
+---
+
 #### P.S. 
 > Использование authorized_key.json удобно при локальном запуске Terraform, создании backend. Но т.к. в дальнейшем потребуется использовать в работе Atlantis, то строка ```service_account_key_file = file("~/.authorized_key.json")``` удалена из кода Terraform, а информация о ключе передана в переменную окруженя ```YC_SERVICE_ACCOUNT_KEY_FILE``` в ~/.bashrc.
 - echo 'export YC_SERVICE_ACCOUNT_KEY_FILE="$HOME/.authorized_key.json"' >> ~/.bashrc
@@ -36,6 +38,8 @@ provider "yandex" {
 - echo $TF_VAR_ssh_public_key
 
 <img width="1030" height="36" alt="изображение" src="https://github.com/user-attachments/assets/6ee42ec7-aa47-4249-a761-dba041b61d32" />
+
+---
 
 2. Подготовьте [backend](https://developer.hashicorp.com/terraform/language/backend) для Terraform:  
    а. Рекомендуемый вариант: [S3 bucket](https://ru.hexlet.io/courses/terraform-basics/lessons/remote-state/theory_unit) в созданном ЯО аккаунте(создание бакета через TF)
