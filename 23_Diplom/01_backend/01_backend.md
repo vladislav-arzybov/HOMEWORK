@@ -117,6 +117,8 @@ terraform {
 
 <img width="474" height="61" alt="изображение" src="https://github.com/user-attachments/assets/d2b1ce61-1d3a-442c-9739-d5206b55dbb9" />
 
+---
+
 4. Создайте VPC с подсетями в разных зонах доступности.
 
 ```
