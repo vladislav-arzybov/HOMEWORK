@@ -192,4 +192,4 @@ spec:
 
 <img width="687" height="210" alt="изображение" src="https://github.com/user-attachments/assets/4cf49875-f5cc-4c35-a10b-e8c5aeb7f935" />
 
-
+Дальнейшая настройка будет производиться в блоке : [Деплой инфраструктуры в terraform pipeline](https://github.com/vladislav-arzybov/HOMEWORK/blob/main/23_Diplom/05_atlantis/05_atlantis.md)
