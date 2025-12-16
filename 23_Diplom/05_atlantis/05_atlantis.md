@@ -245,7 +245,7 @@ spec:
 
 <img width="806" height="110" alt="изображение" src="https://github.com/user-attachments/assets/7d00ca61-a21c-4cae-8fd6-ae99967c9824" />
 
-- В ```Payload URL``` указываем ip мастера и порт atlantis'a http://89.169.144.92:30003/events
+- В ```Payload URL``` указываем ip мастера и порт atlantis'a http://158.160.49.136:30003/events
 - В ```Content type``` - application/json
 - В блоке ```Which events would you like to trigger this webhook?``` выбираем ```Let me select individual events.```, а затем выбираем:
 > - Issue comments
@@ -253,11 +253,11 @@ spec:
 > - Pull request reviews
 > - Pushes
 
-<img width="777" height="646" alt="изображение" src="https://github.com/user-attachments/assets/6bda4de9-94da-4c51-a9c8-59d446d1a974" />
+<img width="776" height="644" alt="изображение" src="https://github.com/user-attachments/assets/7241828c-c18f-445c-9b43-5d6271e212fa" />
 
 > Нажимаем Add webhook
 
-<img width="789" height="203" alt="изображение" src="https://github.com/user-attachments/assets/5365bded-2afa-4d20-b572-58d9e94cce0b" />
+<img width="781" height="193" alt="изображение" src="https://github.com/user-attachments/assets/ae9cbb48-0758-4cee-a83a-3b5c817a9128" />
 
 ---
 
@@ -374,7 +374,9 @@ resource "yandex_lb_network_load_balancer" "nginx" {
 
 <img width="874" height="612" alt="изображение" src="https://github.com/user-attachments/assets/d73d71e0-8235-4825-8399-7c2d6a0fdf5e" />
 
-<img width="1481" height="671" alt="изображение" src="https://github.com/user-attachments/assets/c373ea5a-423b-445d-bfd5-74bb0875418b" />
+<img width="1251" height="610" alt="изображение" src="https://github.com/user-attachments/assets/49ea777f-0368-499e-bcc0-ab7f8067123b" />
+
+> Проверяем наличие созданных балансировщиков:
 
 <img width="1074" height="129" alt="изображение" src="https://github.com/user-attachments/assets/6e3f2f2a-793a-4fb6-9dc2-e1008964ef27" />
 
