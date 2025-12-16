@@ -1,4 +1,4 @@
-### Деплой инфраструктуры в terraform pipeline
+<img width="1614" height="648" alt="изображение" src="https://github.com/user-attachments/assets/7c7787f7-ee4e-445c-a908-ea416f4c79a8" />### Деплой инфраструктуры в terraform pipeline
 
 1. Если на первом этапе вы не воспользовались [Terraform Cloud](https://app.terraform.io/), то задеплойте и настройте в кластере [atlantis](https://www.runatlantis.io/) для отслеживания изменений инфраструктуры. Альтернативный вариант 3 задания: вместо Terraform Cloud или atlantis настройте на автоматический запуск и применение конфигурации terraform из вашего git-репозитория в выбранной вами CI-CD системе при любом комите в main ветку. Предоставьте скриншоты работы пайплайна из CI/CD системы.
 
@@ -233,10 +233,11 @@ spec:
 
 <img width="739" height="310" alt="изображение" src="https://github.com/user-attachments/assets/b107d754-e08a-475c-b6f3-61d067190c7b" />
 
-> Проверяем что сервис доступен из вне: http://89.169.151.178:30003/
+> Проверяем что сервис доступен из вне: http://158.160.49.136:30003/
 
-<img width="1452" height="625" alt="изображение" src="https://github.com/user-attachments/assets/9d96ddcf-cb2e-4e6e-be4f-1a6557f70853" />
+<img width="1614" height="648" alt="изображение" src="https://github.com/user-attachments/assets/04229585-e431-4fde-9df5-f28e9cb0678b" />
 
+---
 
 #### Настройка atlantis для работы с репозиторием
 
@@ -258,7 +259,7 @@ spec:
 
 <img width="789" height="203" alt="изображение" src="https://github.com/user-attachments/assets/5365bded-2afa-4d20-b572-58d9e94cce0b" />
 
-
+---
 
 #### Проверяем работу atlantis, вносим изменения в текущую инфраструктуру
 
@@ -384,6 +385,8 @@ resource "yandex_lb_network_load_balancer" "nginx" {
 <img width="910" height="427" alt="изображение" src="https://github.com/user-attachments/assets/191e8d8b-c76e-48d9-8bfb-54ebd7282772" />
 
 <img width="1475" height="641" alt="изображение" src="https://github.com/user-attachments/assets/74aeba39-2117-4352-896f-df88d93d2394" />
+
+---
 
 #### Итого
 
